@@ -21,7 +21,7 @@
 %\usepackage{natbib}
 % Use the following line if you want square brackets and numbering system
 %\usepackage[square, numbers]{natbib}
-\usepackage[natbib,style=authoryear,refsection=chapter]{biblatex}
+\usepackage[style=authoryear,refsection=chapter]{biblatex}
 \addbibresource{thesisAccessTest.bib}
 
 % \renewcommand{\bibfont}{\setstretch{1}\selectfont}
@@ -33,18 +33,27 @@
 %\renewcommand\bibsection{\section*{\ref name}}
 %\renewcommand\bibsection{\section*}
 % \renewcommand{\bibsection}{\section{References}}
-\newcommand{\theTitle}{This is the title of a thesis
-submitted to Iowa State University\\
-Note that only the first letter of
-the first word and proper names
-are capitalized}
-\newcommand{\theShortTitle}{This is the title of a thesis
-submitted to Iowa State University}
+\newcommand{\twoLineTitle}[2]{
+    \newcommand{\titleWithLineBreak}{#1\\#2}
+    \newcommand{\titleWithoutBreak}{#1 #2}
+}
 \newcommand{\theAuthor}{Alice Wonder}
 
+\twoLineTitle{This is the title of a thesis
+submitted to Iowa State University on the first line}{
+Note that only the first letter of
+the first word and proper names
+are capitalized and this is the second line}
+\author{\theAuthor}
+% \newcommand{\theTitle}{This is the title of a thesis
+% submitted to Iowa State University\\
+% Note that only the first letter of
+% the first word and proper names
+% are capitalized}
 
-\usepackage[pdftex,hypertexnames=false,linktocpage=true,pdfauthor=\theAuthor,
-pdftitle=\theShortTitle,]{hyperref}
+
+\title{\titleWithLineBreak}
+\usepackage[pdftex,hypertexnames=false,linktocpage=true,pdfauthor={\theAuthor},pdftitle={\titleWithoutBreak},]{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB}
 
 
@@ -80,12 +89,13 @@ pdftitle=\theShortTitle,]{hyperref}
 
 \begin{document}
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png}
-%\include{Preface/titlepage}
+\def\@makechapterheada{\vspace*{-2cm}\titlepage}
+\include{Preface/titlepage}
 
 \raggedright
 \parindent 0.25 in % set all paragraphs in the document to have indent
 
-\include{Preface/dedication}
+%\include{Preface/dedication}
 {
 \pdfbookmark[1]{TABLE OF CONTENTS}{table}
 \tableofcontents
@@ -107,8 +117,9 @@ pdftitle=\theShortTitle,]{hyperref}
 \addcontentsline{toc}{chapter}{LIST OF FIGURES}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \listoffigures
-
-% % \include{Preface/nomenclature}
+%Optional nomenclature
+\cleardoublepage \phantomsection
+\include{Preface/nomenclature}
 
 \addtocontents{toc}{\def\protect\@chapapp{CHAPTER\ }}
 
@@ -119,6 +130,7 @@ pdftitle=\theShortTitle,]{hyperref}
 \cleardoublepage \phantomsection
 \include{Preface/abstract}
 \newpage
+\pagenumbering{arabic}
 \include{Body/ch1/ch1_main}
 \include{Body/ch2/ch2_main}
 \include{Body/ch3/ch3_main}

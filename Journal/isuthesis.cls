@@ -680,7 +680,8 @@ For the Major Program\fi\fi}
    \setcounter{figure}{0}
    \setcounter{table}{0}
    \setcounter{footnote}{0}
-   \setcounter{mpfootnote}{0}}
+   \setcounter{mpfootnote}{0}
+   }
 
 \def\nochap{% bizarre hack to not use a chapter number
    \makeatletter
