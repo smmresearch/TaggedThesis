@@ -1,0 +1,28 @@
+\makenomenclature
+\renewcommand{\nomname}{NOMENCLATURE}
+%\specialchapt{NOMENCLATURE}
+
+%\mbox{}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{P}{Physics Constants}{%
+  \ifstrequal{#1}{N}{Number Sets}{%
+  \ifstrequal{#1}{O}{Other Symbols}{}}}%
+]}
+
+\nomenclature[P]{$c$}{Speed of light in a vacuum inertial system}
+\nomenclature[P]{$h$}{Plank Constant}
+\nomenclature[P]{$g$}{Gravitational Constant}
+\nomenclature[N]{$\mathbb{R}$}{Real Numbers}
+\nomenclature[N]{$\mathbb{C}$}{Complex Numbers}
+\nomenclature[N]{$\mathbb{H}$}{Quaternions}
+\nomenclature[O]{$V$}{Constant Volume}
+\nomenclature[O]{$\rho$}{Friction Index}
+
+\renewcommand{\nompreamble}{The nomenclature for your dissertation or thesis is optional. This list may be placed in
+the following places: as the last preliminary page, before the Reference section, or as an Appendix. The heading is bold if other major headings are bold, and the list is in the same font size and style as text. Nomenclature should follow a two-column format with the term in the left
+column and its definition or description within the right column.}
+
+\printnomenclature
+
+% The following link has more tweaks, tips and tricks on how to setup nomenclatures: https://www.overleaf.com/learn/latex/Nomenclatures

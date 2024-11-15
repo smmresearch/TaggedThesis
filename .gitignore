@@ -1,0 +1,16 @@
+/.vscode
+**/*.log
+**/*.fdb_latexmk
+**/*.synctex.gz
+**/*.aux
+**/*.bcf
+**/*.blg
+**/*.bbl
+**/*.run.xml
+**/*.fls
+**/*.out
+**/*.lof
+**/*.lot
+**/*.toc
+**/*.nlo
+**/*Zone.Identifier
