@@ -20,10 +20,10 @@ it is certain that my hypothesis is true.
 %\begin{figure}[p!] \centering
 
 \begin{figure}[H] \centering % This goes with the package float comment this line out and use the previous one if you do not want to hold your position
-\includegraphics[alt={This is alt text}]{Images/dc5}
+    \includegraphics[alt={This is alt text}]{Images/dc5}
 
-\isucaption{Durham Centre---  Another View}
-\label{mgraph2}
+    \isucaption{Durham Centre---  Another View}
+    \label{mgraph2}
 \end{figure}
 
 \subsection{Hypothesis}
@@ -35,23 +35,33 @@ As can be seen in Table~\ref{nothingelse} it is
 truly obvious what I am saying is true.
 
 %\addtocontents{lot}{\protect\newpage}
-
-\begin{sidewaystable} \centering
-\isucaption{This table shows almost nothing but is a
-sideways table and takes up a whole page by itself}
-\label{nothingelse}
-% Use: \begin{tabular{|lcc|} to put table in a box
-\begin{tabular}{lcc} \hline
-\textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
-Moon Rings & 1.23 & 3.38 \\
-Moon Tides & 2.26 & 3.12 \\
-Moon Walk & 3.33 & 9.29 \\ \hline
-\end{tabular}
-\end{sidewaystable}
+\begin{landscape}
+    \hfill
+    \vfill
+    %h! necessary for it to be centered
+    \begin{table}[h!] \centering
+        \isucaption{This table shows almost nothing but is a
+            sideways table and takes up a whole page by itself}
+        \label{nothingelse}
+        % Use: \begin{tabular{|lcc|} to put table in a box
+        %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
+        \tagpdfsetup{table/header-rows={1}}
+        %Use \tagpdfsetup{table/header-columns={}} for header columns instead
+        %Put \tagpdfsetup{table/multirow={⟨number of rows comma separated ⟩} in cells spanning multiple rows
+        \begin{tabular}{lcc} \hline
+            \textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
+            Moon Rings       & 1.23             & 3.38                  \\
+            Moon Tides       & 2.26             & 3.12                  \\
+            Moon Walk        & 3.33             & 9.29                  \\ \hline
+        \end{tabular}
+    \end{table}
+    \hfill
+    \vfill
+\end{landscape}
 
 \subsubsection{Parts of the hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 
@@ -67,7 +77,7 @@ and is examined in the light of current literature.
 
 \subsubsection{Parts of the second hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 
@@ -80,12 +90,3 @@ leading to a foregone conclusion.
 
 Here the results can be inserted
 
-
-%\chapterbib
-
-%\bibliographystyle{apa}
-%\bibliography{Reference/mybib}
-
-%% Rearranging the table of contents to show references before appendix
-%\unappendixtitle
-%\addcontentsline{toc}{chapter}{REFERENCES} %this line is to be included before the last chapter so that in toc it appears after the last chapter. If you want the reference to be the last entry of the toc, remove this line and in the biblio.tex file insert this line (or uncomment the line  )

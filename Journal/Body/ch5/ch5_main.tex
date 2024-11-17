@@ -35,9 +35,11 @@ is few and far between.
 \isucaption{Moon Data}
 \label{data}
 % Use: \begin{tabular{|lcc|} to put table in a box
+%this command denotes which rows are headers
+%\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
 \tagpdfsetup{table/header-rows={1}}
-%\tagpdfsetup{table/header-columns={}}
-%Put \tagpdfsetup{table/multirow={⟨number of rows ⟩} in cells spanning multiple rows
+%Use \tagpdfsetup{table/header-columns={}} for header columns instead
+%Put \tagpdfsetup{table/multirow={⟨number of rows comma separated ⟩} in cells spanning multiple rows
 \begin{tabular}{lcc} \hline
 \textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
 Moon Rings & 1.23 & 3.38 \\

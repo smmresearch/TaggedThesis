@@ -35,7 +35,7 @@ rest is obvious.
 
 \begin{figure}[h!tb] \centering
 
-\vspace{ 2 in}
+\includegraphics[alt={Alt text describing}]{Images/dc5.jpg}
 \isucaption[Short caption for List of Figures/ Tables]{This table shows a standard empty figure. Remove the square bracketed information to get longer captions in the LOT/ LOF}
 \label{moon}
 \end{figure}
@@ -66,8 +66,17 @@ elements of that part are given careful scrutiny.
 Here certain criteria are explained thus eventually
 leading to a foregone conclusion as can be seen in
 Table~\ref{nevermore}.
-
+%\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
+\tagpdfsetup{table/header-rows={1}}
+%Use \tagpdfsetup{table/header-columns={}} for header columns instead
+%Put \tagpdfsetup{table/multirow={⟨number of rows comma separated ⟩} in cells spanning multiple rows
 \begin{table}[h!tb] \centering
+    \begin{tabular}{c|c|c}
+        Header & head  & head\\ 
+        leg & leg & leg \\
+        leg & leg & leg \\
+        leg & leg & leg \\
+    \end{tabular}
 \setlength{\captionwidth}{3.5 in}
 \isucaption{This table shows a standard empty table with
 a limited captionwidth}
@@ -76,7 +85,3 @@ a limited captionwidth}
 \vspace{ 2 in}
 \end{table}
 
-%\chapterbib
-
-%\bibliographystyle{apa}
-%\bibliography{Reference/mybib}

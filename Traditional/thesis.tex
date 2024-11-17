@@ -1,4 +1,7 @@
-% Template file for a standard thesis
+%!LW recipe=latexmk (lualatex)
+%Use lualatex to compile
+%Therefore, do not use amssymb, input/output enc
+% Get \@ doesn't match definition? Try deleting all auxillary files.
 \DocumentMetadata{
  lang=en,
  testphase={phase-III,math,table,title,firstaid},
@@ -7,86 +10,73 @@
  pdfstandard=a-4f,
  uncompress
 }
-\documentclass[11pt]{isuthesis}
-%\usepackage{chapterbib}
-\usepackage[pdftex]{graphicx}
-%\usepackage[T1]{fontenc} % This changes fonts to type 1 fonts the default in this package is type 3
-% Standard, old-style thesis
-\usepackage{isutraditional}   
-%\usepackage{indentfirst}
+\documentclass[11pt]{isuthesistagged}
+%%Mathy packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{thmtools}
+\usepackage{templatedShortcuts-private}
+%%
+\usepackage[default]{fontsetup}
+
+\usepackage{unicode-math}
+
+\usepackage{graphicx}
 
 \chaptertitle
 % Old-style, thesis numbering down to subsubsection
 \alternate
 \usepackage{rotating}
 % Bibliography without numbers or labels
-\usepackage[style=authoryear]{biblatex}
+%Natbib compatibility mode activated
+%Different styles available - look at biblatex documentation
+\usepackage[natbib=true,style=authoryear,style=apa]{biblatex}
 \addbibresource{thesisAccessTest.bib}
+\setlength{\bibitemsep}{13.2pt}
 
-\newcommand{\twoLineTitle}[2]{
-    \newcommand{\titleWithLineBreak}{#1\\#2}
-    \newcommand{\titleWithoutBreak}{#1 #2}
-}
+%Set the author
 \newcommand{\theAuthor}{Alice Wonder}
-
+%Set the tite 
 \twoLineTitle{This is the title of a thesis
 submitted to Iowa State University on the first line}{
 Note that only the first letter of
 the first word and proper names
 are capitalized and this is the second line}
-\author{\theAuthor}
 
-%Optional Package to add PDF bookmarks and hypertext links
+%%PDF properties automatically set
+\author{\theAuthor}
 \title{\titleWithLineBreak}
-\usepackage[pdftex,hypertexnames=false,linktocpage=true,pdfauthor=\theAuthor,
-pdftitle=\titleWithoutBreak,]{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB}
+\usepackage[hypertexnames=false,linktocpage=true,pdfauthor={\theAuthor},pdftitle={\titleWithoutBreak},]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB,pdfencoding=auto}
 \usepackage{bookmark}
 % The following piece of code removes extra space on the top of each chapter
 %  that is default of latex report class documents
 
 \usepackage{etoolbox}
-
 \makeatletter
-\patchcmd{\@makechapterhead}{50\p@}{0pt}{}{}
-\patchcmd{\@makeschapterhead}{50\p@}{0pt}{}{}
-
-%%%%%%%%%%%%% using the etoolbox package to patch the sectional units commands to ADD VERTICAL SPACE TO THE TOC
-
-%\pretocmd{\chapter}{\addtocontents{toc}{\protect\addvspace{15\p@}}}{}{}
-%\pretocmd{\section}{\addtocontents{toc}{\protect\addvspace{5\p@}}}{}{}
 \setlength{\@fptop}{0pt} %command added to ensure images always float on top of the page
 \makeatother
-%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% In order to change space between the Table of contents items go to isuthesis.cls
-% line  \renewcommand{\l@chapter}[2]{\addpenalty{-\@highpenalty}....
-% change \vkip values
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% This is to minimize orphan lines. Might not be possible to entirely remove them
-% Method 1 of doing this
-%\widowpenalty10000
-%\clubpenalty10000
-
-% Method 2 of doing this
-\usepackage[all]{nowidow}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Set the margins in the whole documenst
-\geometry{letterpaper, left=1in, top=1in, right=1in, bottom=1in, includehead=true} 
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{letterpaper, left=1in, top=1in, right=1in, bottom=1in, includehead=true,headheight=14pt} 
+\usepackage{pdflscape}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{amssymb}
 \usepackage[intoc, english]{nomencl}
-
-\usepackage[inline]{enumitem}
-
-\usepackage{setspace}
+\doublespacing
 \AtBeginEnvironment{table}{\singlespacing}% 
 \AtBeginEnvironment{figure}{\singlespacing}% 
+
+
+\usepackage[inline]{enumitem}
 
 
 
@@ -95,6 +85,8 @@ pdftitle=\titleWithoutBreak,]{hyperref}
 %\begin{singlespace}
 \def\@makechapterheada{\vspace*{-2cm}\titlepage} % in order to reduce the space between margin and heading in titlepage
 \include{Preface/titlepage}
+\fancypagestyle{plain}{}
+
 
 % % Left-justified setting for all sections including
 % % dedication, nomenclature, acknowledgement, abstract and all chapters
@@ -102,37 +94,50 @@ pdftitle=\titleWithoutBreak,]{hyperref}
 % % being compiled after those two lines
 \raggedright
 \parindent 0.25 in % set all paragraphs in the document to have indent
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% The line below adds the word "Page" over the page numbers in TOC, LOT, LOF
+\addtocontents{toc}{~\hfill\tagstructbegin{tag=H2,stash,label=pageOfTOC}\tagmcbegin{tag=H2}\textbf{Page}\par\tagmcend\tagstructend}
+\addtocontents{lot}{~\hfill\tagstructbegin{tag=H2,stash,label=pageOfLOT}\tagmcbegin{tag=H2}\textbf{Page}\par\tagmcend\tagstructend}
+\addtocontents{lof}{~\hfill\tagstructbegin{tag=H2,stash,label=pageOfLOF}\tagmcbegin{tag=H2}\textbf{Page}\par\tagmcend\tagstructend}
 
+% %%
 % % Optional thesis dedication
+%   Dedication is weird if you include the bib command in the include for some reason
+%   so it is included here instead
+%   (Probably relating to it coming before the table of contents)
+\addToBibWithoutChapter{DEDICATION}
 \include{Preface/dedication}
 % % Table of Contents, List of Tables and List of Figures
 
-\pdfbookmark[1]{TABLE OF CONTENTS}{table}
+{
+\pdfbookmark[0]{TABLE OF CONTENTS}{table}
 \tableofcontents
+\tagstructuse{pageOfTOC} %gets tagging of "Page" done
+}
 
-% %% The line below adds the word "Page" over the page numbers in TOC, LOT, LOF
-\addtocontents{toc}{~\hfill\textbf{Page}\par}
-\addtocontents{lot}{~\hfill\textbf{Page}\par}
-\addtocontents{lof}{~\hfill\textbf{Page}\par}
-% %%
 \addtocontents{toc}{\def\protect\@chapapp{}} \cleardoublepage \phantomsection
 \pagebreak
-\MakeLinkTarget[specialchapter]{}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\MakeLinkTarget[specialchapter]{}%necessary for tagging (as of 2024)
 \addcontentsline{toc}{chapter}{LIST OF TABLES}
 \listoftables
+\tagstructuse{pageOfLOT}%gets tagging of "Page" done
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cleardoublepage \phantomsection
-\MakeLinkTarget[specialchapter]{} 
+\MakeLinkTarget[specialchapter]{} %necessary for tagging (as of 2024)
 \addcontentsline{toc}{chapter}{LIST OF FIGURES}
 \listoffigures
+\tagstructuse{pageOfLOF}%gets tagging of "Page" done
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % %Optional Nomenclature
 \cleardoublepage \phantomsection
 \MakeLinkTarget[specialchapter]{}
 \include{Preface/nomenclature}
 
-% % Comment out the next line if NOT using chaptertitle
-% \addtocontents{toc}{\def\protect\@chapapp{CHAPTER\ }}
-
+%Adds Chapter in front of chapter on TOC
+\addtocontents{toc}{\def\protect\@chapapp{CHAPTER\ }}
 
 
 %Optional Acknowledgements
@@ -145,24 +150,21 @@ pdftitle=\titleWithoutBreak,]{hyperref}
 
 \newpage
 \pagenumbering{arabic}
-
+\pagestyle{fancy}
 \include{Body/chapter1}
 \include{Body/chapter2}
 \include{Body/chapter3}
 \include{Body/chapter4}
 \include{Body/chapter5}
 
-%%\include{Reference/biblio}
-%\include{Reference/bibtex}
-% \MakeLinkTarget[specialchapter]{}
-% \addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
-\specialchapt{BIBLIOGRAPHY}
-\printbibliography[heading=none,title={BIBLIOGRAPHY}]
+\chapter*{BIBLIOGRAPHY}
+\addToBibWithoutChapter{BIBLIOGRAPHY}
+\printbibliography[heading=none]
 
 % \include{Appendix/appendix1} 
 % % Instruction for single appendix check instruction in Appendix/appendix1.tex on top of the file
 % \include{Appendix/appendix2}
-
+asds
 \end{document}
 
 % IMPORTANT NOTES

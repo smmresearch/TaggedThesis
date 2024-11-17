@@ -18,6 +18,10 @@ several hypothesis are mentioned in brief.
 Of course, data on this as seen in Table~\ref{data}
 is few and far between.
 
+%\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
+\tagpdfsetup{table/header-rows={1}}
+%Use \tagpdfsetup{table/header-columns={}} for header columns instead
+%Put \tagpdfsetup{table/multirow={⟨number of rows comma separated ⟩} in cells spanning multiple rows
 \begin{table}[h!tb] \centering
 \isucaption{Moon Data}
 \label{data}
@@ -71,8 +75,3 @@ elements of that part are given careful scrutiny.
 
 Here certain criteria are explained thus eventually
 leading to a foregone conclusion.
-
-%\chapterbib
-
-%\bibliographystyle{apa}
-%\bibliography{Reference/mybib}
