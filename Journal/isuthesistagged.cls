@@ -504,9 +504,7 @@ For the Major Program\fi\fi}
 \def\copyyear#1{\gdef\@copyyear{\number#1}}
 \copyyear{\year}
 \def\notice{\gdef\@notice{Copyright
-   \/ \@author,\ \@copyyear. All rights reserved.}}
-% \def\notice{\gdef\@notice{Copyright
-%    \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
+   \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
 \def\@notice{}
 
 \def\supervisor#1{\gdef\@supervisor{#1}}
