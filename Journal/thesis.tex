@@ -7,12 +7,16 @@
  uncompress
 }
 % Template file for a standard thesis
-\documentclass[11pt,notitlepage]{isuthesis}
+% Get \@ doesn't match definition? Try deleting all auxillary files.
+\documentclass[11pt,notitlepage]{isuthesistagged}
 % notitlepage is used because \begin{abstract} uses titlepage by default, which resets the page numbers
-\makeatletter
+%%%%
+% Patching needed to get TOC to look as desired and Part pages.
+% Must be patched before hyperref is loaded.
+%%%%
 \usepackage{xpatch}
+\makeatletter
 \newcommand{\numberlineP}[1]{\numberline{#1.}}
-\tracingpatches
 \xpatchcmd{\@chapter}% <cmd>
   {\numberline}% <search>
   {\numberlineP}% <replace>
@@ -33,74 +37,60 @@
   {\Huge}% <search>
   {\Large}% <replace>
   {}{}% <success><failure>\makeatother
+\makeatother
+
+
+
 \usepackage[pdftex]{graphicx}
 % Standard, old-style thesis
-\usepackage{isutraditional}   
+%Everything in isutraditional has
+%\usepackage{isutraditional}   
 \chaptertitle
 % Old-style, thesis numbering down to subsubsection
 \alternate
 \usepackage{rotating}
-% Bibliography without numbers or labels
-%\usepackage{natbib}
-% Use the following line if you want square brackets and numbering system
-%\usepackage[square, numbers]{natbib}
-\usepackage[style=authoryear,refsection=chapter]{biblatex}
+%Natbib compatibility mode activated
+%Different styles available - look at biblatex
+\usepackage[natbib=true,style=authoryear,refsection=chapter,style=apa]{biblatex}
 \addbibresource{thesisAccessTest.bib}
 
 % \renewcommand{\bibfont}{\setstretch{1}\selectfont}
-% \setlength{\bibsep}{13.2pt}
+\setlength{\bibitemsep}{13.2pt}
 
-
-%\usepackage{chapterbib}
-\usepackage{myshortcuts}
-%\renewcommand\bibsection{\section*{\ref name}}
-%\renewcommand\bibsection{\section*}
-% \renewcommand{\bibsection}{\section{References}}
-\newcommand{\twoLineTitle}[2]{
-    \newcommand{\titleWithLineBreak}{#1\\#2}
-    \newcommand{\titleWithoutBreak}{#1 #2}
-}
+%Set to your name
 \newcommand{\theAuthor}{Alice Wonder}
-
+%Set the tite 
 \twoLineTitle{This is the title of a thesis
 submitted to Iowa State University on the first line}{
 Note that only the first letter of
 the first word and proper names
-are capitalized and a second line}
+are capitalized and this is the second line}
 \author{\theAuthor}
-% \newcommand{\theTitle}{This is the title of a thesis
-% submitted to Iowa State University\\
-% Note that only the first letter of
-% the first word and proper names
-% are capitalized}
 
 
 \title{\titleWithLineBreak}
+
 \usepackage[pdftex,hypertexnames=false,linktocpage=true,pdfauthor={\theAuthor},pdftitle={\titleWithoutBreak},]{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB,pdfencoding=auto}
 
 
 \overfullrule=0pt
 %%%%%%%%%%%%%%%%%%%%%
 
-% The following piece of code removes extra space on the top of each chapter
-%  that is default of latex report class documents
-
 \usepackage{etoolbox}
 \makeatletter
-% \patchcmd{\@makechapterhead}{50\p@}{0pt}{}{}
-% \patchcmd{\@makeschapterhead}{50\p@}{0pt}{}{}
-
 \setlength{\@fptop}{0pt} %command added to ensure images always float on top of the page
 \makeatother
-
+%% This is to minimize orphan lines. Might not be possible to entirely remove them
 % Method 1 of doing this
 \widowpenalty100000
 \clubpenalty100000
 
 % Method 2 of doing this
 \usepackage[all]{nowidow}
-
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{geometry}
 \geometry{letterpaper, left=1in, top=1in, right=1in, bottom=1in, includehead=true,headheight=14pt} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -108,12 +98,13 @@ are capitalized and a second line}
 \usepackage[english]{nomencl}
 \usepackage{setspace}
 \doublespacing
-%\AtBeginEnvironment{table}{\singlespacing}% 
-%\AtBeginEnvironment{figure}{\singlespacing}% 
+\AtBeginEnvironment{table}{\singlespacing}% 
+\AtBeginEnvironment{figure}{\singlespacing}% 
 
 \usepackage{titlesec}
-
-
+%% Patches needed for titlesec to work with tagging in 2024
+% Will likely be natively supported by the package/Latex
+% See this issue: https://github.com/latex3/tagging-project/issues/24
 \makeatletter
 \patchcmd\ttl@straight@ii
   {\@svsechd\unskip}
@@ -131,6 +122,9 @@ are capitalized and a second line}
   {}{\fail}
  
 \makeatother 
+
+%Following command adds numberless chapters
+%to the bibliography correctly while being compatible with tagging
 \makeatletter%
 \let\@tempchapapp=\@chapapp
 \newcommand{\addToBibWithoutChapter}[1]{%
@@ -140,9 +134,8 @@ are capitalized and a second line}
   \addtocontents{toc}{\def\protect\@chapapp{\@tempchapapp}}
 }
 \makeatother%
-%\renewcommand{\thechapter}{\arabic{chapter}.}
-%\def \numberline#1{\savenumberline{#1.}}
-%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter}{0pt}{\Huge\bfseries}
+%Format the section title appropriately (while being compatible with tagging)
+\usepackage{titlesec}
 \makeatletter
 \titleformat{\chapter}[block]{\large\centering\bfseries}{CHAPTER \thechapter.}{12pt}{}
 \titlespacing{\chapter}{0pt}{0in}{0.6in}
@@ -156,17 +149,12 @@ are capitalized and a second line}
 \titlespacing{\paragraph}{0pt}{*3}{1.5ex \@plus .2ex}
 \titleformat{\subparagraph}[block]{\bfseries\filright}{\thesubsubsection}{.5em}{}
 \titlespacing{\subparagraph}{0.25in}{*3}{1.5ex \@plus .2ex}
-%\titleformat{\part}[block]{\Large\centering\bfseries}{\vfill\partname~\thepart\\*\addvspace{20pt}}{0pt}{}[\vfill]
+%Formatting Part breaks the TOC implementation as of 2024
 \makeatother
-%\titlespacing{\subsubsection}{2in}{*1}{*1}
-\usepackage{fancyhdr}
-\renewcommand{\headrulewidth}{0pt}
-%\fancyhf{}
-\fancyhead[L,R]{}
-\fancyhead[C]{\thepage}
-\fancyfoot[L,C,R]{}
+
 \begin{document}
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png}
+%command used in preface
 \def\@makechapterheada{\vspace*{-2cm}\titlepage}
 \include{Preface/titlepage}
 \fancypagestyle{plain}{}
@@ -174,12 +162,13 @@ are capitalized and a second line}
 \raggedright
 \parindent 0.25 in % set all paragraphs in the document to have indent
 
+%optionally include dedication
 %\include{Preface/dedication}
 
 {
 \pdfbookmark[1]{TABLE OF CONTENTS}{table}
 \tableofcontents
-\tagstructuse{pageOfTOC}
+\tagstructuse{pageOfTOC} %gets tagging of "Page" done
 }
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %% The line below adds the word "Page" over the page numbers in TOC, LOT, LOF
@@ -195,14 +184,12 @@ are capitalized and a second line}
 \listoftables
 \tagstructuse{pageOfLOT}
 \cleardoublepage \phantomsection
-\MakeLinkTarget[specialchapter]{}
+\MakeLinkTarget[specialchapter]{} %necessary for tagging (as of 2024)
 \addcontentsline{toc}{chapter}{LIST OF FIGURES}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \listoffigures
 \tagstructuse{pageOfLOF}
 %Optional nomenclature
-%\titleformat{\chapter}[block]{\Huge\bfseries}{\thechapter}{0pt}{\Huge\bfseries}
-
 \cleardoublepage \phantomsection
 \include{Preface/nomenclature}
 
@@ -220,7 +207,7 @@ are capitalized and a second line}
 \include{Body/ch1/ch1_main}
 \include{Body/ch2/ch2_main}
 \include{Body/ch3/ch3_main}
-\part{Lets have a part page}
+\part{Let's have a part page}
 \include{Body/ch4/ch4_main}
 \include{Body/ch5/ch5_main}
 \include{Body/ch6/ch6_future_and_conclusions}

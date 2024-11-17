@@ -32,7 +32,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{isuthesis}[2011/02/14]
+\ProvidesClass{isuthesistagged}[2011/02/14]
 %  Requires the Geometry Package
 
 %  Thesis looks much like report
@@ -41,15 +41,44 @@
 \LoadClass{report}
 
 
-% New Way of setting pages with Geometry
-%  replaces most of the setlength commands below (JAS05 / JAS09)
-\usepackage{geometry}
-\usepackage{setspace}
-\geometry{letterpaper, left=1.5in, top=1in, right=1in, bottom=1in, includehead=true} 
 %\geometry{letterpaper, left=1.25in, top=0.55in, right=1.02in, bottom=1in, includehead=true} 
 % (JAS11) old values: top=1.22 and no includehead option
 
 %\usepackage{isumacros}
+
+
+% New Way of setting pages with Geometry
+%  replaces most of the setlength commands below (JAS05 / JAS09)
+%\usepackage{geometry}
+\usepackage{setspace}
+%\geometry{letterpaper, left=1.5in, top=1in, right=1in, bottom=1in, includehead=true} 
+
+
+%%%%
+% 2024 Additions for new requirements and modern conveniences
+%%%%
+%footnote without a number
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\newcommand{\twoLineTitle}[2]{
+    \newcommand{\titleWithLineBreak}{#1\\#2}
+    \newcommand{\titleWithoutBreak}{#1 #2}
+}
+%Add the page number in a modern way - works nicer with other modern things
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+%\fancyhf{}
+\fancyhead[L,R]{}
+\fancyhead[C]{\thepage}
+\fancyfoot[L,C,R]{}
+
+
+
+
 
 %%%%
 %% Subpackage: isumacros.sty for use with the isuthesis package.
@@ -475,7 +504,9 @@ For the Major Program\fi\fi}
 \def\copyyear#1{\gdef\@copyyear{\number#1}}
 \copyyear{\year}
 \def\notice{\gdef\@notice{Copyright
-   \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
+   \/ \@author,\ \@copyyear. All rights reserved.}}
+% \def\notice{\gdef\@notice{Copyright
+%    \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
 \def\@notice{}
 
 \def\supervisor#1{\gdef\@supervisor{#1}}
@@ -987,14 +1018,14 @@ For the Major Program\fi\fi}
 
 % Paragraph and subparagraph (JAS -reformulation)
 %   (basically the same as subsection and subsubsection)
-\renewcommand\paragraph{\@startsection{paragraph}{4}{0.25 in}%
-                                    {3.25ex \@plus1ex \@minus.2ex}%
-                                    {-1em}%
-                                    {\normalfont\normalsize\bfseries}}
-\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
-                                       {3.25ex \@plus1ex \@minus .2ex}%
-                                       {-1em}%
-                                      {\normalfont\normalsize\bfseries}}
+% \renewcommand\paragraph{\@startsection{paragraph}{4}{0.25 in}%
+%                                     {3.25ex \@plus1ex \@minus.2ex}%
+%                                     {-1em}%
+%                                     {\normalfont\normalsize\bfseries}}
+% \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+%                                        {3.25ex \@plus1ex \@minus .2ex}%
+%                                        {-1em}%
+%                                       {\normalfont\normalsize\bfseries}}
 
 %%%%
 
