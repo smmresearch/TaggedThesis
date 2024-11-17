@@ -106,8 +106,10 @@ pdftitle=\titleWithoutBreak,]{hyperref}
 % % Optional thesis dedication
 \include{Preface/dedication}
 % % Table of Contents, List of Tables and List of Figures
+
 \pdfbookmark[1]{TABLE OF CONTENTS}{table}
 \tableofcontents
+
 % %% The line below adds the word "Page" over the page numbers in TOC, LOT, LOF
 \addtocontents{toc}{~\hfill\textbf{Page}\par}
 \addtocontents{lot}{~\hfill\textbf{Page}\par}
@@ -152,7 +154,10 @@ pdftitle=\titleWithoutBreak,]{hyperref}
 
 %%\include{Reference/biblio}
 %\include{Reference/bibtex}
-\printbibliography[title={BIBLIOGRAPHY}]
+% \MakeLinkTarget[specialchapter]{}
+% \addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
+\specialchapt{BIBLIOGRAPHY}
+\printbibliography[heading=none,title={BIBLIOGRAPHY}]
 
 % \include{Appendix/appendix1} 
 % % Instruction for single appendix check instruction in Appendix/appendix1.tex on top of the file

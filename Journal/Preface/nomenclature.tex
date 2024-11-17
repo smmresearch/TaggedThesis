@@ -1,6 +1,11 @@
+%to use the nomenclature package you must run a terminal
+%command along the lines of 
+%makeindex .\LatexAux\thesis.nlo -s nomencl.ist -o .\LatexAux\thesis.nls
+%See manual for details
 \makenomenclature
 \renewcommand{\nomname}{NOMENCLATURE}
-%\specialchapt{NOMENCLATURE}
+\addToBibWithoutChapter{NOMENCLATURE}
+
 
 %\mbox{}
 \renewcommand\nomgroup[1]{%

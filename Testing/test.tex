@@ -1,0 +1,36 @@
+\documentclass{book}
+
+\usepackage{titlesec}
+
+\usepackage[linktocpage=true]{hyperref}
+
+\usepackage{titletoc}
+
+\titlecontents*{subsection}[1.8pc]
+  {\small}
+  {\thecontentslabel. }
+  {}
+  {, \thecontentspage}
+  [.---][.]
+\titlecontents{chapter}
+  [0em]
+  {\raggedright}% above-code
+  {CHAPTER \thecontentslabel\qquad}%
+  {0em}%
+  {\titlerule*[1pc]{.}{\thecontentspage}}%
+
+\begin{document}
+
+\tableofcontents
+\chapter{sdklf}
+texst\newpage\section   {section.1}{Introduction}{}% 1
+
+text\newpage\section   {section.2}{Quick Reference}{}% 2
+
+text\newpage\subsection{subsection.2.1}{Format}{section.2}% 3
+
+text\newpage\section   {section.3}{Advanced Interface}{}% 7
+
+text\newpage\subsection{subsection.3.1}{Format}{section.3}% 8
+
+\end{document}

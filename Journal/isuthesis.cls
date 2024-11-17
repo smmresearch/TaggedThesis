@@ -205,68 +205,68 @@
 % SPECIAL CHAPT COMMAND (NORMAL)
 % Special chapter command for outputting a chapter title without 'Chapter'
 % and the number. Unlike \chapter* the title is included in the toc.
-\def\specialchapt{\clearpage   % Start new page.
-  \global\@topnum\z@             % Prevent figures from going to top of page.
-  \@afterindenttrue              % Indent first paragraph.
-  \@dblarg{\@specialchapt}}
+% \def\specialchapt{\clearpage   % Start new page.
+%   \global\@topnum\z@             % Prevent figures from going to top of page.
+%   \@afterindenttrue              % Indent first paragraph.
+%   \@dblarg{\@specialchapt}}
 
-\def\@specialchapt[#1]#2{
-  \typeout{#2}
-  \let\@tempchapapp=\@chapapp
-  \addtocontents{toc}{\def\protect\@chapapp{}}
-  \vspace*{15pt}{\centering\large\bfseries #2\par}      % change normalsize to large to (JAS11) 50 to 15
-  \vspace*{40pt}                                        %   match chapter, JAS
-  \MakeLinkTarget[specialchapt]{}
-  \addcontentsline{toc}{chapter}{#1}
-  \addtocontents{toc}{\def\protect\@chapapp{\@tempchapapp}}
-  }
+% \def\@specialchapt[#1]#2{
+%   \typeout{#2}
+%   \let\@tempchapapp=\@chapapp
+%   \addtocontents{toc}{\def\protect\@chapapp{}}
+%   \vspace*{15pt}{\centering\large\bfseries #2\par}      % change normalsize to large to (JAS11) 50 to 15
+%   \vspace*{40pt}                                        %   match chapter, JAS
+%   \MakeLinkTarget[specialchapt]{}
+%   \addcontentsline{toc}{chapter}{#1}
+%   \addtocontents{toc}{\def\protect\@chapapp{\@tempchapapp}}
+%   }
 
 % SPECIAL CHAPTER COMMAND (FOR USE WITH PARTS)
 % Special chapter command for outputting a chapter title without 'Chapter'
 % and the number. Unlike \chapter* the title is included in the toc.
-\def\specialchapter{\clearpage   % Start new page.
-  \global\@topnum\z@             % Prevent figures from going to top of page.
-  \@afterindenttrue              % Indent first paragraph.
-  \@dblarg{\@specialchapter}}
+% \def\specialchapter{\clearpage   % Start new page.
+%   \global\@topnum\z@             % Prevent figures from going to top of page.
+%   \@afterindenttrue              % Indent first paragraph.
+%   \@dblarg{\@specialchapter}}
 
-\def\@specialchapter[#1]#2{
-  \typeout{#2}
-  \let\@tempchapapp=\@chapapp
-  \addtocontents{toc}{\def\protect\@chapapp{}}
-  \vspace*{15pt}{\centering\large\bfseries #2\par}      % change normalsize to large to (JAS11) 50 to 15
-  \vspace*{40pt}                                        %   match chapter, JAS
-  \MakeLinkTarget[specialchapter]{}
-  \addcontentsline{toc}{chapter}{\protect\numberline{}#1} % added numberline, JAS
-  \addtocontents{toc}{\def\protect\@chapapp{\@tempchapapp}}
-  }
+% \def\@specialchapter[#1]#2{
+%   \typeout{#2}
+%   \let\@tempchapapp=\@chapapp
+%   \addtocontents{toc}{\def\protect\@chapapp{}}
+%   \vspace*{15pt}{\centering\large\bfseries #2\par}      % change normalsize to large to (JAS11) 50 to 15
+%   \vspace*{40pt}                                        %   match chapter, JAS
+%   \MakeLinkTarget[specialchapter]{}
+%   \addcontentsline{toc}{chapter}{\protect\numberline{}#1} % added numberline, JAS
+%   \addtocontents{toc}{\def\protect\@chapapp{\@tempchapapp}}
+%   }
 
 % SPECIAL PART COMMAND
 % Puts part title out without 'Part' and part number. Enters title into table
 % of contents at correct level.
-\def\specialpart#1{\clearpage
-    \global\@topnum\z@
-    \@afterindenttrue
-    \typeout{#1}
-    \addcontentsline{toc}{specialpart}{#1}            % change normalsize to large to
-    \vspace*{15pt}{\centering \Large \bf #1\par}      %  match part, JAS (JAS11) 50 to 15
-    \vspace*{40pt}}
+% \def\specialpart#1{\clearpage
+%     \global\@topnum\z@
+%     \@afterindenttrue
+%     \typeout{#1}
+%     \addcontentsline{toc}{specialpart}{#1}            % change normalsize to large to
+%     \vspace*{15pt}{\centering \Large \bf #1\par}      %  match part, JAS (JAS11) 50 to 15
+%     \vspace*{40pt}}
 
-\newif\if@specialpart \@specialpartfalse
-\def\l@specialpart#1#2{
-    \if@specialpart \addvspace{4pt plus 2pt}
-    \else \addvspace{2em plus 1pt}
-          \global\@specialparttrue
-    \fi
-    \begingroup
-       \@tempdima 5.75em \relax
-       \rightskip\@tocrmarg
-       \parfillskip -\rightskip
-       \parindent\z@ \leftskip\@tempdima
-       {\normalsize\bf\leavevmode
-        \hbox{}\hskip -\leftskip #1\nobreak
-        \leaders\hbox{$\m@th\mkern\@dotsep mu.\mkern\@dotsep mu$}\hfill
-        \nobreak \hbox to \@pnumwidth{\hss #2}\par}
-    \endgroup}
+% \newif\if@specialpart \@specialpartfalse
+% \def\l@specialpart#1#2{
+%     \if@specialpart \addvspace{4pt plus 2pt}
+%     \else \addvspace{2em plus 1pt}
+%           \global\@specialparttrue
+%     \fi
+%     \begingroup
+%        \@tempdima 5.75em \relax
+%        \rightskip\@tocrmarg
+%        \parfillskip -\rightskip
+%        \parindent\z@ \leftskip\@tempdima
+%        {\normalsize\bf\leavevmode
+%         \hbox{}\hskip -\leftskip #1\nobreak
+%         \leaders\hbox{$\m@th\mkern\@dotsep mu.\mkern\@dotsep mu$}\hfill
+%         \nobreak \hbox to \@pnumwidth{\hss #2}\par}
+%     \endgroup}
 
 % SINGLE APPENDIX
 %
@@ -791,56 +791,56 @@ For the Major Program\fi\fi}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{}}
    \renewcommand{\appendixname}{}}
-%%%%
+% %%%%
 
-%\usepackage{threeparttop}
+% %\usepackage{threeparttop}
 
-%%%%
-% Three part head and foot macros. 1/87
-% Lance Berc
-% Olsen & Associates	mcvax!unizh!olsen!lance@seismo.css.gov
-% Seefeldstrasse 233
-% CH-8008 Zurich
+% %%%%
+% % Three part head and foot macros. 1/87
+% % Lance Berc
+% % Olsen & Associates	mcvax!unizh!olsen!lance@seismo.css.gov
+% % Seefeldstrasse 233
+% % CH-8008 Zurich
 
-% How users can set the head and foot text.
-\def\lhead#1{\gdef\@lhead{#1}} \def\lfoot#1{\gdef\@lfoot{#1}}
-\def\chead#1{\gdef\@chead{#1}} \def\cfoot#1{\gdef\@cfoot{#1}}
-\def\rhead#1{\gdef\@rhead{#1}} \def\rfoot#1{\gdef\@rfoot{#1}}
+% % How users can set the head and foot text.
+% \def\lhead#1{\gdef\@lhead{#1}} \def\lfoot#1{\gdef\@lfoot{#1}}
+% \def\chead#1{\gdef\@chead{#1}} \def\cfoot#1{\gdef\@cfoot{#1}}
+% \def\rhead#1{\gdef\@rhead{#1}} \def\rfoot#1{\gdef\@rfoot{#1}}
 
-% Initialization of the head and foot text.
-% By default the page number is at the center of the foot and everything
-% else is empty.
-% JAS - changed default page to chead
-\def\@lhead{} \def\@lfoot{}
-\def\@cfoot{} \def\@chead{{\normalfont \thepage}}  % (JAS11) Changed form \rm \thepage
-\def\@rhead{} \def\@rfoot{}
+% % Initialization of the head and foot text.
+% % By default the page number is at the center of the foot and everything
+% % else is empty.
+% % JAS - changed default page to chead
+% \def\@lhead{} \def\@lfoot{}
+% \def\@cfoot{} \def\@chead{{\normalfont \thepage}}  % (JAS11) Changed form \rm \thepage
+% \def\@rhead{} \def\@rfoot{}
 
-% Put together a three part header or footer given the left, center and
-% right text. The \lap commands put the text into an hbox of zero size,
-% so overlapping text is not detected (it just overlaps).
-\def\@threepart#1#2#3{\rlap{#1} \hfil {#2} \hfil \llap{#3}}
+% % Put together a three part header or footer given the left, center and
+% % right text. The \lap commands put the text into an hbox of zero size,
+% % so overlapping text is not detected (it just overlaps).
+% \def\@threepart#1#2#3{\rlap{#1} \hfil {#2} \hfil \llap{#3}}
 
-% Swap the notices on odd and even pages when twosided.
-\def\ps@threepartheadings
-    {
-    \def\@oddhead{\@threepart{\@lhead}{\@chead}{\@rhead}}
-    \def\@oddfoot{\@threepart{\@lfoot}{\@cfoot}{\@rfoot}}
+% % Swap the notices on odd and even pages when twosided.
+% \def\ps@threepartheadings
+%     {
+%     \def\@oddhead{\@threepart{\@lhead}{\@chead}{\@rhead}}
+%     \def\@oddfoot{\@threepart{\@lfoot}{\@cfoot}{\@rfoot}}
 
-    \if@twoside
-	\def\@evenhead{\@threepart{\@rhead}{\@chead}{\@lhead}}
-	\def\@evenfoot{\@threepart{\@rfoot}{\@cfoot}{\@lfoot}}
-    \else
-	\def\@evenhead{\@threepart{\@lhead}{\@chead}{\@rhead}}
-	\def\@evenfoot{\@threepart{\@lfoot}{\@cfoot}{\@rfoot}}
-    \fi
-    }
+%     \if@twoside
+% 	\def\@evenhead{\@threepart{\@rhead}{\@chead}{\@lhead}}
+% 	\def\@evenfoot{\@threepart{\@rfoot}{\@cfoot}{\@lfoot}}
+%     \else
+% 	\def\@evenhead{\@threepart{\@lhead}{\@chead}{\@rhead}}
+% 	\def\@evenfoot{\@threepart{\@lfoot}{\@cfoot}{\@rfoot}}
+%     \fi
+%     }
 
-% Default page style
-\ps@threepartheadings
-%%%%
+% % Default page style
+% \ps@threepartheadings
+% %%%%
 
 
-% Protects added (JAS05 / JAS09)
+% % Protects added (JAS05 / JAS09)
 \renewcommand{\contentsname}
 {\protect \centering \large TABLE OF CONTENTS } %JAS
 \renewcommand{\listfigurename}
@@ -848,26 +848,26 @@ For the Major Program\fi\fi}
 \renewcommand{\listtablename}
 {\protect \centering \large LIST OF TABLES}    %JAS
 
-%\renewcommand{\contentsname}{\centering 
-%\large TABLE OF CONTENTS } %JAS
-%\renewcommand{\listfigurename}{\centering \large LIST OF FIGURES}  %JAS
-%\renewcommand{\listtablename}{\centering \large LIST OF TABLES}    %JAS
+% %\renewcommand{\contentsname}{\centering 
+% %\large TABLE OF CONTENTS } %JAS
+% %\renewcommand{\listfigurename}{\centering \large LIST OF FIGURES}  %JAS
+% %\renewcommand{\listtablename}{\centering \large LIST OF TABLES}    %JAS
 
-\renewcommand{\chaptername}{}             %JAS- remove Chapter?
-\renewcommand{\appendixname}{}            %
-\lineskip 1pt                             % old isuthes value
-\renewcommand{\baselinestretch}{1.655}    % old isuthes value
-\setcounter{secnumdepth}{0}
+% \renewcommand{\chaptername}{}             %JAS- remove Chapter?
+% \renewcommand{\appendixname}{}            %
+% \lineskip 1pt                             % old isuthes value
+% \renewcommand{\baselinestretch}{1.655}    % old isuthes value
+% \setcounter{secnumdepth}{0}
 
-% Replaced by Geometry Package (JAS05 / JAS09)
-%\setlength{\oddsidemargin}{0.25 in}
-%\setlength{\evensidemargin}{0.25 in}
-%\setlength{\textwidth}{6.2 in}           % allow for a little sloppiness (6.3)
-%\setlength{\topmargin}{-.30 in}           % top margin to header (was -.35)
-%\setlength{\textheight}{8.8 in}           % allow for a little sloppiness (8.9)
+% % Replaced by Geometry Package (JAS05 / JAS09)
+% %\setlength{\oddsidemargin}{0.25 in}
+% %\setlength{\evensidemargin}{0.25 in}
+% %\setlength{\textwidth}{6.2 in}           % allow for a little sloppiness (6.3)
+% %\setlength{\topmargin}{-.30 in}           % top margin to header (was -.35)
+% %\setlength{\textheight}{8.8 in}           % allow for a little sloppiness (8.9)
 
-\pagestyle{threepartheadings}             % top page number
-%\usepackage{thesisreport}                 % report alterations for isuthesis
+% \pagestyle{threepartheadings}             % top page number
+% %\usepackage{thesisreport}                 % report alterations for isuthesis
 
 %%%%
 %% Subpackage: thesisreport.sty for use with the isuthesis package.
@@ -895,106 +895,106 @@ For the Major Program\fi\fi}
 %%
 %Standard Report class changes;  JAS 10/95-3/96
 %  Part -standard (change Huge and huge to Large
-\renewcommand{\part}{\cleardoublepage
-                 %\thispagestyle{plain} - remove to get rid of page #
-                 \if@twocolumn
-                     \onecolumn
-                     \@tempswatrue  
-                   \else
-                     \@tempswafalse
-                 \fi
-                 \hbox{}\vfil
-                 \secdef\@part\@spart}
+% \renewcommand{\part}{\cleardoublepage
+%                  %\thispagestyle{plain} - remove to get rid of page #
+%                  \if@twocolumn
+%                      \onecolumn
+%                      \@tempswatrue  
+%                    \else
+%                      \@tempswafalse
+%                  \fi
+%                  \hbox{}\vfil
+%                  \secdef\@part\@spart}
 
-\def\@part[#1]#2{%
-    \ifnum \c@secnumdepth >-2\relax
-      \refstepcounter{part}%
-      \addcontentsline{toc}{part}{\partname \thepart\hspace{1em}#1}%
-    \else
-      \addcontentsline{toc}{part}{#1}%
-    \fi
-    \markboth{}{}
-    {\centering
-     \interlinepenalty \@M
-     \reset@font
-     \ifnum \c@secnumdepth >-2\relax
-       \Large\bfseries \partname~\thepart
-       \par
-       \vskip 20\p@
-     \fi
-     \Large \bfseries #2\par}%
-    \@endpart}
-\def\@spart#1{%   
-    {\centering
-     \interlinepenalty \@M  
-     \reset@font
-     \Large \bfseries #1\par}%
-    \@endpart}
-\def\@endpart{\vfil\newpage
-              \if@twoside
-                \hbox{}%
-                \thispagestyle{empty}%
-                \newpage
-              \fi
-              \if@tempswa
-                \twocolumn
-              \fi} 
+% \def\@part[#1]#2{%
+%     \ifnum \c@secnumdepth >-2\relax
+%       \refstepcounter{part}%
+%       \addcontentsline{toc}{part}{\partname \thepart\hspace{1em}#1}%
+%     \else
+%       \addcontentsline{toc}{part}{#1}%
+%     \fi
+%     \markboth{}{}
+%     {\centering
+%      \interlinepenalty \@M
+%      \reset@font
+%      \ifnum \c@secnumdepth >-2\relax
+%        \Large\bfseries \partname~\thepart
+%        \par
+%        \vskip 20\p@
+%      \fi
+%      \Large \bfseries #2\par}%
+%     \@endpart}
+% \def\@spart#1{%   
+%     {\centering
+%      \interlinepenalty \@M  
+%      \reset@font
+%      \Large \bfseries #1\par}%
+%     \@endpart}
+% \def\@endpart{\vfil\newpage
+%               \if@twoside
+%                 \hbox{}%
+%                 \thispagestyle{empty}%
+%                 \newpage
+%               \fi
+%               \if@tempswa
+%                 \twocolumn
+%               \fi} 
 
 %  Chapter
-\renewcommand{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi
-                    \thispagestyle{threepartheadings}%
-                    \global\@topnum\z@
-                    \@afterindentfalse 
-                    \secdef\@chapter\@schapter}
+% \renewcommand{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi
+%                     \thispagestyle{threepartheadings}%
+%                     \global\@topnum\z@
+%                     \@afterindentfalse 
+%                     \secdef\@chapter\@schapter}
 
-\def\@makechapterhead#1{%             % Heading for \chapter command.
-  \vspace*{15\p@}%                    % Space at top of text page (JAS11) 50 to 15
-  {\centering \reset@font \large\bfseries   % JAS, huge to large (removal and spaces)
-    \ifnum \c@secnumdepth >\m@ne      % IF secnumdepth > -1
-        \interlinepenalty\@M
-        \if@singleappendix
-	\thechapter
-        \else
-        \@chapapp \thechapter \fi \fi %   print 'Chapter' and number
-    ~~~#1\par
-    \nobreak                          % TeX penalty to prevent page break.
-    \vskip 40pt}}                     % Space between title and tex.
+% \def\@makechapterhead#1{%             % Heading for \chapter command.
+%   \vspace*{15\p@}%                    % Space at top of text page (JAS11) 50 to 15
+%   {\centering \reset@font \large\bfseries   % JAS, huge to large (removal and spaces)
+%     \ifnum \c@secnumdepth >\m@ne      % IF secnumdepth > -1
+%         \interlinepenalty\@M
+%         \if@singleappendix
+% 	\thechapter
+%         \else
+%         \@chapapp \thechapter \fi \fi %   print 'Chapter' and number
+%     ~~~#1\par
+%     \nobreak                          % TeX penalty to prevent page break.
+%     \vskip 40pt}}                     % Space between title and tex.
 
-\def\@makeschapterhead#1{%              Heading for \chapter* command
-  \vspace*{15\p@}%                    % Space at top of page (JAS11) 50 to 15
-  {\reset@font \centering \large \bfseries
-    \interlinepenalty\@M
-    ~~~#1\par\nobreak % JAS Huge to large, Title, TeX penalty to prevent page break
-    \vskip 40\p@                      % Space between title and tex.
-  }}
+% \def\@makeschapterhead#1{%              Heading for \chapter* command
+%   \vspace*{15\p@}%                    % Space at top of page (JAS11) 50 to 15
+%   {\reset@font \centering \large \bfseries
+%     \interlinepenalty\@M
+%     ~~~#1\par\nobreak % JAS Huge to large, Title, TeX penalty to prevent page break
+%     \vskip 40\p@                      % Space between title and tex.
+%   }}
 
 % Sections, subsections, subsubsections
-\renewcommand{\section}{\@startsection {section}{1}{\z@}%
-                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
-                                   {2.3ex \@plus.2ex}%
-                                   {\reset@font\large\bfseries}}
- % JAS: Large to large
-\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
-                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
-                                     {1.5ex \@plus .2ex}%
-                         {\reset@font\normalsize\bfseries \hskip 0.0 in}}
- % JAS: large to normalsize; added 0.0 cm \hskip
-\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
-                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
-                                     {1.5ex \@plus .2ex}%
-                             {\reset@font\normalsize\bfseries \hskip 0.25 in}}
+% \renewcommand{\section}{\@startsection {section}{1}{\z@}%
+%                                    {-3.5ex \@plus -1ex \@minus -.2ex}%
+%                                    {2.3ex \@plus.2ex}%
+%                                    {\reset@font\large\bfseries}}
+%  % JAS: Large to large
+% \renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+%                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
+%                                      {1.5ex \@plus .2ex}%
+%                          {\reset@font\normalsize\bfseries}}
+%  % JAS: large to normalsize; added 0.0 cm \hskip
+% \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0.25 in}%
+%                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
+%                                      {1.5ex \@plus .2ex}%
+%                              {\reset@font\normalsize\bfseries}}
  % JAS no change; added .25 in \hskip
 
 % Paragraph and subparagraph (JAS -reformulation)
 %   (basically the same as subsection and subsubsection)
-\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+\renewcommand\paragraph{\@startsection{paragraph}{4}{0.25 in}%
                                     {3.25ex \@plus1ex \@minus.2ex}%
                                     {-1em}%
-                                    {\normalfont\normalsize\bfseries \hskip 0.25 in}}
+                                    {\normalfont\normalsize\bfseries}}
 \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
                                        {3.25ex \@plus1ex \@minus .2ex}%
                                        {-1em}%
-                                      {\normalfont\normalsize\bfseries \hskip 0.25 in}}
+                                      {\normalfont\normalsize\bfseries}}
 
 %%%%
 

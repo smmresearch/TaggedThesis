@@ -941,11 +941,11 @@ For the Major Program\fi\fi}
               \fi} 
 
 %  Chapter
-\renewcommand{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi
-                    \thispagestyle{threepartheadings}%
-                    \global\@topnum\z@
-                    \@afterindentfalse 
-                    \secdef\@chapter\@schapter}
+% \renewcommand{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi
+%                     \thispagestyle{threepartheadings}%
+%                     \global\@topnum\z@
+%                     \@afterindentfalse 
+%                     \secdef\@chapter\@schapter}
 
 \def\@makechapterhead#1{%             % Heading for \chapter command.
   \vspace*{15\p@}%                    % Space at top of text page (JAS11) 50 to 15

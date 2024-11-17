@@ -28,6 +28,9 @@ truly obvious what I am saying is true.
 sideways table and takes up a whole page by itself}
 \label{nothingelse}
 % Use: \begin{tabular{|lcc|} to put table in a box
+\tagpdfsetup{table/header-rows={1}}
+%\tagpdfsetup{table/header-columns={}}
+%Put \tagpdfsetup{table/multirow={⟨number of rows ⟩} in cells spanning multiple rows
 \begin{tabular}{lcc} \hline
 \textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
 Moon Rings & 1.23 & 3.38 \\
@@ -40,7 +43,7 @@ Moon Walk & 3.33 & 9.29 \\ \hline
 
 Here one particular part of the hypothesis that is 
 currently being explained is examined and particular
-elements of that part are given careful scrutiny. \cite{chenGraphHomotopyGraham2001}, \cite{chenGraphHomotopyGraham2001},\cite{virkContractibilityRipsComplexes2024}
+elements of that part are given careful scrutiny. \autocite{chenGraphHomotopyGraham2001}, \autocite{chenGraphHomotopyGraham2001},\autocite{virkContractibilityRipsComplexes2024}
 Here is an equation \[x^2 + y^2 = 8.\]
 
 % Below \subsubsection
