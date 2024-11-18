@@ -63,6 +63,15 @@
 \usepackage{mathtools}
 \usepackage{thmtools}
 \usepackage{templatedShortcuts-private}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\newcommand{\algmargin}{\the\ALG@thistlm}
+\makeatother
+\algnewcommand{\parstate}[1]{\State%
+  \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
+%Tiks? Externally generate as pdf and use includegraphics to add alt text
+%until tikz implements alt text
 %%
 
 \usepackage[default]{fontsetup}
