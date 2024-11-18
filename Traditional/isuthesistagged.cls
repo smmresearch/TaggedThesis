@@ -152,7 +152,7 @@
 \titlespacing{\subparagraph}{0.25in}{*3}{1.5ex \@plus .2ex}
 %Formatting Part breaks the TOC implementation as of 2024, hence why it is patched instead
 %%%%%%%%%%%%%%%
-
+%%%%%%%%%%
 
 \usepackage{setspace}
 
@@ -251,61 +251,61 @@
 % TABLE AND FIGURE CAPTIONS
 % Same as \caption but calls \@isucaption instead
 
-\def\isucaption{\refstepcounter\@captype
-   \@dblarg{\@isucaption\@captype}}
+% \def\isucaption{\refstepcounter\@captype
+%    \@dblarg{\@isucaption\@captype}}
 
-% Width to be used for setting the caption. Can be set by the user.
-\newdimen\captionwidth \captionwidth=\textwidth
+% % Width to be used for setting the caption. Can be set by the user.
+% \newdimen\captionwidth \captionwidth=\textwidth
 
-% the was the#1 line was changed to put the word Figure or Table in lot/lof
-\long\def\@isucaption#1[#2]#3{\par
-  %\baselineskip 14.5 pt
-  \addcontentsline {\csname ext@#1\endcsname}{#1}
-  {\protect\numberline{\csname fnum@#1\endcsname}{\ignorespaces #2}}%was the#1
-  \begingroup
-    \@parboxrestore
-    \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}
-    \par\vspace{1.7ex}
-  \endgroup}
+% % the was the#1 line was changed to put the word Figure or Table in lot/lof
+% \long\def\@isucaption#1[#2]#3{\par
+%   %\baselineskip 14.5 pt
+%   \addcontentsline {\csname ext@#1\endcsname}{#1}
+%   {\protect\numberline{\csname fnum@#1\endcsname}{\ignorespaces #2}}%was the#1
+%   \begingroup
+%     \@parboxrestore
+%     \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}
+%     \par\vspace{1.7ex}
+%   \endgroup}
 
-% \isucontinuecaption allows easy captioning of continued tables and figures.
-% No text supplied by user. Text is '(Continued)'. No ':' after table/figure
-% number and current table/figure number is used without being stepped.
-%\newif\if@continued \@continuedfalse
-\def\isucontinuecaption{\@isucontinuecaption\@captype}
-\def\@isucontinuecaption#1{\par %\baselineskip 14.5pt
-      \begingroup
-         \global\@continuedtrue
-         \@parboxrestore
-         \@makecaption{\csname fnum@#1\endcsname}{(Continued)}%
-         \par \vspace{1.7ex}%
-      \endgroup}
+% % \isucontinuecaption allows easy captioning of continued tables and figures.
+% % No text supplied by user. Text is '(Continued)'. No ':' after table/figure
+% % number and current table/figure number is used without being stepped.
+% %\newif\if@continued \@continuedfalse
+% \def\isucontinuecaption{\@isucontinuecaption\@captype}
+% \def\@isucontinuecaption#1{\par %\baselineskip 14.5pt
+%       \begingroup
+%          \global\@continuedtrue
+%          \@parboxrestore
+%          \@makecaption{\csname fnum@#1\endcsname}{(Continued)}%
+%          \par \vspace{1.7ex}%
+%       \endgroup}
 
-% \@makecaption{NUMBER}{TEXT} : Macro to make a figure or table caption.
-%      NUMBER : Figure or table number--e.g., 'Figure 3.2'
-%      TEXT   : The caption text.
-%  Macro should be called inside a \parbox of right width, with \normalsize.
-% changed 25 Jun 86 to fix according to Howard Trickey:
-% instead of \unhbox\@tempboxa\par we do #1: #2\par
-% We continue to use the old way in order to handle table footnotes on captions
-% - if don't use \unhbox then footnotetext gets output twice and footnote  
-% number once with the second value.
+% % \@makecaption{NUMBER}{TEXT} : Macro to make a figure or table caption.
+% %      NUMBER : Figure or table number--e.g., 'Figure 3.2'
+% %      TEXT   : The caption text.
+% %  Macro should be called inside a \parbox of right width, with \normalsize.
+% % changed 25 Jun 86 to fix according to Howard Trickey:
+% % instead of \unhbox\@tempboxa\par we do #1: #2\par
+% % We continue to use the old way in order to handle table footnotes on captions
+% % - if don't use \unhbox then footnotetext gets output twice and footnote  
+% % number once with the second value.
 
-\long\def\@makecaption#1#2{ \vskip 10pt
-    \newbox\@tempboxb
-    \setbox\@tempboxa\hbox{#2}    % #2 is caption
-    \setbox\@tempboxb\hbox{#1~~~} % #1 is Figure n.n: or Table n.n:
-    \advance\captionwidth by -\wd\@tempboxb
-% IF width of caption text > (\captionwidth - width of caption heading)
-% THEN set caption text in a parbox
-% ELSE set as is
-% Complete caption is centered in both cases.
-    \ifdim\captionwidth < \wd\@tempboxa
-      \hbox to \hsize{\hfil\box\@tempboxb%   
-             \parbox[t]{\captionwidth}{\unhbox\@tempboxa}\hfil}
-   \else
-      \hbox to \hsize{\hfil\box\@tempboxb\box\@tempboxa\hfil}
-   \fi}
+% \long\def\@makecaption#1#2{ \vskip 10pt
+%     \newbox\@tempboxb
+%     \setbox\@tempboxa\hbox{#2}    % #2 is caption
+%     \setbox\@tempboxb\hbox{#1~~~} % #1 is Figure n.n: or Table n.n:
+%     \advance\captionwidth by -\wd\@tempboxb
+% % IF width of caption text > (\captionwidth - width of caption heading)
+% % THEN set caption text in a parbox
+% % ELSE set as is
+% % Complete caption is centered in both cases.
+%     \ifdim\captionwidth < \wd\@tempboxa
+%       \hbox to \hsize{\hfil\box\@tempboxb%   
+%              \parbox[t]{\captionwidth}{\unhbox\@tempboxa}\hfil}
+%    \else
+%       \hbox to \hsize{\hfil\box\@tempboxb\box\@tempboxa\hfil}
+%    \fi}
 
 % SPECIAL CHAPT COMMAND (NORMAL)
 % Special chapter command for outputting a chapter title without 'Chapter'

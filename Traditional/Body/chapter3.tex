@@ -14,12 +14,12 @@ necessary.
 Here initial concepts and conditions are explained and
 several hypothesis are mentioned in brief.
 
-As can be seen in Table~\ref{nothing} it is truly
+As can be seen in \autoref{nothing} it is truly
 obvious what I am saying is true.
 
 \begin{table}[h!tb] \centering
 
-\isucaption[Short caption for List of Figures/ Tables]{This table shows a standard empty table\autocite{kleeHellyTheoremIts1963} . Remove the square bracketed information to get longer captions in the LOT/ LOF }
+\caption[Short caption for List of Figures/ Tables]{This table shows a standard empty table\autocite{kleeHellyTheoremIts1963} . Remove the square bracketed information to get longer captions in the LOT/ LOF }
 \label{nothing}
 
 \vspace{ 2 in}
@@ -30,13 +30,13 @@ obvious what I am saying is true.
 Here one particular hypothesis is explained in depth
 and is examined in the light of current literature.
 
-This can also be seen in Figure~\ref{moon} that the
+This can also be seen in \autoref{moon} that the
 rest is obvious.
 
 \begin{figure}[h!tb] \centering
 
 \includegraphics[alt={Alt text describing}]{Images/dc5.jpg}
-\isucaption[Short caption for List of Figures/ Tables]{This table shows a standard empty figure. Remove the square bracketed information to get longer captions in the LOT/ LOF}
+\caption[Short caption for List of Figures/ Tables]{This table shows a standard empty figure. Remove the square bracketed information to get longer captions in the LOT/ LOF}
 \label{moon}
 \end{figure}
 
@@ -65,7 +65,7 @@ elements of that part are given careful scrutiny.
 
 Here certain criteria are explained thus eventually
 leading to a foregone conclusion as can be seen in
-Table~\ref{nevermore}.
+\autoref{nevermore}.
 %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
 \tagpdfsetup{table/header-rows={1}}
 %Use \tagpdfsetup{table/header-columns={}} for header columns instead
@@ -77,9 +77,8 @@ Table~\ref{nevermore}.
         leg & leg & leg \\
         leg & leg & leg \\
     \end{tabular}
-\setlength{\captionwidth}{3.5 in}
-\isucaption{This table shows a standard empty table with
-a limited captionwidth}
+    \captionsetup{width=2in}
+    \caption{This table shows a standard empty table witha limited caption width}
 \label{nevermore}
 
 \vspace{ 2 in}
