@@ -104,9 +104,9 @@
 \fancyfoot[L,C,R]{}
 
 %Following command adds numberless chapters
-%to the bibliography correctly while being compatible with tagging
+%to the table of contents correctly while being compatible with tagging
 \let\@tempchapapp=\@chapapp
-\newcommand{\addToBibWithoutChapter}[1]{%
+\newcommand{\addToTOCWithoutChapter}[1]{%
   \addtocontents{toc}{\def\protect\@chapapp{}}%
   \MakeLinkTarget[specialchapt]{}%
   \addcontentsline{toc}{chapter}{#1}%
