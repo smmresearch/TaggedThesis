@@ -1,0 +1,316 @@
+%PDF-2.0
+%ÌÕÁÔÅØĞÄÆ
+23 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 73 >>         
+stream
+<math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> ğ´ </mi> </math>
+endstream
+endobj
+24 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-1) /F (mathml-1.xml) /UF <FEFF006D006100740068006D006C002D0031002E0078006D006C> /EF<</F 23 0 R/UF 23 0 R>> >>
+endobj
+25 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 1636 >>       
+stream
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <mpadded depth="0" height="0"> <mtext/> </mpadded> <mo lspace="0" rspace="0"/> <mi> ğ‘‘ </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> ğ‘¥ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘¦ </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.278em" rspace="0.278em"> = </mo> <mi> ğ‘‘ </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> ğ‘¥ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘§ </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mi> ğ‘‘ </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> ğ‘§ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘¦ </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.278em" rspace="0.278em"> â‰¥ </mo> <mi> ğ‘‘ </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> ğ‘¥ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘¥ </mi> <mo lspace="0.222em" rspace="0"> âˆ’ </mo> <mo lspace="0.222em" rspace="0" stretchy="false"> âŸ¨ </mo> <mi> ğ‘¥ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘› </mi> <mo lspace="0" rspace="0" stretchy="false"> âŸ© </mo> <mi> ğ‘› </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mn> 0 </mn> <mo lspace="0.278em" rspace="0"> = </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> âŸ¨ </mo> <mi> ğ‘¥ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘› </mi> <mo lspace="0" rspace="0" stretchy="false"> âŸ© </mo> <mo lspace="0" rspace="0"> . </mo> </math>
+endstream
+endobj
+26 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-2) /F (mathml-2.xml) /UF <FEFF006D006100740068006D006C002D0032002E0078006D006C> /EF<</F 25 0 R/UF 25 0 R>> >>
+endobj
+27 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 1684 >>       
+stream
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <mtable columnalign="right left" columnspacing="0" displaystyle="true"> <mtr> <mtd> <msub> <mi mathvariant="normal"> â„“ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mover> <mi> ğ‘¥ </mi> <mo> Ë† </mo> </mover> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘¦ </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> </mtd> <mtd> <mi/> <mo lspace="0.278em" rspace="0.278em"> = </mo> <msub> <mi mathvariant="normal"> â„“ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> ğ‘¥ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘¦ </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> </mtd> </mtr> <mtr> <mtd> <mi/> </mtd> <mtd> <mi/> <mo lspace="0.278em" rspace="0"> = </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> | </mo> <msub> <mi mathvariant="normal"> â„“ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> ğ‘¥ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘¦ </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> âˆ’ </mo> <mn> 2 </mn> <mo lspace="0" rspace="0" stretchy="false"> âŸ¨ </mo> <mi> ğ‘¥ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘› </mi> <mo lspace="0" rspace="0" stretchy="false"> âŸ© </mo> <msub> <mi mathvariant="normal"> â„“ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> ğ‘› </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mn> 0 </mn> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0" rspace="0" stretchy="false"> | </mo> </mtd> </mtr> </mtable> </math>
+endstream
+endobj
+28 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-3) /F (mathml-3.xml) /UF <FEFF006D006100740068006D006C002D0033002E0078006D006C> /EF<</F 27 0 R/UF 27 0 R>> >>
+endobj
+29 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 929 >>        
+stream
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <msub> <mi mathvariant="normal"> â„“ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mover> <mi> ğ‘¥ </mi> <mo> Ë† </mo> </mover> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘¦ </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mspace width="3.633pt"/> <msub> <mi mathvariant="normal"> â„“ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mover> <mi> ğ‘¥ </mi> <mo> Ë† </mo> </mover> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘¦ </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> âˆ’ </mo> <mn> 2 </mn> <mo lspace="0" rspace="0" stretchy="false"> âŸ¨ </mo> <mi> ğ‘¥ </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> ğ‘› </mi> <mo lspace="0" rspace="0" stretchy="false"> âŸ© </mo> <mo lspace="0.278em" rspace="0"> â‰¤ </mo> </math>
+endstream
+endobj
+30 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-4) /F (mathml-4.xml) /UF <FEFF006D006100740068006D006C002D0034002E0078006D006C> /EF<</F 29 0 R/UF 29 0 R>> >>
+endobj
+31 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 394 >>        
+stream
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <msup> <mi> ğ‘¥ </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> ğ‘¦ </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> ğ‘¥ </mi> <mn> 2 </mn> </msup> <mo lspace="0.278em" rspace="0.278em"> = </mo> <mn> 2 </mn> <mo lspace="0" rspace="0"> . </mo> </math>
+endstream
+endobj
+32 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-5) /F (mathml-5.xml) /UF <FEFF006D006100740068006D006C002D0035002E0078006D006C> /EF<</F 31 0 R/UF 31 0 R>> >>
+endobj
+33 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 73 >>         
+stream
+<math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> ğ‘  </mi> </math>
+endstream
+endobj
+34 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-6) /F (mathml-6.xml) /UF <FEFF006D006100740068006D006C002D0036002E0078006D006C> /EF<</F 33 0 R/UF 33 0 R>> >>
+endobj
+35 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 432 >>        
+stream
+<math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> ğ‘— </mi> <mo lspace="0.278em" rspace="0"> âˆˆ </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> { </mo> <mn> 1 </mn> <mo lspace="0" rspace="0.167em"> , </mo> <mn> 2 </mn> <mo lspace="0" rspace="0"> , </mo> <mo lspace="0.167em" rspace="0"> â€¦ </mo> <mo lspace="0.167em" rspace="0.167em"> , </mo> <mn> 15 </mn> <mo lspace="0" rspace="0" stretchy="false"> } </mo> </math>
+endstream
+endobj
+36 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-7) /F (mathml-7.xml) /UF <FEFF006D006100740068006D006C002D0037002E0078006D006C> /EF<</F 35 0 R/UF 35 0 R>> >>
+endobj
+37 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 70 >>         
+stream
+<math xmlns="http://www.w3.org/1998/Math/MathML"> <mn> 5 </mn> </math>
+endstream
+endobj
+38 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-8) /F (mathml-8.xml) /UF <FEFF006D006100740068006D006C002D0038002E0078006D006C> /EF<</F 37 0 R/UF 37 0 R>> >>
+endobj
+39 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 434 >>        
+stream
+<math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> ğ‘¥ </mi> <mo lspace="0.278em" rspace="0"> âˆˆ </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> { </mo> <mn> 1 </mn> <mo lspace="0" rspace="0.167em"> , </mo> <mn> 2 </mn> <mo lspace="0" rspace="0"> , </mo> <mo lspace="0.167em" rspace="0"> â€¦ </mo> <mo lspace="0.167em" rspace="0.167em"> , </mo> <mn> 1000 </mn> <mo lspace="0" rspace="0" stretchy="false"> } </mo> </math>
+endstream
+endobj
+40 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-9) /F (mathml-9.xml) /UF <FEFF006D006100740068006D006C002D0039002E0078006D006C> /EF<</F 39 0 R/UF 39 0 R>> >>
+endobj
+41 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 73 >>         
+stream
+<math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> ğ‘ </mi> </math>
+endstream
+endobj
+42 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-10) /F (mathml-10.xml) /UF <FEFF006D006100740068006D006C002D00310030002E0078006D006C> /EF<</F 41 0 R/UF 41 0 R>> >>
+endobj
+43 0 obj
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 303 >>        
+stream
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <msup> <mi> ğ‘¥ </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> ğ‘¦ </mi> <mn> 2 </mn> </msup> <mo lspace="0.278em" rspace="0.278em"> = </mo> <mn> 8 </mn> <mo lspace="0" rspace="0"> . </mo> </math>
+endstream
+endobj
+44 0 obj
+<< /Type /Filespec /AFRelationship /Supplement /Desc (mathml-11) /F (mathml-11.xml) /UF <FEFF006D006100740068006D006C002D00310031002E0078006D006C> /EF<</F 43 0 R/UF 43 0 R>> >>
+endobj
+45 0 obj
+<< /N 3 /Length 3268 >>       
+stream
+  Äargl   mntrRGB XYZ à 	 	   acspMSFT    IEC sRGB              öÖ     Ó-argl                                               desc  \   ™cprt  ø   gdmnd  `   pdmdd  Ğ   ˆtech  X   vued  d   gview  Ì   $lumi  ğ   meas     $wtpt  (   bkpt  <   rXYZ  P   gXYZ  d   bXYZ  x   rTRC  Œ  gTRC  Œ  bTRC  Œ  arts  ˜   ,desc       ?sRGB IEC61966-2.1 (Equivalent to www.srgb.com 1998 HP profile)           ?sRGB IEC61966-2.1 (Equivalent to www.srgb.com 1998 HP profile)        text    Created by Graeme W. Gill. Released into the public domain. No Warranty, Use at your own risk.  desc       IEC http://www.iec.ch           IEC http://www.iec.ch                                              desc       .IEC 61966-2.1 Default RGB colour space - sRGB           .IEC 61966-2.1 Default RGB colour space - sRGB                      sig     CRT desc       IEC61966-2.1           IEC61966-2.1                                                        view     ¤€ _0 Î
+ í³ 
+ \h   XYZ      L
+@ P   WĞmeas                            XYZ       óQ    ÌXYZ                 XYZ       o   8õ  XYZ       b—  ·‡  ÙXYZ       $Ÿ  „  ¶Äcurv           
+     # ( - 2 7 ; @ E J O T Y ^ c h m r w |  † ‹  • š Ÿ ¤ © ® ² · ¼ Á Æ Ë Ğ Õ Û à å ë ğ ö û%+28>ELRY`gnu|ƒ‹’š¡©±¹ÁÉÑÙáéòú&/8AKT]gqz„˜¢¬¶ÁËÕàëõ !-8COZfr~Š–¢®ºÇÓàìù -;HUcq~Œš¨¶ÄÓáğş+:IXgw†–¦µÅÕåö'7HYj{Œ¯ÀÑãõ+=Oat†™¬¿Òåø2FZn‚–ª¾Òçû		%	:	O	d	y		¤	º	Ï	å	û
+
+'
+=
+T
+j
+
+˜
+®
+Å
+Ü
+ó"9Qi€˜°Èáù*C\u§ÀÙó&@Zt©ÃŞø.Id›¶Òî	%A^z–³Ïì	&Ca~›¹×õ1OmŒªÉè&Ed„£Ãã#Ccƒ¤Åå'Ij‹­Îğ4Vx›½à&Il²ÖúAe‰®Ò÷@eŠ¯Õú Ek‘·İ*QwÅì;cŠ²Ú*R{£ÌõGp™Ãì@j”¾é>i”¿ê  A l ˜ Ä ğ!!H!u!¡!Î!û"'"U"‚"¯"İ#
+#8#f#”#Â#ğ$$M$|$«$Ú%	%8%h%—%Ç%÷&'&W&‡&·&è''I'z'«'Ü((?(q(¢(Ô))8)k))Ğ**5*h*›*Ï++6+i++Ñ,,9,n,¢,×--A-v-«-á..L.‚.·.î/$/Z/‘/Ç/ş050l0¤0Û11J1‚1º1ò2*2c2›2Ô33F33¸3ñ4+4e44Ø55M5‡5Â5ı676r6®6é7$7`7œ7×88P8Œ8È99B99¼9ù:6:t:²:ï;-;k;ª;è<'<e<¤<ã="=a=¡=à> >`> >à?!?a?¢?â@#@d@¦@çA)AjA¬AîB0BrBµB÷C:C}CÀDDGDŠDÎEEUEšEŞF"FgF«FğG5G{GÀHHKH‘H×IIcI©IğJ7J}JÄKKSKšKâL*LrLºMMJM“MÜN%NnN·O OIO“OİP'PqP»QQPQ›QæR1R|RÇSS_SªSöTBTTÛU(UuUÂVV\V©V÷WDW’WàX/X}XËYYiY¸ZZVZ¦Zõ[E[•[å\5\†\Ö]']x]É^^l^½__a_³``W`ª`üaOa¢aõbIbœbğcCc—cëd@d”dée=e’eçf=f’fèg=g“géh?h–hìiCišiñjHjŸj÷kOk§kÿlWl¯mm`m¹nnknÄooxoÑp+p†pàq:q•qğrKr¦ss]s¸ttptÌu(u…uáv>v›vøwVw³xxnxÌy*y‰yçzFz¥{{c{Â|!||á}A}¡~~b~Â#„å€G€¨
+kÍ‚0‚’‚ôƒWƒº„„€„ã…G…«††r†×‡;‡ŸˆˆiˆÎ‰3‰™‰şŠdŠÊ‹0‹–‹üŒcŒÊ1˜ÿfÎ6nÖ‘?‘¨’’z’ã“M“¶” ”Š”ô•_•É–4–Ÿ—
+—u—à˜L˜¸™$™™üšhšÕ›B›¯œœ‰œ÷dÒ@®ŸŸ‹Ÿú i Ø¡G¡¶¢&¢–££v£æ¤V¤Ç¥8¥©¦¦‹¦ı§n§à¨R¨Ä©7©©ªª««u«é¬\¬Ğ­D­¸®-®¡¯¯‹° °u°ê±`±Ö²K²Â³8³®´%´œµµŠ¶¶y¶ğ·h·à¸Y¸Ñ¹J¹Âº;ºµ».»§¼!¼›½½¾
+¾„¾ÿ¿z¿õÀpÀìÁgÁãÂ_ÂÛÃXÃÔÄQÄÎÅKÅÈÆFÆÃÇAÇ¿È=È¼É:É¹Ê8Ê·Ë6Ë¶Ì5ÌµÍ5ÍµÎ6Î¶Ï7Ï¸Ğ9ĞºÑ<Ñ¾Ò?ÒÁÓDÓÆÔIÔËÕNÕÑÖUÖØ×\×àØdØèÙlÙñÚvÚûÛ€ÜÜŠİİ–ŞŞ¢ß)ß¯à6à½áDáÌâSâÛãcãëäsäüå„ææ–çç©è2è¼éFéĞê[êåëpëûì†ííœî(î´ï@ïÌğXğåñrñÿòŒóó§ô4ôÂõPõŞömöû÷Šøø¨ù8ùÇúWúçûwüü˜ı)ıºşKşÜÿmÿÿsf32      å%  D3ÿÿÖ¯ÿÿ?ô ¶¨  	e  	õÿÿîx ”
+endstream
+endobj
+46 0 obj
+<< /Type /OutputIntent /S /GTS_PDFA1 /DestOutputProfile 45 0 R /OutputConditionIdentifier (IEC\040sRGB) /Info (IEC\04061966-2.1\040Default\040RGB\040colour\040space\040-\040sRGB) /RegistryName (http://www.iec.ch)  >>
+endobj
+69 0 obj
+<< /Length 5186 >>       
+stream
+/opacity1 gs
+/Artifact BMC
+EMC
+/Artifact BMC
+0 g 0 G
+0 g 0 G
+EMC
+/Artifact BMC
+0 g 0 G
+EMC
+/text<</MCID 0>> BDC
+BT
+/F99 10.90909 Tf
+1 0 0 1 89.82 684.374 Tm [<00350049004A00540001004A0054000100550049004600010055004A0055004D00460001005000470001004200010055004900460054004A00540001005400560043004E004A00550055004600450001005500500001002A0050>32<0058>32<004200010034005500420055004600010036004F004A0057>32<004600530054004A0055>32<005A00010050004F000100550049004600010CA40053005400550001004D004A004F0046>]TJ
+ET
+EMC
+/text<</MCID 1>> BDC
+BT
+/F99 10.90909 Tf
+1 0 0 1 72 662.452 Tm [<002F005000550046000100550049004200550001>1<0050004F004D005A0001>1<0055004900460001>1<0CA40053005400550001>1<004D004600550055004600530001>1<005000470001>1<0055004900460001>1<0CA40053005400550001>1<0058>32<0050005300450001>1<0042004F00450001>1<0051005300500051>-31<004600530001004F0042004E004600540001>1<0042005300460001>1<004400420051004A00550042004D004A005B004600450001>1<0042004F00450001>]TJ
+1 0 0 1 246.404 640.529 Tm [<00550049004A00540001004A0054000100550049004600010054004600440050004F00450001004D004A004F0046>]TJ
+ET
+EMC
+/text<</MCID 2>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 300.24 601.172 Tm [<0043>28<005A>]TJ
+ET
+EMC
+/text<</MCID 3>> BDC
+BT
+/F99 10.90909 Tf
+1 0 0 1 268.5 565.302 Tm [<0022004D004A0044004600010038>96<0050004F004500460053>]TJ
+ET
+EMC
+/text<</MCID 4>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 189.813 499.045 Tm [<002200010045004A0054005400460053005500420055004A0050004F0001005400560043004E004A0055005500460045000100550050000100550049004600010048005300420045005600420055004600010047004200440056004D0055>28<005A>]TJ
+ET
+EMC
+/text<</MCID 5>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 168.764 477.123 Tm [<004A004F00010051004200530055004A0042004D000100470056004D0CB8004D004D004E0046004F>28<0055000100500047000100550049004600010053004600520056004A00530046004E0046004F>28<00550054000100470050005300010055004900460001004500460048005300460046000100500047>]TJ
+ET
+EMC
+/text<</MCID 6>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 233.416 455.2 Tm [<002500300024003500300033000100300027000100310029002A002D00300034003000310029003A>]TJ
+ET
+EMC
+/text<</MCID 7>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 256.86 375.993 Tm [<002E0042>-28<004B00500053001B0001>-111<002E0042005500490046004E00420055004A00440054>]TJ
+ET
+EMC
+/text<</MCID 8>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 233.465 309.736 Tm [<003100530050004800530042004E00010050004700010034005500560045005A000100240050004E004E004A0055005500460046001B>]TJ
+ET
+EMC
+/text<</MCID 9>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 236.94 296.187 Tm [<002B00500049004F00010034004E004A00550049000D0001002E0042>-28<004B005000530001003100530050004700460054005400500053>]TJ
+ET
+EMC
+/text<</MCID 10>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 284.187 282.638 Tm [<002B0042004F00460001002500460046>]TJ
+ET
+EMC
+/text<</MCID 11>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 273.556 269.089 Tm [<0022004D004D0046004F00010038>83<00530046004F0044>28<0049>]TJ
+ET
+EMC
+/text<</MCID 12>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 72 240.097 Tm [<0035004900460001>5<00540055005600450046004F>28<00550001>5<004200560055004900500053000D0001>4<005800490050005400460001>5<00510053004600540046004F>28<005500420055004A0050004F0001>5<005000470001>5<0055004900460001>5<00540044>28<00490050004D0042005300540049004A00510001>5<0049004600530046004A004F0001>5<0058>28<004200540001>5<00420051005100530050>28<0057>28<004600450001>5<0043>28<005A0001>5<0055004900460001>5<005100530050004800530042004E0001>6<005000470001>]TJ
+1 0 0 1 75.824 226.548 Tm [<0054005500560045005A000100440050004E004E004A0055005500460046000D0001004A0054000100540050004D0046004D005A00010053004600540051>-28<0050004F0054004A0043004D004600010047005000530001005500490046000100440050004F>28<00550046004F>28<0055000100500047000100550049004A005400010045004A0054005400460053005500420055004A0050004F000F0001>-111<003500490046000100280053004200450056004200550046000100240050004D004D0046004800460001>]TJ
+1 0 0 1 74.635 212.999 Tm [<0058004A004D004D00010046004F0054005600530046000100550049004A005400010045004A0054005400460053005500420055004A0050004F0001004A005400010048004D005000430042004D004D005A0001004200440044004600540054004A0043004D004600010042004F004500010058004A004D004D0001004F0050005500010051>-28<00460053004E004A005500010042004D00550046005300420055004A0050004F0054000100420A10004600530001004200010045004600480053004600460001004A00540001>]TJ
+1 0 0 1 282.48 199.45 Tm [<00440050004F004700460053005300460045000F>]TJ
+ET
+EMC
+/text<</MCID 13>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 254.444 151.624 Tm [<002A0050>28<0058>28<004200010034005500420055004600010036004F004A0057>28<004600530054004A0055>28<005A>]TJ
+ET
+EMC
+/text<</MCID 14>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 278.405 129.702 Tm [<0022004E00460054000D0001002A0050>28<0058>28<0042>]TJ
+ET
+EMC
+/text<</MCID 15>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 295.091 107.779 Tm [<0013001100130015>]TJ
+ET
+EMC
+/text<</MCID 16>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 179.105 85.857 Tm [<002400500051>28<005A0053004A00480049>28<00550001006900010022004D004A0044004600010038>83<0050004F004500460053000D00010013001100130015000F0001>-111<0022004D004D00010053004A00480049>28<005500540001005300460054004600530057>28<00460045000F>]TJ
+ET
+EMC
+/Artifact BMC
+EMC
+/Artifact BMC
+0 g 0 G
+0 g 0 G
+EMC
+/Artifact BMC
+EMC
+
+endstream
+endobj
+21 0 obj
+<< /Type /Page /Contents 69 0 R /Resources 68 0 R /MediaBox [ 0 0 612 792 ] /StructParents 0/Tabs /S /Parent 76 0 R >>
+endobj
+70 0 obj
+<< /D [ 21 0 R /FitB ] >>
+endobj
+71 0 obj
+[ 22 0 R /FitB ]
+endobj
+72 0 obj
+<< /D [ 21 0 R /FitB ] >>
+endobj
+73 0 obj
+[ 22 0 R /FitB ]
+endobj
+68 0 obj
+<< /ExtGState 1 0 R /Font << /F99 74 0 R /F32 75 0 R >> >>
+endobj
+85 0 obj
+<< /Length 1118 >>       
+stream
+/opacity1 gs
+/Artifact BMC
+EMC
+/Artifact BMC
+0 g 0 G
+BT
+/F32 10.90909 Tf
+1 0 0 1 302.967 710.117 Tm [<004A004A>]TJ
+0 g 0 G
+ET
+EMC
+/Artifact BMC
+EMC
+/Span<</MCID 0>> BDC
+BT
+/F99 11.95517 Tf
+1 0 0 1 260.809 647.619 Tm [<002500260025002A00240022>96<0035002A0030002F>]TJ
+ET
+EMC
+/Artifact BMC
+EMC
+/text<</MCID 1>> BDC
+BT
+/F32 10.90909 Tf
+1 0 0 1 90 582.497 Tm [<002A00010058>28<00500056004D00450001004D004A004C>28<00460001005500500001004500460045004A0044004200550046000100550049004A005400010055004900460054004A00540001005500500001004E>28<005A00010058004A0047004600010028004D0046004F0045004200010042004F00450001005500500001004E>28<005A000100450042005600480049>28<00550046005300010022004D004A0044004600010058004A005500490050005600550001>]TJ
+1 0 0 1 72 560.574 Tm [<0058004900500054004600010054005600510051>-28<0050005300550001002A00010058>28<00500056004D00450001004F00500055000100490042>28<0057>28<004600010043>-28<00460046004F000100420043004D0046000100550050000100440050004E0051004D004600550046000100550049004A005400010058>28<00500053004C000F>]TJ
+ET
+EMC
+/Artifact BMC
+EMC
+/Artifact BMC
+0 g 0 G
+0 g 0 G
+EMC
+/Artifact BMC
+EMC
