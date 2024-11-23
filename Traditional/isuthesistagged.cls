@@ -104,7 +104,7 @@
 \fancyfoot[L,C,R]{}
 
 %Following command adds numberless chapters
-%to the bibliography correctly while being compatible with tagging
+%to the TOC correctly while being compatible with tagging
 \let\@tempchapapp=\@chapapp
 \newcommand{\addToTOCWithoutChapter}[1]{%
   \addtocontents{toc}{\def\protect\@chapapp{}}%
