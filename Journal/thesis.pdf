@@ -1,7 +1,7 @@
 %PDF-2.0
 %���������
 23 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 73 >>         
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 73 >>         
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝐴 </mi> </math>
 endstream
@@ -10,7 +10,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-1) /F (mathml-1.xml) /UF <FEFF006D006100740068006D006C002D0031002E0078006D006C> /EF<</F 23 0 R/UF 23 0 R>> >>
 endobj
 25 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 1636 >>       
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 1636 >>       
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <mpadded depth="0" height="0"> <mtext/> </mpadded> <mo lspace="0" rspace="0"/> <mi> 𝑑 </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.278em" rspace="0.278em"> = </mo> <mi> 𝑑 </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑧 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mi> 𝑑 </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑧 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.278em" rspace="0.278em"> ≥ </mo> <mi> 𝑑 </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑥 </mi> <mo lspace="0.222em" rspace="0"> − </mo> <mo lspace="0.222em" rspace="0" stretchy="false"> ⟨ </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ⟩ </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mn> 0 </mn> <mo lspace="0.278em" rspace="0"> = </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> ⟨ </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ⟩ </mo> <mo lspace="0" rspace="0"> . </mo> </math>
 endstream
@@ -19,7 +19,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-2) /F (mathml-2.xml) /UF <FEFF006D006100740068006D006C002D0032002E0078006D006C> /EF<</F 25 0 R/UF 25 0 R>> >>
 endobj
 27 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 1684 >>       
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 1684 >>       
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <mtable columnalign="right left" columnspacing="0" displaystyle="true"> <mtr> <mtd> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mover> <mi> 𝑥 </mi> <mo> ˆ </mo> </mover> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> </mtd> <mtd> <mi/> <mo lspace="0.278em" rspace="0.278em"> = </mo> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> </mtd> </mtr> <mtr> <mtd> <mi/> </mtd> <mtd> <mi/> <mo lspace="0.278em" rspace="0"> = </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> | </mo> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> − </mo> <mn> 2 </mn> <mo lspace="0" rspace="0" stretchy="false"> ⟨ </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ⟩ </mo> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mn> 0 </mn> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0" rspace="0" stretchy="false"> | </mo> </mtd> </mtr> </mtable> </math>
 endstream
@@ -28,7 +28,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-3) /F (mathml-3.xml) /UF <FEFF006D006100740068006D006C002D0033002E0078006D006C> /EF<</F 27 0 R/UF 27 0 R>> >>
 endobj
 29 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 929 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 929 >>        
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mover> <mi> 𝑥 </mi> <mo> ˆ </mo> </mover> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mspace width="3.633pt"/> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mover> <mi> 𝑥 </mi> <mo> ˆ </mo> </mover> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> − </mo> <mn> 2 </mn> <mo lspace="0" rspace="0" stretchy="false"> ⟨ </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ⟩ </mo> <mo lspace="0.278em" rspace="0"> ≤ </mo> </math>
 endstream
@@ -37,7 +37,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-4) /F (mathml-4.xml) /UF <FEFF006D006100740068006D006C002D0034002E0078006D006C> /EF<</F 29 0 R/UF 29 0 R>> >>
 endobj
 31 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 394 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 394 >>        
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <msup> <mi> 𝑥 </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> 𝑦 </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> 𝑥 </mi> <mn> 2 </mn> </msup> <mo lspace="0.278em" rspace="0.278em"> = </mo> <mn> 2 </mn> <mo lspace="0" rspace="0"> . </mo> </math>
 endstream
@@ -46,7 +46,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-5) /F (mathml-5.xml) /UF <FEFF006D006100740068006D006C002D0035002E0078006D006C> /EF<</F 31 0 R/UF 31 0 R>> >>
 endobj
 33 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 73 >>         
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 73 >>         
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝑠 </mi> </math>
 endstream
@@ -55,7 +55,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-6) /F (mathml-6.xml) /UF <FEFF006D006100740068006D006C002D0036002E0078006D006C> /EF<</F 33 0 R/UF 33 0 R>> >>
 endobj
 35 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 432 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 432 >>        
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝑗 </mi> <mo lspace="0.278em" rspace="0"> ∈ </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> { </mo> <mn> 1 </mn> <mo lspace="0" rspace="0.167em"> , </mo> <mn> 2 </mn> <mo lspace="0" rspace="0"> , </mo> <mo lspace="0.167em" rspace="0"> … </mo> <mo lspace="0.167em" rspace="0.167em"> , </mo> <mn> 15 </mn> <mo lspace="0" rspace="0" stretchy="false"> } </mo> </math>
 endstream
@@ -64,7 +64,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-7) /F (mathml-7.xml) /UF <FEFF006D006100740068006D006C002D0037002E0078006D006C> /EF<</F 35 0 R/UF 35 0 R>> >>
 endobj
 37 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 70 >>         
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 70 >>         
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mn> 5 </mn> </math>
 endstream
@@ -73,7 +73,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-8) /F (mathml-8.xml) /UF <FEFF006D006100740068006D006C002D0038002E0078006D006C> /EF<</F 37 0 R/UF 37 0 R>> >>
 endobj
 39 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 434 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 434 >>        
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝑥 </mi> <mo lspace="0.278em" rspace="0"> ∈ </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> { </mo> <mn> 1 </mn> <mo lspace="0" rspace="0.167em"> , </mo> <mn> 2 </mn> <mo lspace="0" rspace="0"> , </mo> <mo lspace="0.167em" rspace="0"> … </mo> <mo lspace="0.167em" rspace="0.167em"> , </mo> <mn> 1000 </mn> <mo lspace="0" rspace="0" stretchy="false"> } </mo> </math>
 endstream
@@ -82,7 +82,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-9) /F (mathml-9.xml) /UF <FEFF006D006100740068006D006C002D0039002E0078006D006C> /EF<</F 39 0 R/UF 39 0 R>> >>
 endobj
 41 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 73 >>         
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 73 >>         
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝑎 </mi> </math>
 endstream
@@ -91,7 +91,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-10) /F (mathml-10.xml) /UF <FEFF006D006100740068006D006C002D00310030002E0078006D006C> /EF<</F 41 0 R/UF 41 0 R>> >>
 endobj
 43 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241121) >> /Length 303 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20241123) >> /Length 303 >>        
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <msup> <mi> 𝑥 </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> 𝑦 </mi> <mn> 2 </mn> </msup> <mo lspace="0.278em" rspace="0.278em"> = </mo> <mn> 8 </mn> <mo lspace="0" rspace="0"> . </mo> </math>
 endstream
@@ -14170,7 +14170,7 @@ endobj
 << /Type/OBJR/Obj 2058 0 R/Pg 2059 0 R >>
 endobj
 2079 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 3 >>          
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 3 >>          
 stream
 $A$
 endstream
@@ -14179,7 +14179,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile1.tex) /UF <FEFF007400610067002D0041004600660069006C00650031002E007400650078> /EF<</F 2079 0 R/UF 2079 0 R>> >>
 endobj
 2091 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 156 >>        
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 156 >>        
 stream
 \begin {equation}\label {orthogonalProjectionIsGoodActually} d(x,y)= d(x,z)+d(z,y) \geq d(x,x-\langle x,n\rangle n )+0 = \langle x,n\rangle .\end {equation}
 endstream
@@ -14188,7 +14188,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile2.tex) /UF <FEFF007400610067002D0041004600660069006C00650032002E007400650078> /EF<</F 2091 0 R/UF 2091 0 R>> >>
 endobj
 2097 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 117 >>        
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 117 >>        
 stream
 \begin {align}\ell _1(\hat {x},y) & = \ell _1 (x,y) \\ & =|\ell _1(x,y)-2\langle x,n\rangle \ell _1(n,0)|\end {align}
 endstream
@@ -14200,7 +14200,7 @@ endobj
 << /Type/OBJR/Obj 2103 0 R/Pg 2059 0 R >>
 endobj
 2106 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 100 >>        
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 100 >>        
 stream
 \begin {equation*}\ell _1(\hat {x},y)\ \ell _1(\hat {x},y)-2\langle x,n\rangle \leq \end {equation*}
 endstream
@@ -14629,7 +14629,7 @@ endobj
 << /Type/OBJR/Obj 2156 0 R/Pg 2148 0 R >>
 endobj
 2159 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 48 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 48 >>         
 stream
 \begin {equation*}x^2+y^2+x^2=2.\end {equation*}
 endstream
@@ -14638,7 +14638,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile5.tex) /UF <FEFF007400610067002D0041004600660069006C00650035002E007400650078> /EF<</F 2159 0 R/UF 2159 0 R>> >>
 endobj
 2180 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 3 >>          
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 3 >>          
 stream
 $s$
 endstream
@@ -14647,7 +14647,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile6.tex) /UF <FEFF007400610067002D0041004600660069006C00650036002E007400650078> /EF<</F 2180 0 R/UF 2180 0 R>> >>
 endobj
 2193 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 25 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 25 >>         
 stream
 $j\in \{1,2,\ldots ,15\}$
 endstream
@@ -14656,7 +14656,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile7.tex) /UF <FEFF007400610067002D0041004600660069006C00650037002E007400650078> /EF<</F 2193 0 R/UF 2193 0 R>> >>
 endobj
 2201 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 3 >>          
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 3 >>          
 stream
 $5$
 endstream
@@ -14665,7 +14665,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile8.tex) /UF <FEFF007400610067002D0041004600660069006C00650038002E007400650078> /EF<</F 2201 0 R/UF 2201 0 R>> >>
 endobj
 2209 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 27 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 27 >>         
 stream
 $x\in \{1,2,\ldots ,1000\}$
 endstream
@@ -14674,7 +14674,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile9.tex) /UF <FEFF007400610067002D0041004600660069006C00650039002E007400650078> /EF<</F 2209 0 R/UF 2209 0 R>> >>
 endobj
 2220 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 3 >>          
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 3 >>          
 stream
 $a$
 endstream
@@ -15693,7 +15693,7 @@ endobj
 << /Type/OBJR/Obj 2388 0 R/Pg 2380 0 R >>
 endobj
 2391 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241121) >> /Length 48 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20241123) >> /Length 48 >>         
 stream
 \begin {equation*}x^2 + y^2 = 8.\end {equation*}
 endstream
@@ -15997,7 +15997,7 @@ stream
        <rdf:Bag>
         <rdf:li rdf:parseType="Resource">
          <pdfd:claimBy>LaTeX Project</pdfd:claimBy>
-         <pdfd:claimDate>2024-11-21</pdfd:claimDate>
+         <pdfd:claimDate>2024-11-23</pdfd:claimDate>
         </rdf:li>
        </rdf:Bag>
       </pdfd:claimData>
@@ -16008,7 +16008,7 @@ stream
        <rdf:Bag>
         <rdf:li rdf:parseType="Resource">
          <pdfd:claimBy>LaTeX Project</pdfd:claimBy>
-         <pdfd:claimDate>2024-11-21</pdfd:claimDate>
+         <pdfd:claimDate>2024-11-23</pdfd:claimDate>
         </rdf:li>
        </rdf:Bag>
       </pdfd:claimData>
@@ -16037,17 +16037,17 @@ stream
    </dc:language>
    <dc:date>
     <rdf:Seq>
-     <rdf:li>2024-11-21T10:08:04-06:00</rdf:li>
+     <rdf:li>2024-11-23T16:43:38-06:00</rdf:li>
     </rdf:Seq>
    </dc:date>
    <dc:format>application/pdf</dc:format>
    <dc:source>thesis.tex</dc:source>
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool>
-   <xmp:CreateDate>2024-11-21T10:08:04-06:00</xmp:CreateDate>
-   <xmp:ModifyDate>2024-11-21T10:08:04-06:00</xmp:ModifyDate>
-   <xmp:MetadataDate>2024-11-21T10:08:04-06:00</xmp:MetadataDate>
+   <xmp:CreateDate>2024-11-23T16:43:38-06:00</xmp:CreateDate>
+   <xmp:ModifyDate>2024-11-23T16:43:38-06:00</xmp:ModifyDate>
+   <xmp:MetadataDate>2024-11-23T16:43:38-06:00</xmp:MetadataDate>
    <xmpMM:DocumentID>uuid:b00c471e-b0f9-4ca1-8864-69d68f8b6768</xmpMM:DocumentID>
-   <xmpMM:InstanceID>uuid:88959c26-2575-4fef-86fd-0a091ab6ecc8</xmpMM:InstanceID>
+   <xmpMM:InstanceID>uuid:6a2d8fbd-ac5e-41c8-8ed7-8b3c0cda98b3</xmpMM:InstanceID>
    <prism:complianceProfile>three</prism:complianceProfile>
    <prism:pageCount>31</prism:pageCount>
   </rdf:Description>
@@ -17127,7 +17127,7 @@ endobj
 << /Type /Namespace /NS (https://www.latex-project.org/ns/book/2022) /RoleMapNS 18 0 R  >>
 endobj
 19 0 obj
-<< /Type /Namespace /NS (data:,28685490-4AD8-DB9C-FE76-157A78164564)  >>
+<< /Type /Namespace /NS (data:,C021ED13-497E-C0B0-3879-2381237BB5BF)  >>
 endobj
 8 0 obj
 [ 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R  ]
@@ -25570,7 +25570,7 @@ xref
 0001393618 00000 n 
 0001393682 00000 n 
 trailer
-<< /Size 2724 /Root 2723 0 R /ID [ <94C3A116ACC7175AA539C8B4655B613D> <94C3A116ACC7175AA539C8B4655B613D> ] >>
+<< /Size 2724 /Root 2723 0 R /ID [ <FC1D6BB172BC966A945F9799038A684B> <FC1D6BB172BC966A945F9799038A684B> ] >>
 startxref
 1394010
 %%EOF
