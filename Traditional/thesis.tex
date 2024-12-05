@@ -1,7 +1,53 @@
 %!LW recipe=latexmk (lualatex)
+%The above command is for use with VSCode as an editor - can be deleted for others
+
+%%%%%%% Instructions %%%%%%%%%%%%%%%%%%%
+
 %Use lualatex to compile
 %Therefore, do not use amssymb, input/output enc
-% Get \@ doesn't match definition? Try deleting all auxillary files.
+% Get Error ".. \@ doesn't match definition.."? Try deleting all auxillary files.
+
+% Did you know you can have the auxillary files in a different directory?
+% If using latexmk (which you should), use command line argument of the form "-auxdir=%OUTDIR%/LatexAux" 
+% You will also need the flag "-emulate-aux-dir" if using TexLive (MikTex natively supports auxillary directories)
+% Makes deleting all of them a snap
+
+
+%% Tagging is slow
+%%
+%% Things that can be commented or uncommented in this tex file
+%% while drafting
+%% (and should be un-done before submitting)
+%% to speed-up compliation
+%% 
+%% 1. Use "\AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}"
+    %Find this commented out above DocumentMetadata
+    %This command disables a slow part of tagging
+    %May want to disable periodically to ensure tagging is working
+    %Comment out before submission
+%% 2. Use "\tagpdfsetup{
+%                  math/mathml/sources=,
+%                  math/mathml/luamml/write=false
+%                 }"
+    %Find this command commented out below DocumentMetadata
+    %This command disables math related accessiblity tagging (which is also slow)
+    %Comment out before submission
+% 3. Comment out "\usepackage[default]{fontsetup}" (unless using special characters - then you will need it)
+    %Located in the middle of the preamble
+    %This command sets up fonts to look nicer
+    %Should be active (not a comment) before submission
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Command below disables slow parts of tagging,
+%speeding up compiling during drafting stages
+%When submitting, it should be commented out
+%\AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}
+%
+
+
+
 \DocumentMetadata{
  lang=en,
  testphase={phase-III,math,table,title,firstaid},
@@ -10,11 +56,17 @@
  pdfstandard=a-4f,
  uncompress
 }
+
+%The command below disables the slow parts of tagging math, 
+%speeding up compiling
+%When submitting, it should be commented out
+% \tagpdfsetup{
+%  math/mathml/sources=,
+%  math/mathml/luamml/write=false
+% }
+
+
 \documentclass[11pt]{isuthesistagged}
-%Command below can toggle off tagging,
-%speeding up compiling during drafting stages
-%Comment out when ready to submit
-%\tagpdfsetup{activate/all=false}
 
 
 
@@ -63,6 +115,14 @@
 %Tiks? Externally generate as pdf and use includegraphics to add alt text
 %until tikz implements alt text
 %%
+
+
+%This command sets-up some nice default font choices.
+%The package fontspec can be used instead for further customization
+%Commenting out font specifications while drafting or until otherwise strictly needed
+%can speed up compilation
+%It should be active (not a comment) when submitting for fonts to look their best
+
 \usepackage[default]{fontsetup}
 
 \usepackage{unicode-math}
