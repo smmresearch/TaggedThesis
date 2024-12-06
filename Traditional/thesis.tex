@@ -72,6 +72,7 @@
 
 %Caption package & tagging fixes
 \usepackage{caption}
+\usepackage{subcaption}
 %This work-around comes from: https://github.com/latex3/tagging-project/issues/720
 \RemoveFromHook{begindocument}[latex-lab-testphase-float]
 \makeatletter
@@ -285,7 +286,7 @@ are capitalized and this is the second line}
 \printbibliography[heading=none]
 \include{Appendix/appendix1} 
 % % Instruction for single appendix check instruction in Appendix/appendix1.tex on top of the file
-% \include{Appendix/appendix2}
+\include{Appendix/appendix2}
 
 \end{document}
 

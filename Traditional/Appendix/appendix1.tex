@@ -2,15 +2,15 @@
 
 % Use these lines for multiple appendices
 
-% \appendixtitle 
-% \appendix
+\appendixtitle 
+\appendix
 
 %%%%%%%%%%%
 
 %Use these lines instead for a single appendix
-\unappendixtitle
-\singleappendixtitle
-\bookmarksetup{numbered=false}
+% \unappendixtitle
+% \singleappendixtitle
+% \bookmarksetup{numbered=false}
 %%%%%%%%%%
 
 \chapter{ADDITIONAL MATERIAL} 
@@ -39,4 +39,16 @@ with the *-form of a sectioning command.
 \vspace{ 2 in}
 \end{table}
 Supplemental material.
+\begin{figure}[b]
+	\begin{subfigure}[c]{0.495\textwidth}
+	\centering\includegraphics[alt={sample image},width=0.99\textwidth]{example-image-c}%
+	\subcaption{\label{fig:2a}}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.495\textwidth}
+	\centering{\includegraphics[alt={sample image},width=0.99\textwidth]{example-image-c}}%
+	\subcaption{\label{fig:2b}}%
+	\end{subfigure}%
+	\caption{A figure with two subfigures: (a) first subfigure; (b) second subfigure.\label{fig:2}}
+\end{figure}
+
 
