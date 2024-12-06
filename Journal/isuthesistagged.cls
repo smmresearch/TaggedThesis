@@ -1,13 +1,16 @@
-% isuthesis class based on isuthesis1file style file
+% based on isuthesis style file
+% Revision 2.0 2024 - Tagged thesis 
+% -- Sarah McCarty
 % Revision 1.03 11/02/14 13:51:00  jastruss
 % -- Joe Struss (2011/2/14)
 % Revision 1.02 11/01/08 13:12:00  jastruss
 % -- Joe Struss (2011/1/8)
 %%
-%% LaTeX document package `isuthesis', for use with LaTeX2e.
+%% LaTeX document package `isuthesistagged', for use with LaTeX2e.
 %% This is a package that is used with the report class to
 %%   create a thesis at Iowa State University.
 %%
+%% Copyright from original isuthesis file:
 %% COPYRIGHT 2011, by Joe Struss (jastruss@iastate.edu)
 %%
 %% Copying of part or all of any file in the iastatethesis class
@@ -25,10 +28,10 @@
 %% a nominal charge for copying etc.
 %%
 
-\def\fileversion{1.03}
-\def\filedate{2011/02/14}
+\def\fileversion{2.0}
+\def\filedate{2024/02/14}
 \typeout{%
-  Document Class: isuthesis \filedate \space v\fileversion \space (Joe Struss)}
+  Document Class: isuthesistagged \filedate \space v\fileversion \space (v1 by Joe Struss)}
 
 
 \NeedsTeXFormat{LaTeX2e}
