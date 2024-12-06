@@ -909,8 +909,6 @@ For the Major Program\fi\fi}
     \def\@chapapp{}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{}}
-    \renewcommand{\chapterTitleWithSpaceBeforeNum}{CHAPTER }
-   %\renewcommand{\appendixname}{}
    }
 % %%%%
 
