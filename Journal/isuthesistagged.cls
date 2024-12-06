@@ -104,7 +104,7 @@
 \fancyfoot[L,C,R]{}
 
 %Following command adds numberless chapters
-%to the table of contents correctly while being compatible with tagging
+%to the TOC correctly while being compatible with tagging
 \let\@tempchapapp=\@chapapp
 \newcommand{\addToTOCWithoutChapter}[1]{%
   \addtocontents{toc}{\def\protect\@chapapp{}}%
@@ -138,7 +138,9 @@
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Format the section title appropriately (while being compatible with tagging)
-\titleformat{\chapter}[block]{\large\centering\bfseries}{CHAPTER \thechapter.}{12pt}{}
+\newcommand{\chapterTitleWithSpaceBeforeNum}{CHAPTER }
+
+\titleformat{\chapter}[block]{\large\centering\bfseries}{\chapterTitleWithSpaceBeforeNum\thechapter.}{12pt}{}
 \titlespacing{\chapter}{0pt}{0in}{0.6in}
 \titleformat{\section}[block]{\large\centering\bfseries}{\thesection}{.5em}{}
 \titlespacing{\section}{0pt}{*3}{2.3ex \@plus.2ex}
@@ -152,7 +154,7 @@
 \titlespacing{\subparagraph}{0.25in}{*3}{1.5ex \@plus .2ex}
 %Formatting Part breaks the TOC implementation as of 2024, hence why it is patched instead
 %%%%%%%%%%%%%%%
-
+%%%%%%%%%%
 
 \usepackage{setspace}
 
@@ -375,17 +377,17 @@
 
 % SINGLE APPENDIX
 %
-\newif\if@singleappendix \@singleappendixfalse
-\def\singleappendix{\par
-    \@singleappendixtrue
-    \def\@chapapp{APPENDIX}
-    \def\thechapter{}
-    \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
-    \setcounter{chapter}{0}
-    \setcounter{section}{0}
-    \def\theequation{A.\arabic{equation}}
-    \def\thetable{A.\@arabic\c@table}
-    \def\thefigure{A.\@arabic\c@figure}}
+% \newif\if@singleappendix \@singleappendixfalse
+% \def\singleappendix{\par
+%     \@singleappendixtrue
+%     \def\@chapapp{APPENDIX}
+%     \def\thechapter{}
+%     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
+%     \setcounter{chapter}{0}
+%     \setcounter{section}{0}
+%     \def\theequation{A.\arabic{equation}}
+%     \def\thetable{A.\@arabic\c@table}
+%     \def\thefigure{A.\@arabic\c@figure}}
 
 % SUPERSCRIPTS AND SUBSCRIPTS
 % Declaration which causes superscripts and subscripts to be output at normal
@@ -877,7 +879,11 @@ For the Major Program\fi\fi}
     \def\@chapapp{APPENDIX}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX\ }}
-   \renewcommand{\appendixname}{APPENDIX\ }}
+   %\renewcommand{\appendixname}{APPENDIX\ }
+   \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX\ }
+   }
+
+
 
 % USE THE following instead of \appendixtitle for singleappendix
 % first \unappendixtitle
@@ -886,7 +892,15 @@ For the Major Program\fi\fi}
     \def\@chapapp{APPENDIX}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
-   \renewcommand{\appendixname}{APPENDIX\ }}
+   %\renewcommand{\appendixname}{APPENDIX\ }
+   \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX}
+   %Single appendix has no number, hence no space
+   \setcounter{chapter}{0}
+   \setcounter{section}{0}
+   \def\theequation{A.\arabic{equation}}
+   \def\thetable{A.\@arabic\c@table}
+   \def\thefigure{A.\@arabic\c@figure}
+}
 
 % Resets appendix command so the word APPENDIX appears
 % after unsetting chaptername
@@ -895,7 +909,9 @@ For the Major Program\fi\fi}
     \def\@chapapp{}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{}}
-   \renewcommand{\appendixname}{}}
+    \renewcommand{\chapterTitleWithSpaceBeforeNum}{CHAPTER }
+   %\renewcommand{\appendixname}{}
+   }
 % %%%%
 
 % %\usepackage{threeparttop}

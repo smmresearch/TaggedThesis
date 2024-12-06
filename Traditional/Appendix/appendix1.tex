@@ -1,19 +1,37 @@
 % Appendix1 file from standard thesis template
 
-\appendixtitle 
-\appendix
+% \appendixtitle 
+% \appendix
 
-
-%% Use the following two lines for single appendix
-%\unappendixtitle
-%\singleappendixtitle
+%Use these lines instead for a single appendix
+\unappendixtitle
+\singleappendixtitle
+\bookmarksetup{numbered=false}
 
 \chapter{ADDITIONAL MATERIAL} 
+
+
 This is now the same as any other chapter except that
 all sectioning levels below the chapter level must begin
 with the *-form of a sectioning command.
 
 \section*{More stuff}
+\begin{equation}
+    x^2+z=yz
+\end{equation}
+\begin{figure}
+    \caption{Something something.}
+\end{figure}
+\begin{table}[h!tb] \centering
+    \caption[This table shows a standard non-empty table. Please check the code caption for extended instructions]{This table shows a standard empty table. In case of long captions, we want to use the long caption as the description to the table and image but not use it in the table of contents and list of figures/ tables. In order to do this, there are two captions which have been provided, remove the first square bracket options if there is only one small caption. You can use citations like this to}
+    \begin{tabular}{ll}
+        Bach            &Cello Suite Number 1  \\
+        Beethoven       &Cello Sonata Number 3 \\
+        Brahms          &Cello Sonata Number 1
+      \end{tabular}
+\label{nothingagain}
 
+\vspace{ 2 in}
+\end{table}
 Supplemental material.
 

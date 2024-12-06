@@ -275,14 +275,15 @@ are capitalized and this is the second line}
 \include{Body/chapter1}
 \include{Body/chapter2}
 \include{Body/chapter3}
+\part{Let's have a part page}
 \include{Body/chapter4}
 \include{Body/chapter5}
-
+%Pulls the appendices and bibliography out of any Parts
+\bookmarksetup{startatroot}
 \chapter*{BIBLIOGRAPHY}
 \addToTOCWithoutChapter{BIBLIOGRAPHY}
 \printbibliography[heading=none]
-
-%\include{Appendix/appendix1} 
+\include{Appendix/appendix1} 
 % % Instruction for single appendix check instruction in Appendix/appendix1.tex on top of the file
 % \include{Appendix/appendix2}
 
