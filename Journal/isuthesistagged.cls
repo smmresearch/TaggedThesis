@@ -556,7 +556,7 @@ For the Major Program\fi\fi}
 \def\members#1{\def\@members{\\#1}}
 \def\@members{}
 
-\def\disclaimertitlepage#1{\def\@disclaimertitlepage{#1}}
+\def\disclaimertitlepage{\def\@disclaimertitlepage{The student author, whose presentation of the scholarship herein was approved by the program of study committee, is solely responsible for the content of this \@format{}. The Graduate College will ensure this \@format{} is globally accessible and will not permit alterations after a degree is conferred.}}
 \def\@disclaimertitlepage{}
 
 \newcount\@linecount
