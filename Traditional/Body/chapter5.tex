@@ -44,10 +44,13 @@ truly obvious what I am saying is true.
             sideways table and takes up a whole page by itself}
         \label{nothingelse}
         % Use: \begin{tabular{|lcc|} to put table in a box
+        %use \tagpdfsetup{table/tagging=presentation} if and only if the table
+        %is for alignment/presentation purposes and is not a real table
+        %
         %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
         \tagpdfsetup{table/header-rows={1}}
         %Use \tagpdfsetup{table/header-columns={}} for header columns instead
-        %Put \tagpdfsetup{table/multirow={⟨number of rows comma separated ⟩} in cells spanning multiple rows
+        %Put \tagpdfsetup{table/multirow={⟨number of rows⟩} in cells spanning multiple rows
         \begin{tabular}{lcc} \hline
             \textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
             Moon Rings       & 1.23             & 3.38                  \\

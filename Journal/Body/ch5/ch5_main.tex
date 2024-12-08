@@ -32,20 +32,23 @@ Of course, data on this as seen in \autoref{data}
 is few and far between.
 
 \begin{table}[h!tb] \centering
-\caption{Moon Data}
-\label{data}
-% Use: \begin{tabular{|lcc|} to put table in a box
-%this command denotes which rows are headers
-%\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
-\tagpdfsetup{table/header-rows={1}}
-%Use \tagpdfsetup{table/header-columns={}} for header columns instead
-%Put \tagpdfsetup{table/multirow={⟨number of rows comma separated ⟩} in cells spanning multiple rows
-\begin{tabular}{lcc} \hline
-\textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
-Moon Rings & 1.23 & 3.38 \\
-Moon Tides & 2.26 & 3.12 \\
-Moon Walk & 3.33 & 9.29 \\ \hline
-\end{tabular}
+    \caption{Moon Data}
+    \label{data}
+    % Use: \begin{tabular{|lcc|} to put table in a box
+    %
+    %use \tagpdfsetup{table/tagging=presentation} if and only if the table
+    %is for alignment/presentation purposes and is not a real table
+    %
+    %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
+    \tagpdfsetup{table/header-rows={1}}
+    %Use \tagpdfsetup{table/header-columns={}} for header columns instead
+    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩} in cells spanning multiple rows
+    \begin{tabular}{lcc} \hline
+        \textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
+        Moon Rings & 1.23 & 3.38 \\
+        Moon Tides & 2.26 & 3.12 \\
+        Moon Walk & 3.33 & 9.29 \\ \hline
+    \end{tabular}
 \end{table}
 
 
