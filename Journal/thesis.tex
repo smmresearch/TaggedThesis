@@ -200,7 +200,7 @@ are capitalized and this is the second line}
 \captionsetup[table]{listformat=tableList}
 \captionsetup[ContinuedFloat]{list=no}
 
-%Gets rid of footnote rule(line)
+%The command below can be used to get rid of footnote rule(line)
 %\renewcommand*\footnoterule{}
 
 \begin{document}
@@ -276,3 +276,27 @@ are capitalized and this is the second line}
 \pagebreak
 \end{document}
 
+% IMPORTANT NOTES
+% TABLE OF CONTENTS :
+% TOPIC 1:  If you need a page break follow the steps below
+% step1
+% check before which chapter in the table of contents you want a page break
+% step 2
+% go the folder "body". There open the chapter tex file that you noted needed page break in the table of contents..
+% step 3
+% insert  \addtocontents{toc}{\protect\newpage} before the first line i.e. before the line \chapter{RESULTS}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \def\@makechapterhead#1{%   
+% IN ORDER TO MAKE spacing changes in the title page got to the section in the isuthesis.cls file
+% that starts with \long\def\maketitle{\begin{titlepage} and you can use options like
+% singlespace (less spacing)
+%singlespacing (comparitively more spacing almost like 2 spacing)
+% onehalfspacing
+%doublespacing (this is more spacing than the singlespacing above )
+% more definitions on spacing can be found by going through the class file
+
+
+% use \caption{} for all captions of figures and tables, where the captions are not too long.
+
+% Use \caption[]{} with the square brackets for short caption of figure or table that goes into the list of tables and list of figures, and the curly brackets can have long captions which go with the figure/ table.
