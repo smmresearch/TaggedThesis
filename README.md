@@ -1,3 +1,5 @@
+Tagging is slow - do the vast majority of the writing in a separate document (with all your usual presets) before copying over for finishing touches.
+
 Official list of packages compatible with tagging: https://latex3.github.io/tagging-project/tagging-status/
 The list is pessimistic - some packages labeled as incompatible have workarounds or cause only less-than-ideal tagging.
 
