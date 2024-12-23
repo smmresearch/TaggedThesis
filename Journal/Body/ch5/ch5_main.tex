@@ -42,15 +42,15 @@ is few and far between.
     %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
     \tagpdfsetup{table/header-rows={1}}
     %Use \tagpdfsetup{table/header-columns={}} for header columns instead
-    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩} in cells spanning multiple rows
+    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩}} in cells spanning multiple rows
+    %Note, multicolumn works automatically (no extra commands necessary)
     \begin{tabular}{lcc} \hline
         \textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
-        Moon Rings & 1.23 & 3.38 \\
-        Moon Tides & 2.26 & 3.12 \\
-        Moon Walk & 3.33 & 9.29 \\ \hline
+        Moon Rings       & 1.23             & 3.38                  \\
+        Moon Tides       & 2.26             & 3.12                  \\
+        Moon Walk        & 3.33             & 9.29                  \\ \hline
     \end{tabular}
 \end{table}
-
 
 \subsection{Hypothesis}
 
@@ -62,15 +62,15 @@ it is certain that my hypothesis is true.
 
 \begin{figure}[h!tb] \centering
 
-\includegraphics[alt={Here is some alt text}]{Images/dc5}
+    \includegraphics[alt={Here is some alt text}]{Images/dc5}
 
-\caption{Durham Centre}
-\label{mgraph}
+    \caption{Durham Centre}
+    \label{mgraph}
 \end{figure}
 
 \subsubsection{Parts of the hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 
@@ -84,7 +84,7 @@ and is examined in the light of current literature.
 
 \subsubsection{Parts of the second hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 
@@ -103,7 +103,6 @@ The conclusion of the paper goes here.
 % Reference section comes before the appendix
 
 \printbibliography[heading=subbibnumbered]
-
 
 %%%%%
 %% Appendix

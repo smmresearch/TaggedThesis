@@ -1,6 +1,6 @@
 % Chapter 4 from the standard thesis template
 %   that contains an adv. example table and figure.
- %\addtocontents{toc}{\protect\newpage}
+%\addtocontents{toc}{\protect\newpage}
 \chapter{RESULTS}
 
 This is the opening paragraph to my thesis which
@@ -19,7 +19,7 @@ Of course, data on this as seen in \autoref{data}
 is few and far between.
 
 \begin{table}[h!tb] \centering
-\caption{Moon Data}
+    \caption{Moon Data}
     \label{data}
     % Use: \begin{tabular{|lcc|} to put table in a box
     %use \tagpdfsetup{table/tagging=presentation} if and only if the table
@@ -28,15 +28,15 @@ is few and far between.
     %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
     \tagpdfsetup{table/header-rows={1}}
     %Use \tagpdfsetup{table/header-columns={}} for header columns instead
-    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩} in cells spanning multiple rows
+    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩}} in cells spanning multiple rows
+    %Note, multicolumn works automatically (no extra commands necessary)
     \begin{tabular}{lcc} \hline
-    \textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
-    Moon Rings & 1.23 & 3.38 \\
-    Moon Tides & 2.26 & 3.12 \\
-    Moon Walk & 3.33 & 9.29 \\ \hline
+        \textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
+        Moon Rings       & 1.23             & 3.38                  \\
+        Moon Tides       & 2.26             & 3.12                  \\
+        Moon Walk        & 3.33             & 9.29                  \\ \hline
     \end{tabular}
 \end{table}
-
 
 \subsection{Hypothesis}
 
@@ -48,15 +48,15 @@ it is certain that my hypothesis is true.
 
 \begin{figure}[h!tb] \centering
 
-\includegraphics[alt={Picture of Durham you know}]{Images/dc5}
+    \includegraphics[alt={Picture of Durham you know}]{Images/dc5}
 
-\caption{Durham Centre}
-\label{mgraph}
+    \caption{Durham Centre}
+    \label{mgraph}
 \end{figure}
 
 \subsubsection{Parts of the hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 
@@ -70,7 +70,7 @@ and is examined in the light of current literature.
 
 \subsubsection{Parts of the second hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 

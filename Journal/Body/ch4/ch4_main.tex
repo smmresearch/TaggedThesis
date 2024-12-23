@@ -32,7 +32,6 @@ several hypothesis are mentioned in brief.
 As can be seen in \autoref{nothing} it is truly
 obvious what I am saying is true.
 
-
 \begin{table}[h!tb] \centering
     \caption[This table shows a standard non-empty table. Please check the code caption for extended instructions]{This table shows a standard empty table. In case of long captions, we want to use the long caption as the description to the table and image but not use it in the table of contents and list of figures/ tables. In order to do this, there are two captions which have been provided, remove the first square bracket options if there is only one small caption. You can use citations like this to}
     %use \tagpdfsetup{table/tagging=presentation} if and only if the table
@@ -41,16 +40,17 @@ obvious what I am saying is true.
     %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
     \tagpdfsetup{table/header-rows={1}}
     %Use \tagpdfsetup{table/header-columns={}} for header columns instead
-    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩} in cells spanning multiple rows
+    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩}} in cells spanning multiple rows
+    %Note, multicolumn works automatically (no extra commands necessary)
 
     \begin{tabular}{ll}
-        Bach            &Cello Suite Number 1  \\
-        Beethoven       &Cello Sonata Number 3 \\
-        Brahms          &Cello Sonata Number 1
-      \end{tabular}
-\label{nothing}
+        Bach      & Cello Suite Number 1  \\
+        Beethoven & Cello Sonata Number 3 \\
+        Brahms    & Cello Sonata Number 1
+    \end{tabular}
+    \label{nothing}
 
-\vspace{ 2 in}
+    \vspace{ 2 in}
 \end{table}
 
 \subsection{Hypothesis}
@@ -63,14 +63,14 @@ rest is obvious.
 
 \begin{figure}[h!tb] \centering
 
-\vspace{ 2 in}
-\caption{This table shows a standard empty figure}
-\label{moon}
+    \vspace{ 2 in}
+    \caption{This table shows a standard empty figure}
+    \label{moon}
 \end{figure}
 
 \subsubsection{Parts of the hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 
@@ -84,7 +84,7 @@ and is examined in the light of current literature.
 
 \subsubsection{Parts of the second hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 
@@ -96,11 +96,11 @@ leading to a foregone conclusion as can be seen in
 \autoref{nevermore}.
 
 \begin{table}[h!tb] \centering
-\captionsetup{width=2in}
-\caption{This table shows a standard empty table with a limited caption width}
-\label{nevermore}
+    \captionsetup{width=2in}
+    \caption{This table shows a standard empty table with a limited caption width}
+    \label{nevermore}
 
-\vspace{ 2 in}
+    \vspace{ 2 in}
 \end{table}
 \section{Continuing Tables}
 Note, tables with cells spanning multiple columns work automatically, but cells spanning multiple rows require extra tagging.
@@ -113,45 +113,47 @@ Note, tables with cells spanning multiple columns work automatically, but cells 
     %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
     \tagpdfsetup{table/header-rows={1}}
     %Use \tagpdfsetup{table/header-columns={}} for header columns instead
-    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩} in cells spanning multiple rows
+    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩}} in cells spanning multiple rows
+    %Note, multicolumn works automatically (no extra commands necessary)
+
     \begin{tabular}{rrrlrrrr}
-        k      & q          & p+ & p- & s1        & s2         & s3          & RHS       \\ \hline
-        2      & 2          & 2  & 1 & 1         & 0          & 0           & 1         \\
-        -T     & 0          & 1  & 1 & 0         & 1          & 0           & 0         \\
-        T      & -1         & 0  & 1 & 0         & 0          & 1           & 0         \\
-        -1     & 1          & -1 & 1 &           &            &             &           \\ \hline
-        2(T+1) & 2          & 0  & 1 & 1         & -2         & 0           & 1         \\ \hline
-        -T     & 0          & 1  & 1 & 0         & 1          & 0           & 0         \\
-        T      & -1         & 0  & 1 & 0         & 0          & 1           & 0         \\
-        -(T+1) & 1          & 0  & 1 & 0         & 1          & 0           &           \\ \hline
-        0      & 2+2(T+1)/T & 0  & 1 & 1         & -2         & -2(T+1)/T   & 1         \\ \hline
-        0      & -1         & 1  & 1 & 0         & 1          & 1           & 0         \\
-        1      & -1/T       & 0  & 1 & 0         & 0          & 1/T         & 0         \\
-        0      & 1-(T+1)/T  & 0  & 1 & 0         & 1          & (T+1)/T     &           \\ \hline
-        0      & 2(2T+1)/T  & 0  & 1 & 1         & -2         & -2(T+1)/T   & 1         \\ \hline
-        0      & -1         & 1  & 1 & 0         & 1          & 1           & 0         \\
-        1      & -1/T       & 0  & 1 & 0         & 0          & 1/T         & 0         \\
-        0      & -1/T       & 0  & 1 & 0         & 1          & (T+1)/T     &           \\ \hline
-        0      & 1          & 0  & 1 & T/2(2T+1) & -T/(2T+1)  & -1          & T/2(2T+1) \\ \hline
-        0      & 0          & 1  & 1 & T/2(2T+1) & 1-T/(2T+1) & 0           & T/2(2T+1) \\
-        1      & 0          & 0  & 1 & 1/2(2T+1) & -1/(2T+1)  & 0           & 1/2(2T+1) \\ \hline
-        0      & 0          & 0  & 1 & 1/2(2T+1) & 1-1/(2T+1) & -1+(T+1)/TT &           \\ \hline
-        0      & 0          & 0  & 1 & 1/2(2T+1) & 1-1/(2T+1) & -1+(T+1)/TT &           \\ \hline
-        0      & 0          & 0  & 0                      & \tagpdfsetup{table/multirow={8}}\multirow{8}{*}{1/2(2T+1)} &  \tagpdfsetup{table/multirow={8}}\multirow{8}{*}{1/2(2T+1)} &  \tagpdfsetup{table/multirow={8}}\multirow{8}{*}{1/2(2T+1)} &           \\ \cline{1-4}
-        0      & 0          & 0  & 0                      &  &  &  &           \\ \cline{1-4}
-        0      & 0          & 0  & 0                      &  &  &  &           \\ \cline{1-4}
-        0      & 0          & 0  & 0                      &  &  &  &           \\ \cline{1-4}
-        0      & 0          & 0  & 0                      &  &  &  &           \\ \cline{1-4}
-        0      & 0          & 0  & 0                      &  &  &  &           \\ \cline{1-4}
-        0      & 0          & 0  & 0                      &  &  &  &           \\ \cline{1-4}
-        0      & 0          & 0  & 0                      &  &  &  &           \\ \hline
-        \end{tabular}
-        \end{table}
-    \begin{table}[ht]
-        %As a continued table, use \ContinuedFloat to keep the same #
-        %And use the text "Continued" inside the caption
-        \ContinuedFloat
-        \caption{Continued}
+        k      & q          & p+ & p- & s1                                                         & s2                                                         & s3                                                         & RHS       \\ \hline
+        2      & 2          & 2  & 1  & 1                                                          & 0                                                          & 0                                                          & 1         \\
+        -T     & 0          & 1  & 1  & 0                                                          & 1                                                          & 0                                                          & 0         \\
+        T      & -1         & 0  & 1  & 0                                                          & 0                                                          & 1                                                          & 0         \\
+        -1     & 1          & -1 & 1  &                                                            &                                                            &                                                            &           \\ \hline
+        2(T+1) & 2          & 0  & 1  & 1                                                          & -2                                                         & 0                                                          & 1         \\ \hline
+        -T     & 0          & 1  & 1  & 0                                                          & 1                                                          & 0                                                          & 0         \\
+        T      & -1         & 0  & 1  & 0                                                          & 0                                                          & 1                                                          & 0         \\
+        -(T+1) & 1          & 0  & 1  & 0                                                          & 1                                                          & 0                                                          &           \\ \hline
+        0      & 2+2(T+1)/T & 0  & 1  & 1                                                          & -2                                                         & -2(T+1)/T                                                  & 1         \\ \hline
+        0      & -1         & 1  & 1  & 0                                                          & 1                                                          & 1                                                          & 0         \\
+        1      & -1/T       & 0  & 1  & 0                                                          & 0                                                          & 1/T                                                        & 0         \\
+        0      & 1-(T+1)/T  & 0  & 1  & 0                                                          & 1                                                          & (T+1)/T                                                    &           \\ \hline
+        0      & 2(2T+1)/T  & 0  & 1  & 1                                                          & -2                                                         & -2(T+1)/T                                                  & 1         \\ \hline
+        0      & -1         & 1  & 1  & 0                                                          & 1                                                          & 1                                                          & 0         \\
+        1      & -1/T       & 0  & 1  & 0                                                          & 0                                                          & 1/T                                                        & 0         \\
+        0      & -1/T       & 0  & 1  & 0                                                          & 1                                                          & (T+1)/T                                                    &           \\ \hline
+        0      & 1          & 0  & 1  & T/2(2T+1)                                                  & -T/(2T+1)                                                  & -1                                                         & T/2(2T+1) \\ \hline
+        0      & 0          & 1  & 1  & T/2(2T+1)                                                  & 1-T/(2T+1)                                                 & 0                                                          & T/2(2T+1) \\
+        1      & 0          & 0  & 1  & 1/2(2T+1)                                                  & -1/(2T+1)                                                  & 0                                                          & 1/2(2T+1) \\ \hline
+        0      & 0          & 0  & 1  & 1/2(2T+1)                                                  & 1-1/(2T+1)                                                 & -1+(T+1)/TT                                                &           \\ \hline
+        0      & 0          & 0  & 1  & 1/2(2T+1)                                                  & 1-1/(2T+1)                                                 & -1+(T+1)/TT                                                &           \\ \hline
+        0      & 0          & 0  & 0  & \tagpdfsetup{table/multirow={8}}\multirow{8}{*}{1/2(2T+1)} & \tagpdfsetup{table/multirow={8}}\multirow{8}{*}{1/2(2T+1)} & \tagpdfsetup{table/multirow={8}}\multirow{8}{*}{1/2(2T+1)} &           \\ \cline{1-4}
+        0      & 0          & 0  & 0  &                                                            &                                                            &                                                            &           \\ \cline{1-4}
+        0      & 0          & 0  & 0  &                                                            &                                                            &                                                            &           \\ \cline{1-4}
+        0      & 0          & 0  & 0  &                                                            &                                                            &                                                            &           \\ \cline{1-4}
+        0      & 0          & 0  & 0  &                                                            &                                                            &                                                            &           \\ \cline{1-4}
+        0      & 0          & 0  & 0  &                                                            &                                                            &                                                            &           \\ \cline{1-4}
+        0      & 0          & 0  & 0  &                                                            &                                                            &                                                            &           \\ \cline{1-4}
+        0      & 0          & 0  & 0  &                                                            &                                                            &                                                            &           \\ \hline
+    \end{tabular}
+\end{table}
+\begin{table}[ht]
+    %As a continued table, use \ContinuedFloat to keep the same #
+    %And use the text "Continued" inside the caption
+    \ContinuedFloat
+    \caption{Continued}
     %
     %use \tagpdfsetup{table/tagging=presentation} if and only if the table
     %is for alignment/presentation purposes and is not a real table
@@ -159,9 +161,10 @@ Note, tables with cells spanning multiple columns work automatically, but cells 
     %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
     \tagpdfsetup{table/header-rows={1}}
     %Use \tagpdfsetup{table/header-columns={}} for header columns instead
-    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩} in cells spanning multiple rows
+    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩}} in cells spanning multiple rows
+    %Note, multicolumn works automatically (no extra commands necessary)
 
-        \begin{tabular}{rrrlrrrr}
+    \begin{tabular}{rrrlrrrr}
         k      & q          & p+ & \multicolumn{1}{r}{p-} & s1        & s2         & s3          & RHS       \\ \hline
         2      & 2          & 2  & \multicolumn{1}{r}{-2} & 1         & 0          & 0           & 1         \\
         -T     & 0          & 1  & -1                     & 0         & 1          & 0           & 0         \\
@@ -183,8 +186,8 @@ Note, tables with cells spanning multiple columns work automatically, but cells 
         0      & 0          & 1  & \multicolumn{1}{r}{-1} & T/2(2T+1) & 1-T/(2T+1) & 0           & T/2(2T+1) \\
         1      & 0          & 0  & \multicolumn{1}{r}{0}  & 1/2(2T+1) & -1/(2T+1)  & 0           & 1/2(2T+1) \\ \hline
         0      & 0          & 0  & 0                      & 1/2(2T+1) & 1-1/(2T+1) & -1+(T+1)/TT &           \\ \hline
-        \end{tabular}
-        \end{table}
+    \end{tabular}
+\end{table}
 
 \section{Results}
 Include any results

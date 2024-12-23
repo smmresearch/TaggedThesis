@@ -19,10 +19,10 @@ obvious what I am saying is true.
 
 \begin{table}[h!tb] \centering
 
-\caption[Short caption for List of Figures/ Tables]{This table shows a standard empty table \autocite{kleeHellyTheoremIts1963}. Remove the square bracketed information to get longer captions in the LOT/ LOF }
-\label{nothing}
+    \caption[Short caption for List of Figures/ Tables]{This table shows a standard empty table \autocite{kleeHellyTheoremIts1963}. Remove the square bracketed information to get longer captions in the LOT/ LOF }
+    \label{nothing}
 
-\vspace{ 2 in}
+    \vspace{ 2 in}
 \end{table}
 
 \subsection{Hypothesis}
@@ -35,14 +35,14 @@ rest is obvious.
 
 \begin{figure}[h!tb] \centering
 
-\includegraphics[alt={Alt text describing}]{Images/dc5.jpg}
-\caption[Short caption for List of Figures/ Tables]{This table shows a standard empty figure. Remove the square bracketed information to get longer captions in the LOT/ LOF}
-\label{moon}
+    \includegraphics[alt={Alt text describing}]{Images/dc5.jpg}
+    \caption[Short caption for List of Figures/ Tables]{This table shows a standard empty figure. Remove the square bracketed information to get longer captions in the LOT/ LOF}
+    \label{moon}
 \end{figure}
 
 \subsubsection{Parts of the hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 
@@ -56,7 +56,7 @@ and is examined in the light of current literature.
 
 \subsubsection{Parts of the second hypothesis}
 
-Here one particular part of the hypothesis that is 
+Here one particular part of the hypothesis that is
 currently being explained is examined and particular
 elements of that part are given careful scrutiny.
 
@@ -69,20 +69,21 @@ leading to a foregone conclusion as can be seen in
 \begin{table}[h!tb] \centering
     \captionsetup{width=2in}
     \caption{This table shows a standard table with a limited caption width}
-        %
+    %
     %use \tagpdfsetup{table/tagging=presentation} if and only if the table
     %is for alignment/presentation purposes and is not a real table
     %
     %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows
     \tagpdfsetup{table/header-rows={1}}
     %Use \tagpdfsetup{table/header-columns={}} for header columns instead
-    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩} in cells spanning multiple rows
+    %Put \tagpdfsetup{table/multirow={⟨number of rows⟩}} in cells spanning multiple rows
+    %Note, multicolumn works automatically (no extra commands necessary)
 
     \begin{tabular}{c|c|c}
-        Header & head  & head\\ 
-        leg & leg & leg \\
-        leg & leg & leg \\
-        leg & leg & leg \\
+        Header & head & head \\
+        leg    & leg  & leg  \\
+        leg    & leg  & leg  \\
+        leg    & leg  & leg  \\
     \end{tabular}
     \label{nevermore}
     \vspace{ 2 in}
