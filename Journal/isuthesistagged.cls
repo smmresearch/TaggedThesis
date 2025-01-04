@@ -31,8 +31,7 @@
 \def\fileversion{2.0}
 \def\filedate{2024/02/14}
 \typeout{%
-  Document Class: isuthesistagged \filedate \space v\fileversion \space (v1 by Joe Struss)}
-
+    Document Class: isuthesistagged \filedate \space v\fileversion \space (v1 by Joe Struss)}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{isuthesistagged}[2011/02/14]
@@ -42,7 +41,6 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
 \LoadClass{report}
-
 
 %%%%
 % 2024 Additions for new requirements and modern conveniences
@@ -55,32 +53,32 @@
 %adds a Period to the numberline
 \newcommand{\numberlineP}[1]{\numberline{#1.}}
 \xpatchcmd{\@chapter}% <cmd>
-  {\numberline}% <search>
-  {\numberlineP}% <replace>
-  {}{}% <success><failure>
+{\numberline}% <search>
+{\numberlineP}% <replace>
+{}{}% <success><failure>
 \xpatchcmd{\@part}% <cmd>
-  {\thepart}% <search>
-  {PART \thepart}% <replace>
-  {}{}% <success><failure>\makeatother
+{\thepart}% <search>
+{PART \thepart}% <replace>
+{}{}% <success><failure>\makeatother
 \xpatchcmd{\@part}% <cmd>
-  {\huge}% <search>
-  {\Large}% <replace>
-  {}{}% <success><failure>\makeatother
+{\huge}% <search>
+{\Large}% <replace>
+{}{}% <success><failure>\makeatother
 \xpatchcmd{\@part}% <cmd>
-  {\Huge}% <search>
-  {\Large}% <replace>
-  {}{}% <success><failure>\makeatother
+{\Huge}% <search>
+{\Large}% <replace>
+{}{}% <success><failure>\makeatother
 \xpatchcmd{\@spart}% <cmd>
-  {\Huge}% <search>
-  {\Large}% <replace>
-  {}{}% <success><failure>\makeatother
+{\Huge}% <search>
+{\Large}% <replace>
+{}{}% <success><failure>\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %footnote without a number
 \newcommand\blfootnote[1]{%
-  \begingroup
-  \renewcommand\thefootnote{}\footnote{#1}%
-  \addtocounter{footnote}{-1}%
-  \endgroup
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}%
+    \addtocounter{footnote}{-1}%
+    \endgroup
 }
 \newcommand{\twoLineTitle}[2]{
     \newcommand{\titleWithLineBreak}{#1\\#2}
@@ -98,35 +96,32 @@
 %to the TOC correctly while being compatible with tagging
 \let\@tempchapapp=\@chapapp
 \newcommand{\addToTOCWithoutChapter}[1]{%
-  \addtocontents{toc}{\def\protect\@chapapp{}}%
-  \MakeLinkTarget[specialchapt]{}%
-  \addcontentsline{toc}{chapter}{#1}%
-  \addtocontents{toc}{\def\protect\@chapapp{\@tempchapapp}}
+    \addtocontents{toc}{\def\protect\@chapapp{}}%
+    \MakeLinkTarget[specialchapt]{}%
+    \addcontentsline{toc}{chapter}{#1}%
+    \addtocontents{toc}{\def\protect\@chapapp{\@tempchapapp}}
 }
-
-
 
 \usepackage{titlesec}
 %% Patches needed for titlesec to work with tagging in 2024
 % Will likely be natively supported by the package/Latex
 % See this issue: https://github.com/latex3/tagging-project/issues/24
 
+\patchcmd\ttl@straight@ii
+{\@svsechd\unskip}
+{\@svsechd\unskip\tagtool {sec-split-para}}
+{}{\fail}
 
 \patchcmd\ttl@straight@ii
-  {\@svsechd\unskip}
-  {\@svsechd\unskip\tagtool {sec-split-para}}
-  {}{\fail}
-
-\patchcmd\ttl@straight@ii
-  {\@afterheading}
-  {\tagtool{restore-para}\@afterheading}
-  {}{\fail}
+{\@afterheading}
+{\tagtool{restore-para}\@afterheading}
+{}{\fail}
 
 \patchcmd\ttl@straight@i
-  {\par}
-  {\par\tagtool{sec-start=#1}\tagtool{para}}
-  {}{\fail}
- 
+{\par}
+{\par\tagtool{sec-start=#1}\tagtool{para}}
+{}{\fail}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Format the section title appropriately (while being compatible with tagging)
 \newcommand{\chapterTitleWithSpaceBeforeNum}{CHAPTER }
@@ -196,45 +191,45 @@
 % Declaration which causes superscripts and subscripts to be output at normal
 % text size
 \def\bigscript{
-  \scriptfont0=\textfont0
-  \scriptscriptfont0=\textfont0
-  \scriptfont1=\textfont1
-  \scriptscriptfont1=\textfont1
-  \scriptfont2=\textfont2
-  \scriptscriptfont2=\textfont2
-  \scriptfont3=\textfont3
-  \scriptscriptfont3=\textfont3
-  \def\xiipt{\textfont\z@\twlrm
-    \scriptfont\z@\twlrm \scriptscriptfont\z@\twlrm
-  \textfont\@ne\twlmi \scriptfont\@ne\twlmi \scriptscriptfont\@ne\twlmi
-  \textfont\tw@\twlsy \scriptfont\tw@\twlsy \scriptscriptfont\tw@\twlsy
-  \textfont\thr@@\tenex \scriptfont\thr@@\tenex \scriptscriptfont\thr@@\tenex
-  \def\unboldmath{\everymath{}\everydisplay{}\@nomath\unboldmath
+    \scriptfont0=\textfont0
+    \scriptscriptfont0=\textfont0
+    \scriptfont1=\textfont1
+    \scriptscriptfont1=\textfont1
+    \scriptfont2=\textfont2
+    \scriptscriptfont2=\textfont2
+    \scriptfont3=\textfont3
+    \scriptscriptfont3=\textfont3
+    \def\xiipt{\textfont\z@\twlrm
+        \scriptfont\z@\twlrm \scriptscriptfont\z@\twlrm
+        \textfont\@ne\twlmi \scriptfont\@ne\twlmi \scriptscriptfont\@ne\twlmi
+        \textfont\tw@\twlsy \scriptfont\tw@\twlsy \scriptscriptfont\tw@\twlsy
+        \textfont\thr@@\tenex \scriptfont\thr@@\tenex \scriptscriptfont\thr@@\tenex
+        \def\unboldmath{\everymath{}\everydisplay{}\@nomath\unboldmath
             \textfont\@ne\twlmi
             \textfont\tw@\twlsy \textfont\lyfam\twlly
             \@boldfalse}\@boldfalse
-  \def\boldmath{\@ifundefined{twlmib}{\global\font\twlmib\@mbi\@magscale1\global
-          \font\twlsyb\@mbsy \@magscale1\global\font
-           \twllyb\@lasyb\@magscale1\relax\@addfontinfo\@xiipt
+        \def\boldmath{\@ifundefined{twlmib}{\global\font\twlmib\@mbi\@magscale1\global
+                \font\twlsyb\@mbsy \@magscale1\global\font
+                \twllyb\@lasyb\@magscale1\relax\@addfontinfo\@xiipt
                 {\def\boldmath{\everymath
-                  {\mit}\everydisplay{\mit}\@prtct\@nomathbold
-                  \textfont\@ne\twlmib \textfont\tw@\twlsyb
-                  \textfont\lyfam\twllyb\@prtct\@boldtrue}}}{}\@xiipt\boldmath}%
-  \def\prm{\fam\z@\twlrm}%
-  \def\pit{\fam\itfam\twlit}\textfont\itfam\twlit \scriptfont\itfam\egtit
-     \scriptscriptfont\itfam\sevit
-  \def\psl{\fam\slfam\twlsl}\textfont\slfam\twlsl
-       \scriptfont\slfam\tensl \scriptscriptfont\slfam\tensl
-  \def\pbf{\fam\bffam\twlbf}\textfont\bffam\twlbf
-     \scriptfont\bffam\ninbf \scriptscriptfont\bffam\ninbf
-  \def\ptt{\fam\ttfam\twltt}\textfont\ttfam\twltt
-     \scriptfont\ttfam\nintt \scriptscriptfont\ttfam\nintt
-  \def\psf{\fam\sffam\twlsf}\textfont\sffam\twlsf
-      \scriptfont\sffam\tensf \scriptscriptfont\sffam\tensf
-  \def\psc{\@getfont\psc\scfam\@xiipt{\@mcsc\@magscale1}}%
-  \def\ly{\fam\lyfam\twlly}\textfont\lyfam\twlly
-     \scriptfont\lyfam\egtly \scriptscriptfont\lyfam\sixly
-   \@setstrut \rm}
+                        {\mit}\everydisplay{\mit}\@prtct\@nomathbold
+                        \textfont\@ne\twlmib \textfont\tw@\twlsyb
+                        \textfont\lyfam\twllyb\@prtct\@boldtrue}}}{}\@xiipt\boldmath}%
+        \def\prm{\fam\z@\twlrm}%
+        \def\pit{\fam\itfam\twlit}\textfont\itfam\twlit \scriptfont\itfam\egtit
+        \scriptscriptfont\itfam\sevit
+        \def\psl{\fam\slfam\twlsl}\textfont\slfam\twlsl
+        \scriptfont\slfam\tensl \scriptscriptfont\slfam\tensl
+        \def\pbf{\fam\bffam\twlbf}\textfont\bffam\twlbf
+        \scriptfont\bffam\ninbf \scriptscriptfont\bffam\ninbf
+        \def\ptt{\fam\ttfam\twltt}\textfont\ttfam\twltt
+        \scriptfont\ttfam\nintt \scriptscriptfont\ttfam\nintt
+        \def\psf{\fam\sffam\twlsf}\textfont\sffam\twlsf
+        \scriptfont\sffam\tensf \scriptscriptfont\sffam\tensf
+        \def\psc{\@getfont\psc\scfam\@xiipt{\@mcsc\@magscale1}}%
+        \def\ly{\fam\lyfam\twlly}\textfont\lyfam\twlly
+        \scriptfont\lyfam\egtly \scriptscriptfont\lyfam\sixly
+        \@setstrut \rm}
 } %end bigscript
 
 % Singlespaced hanging paragraph environment for uncited bibliographies.
@@ -248,24 +243,24 @@
 \newif\if@firstdate \@firstdatetrue
 \def\socbib{\par \def\baselinestretch{1}\@normalsize
     \raggedright \parindent=0pt \parskip=0pt
-\newskip\socparskip \socparskip = 12pt
-\newdimen\@datewidth \@datewidth = 60 pt
-\newdimen\@stextwidth \@stextwidth=\textwidth
-\advance \@stextwidth by -\@datewidth
-\newskip\@socskip \@socskip=5pt plus 1pt minus 1pt
-\newbox\@sdatebox
-\def\@twodates##1[##2]{\global\setbox\@sdatebox=\vtop{%
-              \hbox to \@datewidth{\kern 20 pt ##1\hfil}%
-              \hbox to \@datewidth{\kern 20 pt ##2\hfil}%
-              }\@socdate}
-\def\@onedate##1{\global\setbox\@sdatebox=%
+    \newskip\socparskip \socparskip = 12pt
+    \newdimen\@datewidth \@datewidth = 60 pt
+    \newdimen\@stextwidth \@stextwidth=\textwidth
+    \advance \@stextwidth by -\@datewidth
+    \newskip\@socskip \@socskip=5pt plus 1pt minus 1pt
+    \newbox\@sdatebox
+    \def\@twodates##1[##2]{\global\setbox\@sdatebox=\vtop{%
+            \hbox to \@datewidth{\kern 20 pt ##1\hfil}%
+            \hbox to \@datewidth{\kern 20 pt ##2\hfil}%
+        }\@socdate}
+    \def\@onedate##1{\global\setbox\@sdatebox=%
         \vtop{\hbox to \@datewidth{\kern 20pt ##1\hfil}}\@socdate}
-\def\par{\egroup \egroup \endgraf \vskip\socparskip \@firstdatetrue}
-\def\@socdate{\if@firstdate \endgraf \nopagebreak \@firstdatefalse \else %
-         \egroup \egroup \endgraf \vskip\@socskip \fi%
-         \hbox to \textwidth\bgroup%
-                   \box\@sdatebox\vtop\bgroup\hsize\@stextwidth\ignorespaces}
-\def\socdate##1{\@ifnextchar[{\@twodates{##1}}{\@onedate{##1}}}
+    \def\par{\egroup \egroup \endgraf \vskip\socparskip \@firstdatetrue}
+    \def\@socdate{\if@firstdate \endgraf \nopagebreak \@firstdatefalse \else %
+            \egroup \egroup \endgraf \vskip\@socskip \fi%
+        \hbox to \textwidth\bgroup%
+        \box\@sdatebox\vtop\bgroup\hsize\@stextwidth\ignorespaces}
+    \def\socdate##1{\@ifnextchar[{\@twodates{##1}}{\@onedate{##1}}}
 }
 \def\endsocbib{\egroup\egroup\endgraf\vskip\baselineskip}
 
@@ -273,7 +268,7 @@
 % The titlepage environment inhibits output of page number, and starts roman
 % page numbering.
 \def\titlepage
-   {\thispagestyle{empty}
+{\thispagestyle{empty}
     \pagenumbering{roman}}
 \def\endtitlepage{\newpage}
 
@@ -291,19 +286,20 @@
 \def\@depttwo{}
 \def\@depttitle{}
 
-\newcount\@numcomm
-\def\committee#1{\@numcomm=#1}
-\committee{0}
+% Relic of needing a signature page
+% \newcount\@numcomm
+% \def\committee#1{\@numcomm=#1}
+% \committee{0}
 
 \newdimen\@signwidth \@signwidth=6cm
 
 \def\@depmajmac#1#2#3#4{% department and major macro
-  \ifcase\@deptnum \def\@depart{}
-     \or \def\@depart{\@depttitle #1 \\}
-     \else \def\@depart{\@depttitle #1\\ #2\\}\fi
-  \ifcase\@majornum \def\@major{}
-     \or \def\@major{\@majortitle #3}
-     \else \def\@major{\@majortitle #3 \\  #4}\fi}
+    \ifcase\@deptnum \def\@depart{}
+    \or \def\@depart{\@depttitle #1 \\}
+    \else \def\@depart{\@depttitle #1\\ #2\\}\fi
+    \ifcase\@majornum \def\@major{}
+    \or \def\@major{\@majortitle #3}
+    \else \def\@major{\@majortitle #3 \\  #4}\fi}
 
 \newif\if@interdept \@interdeptfalse
 \newif\if@interdeptm \@interdeptmfalse
@@ -314,24 +310,24 @@
 \def\interdeptm{\@interdeptmtrue}
 
 \def\dept#1{\gdef\@deptone{#1} \gdef\@depttwo{} \@deptnum=1
-   \if@interdept\def\@depttitle{Interdepartmental Program: } \else
-     \def\@depttitle{Department: }\fi}
+    \if@interdept\def\@depttitle{Interdepartmental Program: } \else
+        \def\@depttitle{Department: }\fi}
 \def\codepts#1#2{\gdef\@deptone{#1} \gdef\@depttwo{#2} \@deptnum=2
-   \def\@depttitle{Departments: }\signdeptnum=2}
+    \def\@depttitle{Departments: }\signdeptnum=2}
 \def\major#1{\@majornum=1 \@depmajmac{\@deptone}{\@depttwo}{#1}{}
-   \if@interdeptm\def\@majortitle{Interdepartmental Major: } \else
-     \def\@majortitle{Major: }\fi}
+    \if@interdeptm\def\@majortitle{Interdepartmental Major: } \else
+        \def\@majortitle{Major: }\fi}
 \def\comajors#1#2{\@majornum=2 \signmajornum=2
-   \@depmajmac{\@deptone}{\@depttwo}{#1}{#2}
-   \def\@majortitle{Co-majors: }}
+    \@depmajmac{\@deptone}{\@depttwo}{#1}{#2}
+    \def\@majortitle{Co-majors: }}
 
 \def\signmajor#1{\def\@signmajor{#1}}
-\signmajor{\ifnum\signmajornum=2 Co-major Professor \else 
-Major Professor\fi} 
+\signmajor{\ifnum\signmajornum=2 Co-major Professor \else
+        Major Professor\fi}
 \def\signdept#1{\def\@signdept{#1}}
-\signdept{\if@interdept For the Major Program \else 
-\ifnum\@deptnum=2 For the Co-major Program \else 
-For the Major Program\fi\fi}
+\signdept{\if@interdept For the Major Program \else
+        \ifnum\@deptnum=2 For the Co-major Program \else
+            For the Major Program\fi\fi}
 
 \def\@depart{}
 \def\@major{}
@@ -346,10 +342,10 @@ For the Major Program\fi\fi}
 %\signmajornum=2} 
 %\def\@mprofs{}
 
-\def\mprofs#1{\def\@mprofs{#1, Co-major Professor}} 
+\def\mprofs#1{\def\@mprofs{#1, Co-major Professor}}
 \def\@mprofs{}
 
-\def\cmprofs#1{\def\@cmprofs{\\#1, Co-major Professor}} 
+\def\cmprofs#1{\def\@cmprofs{\\#1, Co-major Professor}}
 \def\@cmprofs{}
 
 \def\members#1{\def\@members{\\#1}}
@@ -358,220 +354,220 @@ For the Major Program\fi\fi}
 \def\disclaimertitlepage{\def\@disclaimertitlepage{The student author, whose presentation of the scholarship herein was approved by the program of study committee, is solely responsible for the content of this \@format{}. The Graduate College will ensure this \@format{} is globally accessible and will not permit alterations after a degree is conferred.}}
 \def\@disclaimertitlepage{}
 
-\newcount\@linecount
-\def\makelines#1#2{\@linecount=#1
-   \loop\ifnum \@linecount > 0
-   \advance \@linecount by -1
-      \vskip 3pt
-    \underline{\mbox{\hspace{\@signwidth}}}
-%   \hrule width \@signwidth 
-   \vskip -7pt #2 \vskip 4pt
-   \repeat}
+% Signatures are no more
+
+% \newcount\@linecount
+% \def\makelines#1#2{\@linecount=#1
+%    \loop\ifnum \@linecount > 0
+%    \advance \@linecount by -1
+%       \vskip 3pt
+%     \underline{\mbox{\hspace{\@signwidth}}}
+% %   \hrule width \@signwidth 
+%    \vskip -7pt #2 \vskip 4pt
+%    \repeat}
 % allow major and department signature titles to be longer than
 % the signature line width without complaints from TeX
 %   \repeat \hbox to \@signwidth{#2\hss} \vskip 4pt}
 
-\long\def\@signbox{
-   \vfill
-   \makelines{\@numcomm}{Committee Member}
-   \makelines{\signmajornum}{\@signmajor}
-   \if@interdeptm \makelines{1}{For the Interdeparmental Major} \fi
-   \makelines{\signdeptnum}{\@signdept}
-   %\makelines{1}{For the Graduate College}
-   \hfill
-   \par}
+% \long\def\@signbox{
+%    \vfill
+%    \makelines{\@numcomm}{Committee Member}
+%    \makelines{\signmajornum}{\@signmajor}
+%    \if@interdeptm \makelines{1}{For the Interdeparmental Major} \fi
+%    \makelines{\signdeptnum}{\@signdept}
+%    %\makelines{1}{For the Graduate College}
+%    \hfill
+%    \par}
 
 \def\copyyear#1{\gdef\@copyyear{\number#1}}
 \copyyear{\year}
 \def\notice{\gdef\@notice{Copyright
-   \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
+        \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
 \def\@notice{}
 
 \def\supervisor#1{\gdef\@supervisor{#1}}
 \def\@supervisor{}
 
 \def\@titlefoot{\begin{center}Iowa State University\\
-   Ames, Iowa\\ \@copyyear\  \\
-   \@notice \end{center}}%Added \  after \@copyyear to avoid having \\ problem
+        Ames, Iowa\\ \@copyyear\  \\
+        \@notice \end{center}}%Added \  after \@copyyear to avoid having \\ problem
 
 \long\def\maketitle{\begin{titlepage}
 
-% \vbox ensures whole title page stays on one page even if it becomes overfull
-  \vbox to \textheight{
-   \begin{center}
-   \vskip 28pt                   % Added to more evenly space page (JAS11)
-   {\bfseries \@title}
-   \vskip 14pt                    % Changed from 11pt to more evenly space page (JAS11)
-   by \\
-   \vskip 14pt                   % Changed from 11pt to more evenly space page (JAS11)
-   {\bfseries \@author}      % Changed to bold at thesis office request (JAS16)
-   \vskip 41pt                  % Changed from 30pt to more evenly space page (JAS11)
-   A \@format\ submitted to \@submit\ \\
-   in partial fulfillment of the requirements for the degree of\\
-   \@degree \\[2.5pt]
+        % \vbox ensures whole title page stays on one page even if it becomes overfull
+        \vbox to \textheight{
+            \begin{center}
+                \vskip 28pt                   % Added to more evenly space page (JAS11)
+                    {\bfseries \@title}
+                \vskip 14pt                    % Changed from 11pt to more evenly space page (JAS11)
+                by \\
+                \vskip 14pt                   % Changed from 11pt to more evenly space page (JAS11)
+                    {\bfseries \@author}      % Changed to bold at thesis office request (JAS16)
+                \vskip 41pt                  % Changed from 30pt to more evenly space page (JAS11)
+                A \@format\ submitted to \@submit\ \\
+                in partial fulfillment of the requirements for the degree of\\
+                \@degree \\[2.5pt]
 
-   \vskip 55pt                   % Changed from 30pt to cover dept loss
-%   \@depart
-   \@major
-%   \@minor                     % No longer listed - Sept. 2001
-   \vskip 41pt                    % Changed from 14pt to more evenly space page (JAS11)
-   \begin{singlespace}  % Elminated to more evenly space page (JAS11)
-   Program of Study Committee: \\
-   \@mprof 
-   \@mprofs
-   \@cmprofs
-   \@members
-   %\end{singlespace}   % Eliminated to more evenly space page (JAS11)
-  \vfill
-   \vspace{12pt} %default was 4 pts
-%   %\vfill
-   \@disclaimertitlepage
-\end{singlespace}   % Eliminated to more evenly space page (JAS11)
-   \end{center}
-   \vfill
-   \vspace{14pt}%{14pt}
-   \vfill
-   \@titlefoot } % end of \vbox
-   \end{titlepage}
+                \vskip 55pt                   % Changed from 30pt to cover dept loss
+                %   \@depart
+                \@major
+                %   \@minor                     % No longer listed - Sept. 2001
+                \vskip 41pt                    % Changed from 14pt to more evenly space page (JAS11)
+                \begin{singlespace}  % Elminated to more evenly space page (JAS11)
+                    Program of Study Committee: \\
+                    \@mprof
+                    \@mprofs
+                    \@cmprofs
+                    \@members
+                    %\end{singlespace}   % Eliminated to more evenly space page (JAS11)
+                    \vfill
+                    \vspace{12pt} %default was 4 pts
+                    %   %\vfill
+                    \@disclaimertitlepage
+                \end{singlespace}   % Eliminated to more evenly space page (JAS11)
+            \end{center}
+            \vfill
+            \vspace{14pt}%{14pt}
+            \vfill
+            \@titlefoot } % end of \vbox
+    \end{titlepage}
 }% end maketitle
 \long\def\makenosigtitle{\begin{titlepage}
-% \vbox ensures whole title page stays on one page even if it becomes overfull
-  \vbox to \textheight{
-   \begin{center}
-   {\bfseries \@title}
-   \vskip 11pt
-   by \\
-   \vskip 11pt
-   {\bfseries \@author}         % changed from non-bold at thesis office request (JAS16)
-   \vskip 30pt
-   A \@format\ submitted to \@submit\ \\
-   in partial fulfillment of the requirements for the degree of\\
-   \@degree \\[2.5pt]
-   \vskip 41pt                   % Changed from 30pt to cover dept loss
-%   \@depart
-   \@major
-%   \@minor                      % No longer listed - Sept. 2001
-   \vskip 14pt
-   \begin{singlespace}
-   Program of Study Committee: \\
-   \@mprof 
-   \@mprofs
-   \@cmprofs
-   \@members
-   \end{singlespace}
-   \vfill
-%  % \vspace{4pt}
-%   %\vfill
-   \@disclaimertitlepage
-   \end{center}
-   \vfill
-   \vspace{14pt}%{14pt}
-   \vfill
-   \@titlefoot } % end of \vbox
-   \end{titlepage}
+        % \vbox ensures whole title page stays on one page even if it becomes overfull
+        \vbox to \textheight{
+            \begin{center}
+                {\bfseries \@title}
+                \vskip 11pt
+                by \\
+                \vskip 11pt
+                    {\bfseries \@author}         % changed from non-bold at thesis office request (JAS16)
+                \vskip 30pt
+                A \@format\ submitted to \@submit\ \\
+                in partial fulfillment of the requirements for the degree of\\
+                \@degree \\[2.5pt]
+                \vskip 41pt                   % Changed from 30pt to cover dept loss
+                %   \@depart
+                \@major
+                %   \@minor                      % No longer listed - Sept. 2001
+                \vskip 14pt
+                \begin{singlespace}
+                    Program of Study Committee: \\
+                    \@mprof
+                    \@mprofs
+                    \@cmprofs
+                    \@members
+                \end{singlespace}
+                \vfill
+                %  % \vspace{4pt}
+                %   %\vfill
+                \@disclaimertitlepage
+            \end{center}
+            \vfill
+            \vspace{14pt}%{14pt}
+            \vfill
+            \@titlefoot } % end of \vbox
+    \end{titlepage}
 }% end makenosigtitle
 
 \long\def\startabstract{
-   \begin{center}
-   {\bfseries \@title}
-   \vskip 11pt
-   \@author
-   \vskip 11pt
-   \begin{singlespace}
-  % \@mprof 
-  % \@mprofs \\
-   % \@cmprofs \\
-   Iowa State University
-   \end{singlespace}
-   \end{center}
+    \begin{center}
+        {\bfseries \@title}
+        \vskip 11pt
+        \@author
+        \vskip 11pt
+        \begin{singlespace}
+            % \@mprof 
+            % \@mprofs \\
+            % \@cmprofs \\
+            Iowa State University
+        \end{singlespace}
+    \end{center}
 }% end startabstract
 
-\newcommand{\paperinfo}[1]{\vspace{-.4 in} \begin{center} A paper #1 \end{center} 
-\vspace{.4 in}}
+\newcommand{\paperinfo}[1]{\vspace{-.4 in} \begin{center} A paper #1 \end{center}
+    \vspace{.4 in}}
 
-\newcommand{\paperauthor}[1]{\vspace{-.5 in} \begin{center} #1 \end{center} 
-\vspace{.25 in}}
+\newcommand{\paperauthor}[1]{\vspace{-.5 in} \begin{center} #1 \end{center}
+    \vspace{.25 in}}
 
 \def\alternatenum{%  command to set numbering down to subpara
-   \setcounter{secnumdepth}{5}}
+    \setcounter{secnumdepth}{5}}
 
 \def\alternate{%  command to set numbering down to subsection
-   \setcounter{secnumdepth}{3}}
+    \setcounter{secnumdepth}{3}}
 
 \def\alternatepart{%  command to number only parts
-   \setcounter{secnumdepth}{0}
-   \renewcommand{\thechapter}{}
-   \makeatletter
-   \renewcommand{\thefigure}{\@arabic\c@figure}
-   \renewcommand{\theequation}{\arabic{equation}}
-   \renewcommand{\thetable}{\@arabic\c@table}
-   \makeatother
+    \setcounter{secnumdepth}{0}
+    \renewcommand{\thechapter}{}
+    \makeatletter
+    \renewcommand{\thefigure}{\@arabic\c@figure}
+    \renewcommand{\theequation}{\arabic{equation}}
+    \renewcommand{\thetable}{\@arabic\c@table}
+    \makeatother
 }
 
 \def\alternatechap{%  command to number only parts and chapters
-   \setcounter{secnumdepth}{0}
-   \makeatletter
-   \renewcommand{\thefigure}{\@arabic\c@figure}
-   \renewcommand{\theequation}{\arabic{equation}}
-   \renewcommand{\thetable}{\@arabic\c@table}
-   \makeatother
+    \setcounter{secnumdepth}{0}
+    \makeatletter
+    \renewcommand{\thefigure}{\@arabic\c@figure}
+    \renewcommand{\theequation}{\arabic{equation}}
+    \renewcommand{\thetable}{\@arabic\c@table}
+    \makeatother
 }
 
 \def\reset{% resets many chapter level counters
-   \setcounter{chapter}{0}
-   \setcounter{section}{0}
-   \setcounter{subsection}{0}
-   \setcounter{subsubsection}{0}
-   \setcounter{paragraph}{0}
-   \setcounter{subparagraph}{0}
-   \setcounter{equation}{0}
-   \setcounter{figure}{0}
-   \setcounter{table}{0}
-   \setcounter{footnote}{0}
-   \setcounter{mpfootnote}{0}
-   }
+    \setcounter{chapter}{0}
+    \setcounter{section}{0}
+    \setcounter{subsection}{0}
+    \setcounter{subsubsection}{0}
+    \setcounter{paragraph}{0}
+    \setcounter{subparagraph}{0}
+    \setcounter{equation}{0}
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
+    \setcounter{footnote}{0}
+    \setcounter{mpfootnote}{0}
+}
 
 \def\nochap{% bizarre hack to not use a chapter number
-   \makeatletter
-   \renewcommand{\thefigure}{\@arabic\c@figure}
-   \renewcommand{\theequation}{\arabic{equation}}
-   \renewcommand{\thetable}{\@arabic\c@table}
-   \makeatother
-   \renewcommand{\thechapter}      {}    
-   \renewcommand{\thesection}      {\arabic{section}}
-   \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
-   \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
-   \renewcommand{\theparagraph}    {\thesubsubsection.\arabic{paragraph}}
-   \renewcommand{\thesubparagraph} {\theparagraph.\arabic{subparagraph}}
+    \makeatletter
+    \renewcommand{\thefigure}{\@arabic\c@figure}
+    \renewcommand{\theequation}{\arabic{equation}}
+    \renewcommand{\thetable}{\@arabic\c@table}
+    \makeatother
+    \renewcommand{\thechapter}      {}
+    \renewcommand{\thesection}      {\arabic{section}}
+    \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
+    \renewcommand{\theparagraph}    {\thesubsubsection.\arabic{paragraph}}
+    \renewcommand{\thesubparagraph} {\theparagraph.\arabic{subparagraph}}
 }%end nochap
 
 \def\partnochap{% bizarre hack to not use a chapter number but use parts
-   \makeatletter
-   \renewcommand{\thefigure}{\@arabic\c@figure}
-   \renewcommand{\theequation}{\arabic{equation}}
-   \renewcommand{\thetable}{\@arabic\c@table}
-   \makeatother
-%   \renewcommand{\thepart}         {\roman{part}}
-   \renewcommand{\thechapter}      {}    
-   \renewcommand{\thesection}      {\thepart.\arabic{section}}
-   \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
-   \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
-   \renewcommand{\theparagraph}    {\thesubsubsection.\arabic{paragraph}}
-   \renewcommand{\thesubparagraph} {\theparagraph.\arabic{subparagraph}}
+    \makeatletter
+    \renewcommand{\thefigure}{\@arabic\c@figure}
+    \renewcommand{\theequation}{\arabic{equation}}
+    \renewcommand{\thetable}{\@arabic\c@table}
+    \makeatother
+    %   \renewcommand{\thepart}         {\roman{part}}
+    \renewcommand{\thechapter}      {}
+    \renewcommand{\thesection}      {\thepart.\arabic{section}}
+    \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
+    \renewcommand{\theparagraph}    {\thesubsubsection.\arabic{paragraph}}
+    \renewcommand{\thesubparagraph} {\theparagraph.\arabic{subparagraph}}
 }%end partnochap
-
 
 % The thesis office wants Chapters with a dotted leader
 % (This redefinition borrowed from isuthes may not be a very
 %  good idea but it seems to work.) - JAS, April 1996
 
 \renewcommand{\l@chapter}[2]{\addpenalty{-\@highpenalty}
-    	\setlength{\baselineskip}{13.2pt} %this resets the size of a line from the (much wider) default to 1.2x11pt = 13.2pt font, which matches the single spacing required by the grad college for the TOC. Because it is only this function, it is local to the TOC and won't effect spacing in the rest of the dissertation. 
-	\vskip 13.2pt plus 0pt %adds a blank line after a chapter item 
-     %\vskip 4pt plus 2pt
-     %{\bf \@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
-     {\@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
-
+    \setlength{\baselineskip}{13.2pt} %this resets the size of a line from the (much wider) default to 1.2x11pt = 13.2pt font, which matches the single spacing required by the grad college for the TOC. Because it is only this function, it is local to the TOC and won't effect spacing in the rest of the dissertation. 
+    \vskip 13.2pt plus 0pt %adds a blank line after a chapter item 
+        %\vskip 4pt plus 2pt
+        %{\bf \@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
+        {\@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
 
 % 2024 - I don't get how these commands ever added the word Table or Figure
 % but I think they add the dotted leader, so here they stay 
@@ -595,11 +591,10 @@ For the Major Program\fi\fi}
 \addtocontents{lof}{\protect\noaddvspace}
 \addtocontents{lot}{\protect\noaddvspace}
 
-
 % Resets chapter command so the word CHAPTER appears
 
 \def\chaptertitle{% resets chaptername
-   \renewcommand{\chaptername}{CHAPTER\ }}
+    \renewcommand{\chaptername}{CHAPTER\ }}
 
 % Resets part name so PART appears
 % 2024 - I think this is unused b/c the @part is patched instead
@@ -613,11 +608,9 @@ For the Major Program\fi\fi}
     \def\@chapapp{APPENDIX}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX\ }}
-   %\renewcommand{\appendixname}{APPENDIX\ }
-   \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX\ }
-   }
-
-
+    %\renewcommand{\appendixname}{APPENDIX\ }
+    \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX\ }
+}
 
 % USE THE following instead of \appendixtitle for singleappendix
 % first \unappendixtitle
@@ -626,14 +619,14 @@ For the Major Program\fi\fi}
     \def\@chapapp{APPENDIX}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
-   %\renewcommand{\appendixname}{APPENDIX\ }
-   \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX}
-   %Single appendix has no number, hence no space
-   \setcounter{chapter}{0}
-   \setcounter{section}{0}
-   \def\theequation{A.\arabic{equation}}
-   \def\thetable{A.\@arabic\c@table}
-   \def\thefigure{A.\@arabic\c@figure}
+    %\renewcommand{\appendixname}{APPENDIX\ }
+    \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX}
+    %Single appendix has no number, hence no space
+    \setcounter{chapter}{0}
+    \setcounter{section}{0}
+    \def\theequation{A.\arabic{equation}}
+    \def\thetable{A.\@arabic\c@table}
+    \def\thefigure{A.\@arabic\c@figure}
 }
 
 % Resets appendix command so the word APPENDIX appears
@@ -643,9 +636,8 @@ For the Major Program\fi\fi}
     \def\@chapapp{}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{}}
-   }
+}
 %%%%%%%%%%%%%%%%%%%%
-
 
 % % Protects added (JAS05 / JAS09)
 \renewcommand{\contentsname}
