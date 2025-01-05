@@ -128,6 +128,13 @@
   \origsubfigureend
 }
 \makeatother
+
+%In the tagging structure, this collects the floats in each
+%section. Without it, all the floats for the entire document
+%are collected.
+\AddToHook{cmd/section/before}{\tagtool{flush-floats=subsection}}
+
+
 %for tables
 \usepackage{multirow}
 
