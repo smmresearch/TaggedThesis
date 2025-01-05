@@ -101,8 +101,31 @@
            \caption@raisedlink{\MakeLinkTarget*{#1}}%
         \fi}%  
 }
-\makeatother
 
+%This part is my own invention - to get subfigures
+%to have captions be where they are supposed to be
+%by appending some extras to the subfigure environment
+%As with everything else, it probably won't be necessary
+%in the long term
+%
+%Further, no warranties on the robustness
+%If complicated subfigures are causing problems,
+%you are probably are better commenting this out
+%and dealing with the subpar tagging.
+\ExplSyntaxOn
+\cs_new_eq:NN \origsubfigure \subfigure 
+\cs_new_eq:NN \origsubfigureend \endsubfigure
+\RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
+  \origsubfigure[#1][#2][#3]{#4}
+  \tagstructbegin{tag=Part}
+  \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
+}
+\ExplSyntaxOff
+\def\endsubfigure{
+  \tagstructend
+  \origsubfigureend
+}
+\makeatother
 %For tables
 \usepackage{multirow}
 
@@ -220,7 +243,6 @@ are capitalized and this is the second line}
 \addtocontents{lof}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOF}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
 % %%
 
-
 % %%
 % % Optional thesis dedication
 %   Dedication is not usually listed in the table of contents.
@@ -229,9 +251,9 @@ are capitalized and this is the second line}
 \include{Preface/dedication}
 
 {
-\pdfbookmark[0]{TABLE OF CONTENTS}{table}
-\tableofcontents
-\tagstructuse{pageOfTOC} %gets tagging of "Page" done
+  \pdfbookmark[0]{TABLE OF CONTENTS}{table}
+  \tableofcontents
+  \tagstructuse{pageOfTOC} %gets tagging of "Page" done
 }
 \addtocontents{toc}{\def\protect\@chapapp{}} \cleardoublepage \phantomsection
 \pagebreak
@@ -295,7 +317,6 @@ are capitalized and this is the second line}
 % onehalfspacing
 %doublespacing (this is more spacing than the singlespacing above )
 % more definitions on spacing can be found by going through the class file
-
 
 % use \caption{} for all captions of figures and tables, where the captions are not too long.
 
