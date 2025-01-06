@@ -1,3 +1,4 @@
+%!LW recipe=latexmk (lualatex)
 \DocumentMetadata{
  lang=en,
  testphase={phase-III,math,table,title,firstaid},
@@ -66,9 +67,17 @@
 \makeatother
 
 
-
+\usepackage{tikz-cd}
 
 \begin{document}
-\section{A section!}
-{\tagtool{para/tag=Reference}\textbf{Refinement of {\tagstructbegin{tag=Span}$S$\tagstructend}\tagmcend\tagmcbegin{} more words}
+\section{Problem 3.2.ii}
+Consider something
+
+\begin{tikzcd}
+  \lim_J F \arrow[rr] &  & \Pi_{j\in J} Fj \arrow[rr, "c", shift left] \arrow[rr, "d"', shift right] &  & \Pi_{f\in \text{mor}J\setminus J} F(\text{cod}f)
+\end{tikzcd}
+
+where c.
+It is clear that $\lim_{J} F$ has the property of the diagram. Therefore, it suffices to show that any cone $\{\tau_j:s\rightarrow F(j) \; | \: j\in J\}$ over $F$ with summit $s$ that satisfies the modified diagram also satisfies the original equalizer diagram:
+
 \end{document}
