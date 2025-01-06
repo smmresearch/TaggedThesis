@@ -142,11 +142,12 @@
 \usepackage{thmtools}
 \usepackage{templatedShortcuts-private}
 %algorithm packages
-\usepackage{algorithm}
+\usepackage[chapter]{algorithm}
 \usepackage[noend]{algpseudocode}
 \makeatletter
 \newcommand{\algmargin}{\the\ALG@thistlm}
 \makeatother
+\renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}} 
 \algnewcommand{\parstate}[1]{\State%
   \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
 %Tiks? Externally generate as pdf and use includegraphics to add alt text
@@ -199,6 +200,9 @@ are capitalized and this is the second line}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB,pdfencoding=auto}
 \usepackage{bookmark}
 
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Subsection}
 
 \overfullrule=0pt
 %%%%%%%%%%%%%%%%%%%%%

@@ -143,6 +143,15 @@
 \usepackage{mathtools}
 \usepackage{thmtools}
 \usepackage{templatedShortcuts-private}
+\usepackage[chapter]{algorithm}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\newcommand{\algmargin}{\the\ALG@thistlm}
+\makeatother
+\renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}} 
+\algnewcommand{\parstate}[1]{\State%
+  \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
+
 %Tiks? Externally generate as pdf and use includegraphics to add alt text
 %until tikz implements alt text
 %%
@@ -198,11 +207,15 @@ are capitalized and this is the second line}
 \usepackage{bookmark}
 % The following piece of code removes extra space on the top of each chapter
 %  that is default of latex report class documents
-
 \usepackage{etoolbox}
 \makeatletter
 \setlength{\@fptop}{0pt} %command added to ensure images always float on top of the page
 \makeatother
+
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Subsection}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
