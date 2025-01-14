@@ -234,6 +234,10 @@ are capitalized and this is the second line}
 %The command below can be used to get rid of footnote rule(line)
 %\renewcommand*\footnoterule{}
 
+%With unicode instead of bm, symbf should be used
+%This remaps \bm to prevent problems. There might be slightly different behavior.
+\let\bm\symbf
+
 \begin{document}
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png}
 %command used in preface

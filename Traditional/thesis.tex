@@ -242,6 +242,10 @@ are capitalized and this is the second line}
 
 \usepackage[inline]{enumitem}
 
+%With unicode instead of bm, symbf should be used
+%This remaps \bm to prevent problems. There might be slightly different behavior.
+\let\bm\symbf
+
 
 %The command below can be used to get rid of footnote rule(line)
 %\renewcommand*\footnoterule{}
