@@ -23,16 +23,13 @@
     %May want to disable periodically to ensure tagging is working
     %Comment out before submission
 %% 2. Use "\tagpdfsetup{
-%                  math/mathml/sources=,
-%                  math/mathml/luamml/write=false
-%                 }"
+              % math/mathml/sources=,
+              % math/mathml/luamml/load=false,
+              % math/tex/AF=false
+              % }"
     %Find this command commented out below DocumentMetadata
     %This command disables math related accessiblity tagging (which is also slow)
-    %Comment out before submission
-% 3. Comment out "\usepackage[default]{fontsetup}" (unless using special characters - then you will need it)
-    %Located in the middle of the preamble
-    %This command sets up fonts to look nicer
-    %Should be active (not a comment) before submission
+    %Math tagging is not required by ISU, but nice to have
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -56,10 +53,10 @@
 
 %The command below disables the slow parts of tagging math, 
 %speeding up compiling
-%When submitting, it should be commented out
 % \tagpdfsetup{
 %  math/mathml/sources=,
-%  math/mathml/luamml/write=false
+%  math/mathml/luamml/load=false,
+%  math/tex/AF=false
 % }
 
 
@@ -157,17 +154,12 @@
 %%
 
 
-%This command sets-up some nice default font choices.
-%The package fontspec can be used instead for further customization
-%Commenting out font specifications while drafting or until otherwise strictly needed
-%can speed up compilation
-%It should be active (not a comment) when submitting for fonts to look their best
+%Check package documentation for other font options
+%For example, the "default" is a Computer Modern clone
+\usepackage[stixtwo]{fontsetup}
 
-\usepackage[default]{fontsetup}
-
-\usepackage{unicode-math}
-
-%Change the font
+%Instead of font setup, unicode-math has more fine-tuned control
+%\usepackage{unicode-math}
 % \setmainfont{texgyrepagella}[
 % Extension       = .otf,
 % UprightFont     = *-regular,
