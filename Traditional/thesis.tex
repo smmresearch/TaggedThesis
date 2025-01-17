@@ -3,12 +3,25 @@
 
 %%%%%%% Instructions %%%%%%%%%%%%%%%%%%%
 
-%Use lualatex to compile
-%Therefore, do not use amssymb, input/output enc
+%Use lualatex to compile with --interaction-mode=nonstopmode
+%The commands I run are of the form (in the folder containing thesis.tex): 
+
+%lualatex --aux-directory=./LatexAux --synctex=1 --interaction=nonstopmode --c-style-errors .\thesis.tex
+%biber thesis --output-directory=.\LatexAux  
+
+%biber's output-directory should match lualatex's aux-directory or both should be omitted. c-style-errors is optional.
+
+%You can also use latexmk if desired. Beware, sometimes if you have just added alot or are starting fresh,
+%it can take more than 5 runs (latexmk's default max) for everything to settle. 
+
+
+%Do not use amssymb, input/output enc, bm, with lualatex (that stuff is built-in)
 % Get Error ".. \@ doesn't match definition.."? Try deleting *.aux file of file you were messing with. If needed, escalate to deleting all auxillary files.
 
 % Did you know you can have the auxillary files in a different directory with MikTeX?
 % Makes deleting all of them a snap
+
+%%Using Tikz? Externally generate as pdf (with just normal presets/without tagging) and use includegraphics to add alt text
 
 %% Tagging is slow
 %%
