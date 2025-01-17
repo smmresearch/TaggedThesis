@@ -1,7 +1,7 @@
 %PDF-2.0
 %���������
 23 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 73 >>         
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 73 >>         
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝐴 </mi> </math>
 endstream
@@ -10,7 +10,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-1) /F (mathml-1.xml) /UF <FEFF006D006100740068006D006C002D0031002E0078006D006C> /EF<</F 23 0 R/UF 23 0 R>> >>
 endobj
 25 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 1636 >>       
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 1636 >>       
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <mpadded depth="0" height="0"> <mtext/> </mpadded> <mo lspace="0" rspace="0"/> <mi> 𝑑 </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.278em" rspace="0.278em"> = </mo> <mi> 𝑑 </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑧 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mi> 𝑑 </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑧 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.278em" rspace="0.278em"> ≥ </mo> <mi> 𝑑 </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑥 </mi> <mo lspace="0.222em" rspace="0"> − </mo> <mo lspace="0.222em" rspace="0" stretchy="false"> ⟨ </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ⟩ </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mn> 0 </mn> <mo lspace="0.278em" rspace="0"> = </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> ⟨ </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ⟩ </mo> <mo lspace="0" rspace="0"> . </mo> </math>
 endstream
@@ -19,7 +19,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-2) /F (mathml-2.xml) /UF <FEFF006D006100740068006D006C002D0032002E0078006D006C> /EF<</F 25 0 R/UF 25 0 R>> >>
 endobj
 27 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 3261 >>       
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 3261 >>       
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <mtable columnalign="right left" columnspacing="0" displaystyle="true"> <mtr> <mtd> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mover> <mi> 𝑥 </mi> <mo> ˆ </mo> </mover> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> </mtd> <mtd> <mi/> <mo lspace="0.278em" rspace="0.278em"> = </mo> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> </mtd> </mtr> <mtr> <mtd> <mi/> </mtd> <mtd> <mi/> <mo lspace="0.278em" rspace="0"> = </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> | </mo> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> − </mo> <mn> 2 </mn> <mo lspace="0" rspace="0" stretchy="false"> ⟨ </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ⟩ </mo> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mn> 0 </mn> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0" rspace="0" stretchy="false"> | </mo> </mtd> </mtr> <mtr> <mtd> <mi/> </mtd> <mtd> <mi/> <mspace width="0.167em"/> <mrow> <mo fence="true" lspace="0" rspace="0" symmetric="true"> ( </mo> <mfrac> <mrow> <mi> 𝑥 </mi> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mi> 𝑦 </mi> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mi> 𝑧 </mi> </mrow> <mrow> <mn> 2 </mn> <mi> 𝑥 </mi> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mi> 𝑦 </mi> </mrow> </mfrac> <mo fence="true" lspace="0" rspace="0" symmetric="true"> ) </mo> </mrow> <mo lspace="0.222em" rspace="0.222em"> − </mo> <mrow> <mo fence="true" lspace="0" rspace="0" symmetric="true"> ( </mo> <mn> 2 </mn> <msup> <mi> 𝑥 </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> − </mo> <mi> 𝑦 </mi> <mo fence="true" lspace="0" rspace="0" symmetric="true"> ) </mo> </mrow> </mtd> </mtr> <mtr> <mtd> <mi/> </mtd> <mtd> <mi/> <mi> 𝐵 </mi> <mspace width="0.167em"/> <mrow> <mo fence="true" lspace="0" rspace="0" symmetric="true"> ⟨ </mo> <mfrac> <mn> 4 </mn> <mi> 𝑥 </mi> </mfrac> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> 𝑥 </mi> <mn> 3 </mn> </msup> <mo fence="true" lspace="0" rspace="0" symmetric="true"> ⟩ </mo> </mrow> </mtd> </mtr> <mtr> <mtd> <mi/> </mtd> <mtd> <mi/> <mo fence="true" lspace="0" maxsize="30.502pt" minsize="30.502pt" rspace="0" symmetric="true"> ( </mo> <msup> <mi> 𝑥 </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> − </mo> <mn> 2 </mn> <mi> 𝑥 </mi> <mo fence="true" lspace="0" maxsize="30.502pt" minsize="30.502pt" rspace="0" symmetric="true"> ) </mo> </mtd> </mtr> </mtable> </math>
 endstream
@@ -28,7 +28,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-3) /F (mathml-3.xml) /UF <FEFF006D006100740068006D006C002D0033002E0078006D006C> /EF<</F 27 0 R/UF 27 0 R>> >>
 endobj
 29 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 929 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 929 >>        
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mover> <mi> 𝑥 </mi> <mo> ˆ </mo> </mover> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mspace width="2.564pt"/> <msub> <mi mathvariant="normal"> ℓ </mi> <mn> 1 </mn> </msub> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mover> <mi> 𝑥 </mi> <mo> ˆ </mo> </mover> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> <mo lspace="0.222em" rspace="0.222em"> − </mo> <mn> 2 </mn> <mo lspace="0" rspace="0" stretchy="false"> ⟨ </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑛 </mi> <mo lspace="0" rspace="0" stretchy="false"> ⟩ </mo> <mo lspace="0.278em" rspace="0"> ≤ </mo> </math>
 endstream
@@ -37,7 +37,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-4) /F (mathml-4.xml) /UF <FEFF006D006100740068006D006C002D0034002E0078006D006C> /EF<</F 29 0 R/UF 29 0 R>> >>
 endobj
 31 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 402 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 402 >>        
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝐵 </mi> <mspace width="0.167em"/> <mrow> <mo fence="true" lspace="0" rspace="0" symmetric="true"> ( </mo> <mfrac> <mrow> <mn> 3 </mn> <mi> 𝑥 </mi> </mrow> <mrow> <mn> 2 </mn> <mi> 𝑦 </mi> <mo lspace="0" rspace="0"> − </mo> <mi> 𝑥 </mi> </mrow> </mfrac> <mo fence="true" lspace="0" rspace="0" symmetric="true"> ) </mo> </mrow> </math>
 endstream
@@ -46,7 +46,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-5) /F (mathml-5.xml) /UF <FEFF006D006100740068006D006C002D0035002E0078006D006C> /EF<</F 31 0 R/UF 31 0 R>> >>
 endobj
 33 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 250 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 250 >>        
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝑑 </mi> <mo lspace="0" rspace="0" stretchy="false"> ( </mo> <mi> 𝑥 </mi> <mo lspace="0" rspace="0.167em"> , </mo> <mi> 𝑦 </mi> <mo lspace="0" rspace="0" stretchy="false"> ) </mo> </math>
 endstream
@@ -55,7 +55,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-6) /F (mathml-6.xml) /UF <FEFF006D006100740068006D006C002D0036002E0078006D006C> /EF<</F 33 0 R/UF 33 0 R>> >>
 endobj
 35 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 226 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 226 >>        
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <msqrt> <mrow> <msup> <mi> 𝑥 </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <mfrac> <mn> 3 </mn> <mi> 𝑥 </mi> </mfrac> </mrow> </msqrt> </math>
 endstream
@@ -64,7 +64,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-7) /F (mathml-7.xml) /UF <FEFF006D006100740068006D006C002D0037002E0078006D006C> /EF<</F 35 0 R/UF 35 0 R>> >>
 endobj
 37 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 394 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 394 >>        
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <msup> <mi> 𝑥 </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> 𝑦 </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> 𝑥 </mi> <mn> 2 </mn> </msup> <mo lspace="0.278em" rspace="0.278em"> = </mo> <mn> 2 </mn> <mo lspace="0" rspace="0"> . </mo> </math>
 endstream
@@ -73,7 +73,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-8) /F (mathml-8.xml) /UF <FEFF006D006100740068006D006C002D0038002E0078006D006C> /EF<</F 37 0 R/UF 37 0 R>> >>
 endobj
 39 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 73 >>         
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 73 >>         
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝑠 </mi> </math>
 endstream
@@ -82,7 +82,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-9) /F (mathml-9.xml) /UF <FEFF006D006100740068006D006C002D0039002E0078006D006C> /EF<</F 39 0 R/UF 39 0 R>> >>
 endobj
 41 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 432 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 432 >>        
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝑗 </mi> <mo lspace="0.278em" rspace="0"> ∈ </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> { </mo> <mn> 1 </mn> <mo lspace="0" rspace="0.167em"> , </mo> <mn> 2 </mn> <mo lspace="0" rspace="0"> , </mo> <mo lspace="0.167em" rspace="0"> … </mo> <mo lspace="0.167em" rspace="0.167em"> , </mo> <mn> 15 </mn> <mo lspace="0" rspace="0" stretchy="false"> } </mo> </math>
 endstream
@@ -91,7 +91,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-10) /F (mathml-10.xml) /UF <FEFF006D006100740068006D006C002D00310030002E0078006D006C> /EF<</F 41 0 R/UF 41 0 R>> >>
 endobj
 43 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 70 >>         
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 70 >>         
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mn> 5 </mn> </math>
 endstream
@@ -100,7 +100,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-11) /F (mathml-11.xml) /UF <FEFF006D006100740068006D006C002D00310031002E0078006D006C> /EF<</F 43 0 R/UF 43 0 R>> >>
 endobj
 45 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 434 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 434 >>        
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝑥 </mi> <mo lspace="0.278em" rspace="0"> ∈ </mo> <mo lspace="0.278em" rspace="0" stretchy="false"> { </mo> <mn> 1 </mn> <mo lspace="0" rspace="0.167em"> , </mo> <mn> 2 </mn> <mo lspace="0" rspace="0"> , </mo> <mo lspace="0.167em" rspace="0"> … </mo> <mo lspace="0.167em" rspace="0.167em"> , </mo> <mn> 1000 </mn> <mo lspace="0" rspace="0" stretchy="false"> } </mo> </math>
 endstream
@@ -109,7 +109,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-12) /F (mathml-12.xml) /UF <FEFF006D006100740068006D006C002D00310032002E0078006D006C> /EF<</F 45 0 R/UF 45 0 R>> >>
 endobj
 47 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 73 >>         
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 73 >>         
 stream
 <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi> 𝑎 </mi> </math>
 endstream
@@ -118,7 +118,7 @@ endobj
 << /Type /Filespec /AFRelationship /Supplement /Desc (mathml-13) /F (mathml-13.xml) /UF <FEFF006D006100740068006D006C002D00310033002E0078006D006C> /EF<</F 47 0 R/UF 47 0 R>> >>
 endobj
 49 0 obj
-<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250115) >> /Length 303 >>        
+<< /Type /EmbeddedFile /Subtype /application#2Fmathml+xml /Params<</ModDate (D:20250116) >> /Length 303 >>        
 stream
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"> <msup> <mi> 𝑥 </mi> <mn> 2 </mn> </msup> <mo lspace="0.222em" rspace="0.222em"> + </mo> <msup> <mi> 𝑦 </mi> <mn> 2 </mn> </msup> <mo lspace="0.278em" rspace="0.278em"> = </mo> <mn> 8 </mn> <mo lspace="0" rspace="0"> . </mo> </math>
 endstream
@@ -169,13 +169,13 @@ EMC
 EMC
 /text<</MCID 0>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 110.46 684.189 Tm [<001601060107011200010107011200010113010601030001011301070113010B01030001010E01040001>-50<00FF00010113010601030112010701120001011201140100010C01070113>15<0113>5<0103010200010113>5<010E0001000B010E0116>15<00FF00010015011300FF0113>5<010300010017010D01070115>5<0103011101120107011301180001010E010D00010113010601030001029002920111011201130001010B0107010D0103>]TJ
 ET
 EMC
 /text<</MCID 1>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 76.975 662.266 Tm [<0010>10<010E0113>5<010300010113010600FF01130001010E010D010B011800010113010601030001029002920111011201130001010B01030113>15<0113>5<010301110001010E01040001>-50<01130106010300010290029201110112011300010116>5<010E0111>10<0102000100FF010D01020001010F0111>10<010E010F010301110001010D00FF010C01030112000100FF0111>10<01030001010100FF010F0107011300FF010B0107011901030102000100FF010D0102000101130106010701120001010701120001>]TJ
 1 0 0 1 265.985 640.344 Tm [<0113010601030001011201030101010E010D01020001010B0107010D01030725>]TJ
 ET
@@ -188,7 +188,7 @@ ET
 EMC
 /text<</MCID 3>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 271.304 565.116 Tm [<0003010B0107010101030001>20<0019>65<010E010D010201030111>]TJ
 ET
 EMC
@@ -305,7 +305,7 @@ endobj
 [ 22 0 R /FitB ]
 endobj
 75 0 obj
-<< /ExtGState 1 0 R /Font << /F56 81 0 R /F28 82 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F44 81 0 R /F28 82 0 R >> >>
 endobj
 92 0 obj
 << /Length 1121 >>       
@@ -325,7 +325,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 266.679 647.619 Tm [<000600070006000B00050003>60<0016000B00110010>]TJ
 ET
 EMC
@@ -365,7 +365,7 @@ endobj
 [ 85 0 R /FitB ]
 endobj
 90 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 108 0 obj
 << /Type/OBJR/Obj 106 0 R/Pg 107 0 R >>
@@ -472,19 +472,19 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 240.731 647.619 Tm [<0016>60<00030004000E000700010011000800010005>10<00110010001600070010001600150001>]TJ
 ET
 EMC
 /Artifact BMC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 90 582.497 Tm [<0001>]TJ
 ET
 EMC
 /Lbl<</MCID 1>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 515.989 582.497 Tm [<0012>25<00FF0105>-5<0103>]TJ
 ET
 EMC
@@ -1531,7 +1531,7 @@ endobj
 [ 98 0 R /FitB ]
 endobj
 282 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 355 0 obj
 << /Type/OBJR/Obj 353 0 R/Pg 354 0 R >>
@@ -1830,14 +1830,14 @@ EMC
 EMC
 /Reference<</MCID 15>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 72 579.888 Tm [<0012>85<00030014>30<00160001000B0001>-765<000E010301130746>40<01120001010600FF>25<0115>5<0103000100FF0001010F00FF011101130001010F00FF0105>-5<0103>]TJ
 ET
 EMC
 /Link<</MCID 16>> BDC
 0.0 0.0 1.0 rg 0.0 0.0 1.0 RG
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 534.082 579.888 Tm [<078F>]TJ
 0 g 0 G
 ET
@@ -3100,7 +3100,7 @@ endobj
 [ 97 0 R /FitB ]
 endobj
 607 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 693 0 obj
 << /Length 1099 >>       
@@ -3210,19 +3210,19 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 258.753 647.619 Tm [<000E000B0015>10<00160001001100080001>20<0016>60<00030004000E00070015>]TJ
 ET
 EMC
 /Artifact BMC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 90 582.497 Tm [<0001>]TJ
 ET
 EMC
 /Lbl<</MCID 1>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 515.989 582.497 Tm [<0012>25<00FF0105>-5<0103>]TJ
 ET
 EMC
@@ -3443,7 +3443,7 @@ endobj
 [ 700 0 R /FitB ]
 endobj
 736 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 767 0 obj
 << /Type/OBJR/Obj 765 0 R/Pg 766 0 R >>
@@ -3472,19 +3472,19 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 254.916 647.619 Tm [<000E000B0015>10<001600010011000800010008000B00090017001400070015>]TJ
 ET
 EMC
 /Artifact BMC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 90 582.497 Tm [<0001>]TJ
 ET
 EMC
 /Lbl<</MCID 1>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 515.989 582.497 Tm [<0012>25<00FF0105>-5<0103>]TJ
 ET
 EMC
@@ -3633,7 +3633,7 @@ endobj
 [ 756 0 R /FitB ]
 endobj
 780 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 803 0 obj
 << /Length 3919 >>       
@@ -3653,7 +3653,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 239.105 647.619 Tm [<0003>40<0005000D00100011>30<0019000E000700060009000F0007001000160015>]TJ
 ET
 EMC
@@ -3711,7 +3711,7 @@ endobj
 [ 795 0 R /FitB ]
 endobj
 801 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 818 0 obj
 << /Length 1192 >>       
@@ -3731,7 +3731,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 273.864 647.619 Tm [<000300040015>10<001600140003>40<0005>5<0016>]TJ
 ET
 EMC
@@ -3783,7 +3783,7 @@ endobj
 [ 810 0 R /FitB ]
 endobj
 816 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 866 0 obj
 << /Type/OBJR/Obj 864 0 R/Pg 865 0 R >>
@@ -3806,7 +3806,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 184.278 647.619 Tm [<0005000A000300120016000700140001078707250001>-765<000900070010000700140003000E0001000B001000160014>20<0011000600170005>5<0016000B00110010>]TJ
 ET
 EMC
@@ -3835,7 +3835,7 @@ EMC
 EMC
 /section<</MCID 4>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 236.343 480.056 Tm [<0787072507870001>-265<00110115>5<0103011101150107010301160001>20<0016>50<0116>5<010E0001>20<0019>65<010E0111>10<01020112>]TJ
 ET
 EMC
@@ -3851,7 +3851,7 @@ EMC
 EMC
 /subsection<</MCID 6>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 410.238 Tm [<078707250787072507870001>-265<000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -3868,7 +3868,7 @@ EMC
 EMC
 /subsubsection<</MCID 8>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 322.625 Tm [<07870725078707250787072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<01130106010300010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -3885,7 +3885,7 @@ EMC
 EMC
 /subsection<</MCID 10>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 235.011 Tm [<078707250787072507880001>-265<001501030101010E010D01020001000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -3902,7 +3902,7 @@ EMC
 EMC
 /subsubsection<</MCID 12>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 147.398 Tm [<07870725078707250788072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<0113010601030001011201030101010E010D010200010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -3992,7 +3992,7 @@ endobj
 [ 857 0 R /FitB ]
 endobj
 875 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 906 0 obj
 << /Type/OBJR/Obj 904 0 R/Pg 905 0 R >>
@@ -4018,7 +4018,7 @@ EMC
 EMC
 /section<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 251.532 665.349 Tm [<0787072507880001>-265<0005011101070113>5<01030111010700FF00010014>15<01030115010701030116>]TJ
 ET
 EMC
@@ -4034,31 +4034,31 @@ EMC
 EMC
 /Caption<</MCID 2>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 597.68 Tm [<001601060103010E0111>10<0103010C>]TJ
 ET
 EMC
 /Lbl<</MCID 3>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 118.516 597.68 Tm [<0001078707250787>]TJ
 ET
 EMC
 /Caption<</MCID 4>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 134.891 597.68 Tm [<0725>]TJ
 ET
 EMC
 /Artifact BMC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 137.902 597.68 Tm [<0001>]TJ
 ET
 EMC
 /text<</MCID 5>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 142.883 597.68 Tm [<000A01030111>5<0103>10<0751>30<0112000100FF0001011301060103010E0111>5<0103010C0732>]TJ
 ET
 EMC
@@ -4066,7 +4066,7 @@ EMC
 EMC
 /section<</MCID 6>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 264.623 561.008 Tm [<0787072507890001>-265<0014>15<0103010401030111>10<0103010D010101030112>]TJ
 ET
 EMC
@@ -4082,7 +4082,7 @@ ET
 EMC
 /Em<</MCID 9>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 181.604 527.217 Tm [<0007011501030111011800010105>5<0103010D01030111>10<00FF01130107010D01050001010F010E010B01180113010E010F01030001010701120001011201130111>5<010E010D0105010B01180001010C010E010D010E01130118010F01070101>]TJ
 ET
 EMC
@@ -4097,7 +4097,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 428.716 527.217 Tm [<078807880787078607250786078D078C078F0786>]TJ
-/F60 10.90909 Tf
+/F48 10.90909 Tf
 1 0 0 1 479.989 527.217 Tm [<0067>290<0028004B001C0069003F0029>]TJ
 0 g 0 G
 ET
@@ -4187,7 +4187,7 @@ endobj
 [ 898 0 R /FitB ]
 endobj
 910 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R /F60 921 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R /F48 921 0 R >> >>
 endobj
 935 0 obj
 << /Type/OBJR/Obj 933 0 R/Pg 934 0 R >>
@@ -4213,7 +4213,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 184.392 647.619 Tm [<0005000A000300120016000700140001078807250001>-765<0012>85<0003001200070014000107870001>20<0016000B0016000E0007000100090011000700150001000A000700140007>]TJ
 ET
 EMC
@@ -4229,7 +4229,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 83.815 560.574 Tm [<000F010E010201070290029201030102000101040111>10<010E010C000100FF0001010C00FF010D01140112010101110107010F011300010113>5<010E0001010001030001011201140100010C01070113>15<0113>5<0103010200010113>5<010E072D00010114010D01020103011100010111>10<01030115010701030116072D0001010F01140100010B0107011201060103010200010107010D0001>]TJ
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 433.2 560.574 Tm [<001000FF010C01030001010E01040001>-51<0113010601030001000C>10<010E01140111010D00FF010B>-2<0001>]TJ
 ET
 EMC
@@ -4241,7 +4241,7 @@ EMC
 EMC
 /section<</MCID 4>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 271.647 523.901 Tm [<0788072507870001>-265<00030100011201130111>15<00FF01010113>]TJ
 ET
 EMC
@@ -4258,7 +4258,7 @@ EMC
 EMC
 /section<</MCID 6>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 268.796 431.515 Tm [<0788072507880001>-265<00110115>5<010301110115010701030116>]TJ
 ET
 EMC
@@ -4282,7 +4282,7 @@ EMC
 EMC
 /section<</MCID 9>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 259.321 295.284 Tm [<0788072507890001>-265<000B010D01130111>10<010E01020114010101130107010E010D>]TJ
 ET
 EMC
@@ -4318,7 +4318,7 @@ EMC
 EMC
 /subsection<</MCID 14>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 203.543 Tm [<078807250789072507870001>-265<000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -4419,7 +4419,7 @@ endobj
 [ 938 0 R /FitB ]
 endobj
 980 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R >> >>
 endobj
 1031 0 obj
 << /Type/OBJR/Obj 1029 0 R/Pg 1030 0 R >>
@@ -4451,7 +4451,7 @@ EMC
 EMC
 /subsubsection<</MCID 0>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 665.8 Tm [<07880725078907250787072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<01130106010300010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -4468,7 +4468,7 @@ EMC
 EMC
 /subsection<</MCID 2>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 578.187 Tm [<078807250789072507880001>-265<001501030101010E010D01020001000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -4476,7 +4476,7 @@ EMC
 EMC
 /paragraph<</MCID 3>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 548.524 Tm [<000A010300FF01020107010D0105>]TJ
 ET
 EMC
@@ -4493,7 +4493,7 @@ EMC
 EMC
 /subparagraph<</MCID 5>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 460.911 Tm [<0007>20<0115>5<0103010D00010112010C00FF010B010B0103011100010106010300FF01020107010D0105>]TJ
 ET
 EMC
@@ -4509,7 +4509,7 @@ EMC
 EMC
 /subsubsection<</MCID 7>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 395.221 Tm [<07880725078907250788072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<0113010601030001011201030101010E010D010200010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -4524,31 +4524,31 @@ ET
 EMC
 /Caption<</MCID 9>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 309.758 Tm [<001601060103010E0111>10<0103010C>]TJ
 ET
 EMC
 /Lbl<</MCID 10>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 118.516 309.758 Tm [<0001078807250787>]TJ
 ET
 EMC
 /Caption<</MCID 11>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 134.891 309.758 Tm [<0725>]TJ
 ET
 EMC
 /Artifact BMC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 137.902 309.758 Tm [<0001>]TJ
 ET
 EMC
 /text<</MCID 12>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 142.883 309.758 Tm [<000B01040001>-51<0113011101140103072C0001011301060103010D000101130106010701120001011301060103010E0111>5<0103010C0001010701120001011500FF01010114010E011401120730>]TJ
 ET
 EMC
@@ -4556,7 +4556,7 @@ EMC
 EMC
 /section<</MCID 13>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 251.532 273.085 Tm [<07880725078A0001>-265<0005011101070113>5<01030111010700FF00010014>15<01030115010701030116>]TJ
 ET
 EMC
@@ -4572,7 +4572,7 @@ EMC
 EMC
 /section<</MCID 15>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 263.792 202.622 Tm [<07880725078B0001>-265<0005010E010D0101010B011401120107010E010D>]TJ
 ET
 EMC
@@ -4602,7 +4602,7 @@ EMC
 EMC
 /section<</MCID 19>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 264.623 132.159 Tm [<07880725078C0001>-265<0014>15<0103010401030111>10<0103010D010101030112>]TJ
 ET
 EMC
@@ -4618,7 +4618,7 @@ ET
 EMC
 /Em<</MCID 22>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 181.604 98.368 Tm [<0007011501030111011800010105>5<0103010D01030111>10<00FF01130107010D01050001010F010E010B01180113010E010F01030001010701120001011201130111>5<010E010D0105010B01180001010C010E010D010E01130118010F01070101>]TJ
 ET
 EMC
@@ -4633,7 +4633,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 428.716 98.368 Tm [<078807880787078607250786078D078C078F0786>]TJ
-/F60 10.90909 Tf
+/F48 10.90909 Tf
 1 0 0 1 479.989 98.368 Tm [<0067>290<0028004B001C0069003F0029>]TJ
 0 g 0 G
 ET
@@ -4756,7 +4756,7 @@ endobj
 [ 1040 0 R /FitB ]
 endobj
 1063 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R /F60 921 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R /F48 921 0 R >> >>
 endobj
 1097 0 obj
 << /Type/OBJR/Obj 1096 0 R/Pg 1060 0 R >>
@@ -4790,7 +4790,7 @@ ET
 EMC
 /Em<</MCID 2>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 450.578 670.187 Tm [<00060107011201010111>5<0103011301030001>]TJ
 1 0 0 1 108 648.264 Tm [<000F00FF011301060103010C00FF0113010701010112>]TJ
 ET
@@ -4803,7 +4803,7 @@ ET
 EMC
 /Em<</MCID 4>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 171.851 648.264 Tm [<079307950792>]TJ
 ET
 EMC
@@ -4833,13 +4833,13 @@ ET
 EMC
 /Em<</MCID 9>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 108 591.269 Tm [<0005010E010D011501030117010701130118>]TJ
 ET
 EMC
 /text<</MCID 10>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 152.04 591.269 Tm [<0001>]TJ
 /F28 10.90909 Tf
 1 0 0 1 154.604 591.269 Tm [<0731010F010F>20<0725000107870786078707410787078E078607210001>20<0018>65<010E010B07250001078D0732072500010003010C010301110107010100FF010D0001000F00FF011301060103010C00FF01130107010100FF010B00010015010E01010107010301130118>75<0725>]TJ
@@ -4849,7 +4849,7 @@ EMC
 EMC
 /section<</MCID 11>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 135.83 554.596 Tm [<07880725078D0001>-265<0003010F010F0103010D01020107011700010003072400010003010F010F0103010D010201070117000100030001>20<001601070113010B010300010009010E010301120001000A01030111>10<01030001000301040113>5<010301110001>20<00160106010300010005010E010B010E010D>]TJ
 ET
 EMC
@@ -4879,7 +4879,7 @@ EMC
 EMC
 /subsection<</MCID 15>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 484.777 Tm [<07880725078D072507870001>-265<00120111>10<010E01010103010201140111>10<0103000101020103011300FF0107010B0112>]TJ
 ET
 EMC
@@ -4895,7 +4895,7 @@ EMC
 EMC
 /section<</MCID 17>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 136.739 418.442 Tm [<07880725078E0001>-265<0003010F010F0103010D01020107011700010004072400010003010F010F0103010D010201070117000100040001>20<001601070113010B010300010009010E010301120001000A01030111>10<01030001000301040113>5<010301110001>20<00160106010300010005010E010B010E010D>]TJ
 ET
 EMC
@@ -4925,7 +4925,7 @@ EMC
 EMC
 /subsection<</MCID 21>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 348.623 Tm [<07880725078E072507870001>-265<00120111>10<010E01010103010201140111>10<0103000101020103011300FF0107010B0112>]TJ
 ET
 EMC
@@ -5020,7 +5020,7 @@ endobj
 [ 1114 0 R /FitB ]
 endobj
 1119 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F59 918 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F47 918 0 R /F44 81 0 R >> >>
 endobj
 1141 0 obj
 << /Type/OBJR/Obj 1139 0 R/Pg 1140 0 R >>
@@ -5043,7 +5043,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 184.392 647.619 Tm [<0005000A000300120016000700140001078907250001>-765<0012>85<0003001200070014000107880001>20<0016000B0016000E0007000100090011000700150001000A000700140007>]TJ
 ET
 EMC
@@ -5059,7 +5059,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 83.815 560.574 Tm [<000F010E010201070290029201030102000101040111>10<010E010C000100FF0001010C00FF010D01140112010101110107010F011300010113>5<010E0001010001030001011201140100010C01070113>15<0113>5<0103010200010113>5<010E072D00010114010D01020103011100010111>10<01030115010701030116072D0001010F01140100010B0107011201060103010200010107010D0001>]TJ
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 433.2 560.574 Tm [<001000FF010C01030001010E01040001>-51<0113010601030001000C>10<010E01140111010D00FF010B>-2<0001>]TJ
 ET
 EMC
@@ -5071,7 +5071,7 @@ EMC
 EMC
 /section<</MCID 4>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 271.647 523.901 Tm [<0789072507870001>-265<00030100011201130111>15<00FF01010113>]TJ
 ET
 EMC
@@ -5088,7 +5088,7 @@ EMC
 EMC
 /section<</MCID 6>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 268.796 431.515 Tm [<0789072507880001>-265<00110115>5<010301110115010701030116>]TJ
 ET
 EMC
@@ -5112,7 +5112,7 @@ EMC
 EMC
 /section<</MCID 9>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 259.321 290.109 Tm [<0789072507890001>-265<000B010D01130111>10<010E01020114010101130107010E010D>]TJ
 ET
 EMC
@@ -5134,7 +5134,7 @@ EMC
 EMC
 /subsection<</MCID 12>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 198.367 Tm [<078907250789072507870001>-265<000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -5232,7 +5232,7 @@ endobj
 [ 1144 0 R /FitB ]
 endobj
 1207 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R >> >>
 endobj
 1245 0 obj
 << /Type/OBJR/Obj 1243 0 R/Pg 1244 0 R >>
@@ -5255,7 +5255,7 @@ EMC
 EMC
 /subsubsection<</MCID 0>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 665.8 Tm [<07890725078907250787072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<01130106010300010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -5272,7 +5272,7 @@ EMC
 EMC
 /subsection<</MCID 2>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 578.541 Tm [<078907250789072507880001>-265<001501030101010E010D01020001000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -5289,7 +5289,7 @@ EMC
 EMC
 /subsubsection<</MCID 4>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 491.282 Tm [<07890725078907250788072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<0113010601030001011201030101010E010D010200010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -5306,7 +5306,7 @@ EMC
 EMC
 /section<</MCID 6>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 251.532 403.378 Tm [<07890725078A0001>-265<0005011101070113>5<01030111010700FF00010014>15<01030115010701030116>]TJ
 ET
 EMC
@@ -5322,7 +5322,7 @@ EMC
 EMC
 /section<</MCID 8>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 263.792 333.268 Tm [<07890725078B0001>-265<0005010E010D0101010B011401120107010E010D>]TJ
 ET
 EMC
@@ -5358,7 +5358,7 @@ EMC
 EMC
 /section<</MCID 13>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 264.623 241.237 Tm [<07890725078C0001>-265<0014>15<0103010401030111>10<0103010D010101030112>]TJ
 ET
 EMC
@@ -5374,7 +5374,7 @@ ET
 EMC
 /Em<</MCID 16>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 170.945 207.446 Tm [<000E01030101011301140111>5<010301120001010E010D0001010F010E010B01180113010E010F01030112>]TJ
 ET
 EMC
@@ -5388,7 +5388,7 @@ EMC
 EMC
 /section<</MCID 18>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 193.183 171.127 Tm [<07890725078D0001>-265<0003010F010F0103010D01020107011707240001>-78<0003010F010F0103010D0102010701170001>19<001601070113010B010300010009010E010301120001000A01030111>10<0103>]TJ
 ET
 EMC
@@ -5404,7 +5404,7 @@ EMC
 EMC
 /subsection<</MCID 20>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 101.663 Tm [<07890725078D072507870001>-265<00120111>10<010E01010103010201140111>10<0103000101020103011300FF0107010B0112>]TJ
 ET
 EMC
@@ -5503,7 +5503,7 @@ endobj
 [ 1266 0 R /FitB ]
 endobj
 1271 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R >> >>
 endobj
 1286 0 obj
 << /Length 1265 >>       
@@ -5678,13 +5678,13 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 14.3462 Tf
+/F44 14.3462 Tf
 1 0 0 1 280.571 467.767 Tm [<0012>85<00030014>30<001600010001000B>]TJ
 ET
 EMC
 /Span<</MCID 1>> BDC
 BT
-/F56 14.3462 Tf
+/F44 14.3462 Tf
 1 0 0 1 234.592 418.827 Tm [<000E010301130746>40<01120001010600FF>25<0115>5<0103000100FF0001010F00FF011101130001010F00FF0105>-5<0103>]TJ
 ET
 EMC
@@ -5715,7 +5715,7 @@ endobj
 [ 1292 0 R /FitB ]
 endobj
 1297 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 1313 0 obj
 << /Type/OBJR/Obj 1311 0 R/Pg 1312 0 R >>
@@ -5744,7 +5744,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 184.392 647.619 Tm [<0005000A000300120016000700140001078A07250001>-765<0012>85<0003001200070014000107890001>20<0016000B0016000E0007000100090011000700150001000A000700140007>]TJ
 ET
 EMC
@@ -5760,7 +5760,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 83.815 560.574 Tm [<000F010E010201070290029201030102000101040111>10<010E010C000100FF0001010C00FF010D01140112010101110107010F011300010113>5<010E0001010001030001011201140100010C01070113>15<0113>5<0103010200010113>5<010E072D00010114010D01020103011100010111>10<01030115010701030116072D0001010F01140100010B0107011201060103010200010107010D0001>]TJ
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 433.2 560.574 Tm [<001000FF010C01030001010E01040001>-51<0113010601030001000C>10<010E01140111010D00FF010B>-2<0001>]TJ
 ET
 EMC
@@ -5772,7 +5772,7 @@ EMC
 EMC
 /section<</MCID 4>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 271.647 523.901 Tm [<078A072507870001>-265<00030100011201130111>15<00FF01010113>]TJ
 ET
 EMC
@@ -5789,7 +5789,7 @@ EMC
 EMC
 /section<</MCID 6>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 226.408 431.515 Tm [<078A072507880001>-265<000F010301130106010E01020112000100FF010D01020001010F0111>10<010E01010103010201140111>10<01030112>]TJ
 ET
 EMC
@@ -5812,7 +5812,7 @@ EMC
 EMC
 /section<</MCID 9>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 259.321 317.207 Tm [<078A072507890001>-265<000B010D01130111>10<010E01020114010101130107010E010D>]TJ
 ET
 EMC
@@ -5848,7 +5848,7 @@ EMC
 EMC
 /subsection<</MCID 14>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 211.917 Tm [<078A07250789072507870001>-265<000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -5972,7 +5972,7 @@ endobj
 [ 1316 0 R /FitB ]
 endobj
 1383 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R >> >>
 endobj
 1406 0 obj
 << /Length 5877 >>       
@@ -6095,7 +6095,7 @@ EMC
 EMC
 /subsubsection<</MCID 9>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 217.601 Tm [<078A0725078907250787072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<01130106010300010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -6112,7 +6112,7 @@ EMC
 EMC
 /subsection<</MCID 11>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 129.988 Tm [<078A07250789072507880001>-265<001501030101010E010D01020001000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -6182,7 +6182,7 @@ endobj
 [ 1382 0 R /FitB ]
 endobj
 1404 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 1422 0 obj
 << /Type/OBJR/Obj 1420 0 R/Pg 1421 0 R >>
@@ -6205,7 +6205,7 @@ EMC
 EMC
 /subsubsection<</MCID 0>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 665.8 Tm [<078A0725078907250788072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<0113010601030001011201030101010E010D010200010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -6222,7 +6222,7 @@ EMC
 EMC
 /section<</MCID 2>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 251.532 577.542 Tm [<078A0725078A0001>-265<0005011101070113>5<01030111010700FF00010014>15<01030115010701030116>]TJ
 ET
 EMC
@@ -6267,7 +6267,7 @@ EMC
 EMC
 /section<</MCID 7>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 244.234 253.087 Tm [<078A0725078B0001>-265<0005010E010D01130107010D01140107010D01050001>20<0016>60<00FF0100010B01030112>]TJ
 ET
 EMC
@@ -6284,7 +6284,7 @@ EMC
 EMC
 /section<</MCID 9>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 274.827 148.43 Tm [<078A0725078C0001>-265<0014>15<010301120114010B01130112>]TJ
 ET
 EMC
@@ -6359,7 +6359,7 @@ endobj
 [ 1890 0 R /FitB ]
 endobj
 1902 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 1918 0 obj
 << /Type/OBJR/Obj 1916 0 R/Pg 1917 0 R >>
@@ -6394,7 +6394,7 @@ EMC
 EMC
 /section<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 263.804 665.349 Tm [<078A0725078D0001>-265<0005010E010D0101010B011401120107010E010D>]TJ
 ET
 EMC
@@ -6430,7 +6430,7 @@ EMC
 EMC
 /section<</MCID 5>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 264.623 572.963 Tm [<078A0725078E0001>-265<0014>15<0103010401030111>10<0103010D010101030112>]TJ
 ET
 EMC
@@ -6447,7 +6447,7 @@ ET
 EMC
 /Em<</MCID 8>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 314.858 517.25 Tm [<00060107011201010111>5<0103011301030001000F00FF011301060103010C00FF0113010701010112>]TJ
 ET
 EMC
@@ -6459,7 +6459,7 @@ ET
 EMC
 /Em<</MCID 10>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 416.683 517.25 Tm [<079407950797>]TJ
 ET
 EMC
@@ -6489,7 +6489,7 @@ ET
 EMC
 /Em<</MCID 15>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 190.134 460.254 Tm [<0005010E010D01130111>10<00FF01010113010701000107010B0107011301180001010E01040001>-51<011301060103000100140107010F011200010101>5<010E010C010F010B01030117010301120001010E01040001>-51<0107010D011301030105>5<010301110001010B00FF0113>15<011301070101>5<0103011200010115010700FF0001010B010E0101>5<00FF010B00010102010E010C0107010D00FF01130107010E010D>]TJ
 ET
 EMC
@@ -6505,7 +6505,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 138.218 438.331 Tm [<0788078A0786078B07250786078F07870789078A>]TJ
-/F60 10.90909 Tf
+/F48 10.90909 Tf
 1 0 0 1 189.491 438.331 Tm [<0067>290<0028004B001C0069003F0029>]TJ
 0 g 0 G
 ET
@@ -6528,7 +6528,7 @@ EMC
 EMC
 /section<</MCID 20>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 193.171 401.659 Tm [<078A0725078F0001>-265<0003010F010F0103010D01020107011707240001>-78<0003010F010F0103010D0102010701170001>19<001601070113010B010300010009010E010301120001000A01030111>10<0103>]TJ
 ET
 EMC
@@ -6558,7 +6558,7 @@ EMC
 EMC
 /subsection<</MCID 24>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 331.84 Tm [<078A0725078F072507870001>-265<00120111>10<010E01010103010201140111>10<0103000101020103011300FF0107010B0112>]TJ
 ET
 EMC
@@ -6663,7 +6663,7 @@ endobj
 [ 1959 0 R /FitB ]
 endobj
 1964 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R /F60 921 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R /F48 921 0 R >> >>
 endobj
 1979 0 obj
 << /Length 37853 >>      
@@ -11361,7 +11361,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 184.392 647.619 Tm [<0005000A000300120016000700140001078B07250001>-765<0012>85<00030012000700140001078A0001>20<0016000B0016000E0007000100090011000700150001000A000700140007>]TJ
 ET
 EMC
@@ -11377,7 +11377,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 83.815 560.574 Tm [<000F010E010201070290029201030102000101040111>10<010E010C000100FF0001010C00FF010D01140112010101110107010F011300010113>5<010E0001010001030001011201140100010C01070113>15<0113>5<0103010200010113>5<010E072D00010114010D01020103011100010111>10<01030115010701030116072D0001010F01140100010B0107011201060103010200010107010D0001>]TJ
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 433.2 560.574 Tm [<001000FF010C01030001010E01040001>-51<0113010601030001000C>10<010E01140111010D00FF010B>-2<0001>]TJ
 ET
 EMC
@@ -11389,7 +11389,7 @@ EMC
 EMC
 /section<</MCID 4>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 271.647 523.901 Tm [<078B072507870001>-265<00030100011201130111>15<00FF01010113>]TJ
 ET
 EMC
@@ -11406,7 +11406,7 @@ EMC
 EMC
 /section<</MCID 6>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 268.796 431.515 Tm [<078B072507880001>-265<00110115>5<010301110115010701030116>]TJ
 ET
 EMC
@@ -11429,7 +11429,7 @@ EMC
 EMC
 /section<</MCID 9>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 259.321 317.207 Tm [<078B072507890001>-265<000B010D01130111>10<010E01020114010101130107010E010D>]TJ
 ET
 EMC
@@ -11480,19 +11480,19 @@ Q
 EMC
 /TD<</MCID 15>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 211.55 201.155 Tm [<0001>235<0007010B0103010C0103010D0113>]TJ
 ET
 EMC
 /TD<</MCID 16>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 279.502 201.155 Tm [<0001>235<0005010E010D01130111>10<010E010B>]TJ
 ET
 EMC
 /TD<</MCID 17>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 330.457 201.155 Tm [<0001>235<00070117010F010301110107010C0103010D011300FF010B>]TJ
 ET
 EMC
@@ -11707,7 +11707,7 @@ endobj
 [ 2007 0 R /FitB ]
 endobj
 2066 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R >> >>
 endobj
 2082 0 obj
 << /Type/OBJR/Obj 2080 0 R/Pg 2081 0 R >>
@@ -11730,7 +11730,7 @@ EMC
 EMC
 /subsection<</MCID 0>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 665.8 Tm [<078B07250789072507870001>-265<000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -11787,7 +11787,7 @@ EMC
 EMC
 /subsubsection<</MCID 7>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 256.294 Tm [<078B0725078907250787072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<01130106010300010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -11804,7 +11804,7 @@ EMC
 EMC
 /subsection<</MCID 9>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 168.681 Tm [<078B07250789072507880001>-265<001501030101010E010D01020001000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -13992,7 +13992,7 @@ endobj
 [ 2096 0 R /FitB ]
 endobj
 2109 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> /XObject << /Im2 2086 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> /XObject << /Im2 2086 0 R >> >>
 endobj
 2150 0 obj
 << /Type/OBJR/Obj 2148 0 R/Pg 2149 0 R >>
@@ -14024,7 +14024,7 @@ EMC
 EMC
 /subsubsection<</MCID 0>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 665.8 Tm [<078B0725078907250788072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<0113010601030001011201030101010E010D010200010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -14041,7 +14041,7 @@ EMC
 EMC
 /section<</MCID 2>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 251.532 577.542 Tm [<078B0725078A0001>-265<0005011101070113>5<01030111010700FF00010014>15<01030115010701030116>]TJ
 ET
 EMC
@@ -14057,7 +14057,7 @@ EMC
 EMC
 /section<</MCID 4>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 274.827 507.079 Tm [<078B0725078B0001>-265<0014>15<010301120114010B01130112>]TJ
 ET
 EMC
@@ -14065,7 +14065,7 @@ EMC
 EMC
 /section<</MCID 5>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 263.792 472.643 Tm [<078B0725078C0001>-265<0005010E010D0101010B011401120107010E010D>]TJ
 ET
 EMC
@@ -14081,7 +14081,7 @@ EMC
 EMC
 /section<</MCID 7>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 264.635 402.18 Tm [<078B0725078D0001>-265<0014>15<0103010401030111>10<0103010D010101030112>]TJ
 ET
 EMC
@@ -14097,7 +14097,7 @@ ET
 EMC
 /Em<</MCID 10>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 181.604 368.39 Tm [<0007011501030111011800010105>5<0103010D01030111>10<00FF01130107010D01050001010F010E010B01180113010E010F01030001010701120001011201130111>5<010E010D0105010B01180001010C010E010D010E01130118010F01070101>]TJ
 ET
 EMC
@@ -14112,7 +14112,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 428.716 368.39 Tm [<078807880787078607250786078D078C078F0786>]TJ
-/F60 10.90909 Tf
+/F48 10.90909 Tf
 1 0 0 1 479.989 368.39 Tm [<0067>290<0028004B001C0069003F0029>]TJ
 0 g 0 G
 ET
@@ -14144,7 +14144,7 @@ ET
 EMC
 /Em<</MCID 17>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 170.945 311.394 Tm [<000E01030101011301140111>5<010301120001010E010D0001010F010E010B01180113010E010F01030112>]TJ
 ET
 EMC
@@ -14158,7 +14158,7 @@ EMC
 EMC
 /section<</MCID 19>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 197.146 274.721 Tm [<078B0725078E0001>-265<0003010F010F0103010D01020107011707240001>-78<0003010F010F0103010D0102010701170001011301070113010B010300010105>-5<010E010301120001010601030111>9<0103>]TJ
 ET
 EMC
@@ -14188,7 +14188,7 @@ EMC
 EMC
 /subsection<</MCID 23>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 204.903 Tm [<078B0725078E072507870001>-265<00120111>10<010E01010103010201140111>10<0103000101020103011300FF0107010B0112>]TJ
 ET
 EMC
@@ -14326,13 +14326,13 @@ endobj
 [ 2171 0 R /FitB ]
 endobj
 2182 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R /F60 921 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R /F48 921 0 R >> >>
 endobj
 2208 0 obj
 << /Type/OBJR/Obj 2206 0 R/Pg 2207 0 R >>
 endobj
 2231 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 3 >>          
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 3 >>          
 stream
 $A$
 endstream
@@ -14341,7 +14341,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile1.tex) /UF <FEFF007400610067002D0041004600660069006C00650031002E007400650078> /EF<</F 2231 0 R/UF 2231 0 R>> >>
 endobj
 2243 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 156 >>        
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 156 >>        
 stream
 \begin {equation}\label {orthogonalProjectionIsGoodActually} d(x,y)= d(x,z)+d(z,y) \geq d(x,x-\langle x,n\rangle n )+0 = \langle x,n\rangle .\end {equation}
 endstream
@@ -14350,7 +14350,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile2.tex) /UF <FEFF007400610067002D0041004600660069006C00650032002E007400650078> /EF<</F 2243 0 R/UF 2243 0 R>> >>
 endobj
 2249 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 258 >>        
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 258 >>        
 stream
 \begin {align}\ell _1(\hat {x},y) & = \ell _1 (x,y) \\ & =|\ell _1(x,y)-2\langle x,n\rangle \ell _1(n,0)| \\ & \left (\frac {x+y+z}{2x+y}\right ) - \left (2x^2-y\right ) \\ & B\left \langle \frac {4}{x}+x^3\right \rangle \\ & \Bigg (x^2-2x\Bigg )\end {align}
 endstream
@@ -14362,7 +14362,7 @@ endobj
 << /Type/OBJR/Obj 2258 0 R/Pg 2259 0 R >>
 endobj
 2262 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 100 >>        
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 100 >>        
 stream
 \begin {equation*}\ell _1(\hat {x},y)\ \ell _1(\hat {x},y)-2\langle x,n\rangle \leq \end {equation*}
 endstream
@@ -14388,7 +14388,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 195.14 647.619 Tm [<0005000A000300120016000700140001078C07250001>-765<0005000A000300120016000700140001>20<0019000B0016000A0001000F0003>60<0016000A>]TJ
 ET
 EMC
@@ -14404,7 +14404,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 83.815 560.574 Tm [<000F010E010201070290029201030102000101040111>10<010E010C000100FF0001010C00FF010D01140112010101110107010F011300010113>5<010E0001010001030001011201140100010C01070113>15<0113>5<0103010200010113>5<010E072D00010114010D01020103011100010111>10<01030115010701030116072D0001010F01140100010B0107011201060103010200010107010D0001>]TJ
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 433.2 560.574 Tm [<001000FF010C01030001010E01040001>-51<0113010601030001000C>10<010E01140111010D00FF010B>-2<0001>]TJ
 ET
 EMC
@@ -14416,7 +14416,7 @@ EMC
 EMC
 /section<</MCID 4>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 271.647 523.981 Tm [<078C072507870001>-265<00030100011201130111>15<00FF01010113>]TJ
 ET
 EMC
@@ -14433,7 +14433,7 @@ EMC
 EMC
 /section<</MCID 6>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 250.743 431.674 Tm [<078C072507880001>-265<00120111>10<010E010E01040112000100FF010D01020001001501130114028F0104>]TJ
 ET
 EMC
@@ -14441,25 +14441,25 @@ EMC
 EMC
 /Caption<</MCID 7>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 397.883 Tm [<0006010302900292010D010701130107010E010D>]TJ
 ET
 EMC
 /Lbl<</MCID 8>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 124.8 397.883 Tm [<0001078C07250787>]TJ
 ET
 EMC
 /Caption<</MCID 9>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 141.175 397.883 Tm [<0725>]TJ
 ET
 EMC
 /Artifact BMC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 144.185 397.883 Tm [<0001>]TJ
 ET
 EMC
@@ -14485,37 +14485,37 @@ EMC
 EMC
 /Caption<</MCID 13>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 364.566 Tm [<000E0103010C010C00FF>]TJ
 ET
 EMC
 /Lbl<</MCID 14>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 111.131 364.566 Tm [<0001078C07250787>]TJ
 ET
 EMC
 /Caption<</MCID 15>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 127.505 364.566 Tm [<0725>]TJ
 ET
 EMC
 /Artifact BMC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 130.516 364.566 Tm [<0001>]TJ
 ET
 EMC
 /text<</MCID 16>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 135.498 364.566 Tm [<000B01040001>-51<0101>5<010E010E010B072C0001011301060103010D000101050111>5<010300FF01130730>]TJ
 ET
 EMC
 /Caption<</MCID 17>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 72 334.145 Tm [<00120111>5<010E010E0104>20<0730>]TJ
 ET
 EMC
@@ -14823,10 +14823,10 @@ endobj
 [ 2211 0 R /FitB ]
 endobj
 2264 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F59 918 0 R /F32 2272 0 R /F33 2279 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F47 918 0 R /F32 2272 0 R /F33 2279 0 R >> >>
 endobj
 2299 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 34 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 34 >>         
 stream
 $B\left (\frac {3x}{2y-x}\right )$
 endstream
@@ -14835,7 +14835,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile5.tex) /UF <FEFF007400610067002D0041004600660069006C00650035002E007400650078> /EF<</F 2299 0 R/UF 2299 0 R>> >>
 endobj
 2302 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 8 >>          
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 8 >>          
 stream
 $d(x,y)$
 endstream
@@ -14844,7 +14844,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile6.tex) /UF <FEFF007400610067002D0041004600660069006C00650036002E007400650078> /EF<</F 2302 0 R/UF 2302 0 R>> >>
 endobj
 2305 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 26 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 26 >>         
 stream
 $\sqrt {x^2+\frac {3}{x}}$
 endstream
@@ -14862,7 +14862,7 @@ endobj
 << /Type/OBJR/Obj 2326 0 R/Pg 2259 0 R >>
 endobj
 2329 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 48 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 48 >>         
 stream
 \begin {equation*}x^2+y^2+x^2=2.\end {equation*}
 endstream
@@ -14871,7 +14871,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile8.tex) /UF <FEFF007400610067002D0041004600660069006C00650038002E007400650078> /EF<</F 2329 0 R/UF 2329 0 R>> >>
 endobj
 2352 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 3 >>          
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 3 >>          
 stream
 $s$
 endstream
@@ -14880,7 +14880,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile9.tex) /UF <FEFF007400610067002D0041004600660069006C00650039002E007400650078> /EF<</F 2352 0 R/UF 2352 0 R>> >>
 endobj
 2365 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 25 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 25 >>         
 stream
 $j\in \{1,2,\ldots ,15\}$
 endstream
@@ -14889,7 +14889,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile10.tex) /UF <FEFF007400610067002D0041004600660069006C006500310030002E007400650078> /EF<</F 2365 0 R/UF 2365 0 R>> >>
 endobj
 2373 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 3 >>          
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 3 >>          
 stream
 $5$
 endstream
@@ -14898,7 +14898,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile11.tex) /UF <FEFF007400610067002D0041004600660069006C006500310031002E007400650078> /EF<</F 2373 0 R/UF 2373 0 R>> >>
 endobj
 2381 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 27 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 27 >>         
 stream
 $x\in \{1,2,\ldots ,1000\}$
 endstream
@@ -14907,7 +14907,7 @@ endobj
 << /Type /Filespec /AFRelationship /Source /Desc (TeX source) /F (tag-AFfile12.tex) /UF <FEFF007400610067002D0041004600660069006C006500310032002E007400650078> /EF<</F 2381 0 R/UF 2381 0 R>> >>
 endobj
 2392 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 3 >>          
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 3 >>          
 stream
 $a$
 endstream
@@ -15077,37 +15077,37 @@ EMC
 EMC
 /Caption<</MCID 12>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 523.249 Tm [<001601060103010E0111>10<0103010C>]TJ
 ET
 EMC
 /Lbl<</MCID 13>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 118.516 523.249 Tm [<0001078C07250787>]TJ
 ET
 EMC
 /Caption<</MCID 14>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 134.891 523.249 Tm [<0725>]TJ
 ET
 EMC
 /Artifact BMC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 137.902 523.249 Tm [<0001>]TJ
 ET
 EMC
 /text<</MCID 15>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 142.883 523.249 Tm [<000B01040001>-51<0113011101140103072C0001011301060103010D000101070113000100FF010B010B00010101>5<010E010B010B00FF010F0112010301120730>]TJ
 ET
 EMC
 /Caption<</MCID 16>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 72 492.361 Tm [<00120111>5<010E010E0104>20<0730>]TJ
 ET
 EMC
@@ -15206,7 +15206,7 @@ EMC
 EMC
 /section<</MCID 26>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 247.808 374.959 Tm [<078C072507890001>-265<0008010B010E00FF01130107010D0105000100120111>15<00FF01010113010701010103>]TJ
 ET
 EMC
@@ -15227,7 +15227,7 @@ Q
 EMC
 /text<</MCID 28>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 318.613 Tm [<0003010B0105>-5<010E0111010701130106010C0001078C072507870001>]TJ
 /F28 10.90909 Tf
 1 0 0 1 144.469 318.613 Tm [<00150101010E0111>10<010300010003010B0105>-5<010E0111010701130106010C>]TJ
@@ -15249,7 +15249,7 @@ ET
 EMC
 /text<</MCID 30>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90.545 302.142 Tm [<000B010D010F0114011307240001>]TJ
 ET
 EMC
@@ -15273,7 +15273,7 @@ ET
 EMC
 /text<</MCID 34>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90.545 275.044 Tm [<0104010E01110001>]TJ
 ET
 EMC
@@ -15285,7 +15285,7 @@ ET
 EMC
 /text<</MCID 36>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 180.471 275.044 Tm [<00010102010E>]TJ
 ET
 EMC
@@ -15325,7 +15325,7 @@ EMC
 BT
 /F28 8.96638 Tf
 1 0 0 1 90.545 247.946 Tm [<0001>]TJ
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 106.909 247.946 Tm [<0104010E01110001>]TJ
 ET
 EMC
@@ -15337,7 +15337,7 @@ ET
 EMC
 /text<</MCID 44>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 208.922 247.946 Tm [<00010102010E>]TJ
 ET
 EMC
@@ -15391,7 +15391,7 @@ EMC
 EMC
 /section<</MCID 51>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 264.623 141.768 Tm [<078C0725078A0001>-265<0014>15<0103010401030111>10<0103010D010101030112>]TJ
 ET
 EMC
@@ -15407,7 +15407,7 @@ ET
 EMC
 /Em<</MCID 54>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 450.578 107.978 Tm [<00060107011201010111>5<0103011301030001>]TJ
 1 0 0 1 108 86.055 Tm [<000F00FF011301060103010C00FF0113010701010112>]TJ
 ET
@@ -15420,7 +15420,7 @@ ET
 EMC
 /Em<</MCID 56>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 171.851 86.055 Tm [<079307950792>]TJ
 ET
 EMC
@@ -15551,7 +15551,7 @@ endobj
 [ 2415 0 R /FitB ]
 endobj
 2436 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F32 2272 0 R /F33 2279 0 R /F56 81 0 R /F59 918 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F32 2272 0 R /F33 2279 0 R /F44 81 0 R /F47 918 0 R >> >>
 endobj
 2472 0 obj
 << /Type/OBJR/Obj 2471 0 R/Pg 2433 0 R >>
@@ -15583,7 +15583,7 @@ ET
 EMC
 /Em<</MCID 2>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 314.858 648.264 Tm [<00060107011201010111>5<0103011301030001000F00FF011301060103010C00FF0113010701010112>]TJ
 ET
 EMC
@@ -15595,7 +15595,7 @@ ET
 EMC
 /Em<</MCID 4>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 416.683 648.264 Tm [<079407950797>]TJ
 ET
 EMC
@@ -15626,14 +15626,14 @@ ET
 EMC
 /Em<</MCID 9>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 325.538 569.346 Tm [<0004010E01020107010301120001010E01040001>-51<0005010E010D0112011300FF010D01130001>20<00190107010201130106072F00010003010D0001000B010D01130111>5<010E01020114010101130107010E010D00010113010E0001>]TJ
 1 0 0 1 108 547.423 Tm [<0005010E010D011501030117000100090103010E010C01030113011101180001011601070113010600010003010F010F010B01070101>5<00FF01130107010E010D0112>]TJ
 ET
 EMC
 /text<</MCID 10>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 268.004 547.423 Tm [<0001>]TJ
 /F28 10.90909 Tf
 1 0 0 1 270.567 547.423 Tm [<0731010F010F>20<072500010787078A078907410787078C078B0732072500010015010F01110107010D0105>-5<010301110001000B010D0113>5<01030111010D00FF01130107010E010D00FF010B0001001201140100010B0107011201060107010D0105>10<07250001>]TJ
@@ -15705,7 +15705,7 @@ endobj
 [ 2465 0 R /FitB ]
 endobj
 2473 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F59 918 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F47 918 0 R >> >>
 endobj
 2507 0 obj
 << /Type/OBJR/Obj 2505 0 R/Pg 2506 0 R >>
@@ -15728,7 +15728,7 @@ EMC
 EMC
 /Span<</MCID 0>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 192.426 647.619 Tm [<0005000A000300120016000700140001078D07250001>-765<000900070010000700140003000E00010005>10<001100100005000E>20<00170015000B00110010>]TJ
 ET
 EMC
@@ -15751,7 +15751,7 @@ EMC
 EMC
 /section<</MCID 3>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 223.222 501.979 Tm [<078D072507870001>-265<00150114010C010C00FF0111011800010003010D0102000100060107011201010114011201120107010E010D>]TJ
 ET
 EMC
@@ -15767,7 +15767,7 @@ EMC
 EMC
 /subsection<</MCID 5>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 72 432.16 Tm [<078D07250787072507870001>-265<000A0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -15845,7 +15845,7 @@ endobj
 [ 2497 0 R /FitB ]
 endobj
 2508 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 2544 0 obj
 << /Length 3090 >>       
@@ -15884,19 +15884,19 @@ Q
 EMC
 /TD<</MCID 1>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 750.123 310.765 Tm [<0001>235<0007010B0103010C0103010D0113>]TJ
 ET
 EMC
 /TD<</MCID 2>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 818.075 310.765 Tm [<0001>235<0005010E010D01130111>10<010E010B>]TJ
 ET
 EMC
 /TD<</MCID 3>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 869.03 310.765 Tm [<0001>235<00070117010F010301110107010C0103010D011300FF010B>]TJ
 ET
 EMC
@@ -16052,7 +16052,7 @@ endobj
 [ 2516 0 R /FitB ]
 endobj
 2542 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R >> >>
 endobj
 2558 0 obj
 << /Type/OBJR/Obj 2556 0 R/Pg 2557 0 R >>
@@ -16064,7 +16064,7 @@ endobj
 << /Type/OBJR/Obj 2565 0 R/Pg 2557 0 R >>
 endobj
 2568 0 obj
-<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250115) >> /Length 48 >>         
+<< /Subtype /application#2Fx-tex/Type /EmbeddedFile /Params<</ModDate (D:20250116) >> /Length 48 >>         
 stream
 \begin {equation*}x^2 + y^2 = 8.\end {equation*}
 endstream
@@ -16368,7 +16368,7 @@ stream
        <rdf:Bag>
         <rdf:li rdf:parseType="Resource">
          <pdfd:claimBy>LaTeX Project</pdfd:claimBy>
-         <pdfd:claimDate>2025-01-15</pdfd:claimDate>
+         <pdfd:claimDate>2025-01-16</pdfd:claimDate>
         </rdf:li>
        </rdf:Bag>
       </pdfd:claimData>
@@ -16379,7 +16379,7 @@ stream
        <rdf:Bag>
         <rdf:li rdf:parseType="Resource">
          <pdfd:claimBy>LaTeX Project</pdfd:claimBy>
-         <pdfd:claimDate>2025-01-15</pdfd:claimDate>
+         <pdfd:claimDate>2025-01-16</pdfd:claimDate>
         </rdf:li>
        </rdf:Bag>
       </pdfd:claimData>
@@ -16408,17 +16408,17 @@ stream
    </dc:language>
    <dc:date>
     <rdf:Seq>
-     <rdf:li>2025-01-15T09:10:47-06:00</rdf:li>
+     <rdf:li>2025-01-16T20:35:34-06:00</rdf:li>
     </rdf:Seq>
    </dc:date>
    <dc:format>application/pdf</dc:format>
    <dc:source>thesis.tex</dc:source>
    <xmp:CreatorTool>LaTeX with hyperref</xmp:CreatorTool>
-   <xmp:CreateDate>2025-01-15T09:10:47-06:00</xmp:CreateDate>
-   <xmp:ModifyDate>2025-01-15T09:10:47-06:00</xmp:ModifyDate>
-   <xmp:MetadataDate>2025-01-15T09:10:47-06:00</xmp:MetadataDate>
+   <xmp:CreateDate>2025-01-16T20:35:34-06:00</xmp:CreateDate>
+   <xmp:ModifyDate>2025-01-16T20:35:34-06:00</xmp:ModifyDate>
+   <xmp:MetadataDate>2025-01-16T20:35:34-06:00</xmp:MetadataDate>
    <xmpMM:DocumentID>uuid:647fde89-3d3d-4d07-8d09-f1aa4ab5388e</xmpMM:DocumentID>
-   <xmpMM:InstanceID>uuid:8ffcd94c-9175-48c2-8393-5eff67ddaad8</xmpMM:InstanceID>
+   <xmpMM:InstanceID>uuid:38720fba-b844-4f1e-87b7-3a700b377ff7</xmpMM:InstanceID>
    <prism:complianceProfile>three</prism:complianceProfile>
    <prism:pageCount>33</prism:pageCount>
   </rdf:Description>
@@ -16455,7 +16455,7 @@ EMC
 EMC
 /subsubsection<</MCID 0>> BDC
 BT
-/F56 10.90909 Tf
+/F44 10.90909 Tf
 1 0 0 1 90 665.8 Tm [<078D0725078707250787072507870001>-265<0012>25<00FF0111011301120001010E01040001>-50<01130106010300010106>20<0118010F010E011301060103011201070112>]TJ
 ET
 EMC
@@ -16528,7 +16528,7 @@ EMC
 EMC
 /section<</MCID 9>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 251.544 533.697 Tm [<078D072507880001>-265<0005011101070113>5<01030111010700FF00010014>15<01030115010701030116>]TJ
 ET
 EMC
@@ -16544,7 +16544,7 @@ EMC
 EMC
 /section<</MCID 11>> BDC
 BT
-/F56 11.95517 Tf
+/F44 11.95517 Tf
 1 0 0 1 264.635 463.234 Tm [<078D072507890001>-265<0014>15<0103010401030111>10<0103010D010101030112>]TJ
 ET
 EMC
@@ -16560,7 +16560,7 @@ ET
 EMC
 /Em<</MCID 14>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 450.578 429.443 Tm [<00060107011201010111>5<0103011301030001>]TJ
 1 0 0 1 108 407.521 Tm [<000F00FF011301060103010C00FF0113010701010112>]TJ
 ET
@@ -16573,7 +16573,7 @@ ET
 EMC
 /Em<</MCID 16>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 171.851 407.521 Tm [<079307950792>]TJ
 ET
 EMC
@@ -16603,7 +16603,7 @@ ET
 EMC
 /Em<</MCID 21>> BDC
 BT
-/F59 10.90909 Tf
+/F47 10.90909 Tf
 1 0 0 1 190.134 372.447 Tm [<0005010E010D01130111>10<00FF01010113010701000107010B0107011301180001010E01040001>-51<011301060103000100140107010F011200010101>5<010E010C010F010B01030117010301120001010E01040001>-51<0107010D011301030105>5<010301110001010B00FF0113>15<011301070101>5<0103011200010115010700FF0001010B010E0101>5<00FF010B00010102010E010C0107010D00FF01130107010E010D>]TJ
 ET
 EMC
@@ -16619,7 +16619,7 @@ EMC
 BT
 /F28 10.90909 Tf
 1 0 0 1 138.218 350.525 Tm [<0788078A0786078B07250786078F07870789078A>]TJ
-/F60 10.90909 Tf
+/F48 10.90909 Tf
 1 0 0 1 189.491 350.525 Tm [<0067>290<0028004B001C0069003F0029>]TJ
 0 g 0 G
 ET
@@ -16728,7 +16728,7 @@ endobj
 [ 2595 0 R /FitB ]
 endobj
 2607 0 obj
-<< /ExtGState 1 0 R /Font << /F28 82 0 R /F56 81 0 R /F32 2272 0 R /F33 2279 0 R /F59 918 0 R /F60 921 0 R >> >>
+<< /ExtGState 1 0 R /Font << /F28 82 0 R /F44 81 0 R /F32 2272 0 R /F33 2279 0 R /F47 918 0 R /F48 921 0 R >> >>
 endobj
 1 0 obj
 << /opacity1 <</ca 1/CA 1>>  >>
@@ -17549,7 +17549,7 @@ endobj
 << /Type /Namespace /NS (https://www.latex-project.org/ns/book/2022) /RoleMapNS 18 0 R  >>
 endobj
 19 0 obj
-<< /Type /Namespace /NS (data:,BC469502-C66A-DA42-D398-76F3CF28CA90)  >>
+<< /Type /Namespace /NS (data:,C66D7EB4-AAB0-B18A-9D36-47C9C4B02452)  >>
 endobj
 8 0 obj
 [ 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R  ]
@@ -26638,7 +26638,7 @@ xref
 0001448077 00000 n 
 0001448141 00000 n 
 trailer
-<< /Size 2919 /Root 2918 0 R /ID [ <3B485D5C1FFE6F3D6408AFBF1793BF04> <3B485D5C1FFE6F3D6408AFBF1793BF04> ] >>
+<< /Size 2919 /Root 2918 0 R /ID [ <079FC924D01F2C0BACC4DADA15CBB6AC> <079FC924D01F2C0BACC4DADA15CBB6AC> ] >>
 startxref
 1448469
 %%EOF

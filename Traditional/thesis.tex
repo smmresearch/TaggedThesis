@@ -135,8 +135,6 @@
 %%Mathy packages
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{mathrsfs}
-\usepackage{bm}
 \usepackage{mathtools}
 \usepackage{thmtools}
 \usepackage{templatedShortcuts-private}
@@ -152,7 +150,6 @@
 %Tiks? Externally generate as pdf and use includegraphics to add alt text
 %until tikz implements alt text
 %%
-
 
 %Check package documentation for other font options
 %For example, the "default" is a Computer Modern clone
@@ -174,11 +171,10 @@
 \chaptertitle
 % Old-style, thesis numbering down to subsubsection
 \alternate
-\usepackage{rotating}
-% Bibliography without numbers or labels
+
 %Natbib compatibility mode activated
 %Different styles available - look at biblatex documentation
-\usepackage[natbib=true,style=authoryear,style=apa]{biblatex}
+\usepackage[natbib=true,style=apa]{biblatex}
 \addbibresource{thesisAccessTest.bib}
 \setlength{\bibitemsep}{13.2pt}
 
@@ -218,8 +214,8 @@ are capitalized and this is the second line}
 \geometry{letterpaper, left=1in, top=1in, right=1in, bottom=1in, includehead=true,headheight=14pt} 
 \usepackage{pdflscape}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage[intoc, english]{nomencl}
+%we are manually adding nomeclature to the TOC, hence notintoc
+\usepackage[notintoc, english]{nomencl}
 \doublespacing
 \AtBeginEnvironment{table}{\singlespacing}% 
 \AtBeginEnvironment{figure}{\singlespacing}% 
@@ -244,7 +240,6 @@ are capitalized and this is the second line}
 
 \begin{document}
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png}
-%\begin{singlespace}
 \def\@makechapterheada{\vspace*{-2cm}\titlepage} % in order to reduce the space between margin and heading in titlepage
 \include{Preface/titlepage}
 \fancypagestyle{plain}{}
@@ -291,9 +286,9 @@ are capitalized and this is the second line}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % %Optional Nomenclature
-\cleardoublepage \phantomsection
-\MakeLinkTarget[specialchapter]{}
-\include{Preface/nomenclature}
+% \cleardoublepage \phantomsection
+% \MakeLinkTarget[specialchapter]{}
+% \include{Preface/nomenclature}
 
 %Adds Chapter in front of chapter on TOC
 \addtocontents{toc}{\def\protect\@chapapp{CHAPTER\ }}

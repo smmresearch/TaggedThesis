@@ -132,8 +132,6 @@
 %%Mathy packages
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{mathrsfs}
-\usepackage{bm}
 \usepackage{mathtools}
 \usepackage{thmtools}
 \usepackage{templatedShortcuts-private}
@@ -170,10 +168,9 @@
 \chaptertitle
 % Old-style, thesis numbering down to subsubsection
 \alternate
-\usepackage{rotating}
 %Natbib compatibility mode activated
 %Different styles available - look at biblatex documentation
-\usepackage[natbib=true,style=authoryear,refsection=chapter,style=apa]{biblatex}
+\usepackage[natbib=true,refsection=chapter,style=apa]{biblatex}
 \addbibresource{thesisAccessTest.bib}
 \setlength{\bibitemsep}{13.2pt}
 
@@ -211,7 +208,7 @@ are capitalized and this is the second line.}
 \usepackage{pdflscape}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[english]{nomencl}
+\usepackage[notintoc,english]{nomencl}
 
 \doublespacing
 \AtBeginEnvironment{table}{\singlespacing}% 
@@ -277,6 +274,7 @@ are capitalized and this is the second line.}
 
 %Optional nomenclature
 % \cleardoublepage \phantomsection
+%\MakeLinkTarget[specialchapter]{}
 % \include{Preface/nomenclature}
 
 %Adds Chapter in front of chapter on TOC
