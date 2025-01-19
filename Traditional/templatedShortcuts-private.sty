@@ -31,10 +31,11 @@
 \makeatother
 \theoremstyle{definition}
 \newtheorem{case}{Case}
-% \makeatletter\@addtoreset{case}{theorem}\makeatother
-% \makeatletter\@addtoreset{case}{proposition}\makeatother
-% \makeatletter\@addtoreset{case}{corollary}\makeatother
-% \makeatletter\@addtoreset{case}{lemma}\makeatother
+%use \setcounter{case}{0} as needed as well within document
+\makeatletter\@addtoreset{case}{theorem}\makeatother
+\makeatletter\@addtoreset{case}{proposition}\makeatother
+\makeatletter\@addtoreset{case}{corollary}\makeatother
+\makeatletter\@addtoreset{case}{lemma}\makeatother
 \theoremstyle{indenteddef}
 \newtheorem{subcase}{Case}[case]
 \newtheorem{subsubcase}{Case}[subcase]
@@ -42,9 +43,6 @@
 \newtheoremstyle{indentedproof}
 {3pt}% space before
 {3pt}% space after
-% {\addtolength{\@totalleftmargin}{3.5em}
-%   \addtolength{\linewidth}{-3.5em}
-%   \parshape 1 3.5em \linewidth}% body font
 {\addtolength{\@totalleftmargin}{3.5em}
   \addtolength{\linewidth}{-3.5em}
   \parshape 1 3.5em \linewidth}% body font
