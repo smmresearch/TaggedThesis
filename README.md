@@ -4,8 +4,8 @@ Things to keep in mind while drafting:
 1. If you need landscape tables/figures, subfigures, or algorithms, there are competing packages to do the same thing. Use the examples/packages used in the template.
 2. Biblatex is needed in the template. To prevent any potential problems, you could use it from the start (but biblatex has pretty good backwards-compatibility).
 3. If using Tikz, put those in a separate document and use includegraphics. There are more instructions in the template or in the closed issues.
-4. For whatever reason the tagging thing doesn't like if you do something like $x_\someCommand{whatever}$ instead of $x_{\someCommand{whatever}}$  (even though both work with standard latex).
-Somethign like $x_1$ (single character) is fine.
+4. For whatever reason the tagging thing doesn't like if you do something like ```$x_\someCommand{whatever}$``` instead of ```$x_{\someCommand{whatever}}$```  (even though both work with standard latex).
+Somethign like ```$x_1$``` (single character) is fine.
 5. The template uses LuaLatex. Drafting with pdflatex will usually be fine, but you can also minimize the chance for problems by starting with lualatex if you are comfortable setting up LuaLatex.
 
 
