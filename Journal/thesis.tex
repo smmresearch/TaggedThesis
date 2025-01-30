@@ -163,6 +163,20 @@
 \renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}} 
 \algnewcommand{\parstate}[1]{\State%
   \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
+%Following makes proof more reliable for tagging
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\par\@endpefalse %<-- par inserted
+}
+\makeatother
+
 %%
 
 %Check package documentation for other font options

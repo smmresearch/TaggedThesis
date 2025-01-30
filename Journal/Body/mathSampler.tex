@@ -7,9 +7,9 @@
 
 \chapter{CHAPTER WITH MATH}
 \begin{center}
-    Authors and Affiliations \\
-    Modified from a manuscript to be submitted to/ under review/ published in \textit{Name of the Journal}
-    \blfootnote{A version of this chapter appears in Journal of Discipline, Volume 18, Issue 3}
+  Authors and Affiliations \\
+  Modified from a manuscript to be submitted to/ under review/ published in \textit{Name of the Journal}
+  \blfootnote{A version of this chapter appears in Journal of Discipline, Volume 18, Issue 3}
 \end{center}
 
 \section{Abstract}
@@ -17,39 +17,46 @@ This is the text of my abstract that is part of the thesis itself.
 The abstract describes the work in the first paper general. You can use the same abstract as your paper here.
 \section{Proofs and Stuff}
 \begin{definition}
-    A set $A$ is something.
+  A set $A$ is something.
 \end{definition}
 
 \begin{lemma}
-    If cool, then great.
+  If cool, then great.
 \end{lemma}
 \begin{proof}
-    Without loss of generality, it works.
-    \begin{equation}
-        \label{orthogonalProjectionIsGoodActually}
-        d(x,y)= d(x,z)+d(z,y) \geq d(x,x-\langle x,n\rangle n )+0 = \langle x,n\rangle.
-    \end{equation}
+  Without loss of generality, it works.
+  \begin{equation}
+    \label{orthogonalProjectionIsGoodActually}
+    d(x,y)= d(x,z)+d(z,y) \geq d(x,x-\langle x,n\rangle n )+0 = \langle x,n\rangle.
+  \end{equation}
 
-    Furthermore,
-    \begin{align}
-        \ell_1(\hat{x},y) & = \ell_1 (x,y)                                        \\
-                          & =|\ell_1(x,y)-2\langle x,n\rangle \ell_1(n,0)|        \\
-                          & \left(\frac{x+y+z}{2x+y}\right) - \left(2x^2-y\right) \\
-                          & B\left\langle \frac{4}{x}+x^3\right\rangle            \\
-                          & \Bigg(x^2-2x\Bigg)
-    \end{align}
-    From \autoref{orthogonalProjectionIsGoodActually}, it follows \[\ell_1(\hat{x},y)\ \ell_1(\hat{x},y)-2\langle x,n\rangle \leq\]
+  Furthermore,
+  \begin{align}
+    \ell_1(\hat{x},y) & = \ell_1 (x,y)                                        \\
+                      & =|\ell_1(x,y)-2\langle x,n\rangle \ell_1(n,0)|        \\
+                      & \left(\frac{x+y+z}{2x+y}\right) - \left(2x^2-y\right) \\
+                      & B\left\langle \frac{4}{x}+x^3\right\rangle            \\
+                      & \Bigg(x^2-2x\Bigg)
+  \end{align}
+  From \autoref{orthogonalProjectionIsGoodActually}, it follows \[\ell_1(\hat{x},y)\ \ell_1(\hat{x},y)-2\langle x,n\rangle \leq\]
+\end{proof}
+
+\begin{lemma}
+  A lemma.
+\end{lemma}
+\begin{proof}
+  \[3x+4=12\]
 \end{proof}
 
 Then, we should also have some in-line math $B\left(\frac{3x}{2y-x}\right)$ and then $d(x,y)$ if it is alright. We might also have $\sqrt{x^2+\frac{3}{x}}$.
 
 \begin{theorem}
-    If true, then it all collapses.
+  If true, then it all collapses.
 \end{theorem}
 \begin{proof}
-    By Zorn's lemma, Zorn has the best name \autocite{martiniCompleteReducedConvex2019}.
-    Also, \autocite{chenGraphHomotopyGraham2001} and \autocite{dochtermannMinimalGraphsContractible2023}.
-    \[x^2+y^2+x^2=2.\]
+  By Zorn's lemma, Zorn has the best name \autocite{martiniCompleteReducedConvex2019}.
+  Also, \autocite{chenGraphHomotopyGraham2001} and \autocite{dochtermannMinimalGraphsContractible2023}.
+  \[x^2+y^2+x^2=2.\]
 
 \end{proof}
 \section{Floating Practice}
@@ -58,17 +65,17 @@ Text here.
 %Algorithm package can cause a parent key warning from tagpdf, but the actual
 %tagging output is fine.
 \begin{algorithm}
-    \caption{Score Algorithm}
-    \begin{algorithmic}[1]
-        \State {\textbf{Input: }{$s$ is a sensor }}
-        \Statex
-        \For{$j\in \{1,2,\ldots,15\}$}
-        \State Randomly choose $5$ days
-        \For{$x\in \{1,2,\ldots,1000\}$}
-        \parstate{Set $a$ to be something in this very long state that will have to be wrapped quite possibly around and around and around}
-        \EndFor
-        \EndFor
-    \end{algorithmic}
+  \caption{Score Algorithm}
+  \begin{algorithmic}[1]
+    \State {\textbf{Input: }{$s$ is a sensor }}
+    \Statex
+    \For{$j\in \{1,2,\ldots,15\}$}
+    \State Randomly choose $5$ days
+    \For{$x\in \{1,2,\ldots,1000\}$}
+    \parstate{Set $a$ to be something in this very long state that will have to be wrapped quite possibly around and around and around}
+    \EndFor
+    \EndFor
+  \end{algorithmic}
 \end{algorithm}
 
 More text here. Now what is we ?
