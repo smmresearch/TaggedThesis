@@ -330,19 +330,25 @@ are capitalized and this is the second line}
 \pagenumbering{arabic}
 \pagestyle{fancy}
 \include{Body/chapter1}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/chapter2}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/chapter3}
 \part{Let's have a part page}
 \include{Body/chapter4}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/chapter5}
 %Pulls the appendices and bibliography out of any Parts
 \bookmarksetup{startatroot}
 \chapter*{BIBLIOGRAPHY}
 \addToTOCWithoutChapter{BIBLIOGRAPHY}
 \printbibliography[heading=none]
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Appendix/appendix1}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 % % Instruction for single appendix check instruction in Appendix/appendix1.tex on top of the file
 \include{Appendix/appendix2}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 
 \end{document}
 

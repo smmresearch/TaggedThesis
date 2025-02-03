@@ -321,13 +321,20 @@ are capitalized and this is the second line.}
 \pagenumbering{arabic}
 \pagestyle{fancy}
 \include{Body/ch1/ch1_main}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/ch2/ch2_main}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/ch3/ch3_main}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \part{Let us have a part page}
 \include{Body/ch4/ch4_main}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/ch5/ch5_main}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/mathSampler}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/ch6/ch6_future_and_conclusions}
+\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \clearpage
 \pagebreak
 \end{document}
