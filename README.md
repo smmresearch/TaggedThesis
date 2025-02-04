@@ -1,4 +1,5 @@
 Tagging is slow - do the vast majority of the writing in a separate document (with all your usual presets) before copying over for finishing touches.
+Though, if using latexmk, it probably overdoes the number of re-runs.
 
 Things to keep in mind while drafting:
 1. If you need landscape tables/figures, subfigures, or algorithms, there are competing packages to do the same thing. Use the examples/packages used in the template.
