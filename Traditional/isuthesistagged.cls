@@ -31,7 +31,7 @@
 \def\fileversion{2.0}
 \def\filedate{2024/02/14}
 \typeout{%
-   Document Class: isuthesistagged \filedate \space v\fileversion \space (v1 by Joe Struss)}
+    Document Class: isuthesistagged \filedate \space v\fileversion \space (v1 by Joe Struss)}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{isuthesistagged}[2011/02/14]
@@ -49,23 +49,23 @@
 \togglefalse{algorithms-tagthesis}
 
 \DeclareOption{math-packages}{%
-   \toggletrue{math-tagthesis}
+    \toggletrue{math-tagthesis}
 }
 
 \DeclareOption{algorithms-packages}{%
-   \toggletrue{algorithms-tagthesis}
+    \toggletrue{algorithms-tagthesis}
 }
 
 \DeclareOption{no-mathml}{
-   \tagpdfsetup{
-      math/mathml/sources=,
-      math/mathml/luamml/load=false,
-      math/tex/AF=false
-   }
+    \tagpdfsetup{
+        math/mathml/sources=,
+        math/mathml/luamml/load=false,
+        math/tex/AF=false
+    }
 }
 
 \DeclareOption{no-tag-tree}{
-   \AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}
+    \AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}
 }
 
 \ProcessOptions\relax
@@ -104,14 +104,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %footnote without a number
 \newcommand\blfootnote[1]{%
-   \begingroup
-   \renewcommand\thefootnote{}\footnote{#1}%
-   \addtocounter{footnote}{-1}%
-   \endgroup
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}%
+    \addtocounter{footnote}{-1}%
+    \endgroup
 }
 \newcommand{\twoLineTitle}[2]{
-   \newcommand{\titleWithLineBreak}{#1\\#2}
-   \newcommand{\titleWithoutBreak}{#1 #2}
+    \newcommand{\titleWithLineBreak}{#1\\#2}
+    \newcommand{\titleWithoutBreak}{#1 #2}
 }
 %Add the page number in a modern way - works nicer with other modern things
 \usepackage{fancyhdr}
@@ -125,10 +125,10 @@
 %to the TOC correctly while being compatible with tagging
 \let\@tempchapapp=\@chapapp
 \newcommand{\addToTOCWithoutChapter}[1]{%
-   \addtocontents{toc}{\def\protect\@chapapp{}}%
-   \MakeLinkTarget[specialchapt]{}%
-   \addcontentsline{toc}{chapter}{#1}%
-   \addtocontents{toc}{\def\protect\@chapapp{\@tempchapapp}}
+    \addtocontents{toc}{\def\protect\@chapapp{}}%
+    \MakeLinkTarget[specialchapt]{}%
+    \addcontentsline{toc}{chapter}{#1}%
+    \addtocontents{toc}{\def\protect\@chapapp{\@tempchapapp}}
 }
 
 \usepackage{titlesec}
@@ -220,76 +220,76 @@
 % Declaration which causes superscripts and subscripts to be output at normal
 % text size
 \def\bigscript{
-   \scriptfont0=\textfont0
-   \scriptscriptfont0=\textfont0
-   \scriptfont1=\textfont1
-   \scriptscriptfont1=\textfont1
-   \scriptfont2=\textfont2
-   \scriptscriptfont2=\textfont2
-   \scriptfont3=\textfont3
-   \scriptscriptfont3=\textfont3
-   \def\xiipt{\textfont\z@\twlrm
-      \scriptfont\z@\twlrm \scriptscriptfont\z@\twlrm
-      \textfont\@ne\twlmi \scriptfont\@ne\twlmi \scriptscriptfont\@ne\twlmi
-      \textfont\tw@\twlsy \scriptfont\tw@\twlsy \scriptscriptfont\tw@\twlsy
-      \textfont\thr@@\tenex \scriptfont\thr@@\tenex \scriptscriptfont\thr@@\tenex
-      \def\unboldmath{\everymath{}\everydisplay{}\@nomath\unboldmath
-         \textfont\@ne\twlmi
-         \textfont\tw@\twlsy \textfont\lyfam\twlly
-         \@boldfalse}\@boldfalse
-      \def\boldmath{\@ifundefined{twlmib}{\global\font\twlmib\@mbi\@magscale1\global
-            \font\twlsyb\@mbsy \@magscale1\global\font
-            \twllyb\@lasyb\@magscale1\relax\@addfontinfo\@xiipt
-            {\def\boldmath{\everymath
-                  {\mit}\everydisplay{\mit}\@prtct\@nomathbold
-                  \textfont\@ne\twlmib \textfont\tw@\twlsyb
-                  \textfont\lyfam\twllyb\@prtct\@boldtrue}}}{}\@xiipt\boldmath}%
-      \def\prm{\fam\z@\twlrm}%
-      \def\pit{\fam\itfam\twlit}\textfont\itfam\twlit \scriptfont\itfam\egtit
-      \scriptscriptfont\itfam\sevit
-      \def\psl{\fam\slfam\twlsl}\textfont\slfam\twlsl
-      \scriptfont\slfam\tensl \scriptscriptfont\slfam\tensl
-      \def\pbf{\fam\bffam\twlbf}\textfont\bffam\twlbf
-      \scriptfont\bffam\ninbf \scriptscriptfont\bffam\ninbf
-      \def\ptt{\fam\ttfam\twltt}\textfont\ttfam\twltt
-      \scriptfont\ttfam\nintt \scriptscriptfont\ttfam\nintt
-      \def\psf{\fam\sffam\twlsf}\textfont\sffam\twlsf
-      \scriptfont\sffam\tensf \scriptscriptfont\sffam\tensf
-      \def\psc{\@getfont\psc\scfam\@xiipt{\@mcsc\@magscale1}}%
-      \def\ly{\fam\lyfam\twlly}\textfont\lyfam\twlly
-      \scriptfont\lyfam\egtly \scriptscriptfont\lyfam\sixly
-      \@setstrut \rm}
+    \scriptfont0=\textfont0
+    \scriptscriptfont0=\textfont0
+    \scriptfont1=\textfont1
+    \scriptscriptfont1=\textfont1
+    \scriptfont2=\textfont2
+    \scriptscriptfont2=\textfont2
+    \scriptfont3=\textfont3
+    \scriptscriptfont3=\textfont3
+    \def\xiipt{\textfont\z@\twlrm
+        \scriptfont\z@\twlrm \scriptscriptfont\z@\twlrm
+        \textfont\@ne\twlmi \scriptfont\@ne\twlmi \scriptscriptfont\@ne\twlmi
+        \textfont\tw@\twlsy \scriptfont\tw@\twlsy \scriptscriptfont\tw@\twlsy
+        \textfont\thr@@\tenex \scriptfont\thr@@\tenex \scriptscriptfont\thr@@\tenex
+        \def\unboldmath{\everymath{}\everydisplay{}\@nomath\unboldmath
+            \textfont\@ne\twlmi
+            \textfont\tw@\twlsy \textfont\lyfam\twlly
+            \@boldfalse}\@boldfalse
+        \def\boldmath{\@ifundefined{twlmib}{\global\font\twlmib\@mbi\@magscale1\global
+                \font\twlsyb\@mbsy \@magscale1\global\font
+                \twllyb\@lasyb\@magscale1\relax\@addfontinfo\@xiipt
+                {\def\boldmath{\everymath
+                        {\mit}\everydisplay{\mit}\@prtct\@nomathbold
+                        \textfont\@ne\twlmib \textfont\tw@\twlsyb
+                        \textfont\lyfam\twllyb\@prtct\@boldtrue}}}{}\@xiipt\boldmath}%
+        \def\prm{\fam\z@\twlrm}%
+        \def\pit{\fam\itfam\twlit}\textfont\itfam\twlit \scriptfont\itfam\egtit
+        \scriptscriptfont\itfam\sevit
+        \def\psl{\fam\slfam\twlsl}\textfont\slfam\twlsl
+        \scriptfont\slfam\tensl \scriptscriptfont\slfam\tensl
+        \def\pbf{\fam\bffam\twlbf}\textfont\bffam\twlbf
+        \scriptfont\bffam\ninbf \scriptscriptfont\bffam\ninbf
+        \def\ptt{\fam\ttfam\twltt}\textfont\ttfam\twltt
+        \scriptfont\ttfam\nintt \scriptscriptfont\ttfam\nintt
+        \def\psf{\fam\sffam\twlsf}\textfont\sffam\twlsf
+        \scriptfont\sffam\tensf \scriptscriptfont\sffam\tensf
+        \def\psc{\@getfont\psc\scfam\@xiipt{\@mcsc\@magscale1}}%
+        \def\ly{\fam\lyfam\twlly}\textfont\lyfam\twlly
+        \scriptfont\lyfam\egtly \scriptscriptfont\lyfam\sixly
+        \@setstrut \rm}
 } %end bigscript
 
 % Singlespaced hanging paragraph environment for uncited bibliographies.
 \def\hangpar{\par \def\baselinestretch{1}\@normalsize
-   \raggedright \parindent=0pt \parskip=12pt
-   \everypar{\hangindent=24pt \hangafter=1}}
+    \raggedright \parindent=0pt \parskip=12pt
+    \everypar{\hangindent=24pt \hangafter=1}}
 \def\endhangpar{\par}
 
 % Singlespaced hanging paragraph environment suitable for uncited
 % bibliographies in sociology and anthropology.
 \newif\if@firstdate \@firstdatetrue
 \def\socbib{\par \def\baselinestretch{1}\@normalsize
-   \raggedright \parindent=0pt \parskip=0pt
-   \newskip\socparskip \socparskip = 12pt
-   \newdimen\@datewidth \@datewidth = 60 pt
-   \newdimen\@stextwidth \@stextwidth=\textwidth
-   \advance \@stextwidth by -\@datewidth
-   \newskip\@socskip \@socskip=5pt plus 1pt minus 1pt
-   \newbox\@sdatebox
-   \def\@twodates##1[##2]{\global\setbox\@sdatebox=\vtop{%
-         \hbox to \@datewidth{\kern 20 pt ##1\hfil}%
-         \hbox to \@datewidth{\kern 20 pt ##2\hfil}%
-      }\@socdate}
-   \def\@onedate##1{\global\setbox\@sdatebox=%
-      \vtop{\hbox to \@datewidth{\kern 20pt ##1\hfil}}\@socdate}
-   \def\par{\egroup \egroup \endgraf \vskip\socparskip \@firstdatetrue}
-   \def\@socdate{\if@firstdate \endgraf \nopagebreak \@firstdatefalse \else %
-         \egroup \egroup \endgraf \vskip\@socskip \fi%
-      \hbox to \textwidth\bgroup%
-      \box\@sdatebox\vtop\bgroup\hsize\@stextwidth\ignorespaces}
-   \def\socdate##1{\@ifnextchar[{\@twodates{##1}}{\@onedate{##1}}}
+    \raggedright \parindent=0pt \parskip=0pt
+    \newskip\socparskip \socparskip = 12pt
+    \newdimen\@datewidth \@datewidth = 60 pt
+    \newdimen\@stextwidth \@stextwidth=\textwidth
+    \advance \@stextwidth by -\@datewidth
+    \newskip\@socskip \@socskip=5pt plus 1pt minus 1pt
+    \newbox\@sdatebox
+    \def\@twodates##1[##2]{\global\setbox\@sdatebox=\vtop{%
+            \hbox to \@datewidth{\kern 20 pt ##1\hfil}%
+            \hbox to \@datewidth{\kern 20 pt ##2\hfil}%
+        }\@socdate}
+    \def\@onedate##1{\global\setbox\@sdatebox=%
+        \vtop{\hbox to \@datewidth{\kern 20pt ##1\hfil}}\@socdate}
+    \def\par{\egroup \egroup \endgraf \vskip\socparskip \@firstdatetrue}
+    \def\@socdate{\if@firstdate \endgraf \nopagebreak \@firstdatefalse \else %
+            \egroup \egroup \endgraf \vskip\@socskip \fi%
+        \hbox to \textwidth\bgroup%
+        \box\@sdatebox\vtop\bgroup\hsize\@stextwidth\ignorespaces}
+    \def\socdate##1{\@ifnextchar[{\@twodates{##1}}{\@onedate{##1}}}
 }
 \def\endsocbib{\egroup\egroup\endgraf\vskip\baselineskip}
 
@@ -298,7 +298,7 @@
 % page numbering.
 \def\titlepage
 {\thispagestyle{empty}
-   \pagenumbering{roman}}
+    \pagenumbering{roman}}
 \def\endtitlepage{\newpage}
 
 \def\title#1{\gdef\@title{#1}}              \title{Unknown}
@@ -323,12 +323,12 @@
 \newdimen\@signwidth \@signwidth=6cm
 
 \def\@depmajmac#1#2#3#4{% department and major macro
-   \ifcase\@deptnum \def\@depart{}
-   \or \def\@depart{\@depttitle #1 \\}
-   \else \def\@depart{\@depttitle #1\\ #2\\}\fi
-   \ifcase\@majornum \def\@major{}
-   \or \def\@major{\@majortitle #3}
-   \else \def\@major{\@majortitle #3 \\  #4}\fi}
+    \ifcase\@deptnum \def\@depart{}
+    \or \def\@depart{\@depttitle #1 \\}
+    \else \def\@depart{\@depttitle #1\\ #2\\}\fi
+    \ifcase\@majornum \def\@major{}
+    \or \def\@major{\@majortitle #3}
+    \else \def\@major{\@majortitle #3 \\  #4}\fi}
 
 \newif\if@interdept \@interdeptfalse
 \newif\if@interdeptm \@interdeptmfalse
@@ -339,24 +339,24 @@
 \def\interdeptm{\@interdeptmtrue}
 
 \def\dept#1{\gdef\@deptone{#1} \gdef\@depttwo{} \@deptnum=1
-   \if@interdept\def\@depttitle{Interdepartmental Program: } \else
-      \def\@depttitle{Department: }\fi}
+    \if@interdept\def\@depttitle{Interdepartmental Program: } \else
+        \def\@depttitle{Department: }\fi}
 \def\codepts#1#2{\gdef\@deptone{#1} \gdef\@depttwo{#2} \@deptnum=2
-   \def\@depttitle{Departments: }\signdeptnum=2}
+    \def\@depttitle{Departments: }\signdeptnum=2}
 \def\major#1{\@majornum=1 \@depmajmac{\@deptone}{\@depttwo}{#1}{}
-   \if@interdeptm\def\@majortitle{Interdepartmental Major: } \else
-      \def\@majortitle{Major: }\fi}
+    \if@interdeptm\def\@majortitle{Interdepartmental Major: } \else
+        \def\@majortitle{Major: }\fi}
 \def\comajors#1#2{\@majornum=2 \signmajornum=2
-   \@depmajmac{\@deptone}{\@depttwo}{#1}{#2}
-   \def\@majortitle{Co-majors: }}
+    \@depmajmac{\@deptone}{\@depttwo}{#1}{#2}
+    \def\@majortitle{Co-majors: }}
 
 \def\signmajor#1{\def\@signmajor{#1}}
 \signmajor{\ifnum\signmajornum=2 Co-major Professor \else
-      Major Professor\fi}
+        Major Professor\fi}
 \def\signdept#1{\def\@signdept{#1}}
 \signdept{\if@interdept For the Major Program \else
-      \ifnum\@deptnum=2 For the Co-major Program \else
-         For the Major Program\fi\fi}
+        \ifnum\@deptnum=2 For the Co-major Program \else
+            For the Major Program\fi\fi}
 
 \def\@depart{}
 \def\@major{}
@@ -386,180 +386,180 @@
 \def\copyyear#1{\gdef\@copyyear{\number#1}}
 \copyyear{\year}
 \def\notice{\gdef\@notice{Copyright
-      \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
+        \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
 \def\@notice{}
 
 \def\supervisor#1{\gdef\@supervisor{#1}}
 \def\@supervisor{}
 
 \def\@titlefoot{\begin{center}Iowa State University\\
-      Ames, Iowa\\ \@copyyear\  \\
-      \@notice \end{center}}%Added \  after \@copyyear to avoid having \\ problem
+        Ames, Iowa\\ \@copyyear\  \\
+        \@notice \end{center}}%Added \  after \@copyyear to avoid having \\ problem
 
 \long\def\maketitle{\begin{titlepage}
 
-      % \vbox ensures whole title page stays on one page even if it becomes overfull
-      \vbox to \textheight{
-         \begin{center}
-            \vskip 28pt                   % Added to more evenly space page (JAS11)
-               {\bfseries \@title}
-            \vskip 14pt                    % Changed from 11pt to more evenly space page (JAS11)
-            by \\
-            \vskip 14pt                   % Changed from 11pt to more evenly space page (JAS11)
-               {\bfseries \@author}      % Changed to bold at thesis office request (JAS16)
-            \vskip 41pt                  % Changed from 30pt to more evenly space page (JAS11)
-            A \@format\ submitted to \@submit\ \\
-            in partial fulfillment of the requirements for the degree of\\
-            \@degree \\[2.5pt]
+        % \vbox ensures whole title page stays on one page even if it becomes overfull
+        \vbox to \textheight{
+            \begin{center}
+                \vskip 28pt                   % Added to more evenly space page (JAS11)
+                    {\bfseries \@title}
+                \vskip 14pt                    % Changed from 11pt to more evenly space page (JAS11)
+                by \\
+                \vskip 14pt                   % Changed from 11pt to more evenly space page (JAS11)
+                    {\bfseries \@author}      % Changed to bold at thesis office request (JAS16)
+                \vskip 41pt                  % Changed from 30pt to more evenly space page (JAS11)
+                A \@format\ submitted to \@submit\ \\
+                in partial fulfillment of the requirements for the degree of\\
+                \@degree \\[2.5pt]
 
-            \vskip 55pt                   % Changed from 30pt to cover dept loss
-            %   \@depart
-            \@major
-            %   \@minor                     % No longer listed - Sept. 2001
-            \vskip 41pt                    % Changed from 14pt to more evenly space page (JAS11)
-            \begin{singlespace}  % Elminated to more evenly space page (JAS11)
-               Program of Study Committee: \\
-               \@mprof
-               \@mprofs
-               \@cmprofs
-               \@members
-               %\end{singlespace}   % Eliminated to more evenly space page (JAS11)
-               \vfill
-               \vspace{12pt} %default was 4 pts
-               %   %\vfill
-               \@disclaimertitlepage
-            \end{singlespace}   % Eliminated to more evenly space page (JAS11)
-         \end{center}
-         \vfill
-         \vspace{14pt}%{14pt}
-         \vfill
-         \@titlefoot } % end of \vbox
-   \end{titlepage}
+                \vskip 55pt                   % Changed from 30pt to cover dept loss
+                %   \@depart
+                \@major
+                %   \@minor                     % No longer listed - Sept. 2001
+                \vskip 41pt                    % Changed from 14pt to more evenly space page (JAS11)
+                \begin{singlespace}  % Elminated to more evenly space page (JAS11)
+                    Program of Study Committee: \\
+                    \@mprof
+                    \@mprofs
+                    \@cmprofs
+                    \@members
+                    %\end{singlespace}   % Eliminated to more evenly space page (JAS11)
+                    \vfill
+                    \vspace{12pt} %default was 4 pts
+                    %   %\vfill
+                    \@disclaimertitlepage
+                \end{singlespace}   % Eliminated to more evenly space page (JAS11)
+            \end{center}
+            \vfill
+            \vspace{14pt}%{14pt}
+            \vfill
+            \@titlefoot } % end of \vbox
+    \end{titlepage}
 }% end maketitle
 \long\def\makenosigtitle{\begin{titlepage}
-      % \vbox ensures whole title page stays on one page even if it becomes overfull
-      \vbox to \textheight{
-         \begin{center}
-            {\bfseries \@title}
-            \vskip 11pt
-            by \\
-            \vskip 11pt
-               {\bfseries \@author}         % changed from non-bold at thesis office request (JAS16)
-            \vskip 30pt
-            A \@format\ submitted to \@submit\ \\
-            in partial fulfillment of the requirements for the degree of\\
-            \@degree \\[2.5pt]
-            \vskip 41pt                   % Changed from 30pt to cover dept loss
-            %   \@depart
-            \@major
-            %   \@minor                      % No longer listed - Sept. 2001
-            \vskip 14pt
-            \begin{singlespace}
-               Program of Study Committee: \\
-               \@mprof
-               \@mprofs
-               \@cmprofs
-               \@members
-            \end{singlespace}
+        % \vbox ensures whole title page stays on one page even if it becomes overfull
+        \vbox to \textheight{
+            \begin{center}
+                {\bfseries \@title}
+                \vskip 11pt
+                by \\
+                \vskip 11pt
+                    {\bfseries \@author}         % changed from non-bold at thesis office request (JAS16)
+                \vskip 30pt
+                A \@format\ submitted to \@submit\ \\
+                in partial fulfillment of the requirements for the degree of\\
+                \@degree \\[2.5pt]
+                \vskip 41pt                   % Changed from 30pt to cover dept loss
+                %   \@depart
+                \@major
+                %   \@minor                      % No longer listed - Sept. 2001
+                \vskip 14pt
+                \begin{singlespace}
+                    Program of Study Committee: \\
+                    \@mprof
+                    \@mprofs
+                    \@cmprofs
+                    \@members
+                \end{singlespace}
+                \vfill
+                %  % \vspace{4pt}
+                %   %\vfill
+                \@disclaimertitlepage
+            \end{center}
             \vfill
-            %  % \vspace{4pt}
-            %   %\vfill
-            \@disclaimertitlepage
-         \end{center}
-         \vfill
-         \vspace{14pt}%{14pt}
-         \vfill
-         \@titlefoot } % end of \vbox
-   \end{titlepage}
+            \vspace{14pt}%{14pt}
+            \vfill
+            \@titlefoot } % end of \vbox
+    \end{titlepage}
 }% end makenosigtitle
 
 \long\def\startabstract{
-   \begin{center}
-      {\bfseries \@title}
-      \vskip 11pt
-      \@author
-      \vskip 11pt
-      \begin{singlespace}
-         % \@mprof 
-         % \@mprofs \\
-         % \@cmprofs \\
-         Iowa State University
-      \end{singlespace}
-   \end{center}
+    \begin{center}
+        {\bfseries \@title}
+        \vskip 11pt
+        \@author
+        \vskip 11pt
+        \begin{singlespace}
+            % \@mprof 
+            % \@mprofs \\
+            % \@cmprofs \\
+            Iowa State University
+        \end{singlespace}
+    \end{center}
 }% end startabstract
 
 \newcommand{\paperinfo}[1]{\vspace{-.4 in} \begin{center} A paper #1 \end{center}
-   \vspace{.4 in}}
+    \vspace{.4 in}}
 
 \newcommand{\paperauthor}[1]{\vspace{-.5 in} \begin{center} #1 \end{center}
-   \vspace{.25 in}}
+    \vspace{.25 in}}
 
 \def\alternatenum{%  command to set numbering down to subpara
-   \setcounter{secnumdepth}{5}}
+    \setcounter{secnumdepth}{5}}
 
 \def\alternate{%  command to set numbering down to subsection
-   \setcounter{secnumdepth}{3}}
+    \setcounter{secnumdepth}{3}}
 
 \def\alternatepart{%  command to number only parts
-   \setcounter{secnumdepth}{0}
-   \renewcommand{\thechapter}{}
-   \makeatletter
-   \renewcommand{\thefigure}{\@arabic\c@figure}
-   \renewcommand{\theequation}{\arabic{equation}}
-   \renewcommand{\thetable}{\@arabic\c@table}
-   \makeatother
+    \setcounter{secnumdepth}{0}
+    \renewcommand{\thechapter}{}
+    \makeatletter
+    \renewcommand{\thefigure}{\@arabic\c@figure}
+    \renewcommand{\theequation}{\arabic{equation}}
+    \renewcommand{\thetable}{\@arabic\c@table}
+    \makeatother
 }
 
 \def\alternatechap{%  command to number only parts and chapters
-   \setcounter{secnumdepth}{0}
-   \makeatletter
-   \renewcommand{\thefigure}{\@arabic\c@figure}
-   \renewcommand{\theequation}{\arabic{equation}}
-   \renewcommand{\thetable}{\@arabic\c@table}
-   \makeatother
+    \setcounter{secnumdepth}{0}
+    \makeatletter
+    \renewcommand{\thefigure}{\@arabic\c@figure}
+    \renewcommand{\theequation}{\arabic{equation}}
+    \renewcommand{\thetable}{\@arabic\c@table}
+    \makeatother
 }
 
 \def\reset{% resets many chapter level counters
-   \setcounter{chapter}{0}
-   \setcounter{section}{0}
-   \setcounter{subsection}{0}
-   \setcounter{subsubsection}{0}
-   \setcounter{paragraph}{0}
-   \setcounter{subparagraph}{0}
-   \setcounter{equation}{0}
-   \setcounter{figure}{0}
-   \setcounter{table}{0}
-   \setcounter{footnote}{0}
-   \setcounter{mpfootnote}{0}
+    \setcounter{chapter}{0}
+    \setcounter{section}{0}
+    \setcounter{subsection}{0}
+    \setcounter{subsubsection}{0}
+    \setcounter{paragraph}{0}
+    \setcounter{subparagraph}{0}
+    \setcounter{equation}{0}
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
+    \setcounter{footnote}{0}
+    \setcounter{mpfootnote}{0}
 }
 
 \def\nochap{% bizarre hack to not use a chapter number
-   \makeatletter
-   \renewcommand{\thefigure}{\@arabic\c@figure}
-   \renewcommand{\theequation}{\arabic{equation}}
-   \renewcommand{\thetable}{\@arabic\c@table}
-   \makeatother
-   \renewcommand{\thechapter}      {}
-   \renewcommand{\thesection}      {\arabic{section}}
-   \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
-   \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
-   \renewcommand{\theparagraph}    {\thesubsubsection.\arabic{paragraph}}
-   \renewcommand{\thesubparagraph} {\theparagraph.\arabic{subparagraph}}
+    \makeatletter
+    \renewcommand{\thefigure}{\@arabic\c@figure}
+    \renewcommand{\theequation}{\arabic{equation}}
+    \renewcommand{\thetable}{\@arabic\c@table}
+    \makeatother
+    \renewcommand{\thechapter}      {}
+    \renewcommand{\thesection}      {\arabic{section}}
+    \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
+    \renewcommand{\theparagraph}    {\thesubsubsection.\arabic{paragraph}}
+    \renewcommand{\thesubparagraph} {\theparagraph.\arabic{subparagraph}}
 }%end nochap
 
 \def\partnochap{% bizarre hack to not use a chapter number but use parts
-   \makeatletter
-   \renewcommand{\thefigure}{\@arabic\c@figure}
-   \renewcommand{\theequation}{\arabic{equation}}
-   \renewcommand{\thetable}{\@arabic\c@table}
-   \makeatother
-   %   \renewcommand{\thepart}         {\roman{part}}
-   \renewcommand{\thechapter}      {}
-   \renewcommand{\thesection}      {\thepart.\arabic{section}}
-   \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
-   \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
-   \renewcommand{\theparagraph}    {\thesubsubsection.\arabic{paragraph}}
-   \renewcommand{\thesubparagraph} {\theparagraph.\arabic{subparagraph}}
+    \makeatletter
+    \renewcommand{\thefigure}{\@arabic\c@figure}
+    \renewcommand{\theequation}{\arabic{equation}}
+    \renewcommand{\thetable}{\@arabic\c@table}
+    \makeatother
+    %   \renewcommand{\thepart}         {\roman{part}}
+    \renewcommand{\thechapter}      {}
+    \renewcommand{\thesection}      {\thepart.\arabic{section}}
+    \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
+    \renewcommand{\theparagraph}    {\thesubsubsection.\arabic{paragraph}}
+    \renewcommand{\thesubparagraph} {\theparagraph.\arabic{subparagraph}}
 }%end partnochap
 
 % The thesis office wants Chapters with a dotted leader
@@ -567,11 +567,11 @@
 %  good idea but it seems to work.) - JAS, April 1996
 
 \renewcommand{\l@chapter}[2]{\addpenalty{-\@highpenalty}
-   \setlength{\baselineskip}{13.2pt} %this resets the size of a line from the (much wider) default to 1.2x11pt = 13.2pt font, which matches the single spacing required by the grad college for the TOC. Because it is only this function, it is local to the TOC and won't effect spacing in the rest of the dissertation. 
-   \vskip 13.2pt plus 0pt %adds a blank line after a chapter item 
-      %\vskip 4pt plus 2pt
-      %{\bf \@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
-      {\@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
+    \setlength{\baselineskip}{13.2pt} %this resets the size of a line from the (much wider) default to 1.2x11pt = 13.2pt font, which matches the single spacing required by the grad college for the TOC. Because it is only this function, it is local to the TOC and won't effect spacing in the rest of the dissertation. 
+    \vskip 13.2pt plus 0pt %adds a blank line after a chapter item 
+        %\vskip 4pt plus 2pt
+        %{\bf \@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
+        {\@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
 
 % 2024 - I don't get how these commands ever added the word Table or Figure
 % but I think they add the dotted leader, so here they stay 
@@ -598,7 +598,7 @@
 % Resets chapter command so the word CHAPTER appears
 
 \def\chaptertitle{% resets chaptername
-   \renewcommand{\chaptername}{CHAPTER\ }}
+    \renewcommand{\chaptername}{CHAPTER\ }}
 
 % Resets part name so PART appears
 % 2024 - I think this is unused b/c the @part is patched instead
@@ -609,37 +609,37 @@
 % after unsetting chaptername
 
 \def\appendixtitle{% resets appendixname
-   \def\@chapapp{APPENDIX}
-   \def\thechapter{}
-   \addtocontents{toc}{\def\protect\@chapapp{APPENDIX\ }}
-   %\renewcommand{\appendixname}{APPENDIX\ }
-   \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX\ }
+    \def\@chapapp{APPENDIX}
+    \def\thechapter{}
+    \addtocontents{toc}{\def\protect\@chapapp{APPENDIX\ }}
+    %\renewcommand{\appendixname}{APPENDIX\ }
+    \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX\ }
 }
 
 % USE THE following instead of \appendixtitle for singleappendix
 % first \unappendixtitle
 % second \singleappendixtitle
 \def\singleappendixtitle{% resets appendixname
-   \def\@chapapp{APPENDIX}
-   \def\thechapter{}
-   \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
-   %\renewcommand{\appendixname}{APPENDIX\ }
-   \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX}
-   %Single appendix has no number, hence no space
-   \setcounter{chapter}{0}
-   \setcounter{section}{0}
-   \def\theequation{A.\arabic{equation}}
-   \def\thetable{A.\@arabic\c@table}
-   \def\thefigure{A.\@arabic\c@figure}
+    \def\@chapapp{APPENDIX}
+    \def\thechapter{}
+    \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
+    %\renewcommand{\appendixname}{APPENDIX\ }
+    \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX}
+    %Single appendix has no number, hence no space
+    \setcounter{chapter}{0}
+    \setcounter{section}{0}
+    \def\theequation{A.\arabic{equation}}
+    \def\thetable{A.\@arabic\c@table}
+    \def\thefigure{A.\@arabic\c@figure}
 }
 
 % Resets appendix command so the word APPENDIX appears
 % after unsetting chaptername
 
 \def\unappendixtitle{% resets appendixname
-   \def\@chapapp{}
-   \def\thechapter{}
-   \addtocontents{toc}{\def\protect\@chapapp{}}
+    \def\@chapapp{}
+    \def\thechapter{}
+    \addtocontents{toc}{\def\protect\@chapapp{}}
 }
 %%%%%%%%%%%%%%%%%%%%
 
@@ -688,43 +688,43 @@
 
 %%%%%%%%%%%%%%%%%%2025 fixes and new packages
 \newcommand{\frontmattersetup}{
-   \fancypagestyle{plain}{}
-   \raggedright
-   \parindent 0.25 in % set all paragraphs in the document to have indent
+    \fancypagestyle{plain}{}
+    \raggedright
+    \parindent 0.25 in % set all paragraphs in the document to have indent
 
-   % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   % %% The line below adds the word "Page" over the page numbers in TOC, LOT, LOF
-   \addtocontents{toc}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfTOC}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
-   \addtocontents{lot}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOT}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
-   \addtocontents{lof}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOF}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
-   % %%
+    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % %% The line below adds the word "Page" over the page numbers in TOC, LOT, LOF
+    \addtocontents{toc}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfTOC}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
+    \addtocontents{lot}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOT}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
+    \addtocontents{lof}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOF}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
+    % %%
 }
 
 \newcommand{\tableofcontentsTagged}{
-   {
-         \pdfbookmark[0]{TABLE OF CONTENTS}{table}
-         \tableofcontents
-         \tagstructuse{pageOfTOC} %gets tagging of "Page" done
-      }
-   \addtocontents{toc}{\def\protect\@chapapp{}}
+    {
+            \pdfbookmark[0]{TABLE OF CONTENTS}{table}
+            \tableofcontents
+            \tagstructuse{pageOfTOC} %gets tagging of "Page" done
+        }
+    \addtocontents{toc}{\def\protect\@chapapp{}}
 }
 \newcommand{\listoftablesTagged}{
-   \MakeLinkTarget[specialchapter]{}%necessary for tagging (as of 2024)
-   \addcontentsline{toc}{chapter}{LIST OF TABLES}
-   \listoftables
-   \tagstructuse{pageOfLOT}%gets tagging of "Page" done
+    \MakeLinkTarget[specialchapter]{}%necessary for tagging (as of 2024)
+    \addcontentsline{toc}{chapter}{LIST OF TABLES}
+    \listoftables
+    \tagstructuse{pageOfLOT}%gets tagging of "Page" done
 }
 \newcommand{\listoffiguresTagged}{
-   \MakeLinkTarget[specialchapter]{} %necessary for tagging (as of 2024)
-   \addcontentsline{toc}{chapter}{LIST OF FIGURES}
-   \listoffigures
-   \tagstructuse{pageOfLOF}%gets tagging of "Page" done
+    \MakeLinkTarget[specialchapter]{} %necessary for tagging (as of 2024)
+    \addcontentsline{toc}{chapter}{LIST OF FIGURES}
+    \listoffigures
+    \tagstructuse{pageOfLOF}%gets tagging of "Page" done
 }
 
 \newcommand{\nomenclatureTagged}{
 
-   \MakeLinkTarget[specialchapter]{}
-   \include{Preface/nomenclature}
+    \MakeLinkTarget[specialchapter]{}
+    \include{Preface/nomenclature}
 }
 %In the tagging structure, this collects the floats in each
 %section. Without it, all the floats for the entire document
@@ -740,29 +740,29 @@
 \ExplSyntaxOn
 \socket_new_plug:nnn{tagsupport/parbox/before}{caption}
 {
-   \tagpdfparaOn %restart para tagging
-   \tl_if_empty:NTF\@current@float@struct
-   {
-      \tag_struct_begin:n{tag=Caption,firstkid}
-   }
-   {
-      \tag_struct_begin:n{tag=Caption,parent=\@current@float@struct,firstkid}
-   }
+    \tagpdfparaOn %restart para tagging
+    \tl_if_empty:NTF\@current@float@struct
+    {
+        \tag_struct_begin:n{tag=Caption,firstkid}
+    }
+    {
+        \tag_struct_begin:n{tag=Caption,parent=\@current@float@struct,firstkid}
+    }
 }
 \socket_new_plug:nnn{tagsupport/parbox/after}{caption}
 {
-   \tag_struct_end:
+    \tag_struct_end:
 }
 \l@addto@macro\caption@beginex@hook{%
-   \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
-   \AssignSocketPlug{tagsupport/parbox/before}{caption}
-   \AssignSocketPlug{tagsupport/parbox/after}{caption}}
+    \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
+    \AssignSocketPlug{tagsupport/parbox/before}{caption}
+    \AssignSocketPlug{tagsupport/parbox/after}{caption}}
 \ExplSyntaxOff
 \AtBeginDocument{
-   \renewcommand*\caption@anchor[1]{%
-      \ifmeasuring@ \else
-         \caption@raisedlink{\MakeLinkTarget*{#1}}%
-      \fi}%  
+    \renewcommand*\caption@anchor[1]{%
+        \ifmeasuring@ \else
+            \caption@raisedlink{\MakeLinkTarget*{#1}}%
+        \fi}%  
 }
 
 %This part is my own invention - to get subfigures
@@ -779,14 +779,14 @@
 \cs_new_eq:NN \origsubfigure \subfigure
 \cs_new_eq:NN \origsubfigureend \endsubfigure
 \RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
-   \origsubfigure[#1][#2][#3]{#4}
-   \tagstructbegin{tag=Part}
-   \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
+    \origsubfigure[#1][#2][#3]{#4}
+    \tagstructbegin{tag=Part}
+    \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
 }
 \ExplSyntaxOff
 \def\endsubfigure{
-   \tagstructend
-   \origsubfigureend
+    \tagstructend
+    \origsubfigureend
 }
 
 %%%Default setup I doubt much of anyone changes
@@ -805,6 +805,8 @@
 \AtBeginEnvironment{table}{\singlespacing}% 
 \AtBeginEnvironment{figure}{\singlespacing}% 
 
+\overfullrule=0pt
+
 %%%Captioning Format
 \DeclareCaptionListFormat{figureList}{Figure #1#2}
 \DeclareCaptionListFormat{tableList}{Table #1#2}
@@ -815,30 +817,30 @@
 %%Optional packages
 %math option
 \iftoggle{math-tagthesis}{
-   \usepackage{amsmath}
-   \usepackage{amsthm}
-   \usepackage{mathtools}
-   \usepackage{thmtools}
-   %Following makes proof more reliable for tagging, from: https://github.com/latex3/tagging-project/issues/790
-   \renewenvironment{proof}[1][\proofname]{\par
-      \pushQED{\qed}%
-      \normalfont \topsep6\p@\@plus6\p@\relax
-      \trivlist
-      \item[\hskip\labelsep
-                  \itshape
-                  #1\@addpunct{.}]\ignorespaces
-   }{%
-      \popQED\endtrivlist\par\@endpefalse %<-- par inserted
-   }
+    \usepackage{amsmath}
+    \usepackage{amsthm}
+    \usepackage{mathtools}
+    \usepackage{thmtools}
+    %Following makes proof more reliable for tagging, from: https://github.com/latex3/tagging-project/issues/790
+    \renewenvironment{proof}[1][\proofname]{\par
+        \pushQED{\qed}%
+        \normalfont \topsep6\p@\@plus6\p@\relax
+        \trivlist
+        \item[\hskip\labelsep
+                    \itshape
+                    #1\@addpunct{.}]\ignorespaces
+    }{%
+        \popQED\endtrivlist\par\@endpefalse %<-- par inserted
+    }
 }{}
 
 %algorithms
 \iftoggle{algorithms-tagthesis}{
-   \usepackage[chapter]{algorithm}
-   \usepackage[noend]{algpseudocode}
-   \newcommand{\algmargin}{\the\ALG@thistlm}
-   \renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}}
-   \algnewcommand{\parstate}[1]{\State%
-      \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
+    \usepackage[chapter]{algorithm}
+    \usepackage[noend]{algpseudocode}
+    \newcommand{\algmargin}{\the\ALG@thistlm}
+    \renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}}
+    \algnewcommand{\parstate}[1]{\State%
+        \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
 
 }{}

@@ -806,6 +806,8 @@
 \AtBeginEnvironment{table}{\singlespacing}% 
 \AtBeginEnvironment{figure}{\singlespacing}% 
 
+\overfullrule=0pt
+
 %%%Captioning Format
 \DeclareCaptionListFormat{figureList}{Figure #1#2}
 \DeclareCaptionListFormat{tableList}{Table #1#2}
