@@ -1,5 +1,6 @@
 Tagging is slow - do the vast majority of the writing in a separate document (with all your usual presets) before copying over for finishing touches.
-Though, if using latexmk, it probably overdoes the number of re-runs, which is part of the slowness problem.
+
+If using latexmk with tagging activated, it probably overdoes the number of re-runs, which is part of the slowness problem.
 
 Things to keep in mind while drafting:
 1. If you need landscape tables/figures, subfigures, or algorithms, there are competing packages to do the same thing. Use the examples/packages used in the template.
@@ -15,3 +16,5 @@ The list is pessimistic - some packages labeled as incompatible have workarounds
 
 The template has only been tested with MikTeX. It probably works with an up-to-date version of TeXLive.\
 I suspect it won't work with Overleaf (packages too out of date and compilation timeout) - but this has not been tested.
+
+Issues or pull requests are welcome.
