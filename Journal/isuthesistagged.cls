@@ -682,8 +682,6 @@
 \@afterindenttrue
 %%%%
 \usepackage[all]{nowidow}
-\widowpenalty=1000                         % three times normal widow penalty
-\clubpenalty=1000                          % three times normal orphan penalty
 %
 
 %%%%%%%%%%%%%%%%%%2025 fixes and new packages
@@ -838,7 +836,7 @@
 %algorithms
 \iftoggle{algorithms-tagthesis}{
     \usepackage[chapter]{algorithm}
-    \usepackage[noend]{algpseudocode}
+    \usepackage{algpseudocode}
     \newcommand{\algmargin}{\the\ALG@thistlm}
     \renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}}
     \algnewcommand{\parstate}[1]{\State%

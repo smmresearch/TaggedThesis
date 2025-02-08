@@ -46,18 +46,19 @@
 }
 
 
+%Can pass additional options to packages loaded by the class
+%with \PassOptionsToPackage{<options>}{<packagename>}
+\PassOptionsToPackage{noend}{algpseudocode}
+
+
 % Template file for a standard thesis
 \documentclass[11pt,notitlepage,math-packages,algorithms-packages]{isuthesistagged}
 % notitlepage is used because \begin{abstract} uses titlepage by default, which resets the page numbers
 
 %math-packages loads: amsmath,amsthm, mathtools, thmtools, and associated tagging fixes
-%algorithms-packages loads: algorithm, algpseudocode (noend package option)
+%algorithms-packages loads: algorithm, algpseudocode, also provides \parstate for long, wrapped states
 
-%packages always loaded in cls file: xpatch, fancyhdr, titlesec, setspace, nowidow, caption
-%           subcaption, geometry, graphicx
 %biblatex and hyperref must also be loaded later in the preamble
-
-%search for "{packageName}" in the class file to find the line it is loaded to change options as needed
 
 
 %Additional class options:
