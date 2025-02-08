@@ -37,9 +37,38 @@
 \ProvidesClass{isuthesistagged}[2011/02/14]
 %  Requires the Geometry Package
 
+%\usepackage{etoolbox}
+\usepackage{xpatch}
 %  Thesis looks much like report
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
-\ProcessOptions
+
+\newtoggle{math-tagthesis}
+\togglefalse{math-tagthesis}
+
+\newtoggle{algorithms-tagthesis}
+\togglefalse{algorithms-tagthesis}
+
+\DeclareOption{math-packages}{%
+   \toggletrue{math-tagthesis}
+}
+
+\DeclareOption{algorithms-packages}{%
+   \toggletrue{algorithms-tagthesis}
+}
+
+\DeclareOption{no-mathml}{
+   \tagpdfsetup{
+      math/mathml/sources=,
+      math/mathml/luamml/load=false,
+      math/tex/AF=false
+   }
+}
+
+\DeclareOption{no-tag-tree}{
+   \AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}
+}
+
+\ProcessOptions\relax
 \LoadClass{report}
 
 %%%%
@@ -49,7 +78,7 @@
 % Patching needed to get TOC and Part pages to look as desired.
 % Must be patched before hyperref is loaded.
 %%%%
-\usepackage{xpatch}
+
 %adds a Period to the numberline
 \newcommand{\numberlineP}[1]{\numberline{#1.}}
 \xpatchcmd{\@chapter}% <cmd>
@@ -354,31 +383,6 @@
 \def\disclaimertitlepage{\def\@disclaimertitlepage{The student author, whose presentation of the scholarship herein was approved by the program of study committee, is solely responsible for the content of this \@format{}. The Graduate College will ensure this \@format{} is globally accessible and will not permit alterations after a degree is conferred.}}
 \def\@disclaimertitlepage{}
 
-% Signatures are no more
-
-% \newcount\@linecount
-% \def\makelines#1#2{\@linecount=#1
-%    \loop\ifnum \@linecount > 0
-%    \advance \@linecount by -1
-%       \vskip 3pt
-%     \underline{\mbox{\hspace{\@signwidth}}}
-% %   \hrule width \@signwidth 
-%    \vskip -7pt #2 \vskip 4pt
-%    \repeat}
-% allow major and department signature titles to be longer than
-% the signature line width without complaints from TeX
-%   \repeat \hbox to \@signwidth{#2\hss} \vskip 4pt}
-
-% \long\def\@signbox{
-%    \vfill
-%    \makelines{\@numcomm}{Committee Member}
-%    \makelines{\signmajornum}{\@signmajor}
-%    \if@interdeptm \makelines{1}{For the Interdeparmental Major} \fi
-%    \makelines{\signdeptnum}{\@signdept}
-%    %\makelines{1}{For the Graduate College}
-%    \hfill
-%    \par}
-
 \def\copyyear#1{\gdef\@copyyear{\number#1}}
 \copyyear{\year}
 \def\notice{\gdef\@notice{Copyright
@@ -674,12 +678,167 @@
 %Standard Report class changes;  JAS 10/95-3/96
 %  Part -standard (change Huge and huge to Large
 %%%%  both afterindentfalse and afterindenttrue should mean the same thing after below
-\makeatletter
 \let\@afterindentfalse\@afterindenttrue
 \@afterindenttrue
-\makeatother
 %%%%
 \usepackage[all]{nowidow}
 \widowpenalty=1000                         % three times normal widow penalty
 \clubpenalty=1000                          % three times normal orphan penalty
 %
+
+%%%%%%%%%%%%%%%%%%2025 fixes and new packages
+\newcommand{\frontmattersetup}{
+   \fancypagestyle{plain}{}
+   \raggedright
+   \parindent 0.25 in % set all paragraphs in the document to have indent
+
+   % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   % %% The line below adds the word "Page" over the page numbers in TOC, LOT, LOF
+   \addtocontents{toc}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfTOC}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
+   \addtocontents{lot}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOT}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
+   \addtocontents{lof}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOF}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
+   % %%
+}
+
+\newcommand{\tableofcontentsTagged}{
+   {
+         \pdfbookmark[0]{TABLE OF CONTENTS}{table}
+         \tableofcontents
+         \tagstructuse{pageOfTOC} %gets tagging of "Page" done
+      }
+   \addtocontents{toc}{\def\protect\@chapapp{}}
+}
+\newcommand{\listoftablesTagged}{
+   \MakeLinkTarget[specialchapter]{}%necessary for tagging (as of 2024)
+   \addcontentsline{toc}{chapter}{LIST OF TABLES}
+   \listoftables
+   \tagstructuse{pageOfLOT}%gets tagging of "Page" done
+}
+\newcommand{\listoffiguresTagged}{
+   \MakeLinkTarget[specialchapter]{} %necessary for tagging (as of 2024)
+   \addcontentsline{toc}{chapter}{LIST OF FIGURES}
+   \listoffigures
+   \tagstructuse{pageOfLOF}%gets tagging of "Page" done
+}
+
+\newcommand{\nomenclatureTagged}{
+
+   \MakeLinkTarget[specialchapter]{}
+   \include{Preface/nomenclature}
+}
+%In the tagging structure, this collects the floats in each
+%section. Without it, all the floats for the entire document
+%are collected.
+\AddToHook{cmd/section/before}{\tagtool{flush-floats=subsection}}
+\AddToHook{cmd/chapter/before}{\tagtool{flush-floats=subsection}}
+
+%Caption package & tagging fixes
+\usepackage{caption}
+\usepackage{subcaption}
+%This work-around comes from: https://github.com/latex3/tagging-project/issues/720
+\RemoveFromHook{begindocument}[latex-lab-testphase-float]
+\ExplSyntaxOn
+\socket_new_plug:nnn{tagsupport/parbox/before}{caption}
+{
+   \tagpdfparaOn %restart para tagging
+   \tl_if_empty:NTF\@current@float@struct
+   {
+      \tag_struct_begin:n{tag=Caption,firstkid}
+   }
+   {
+      \tag_struct_begin:n{tag=Caption,parent=\@current@float@struct,firstkid}
+   }
+}
+\socket_new_plug:nnn{tagsupport/parbox/after}{caption}
+{
+   \tag_struct_end:
+}
+\l@addto@macro\caption@beginex@hook{%
+   \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
+   \AssignSocketPlug{tagsupport/parbox/before}{caption}
+   \AssignSocketPlug{tagsupport/parbox/after}{caption}}
+\ExplSyntaxOff
+\AtBeginDocument{
+   \renewcommand*\caption@anchor[1]{%
+      \ifmeasuring@ \else
+         \caption@raisedlink{\MakeLinkTarget*{#1}}%
+      \fi}%  
+}
+
+%This part is my own invention - to get subfigures
+%to have captions be where they are supposed to be
+%by appending some extras to the subfigure environment
+%As with everything else, it probably won't be necessary
+%in the long term
+%
+%Further, no warranties on the robustness
+%If complicated subfigures are causing problems,
+%you are probably are better commenting this out
+%and dealing with the subpar tagging.
+\ExplSyntaxOn
+\cs_new_eq:NN \origsubfigure \subfigure
+\cs_new_eq:NN \origsubfigureend \endsubfigure
+\RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
+   \origsubfigure[#1][#2][#3]{#4}
+   \tagstructbegin{tag=Part}
+   \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
+}
+\ExplSyntaxOff
+\def\endsubfigure{
+   \tagstructend
+   \origsubfigureend
+}
+
+%%%Default setup I doubt much of anyone changes
+\chaptertitle
+% Old-style, thesis numbering down to subsubsection
+\alternate
+
+\setlength{\@fptop}{0pt} %command added to ensure images always float on top of the page
+
+\usepackage{geometry}
+\geometry{letterpaper, left=1in, top=1in, right=1in, bottom=1in, includehead=true,headheight=14pt}
+
+\usepackage{graphicx}
+
+\doublespacing
+\AtBeginEnvironment{table}{\singlespacing}% 
+\AtBeginEnvironment{figure}{\singlespacing}% 
+
+%%%Captioning Format
+\DeclareCaptionListFormat{figureList}{Figure #1#2}
+\DeclareCaptionListFormat{tableList}{Table #1#2}
+\captionsetup[figure]{listformat=figureList}
+\captionsetup[table]{listformat=tableList}
+\captionsetup[ContinuedFloat]{list=no}
+
+%%Optional packages
+%math option
+\iftoggle{math-tagthesis}{
+   \usepackage{amsmath}
+   \usepackage{amsthm}
+   \usepackage{mathtools}
+   \usepackage{thmtools}
+   %Following makes proof more reliable for tagging, from: https://github.com/latex3/tagging-project/issues/790
+   \renewenvironment{proof}[1][\proofname]{\par
+      \pushQED{\qed}%
+      \normalfont \topsep6\p@\@plus6\p@\relax
+      \trivlist
+      \item[\hskip\labelsep
+                  \itshape
+                  #1\@addpunct{.}]\ignorespaces
+   }{%
+      \popQED\endtrivlist\par\@endpefalse %<-- par inserted
+   }
+}{}
+
+%algorithms
+\iftoggle{algorithms-tagthesis}{
+   \usepackage[chapter]{algorithm}
+   \usepackage[noend]{algpseudocode}
+   \newcommand{\algmargin}{\the\ALG@thistlm}
+   \renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}}
+   \algnewcommand{\parstate}[1]{\State%
+      \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
+
+}{}

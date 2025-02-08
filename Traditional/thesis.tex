@@ -10,13 +10,12 @@
 %biber thesis --output-directory=.\LatexAux  
 
 %biber's output-directory should match lualatex's aux-directory or both should be omitted. c-style-errors is optional.
-
 %You can also use latexmk if desired. Beware, sometimes if you have just added alot or are starting fresh,
-%it can take more than 5 runs (latexmk's default max) for everything to settle. 
+%it can take more than 5 runs (latexmk's default max) for everything to settle.
 
 
-%Do not use amssymb, input/output enc, bm, with lualatex (that stuff is built-in)
-% Get Error ".. \@ doesn't match definition.."?
+% With lualatex, do not use amssymb, input/output enc
+% Get Error ".. \@ doesn't match definition.."? 
 % First, make sure you have ran biber and re-ran lualatex
 % Then, try deleting *.aux file of file you were messing with. If needed, escalate to deleting all auxillary files.
 
@@ -25,157 +24,58 @@
 
 %%Using Tikz? Externally generate as pdf (with just normal presets/without tagging) and use includegraphics to add alt text
 
-%% Tagging is slow
-%%
-%% Things that can be commented or uncommented in this tex file
-%% while drafting
-%% (and should be un-done before submitting)
-%% to speed-up compliation
-%% 
-%% 1. Use "\AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}"
-    %Find this commented out above DocumentMetadata
-    %This command disables a slow part of tagging
-    %May want to disable periodically to ensure tagging is working
-    %Comment out before submission
-%% 2. Use "\tagpdfsetup{
-              % math/mathml/sources=,
-              % math/mathml/luamml/load=false,
-              % math/tex/AF=false
-              % }"
-    %Find this command commented out below DocumentMetadata
-    %This command disables math related accessiblity tagging (which is also slow)
-    %Math tagging is not required by ISU, but nice to have
+
+%%% While drafting, the class options no-mathml and/or no-tag-tree can speed up compiling.
+% no-tag-tree cannot be used for final submission. mathml accessiblity tagging is not currently required by ISU
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%Command below disables slow parts of tagging,
-%speeding up compiling during drafting stages
-%When submitting, it should be commented out
-%\AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}
-%
-
-
-
 \DocumentMetadata{
  lang=en,
- testphase={phase-III,math,table,title,firstaid},
+ testphase={
+  phase-III,
+  math,
+  table,
+  title,
+  firstaid
+  },
  pdfversion=2.0,
  pdfstandard=ua-2,
  pdfstandard=a-4f,
  uncompress
 }
 
-%The command below disables the slow parts of tagging math, 
-%speeding up compiling
-% \tagpdfsetup{
-%  math/mathml/sources=,
-%  math/mathml/luamml/load=false,
-%  math/tex/AF=false
-% }
+
+% Template file for a standard thesis
+\documentclass[11pt,notitlepage,math-packages,algorithms-packages]{isuthesistagged}
+% notitlepage is used because \begin{abstract} uses titlepage by default, which resets the page numbers
+
+%math-packages loads: amsmath,amsthm, mathtools, thmtools, and associated tagging fixes
+%algorithms-packages loads: algorithm, algpseudocode (noend package option)
+
+%packages always loaded in cls file: xpatch, fancyhdr, titlesec, setspace, nowidow, caption
+%           subcaption, geometry, graphicx
+%biblatex and hyperref must also be loaded later in the preamble
+
+%search for "{packageName}" in the class file to find the line it is loaded to change options as needed
 
 
-\documentclass[11pt]{isuthesistagged}
+%Additional class options:
+% no-mathml: disables math tagging (not required by Iowa State)
+% no-tag-tree: disables a slow part of tagging (must be re-enabled before submission)
 
 
 
-%Caption package & tagging fixes
-\usepackage{caption}
-\usepackage{subcaption}
-%This work-around comes from: https://github.com/latex3/tagging-project/issues/720
-\RemoveFromHook{begindocument}[latex-lab-testphase-float]
-\makeatletter
-\ExplSyntaxOn
-\socket_new_plug:nnn{tagsupport/parbox/before}{caption}
-  {   
-   \tagpdfparaOn %restart para tagging
-   \tl_if_empty:NTF\@current@float@struct
-    {     
-     \tag_struct_begin:n{tag=Caption,firstkid}
-    }
-    {
-     \tag_struct_begin:n{tag=Caption,parent=\@current@float@struct,firstkid}
-    } 
-  }
-\socket_new_plug:nnn{tagsupport/parbox/after}{caption}
-  {
-   \tag_struct_end:   
-  }
-\l@addto@macro\caption@beginex@hook{%
-  \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
-  \AssignSocketPlug{tagsupport/parbox/before}{caption}
-  \AssignSocketPlug{tagsupport/parbox/after}{caption}}
-\ExplSyntaxOff
-\AtBeginDocument{
-	\renewcommand*\caption@anchor[1]{%
-        \ifmeasuring@ \else
-           \caption@raisedlink{\MakeLinkTarget*{#1}}%
-        \fi}%  
-}
 
-%This part is my own invention - to get subfigures
-%to have captions be where they are supposed to be
-%by appending some extras to the subfigure environment
-%As with everything else, it probably won't be necessary
-%in the long term
-%
-%Further, no warranties on the robustness
-%If complicated subfigures are causing problems,
-%you are probably are better commenting this out
-%and dealing with the subpar tagging.
-\ExplSyntaxOn
-\cs_new_eq:NN \origsubfigure \subfigure 
-\cs_new_eq:NN \origsubfigureend \endsubfigure
-\RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
-  \origsubfigure[#1][#2][#3]{#4}
-  \tagstructbegin{tag=Part}
-  \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
-}
-\ExplSyntaxOff
-\def\endsubfigure{
-  \tagstructend
-  \origsubfigureend
-}
-\makeatother
-
-%In the tagging structure, this collects the floats in each
-%section. Without it, all the floats for the entire document
-%are collected.
-\AddToHook{cmd/section/before}{\tagtool{flush-floats=subsection}}
-
-
-%for tables
+%For complex tables
 \usepackage{multirow}
+\usepackage{pdflscape}
 
-%%Mathy packages
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{mathtools}
-\usepackage{thmtools}
+%%Provides math presets: 
+%    Sets up some common math presets like Theorem, Definition, \R for mathbb{R}, etc. 
+%    Easier to edit than the class file
 \usepackage{templatedShortcuts-private}
-\usepackage[chapter]{algorithm}
-\usepackage[noend]{algpseudocode}
-\makeatletter
-\newcommand{\algmargin}{\the\ALG@thistlm}
-\makeatother
-\renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}} 
-\algnewcommand{\parstate}[1]{\State%
-  \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
-%Following makes proof more reliable for tagging, from: https://github.com/latex3/tagging-project/issues/790
-\makeatletter
-\renewenvironment{proof}[1][\proofname]{\par
-  \pushQED{\qed}%
-  \normalfont \topsep6\p@\@plus6\p@\relax
-  \trivlist
-  \item[\hskip\labelsep
-        \itshape
-    #1\@addpunct{.}]\ignorespaces
-}{%
-  \popQED\endtrivlist\par\@endpefalse %<-- par inserted
-}
-\makeatother
-%Tiks? Externally generate as pdf and use includegraphics to add alt text
-%until tikz implements alt text
+
 %%
 
 %Check package documentation for other font options
@@ -193,11 +93,6 @@
 % ]
 % \setmathfont{texgyrepagella-math.otf}
 
-\usepackage{graphicx}
-
-\chaptertitle
-% Old-style, thesis numbering down to subsubsection
-\alternate
 
 %Natbib compatibility mode activated
 %Different styles available - look at biblatex documentation
@@ -208,8 +103,8 @@
 %Set the author
 \newcommand{\theAuthor}{Alice Wonder}
 %Set the tite 
-\twoLineTitle{This is the title of the thesis
-submitted to Iowa State University on the first line}{
+\twoLineTitle{This is the title of a thesis
+submitted to Iowa State University on the first line.}{
 Note that only the first letter of
 the first word and proper names
 are capitalized and this is the second line}
@@ -220,102 +115,49 @@ are capitalized and this is the second line}
 \usepackage[hypertexnames=false,linktocpage=true,pdfauthor={\theAuthor},pdftitle={\titleWithoutBreak},]{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB,pdfencoding=auto}
 \usepackage{bookmark}
-% The following piece of code removes extra space on the top of each chapter
-%  that is default of latex report class documents
-\usepackage{etoolbox}
-\makeatletter
-\setlength{\@fptop}{0pt} %command added to ensure images always float on top of the page
-\makeatother
 
 \renewcommand{\chapterautorefname}{Chapter}
 \renewcommand{\sectionautorefname}{Section}
 \renewcommand{\subsectionautorefname}{Subsection}
 
+\overfullrule=0pt
+%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{float}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{xcolor}
-\usepackage{graphicx}
-\usepackage{geometry}
-\geometry{letterpaper, left=1in, top=1in, right=1in, bottom=1in, includehead=true,headheight=14pt} 
-\usepackage{pdflscape}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%we are manually adding nomeclature to the TOC, hence notintoc
-\usepackage[notintoc, english]{nomencl}
-\doublespacing
-\AtBeginEnvironment{table}{\singlespacing}% 
-\AtBeginEnvironment{figure}{\singlespacing}% 
-
-%%%Captioning Format
-\DeclareCaptionListFormat{figureList}{Figure #1#2}
-\DeclareCaptionListFormat{tableList}{Table #1#2}
-\captionsetup[figure]{listformat=figureList}
-\captionsetup[table]{listformat=tableList}
-\captionsetup[ContinuedFloat]{list=no}
+%Optional nomenclature package
+\usepackage[notintoc,english]{nomencl}
 
 
-\usepackage[inline]{enumitem}
+%The command below can be used to get rid of footnote rule(line)
+%\renewcommand*\footnoterule{}
 
 %With unicode instead of bm, symbf should be used
 %This remaps \bm to prevent problems. There might be slightly different behavior.
 \let\bm\symbf
 
 
-%The command below can be used to get rid of footnote rule(line)
-%\renewcommand*\footnoterule{}
-
 \begin{document}
-\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png}
-\def\@makechapterheada{\vspace*{-2cm}\titlepage} % in order to reduce the space between margin and heading in titlepage
 \include{Preface/titlepage}
-\fancypagestyle{plain}{}
-
-% % Left-justified setting for all sections including
-% % dedication, nomenclature, acknowledgement, abstract and all chapters
-% % Re-position the two lines below will change all the section
-% % being compiled after those two lines
-\raggedright
-\parindent 0.25 in % set all paragraphs in the document to have indent
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %% The line below adds the word "Page" over the page numbers in TOC, LOT, LOF
-\addtocontents{toc}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfTOC}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
-\addtocontents{lot}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOT}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
-\addtocontents{lof}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOF}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
-
+\frontmattersetup
 % %%
 % % Optional thesis dedication
 %   Dedication is not usually listed in the table of contents.
 %   However, if you do want it, add this command here (not in the dedication file)
 %   \addToTOCWithoutChapter{DEDICATION}
 \include{Preface/dedication}
-% % Table of Contents, List of Tables and List of Figures
 
-{
-  \pdfbookmark[0]{TABLE OF CONTENTS}{table}
-  \tableofcontents
-  \tagstructuse{pageOfTOC} %gets tagging of "Page" done
-}
-
-\addtocontents{toc}{\def\protect\@chapapp{}} \cleardoublepage \phantomsection
-\pagebreak
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\MakeLinkTarget[specialchapter]{}%necessary for tagging (as of 2024)
-\addcontentsline{toc}{chapter}{LIST OF TABLES}
-\listoftables
-\tagstructuse{pageOfLOT}%gets tagging of "Page" done
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontentsTagged
 \cleardoublepage \phantomsection
-\MakeLinkTarget[specialchapter]{} %necessary for tagging (as of 2024)
-\addcontentsline{toc}{chapter}{LIST OF FIGURES}
-\listoffigures
-\tagstructuse{pageOfLOF}%gets tagging of "Page" done
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
 
-% %Optional Nomenclature
-% \cleardoublepage \phantomsection
-% \MakeLinkTarget[specialchapter]{}
-% \include{Preface/nomenclature}
+\listoftablesTagged %remove if no tables
+
+\cleardoublepage \phantomsection
+\listoffiguresTagged %remove if no figures
+
+%%%% Optional nomenclature
+%\cleardoublepage \phantomsection
+%\nomenclatureTagged
 
 %Adds Chapter in front of chapter on TOC
 \addtocontents{toc}{\def\protect\@chapapp{CHAPTER\ }}
@@ -326,31 +168,24 @@ are capitalized and this is the second line}
 %Optional thesis abstract
 \cleardoublepage \phantomsection
 \include{Preface/abstract}
-\cleardoublepage \phantomsection
-
 \newpage
 \pagenumbering{arabic}
 \pagestyle{fancy}
 \include{Body/chapter1}
-\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/chapter2}
-\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/chapter3}
 \part{Let's have a part page}
 \include{Body/chapter4}
-\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Body/chapter5}
 %Pulls the appendices and bibliography out of any Parts
 \bookmarksetup{startatroot}
 \chapter*{BIBLIOGRAPHY}
 \addToTOCWithoutChapter{BIBLIOGRAPHY}
 \printbibliography[heading=none]
-\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 \include{Appendix/appendix1}
-\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
 % % Instruction for single appendix check instruction in Appendix/appendix1.tex on top of the file
 \include{Appendix/appendix2}
-\tagtool{flush-floats=subsection}%add this command after each chapter to keep floats where they are supposed to be
+\tagtool{flush-floats=subsection}% to keep floats where they are supposed to be in the tagging tree
 
 \end{document}
 
@@ -365,7 +200,6 @@ are capitalized and this is the second line}
 % insert  \addtocontents{toc}{\protect\newpage} before the first line i.e. before the line \chapter{RESULTS}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \def\@makechapterhead#1{%   
 % IN ORDER TO MAKE spacing changes in the title page got to the section in the isuthesis.cls file
 % that starts with \long\def\maketitle{\begin{titlepage} and you can use options like
 % singlespace (less spacing)
