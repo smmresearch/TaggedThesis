@@ -9,6 +9,7 @@ Things to keep in mind while drafting:
 4. For whatever reason the tagging thing doesn't like if you do something like ```$x_\someCommand{whatever}$``` instead of ```$x_{\someCommand{whatever}}$```  (even though both work with standard latex).
 Something like ```$x_1$``` (single character) is fine.
 5. The template uses LuaLatex. Drafting with pdflatex will usually be fine, but you can also minimize the chance for problems by starting with lualatex if you are comfortable setting up LuaLatex.
+6. Alt-text is added to images using ```\includegraphics[alt={alt text here}]{...}```. If you use a recent version of latex, you should be able to add the alt text to includegraphics without any tagging (it does do anything without tagging, but it also does not break anything). Table markup I would add later once you have transferred to the template.
 
 
 Official list of packages compatible with tagging: https://latex3.github.io/tagging-project/tagging-status/
