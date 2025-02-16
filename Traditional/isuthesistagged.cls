@@ -681,8 +681,10 @@
 \let\@afterindentfalse\@afterindenttrue
 \@afterindenttrue
 %%%%
+%% Prevent orphan and widow lines
 \usepackage[all]{nowidow}
-%
+%% Prevent references from being split across two pages
+\AtBeginEnvironment{thebibliography}{\interlinepenalty=10000}
 
 %%%%%%%%%%%%%%%%%%2025 fixes and new packages
 \newcommand{\frontmattersetup}{
