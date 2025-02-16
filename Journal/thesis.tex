@@ -51,22 +51,22 @@
 
 
 % Template file for a standard thesis
-\documentclass[11pt,notitlepage,math-packages,algorithms-packages]{isuthesistagged}
+\documentclass[math-packages,algorithms-packages]{isuthesistagged}
 %packages always loaded in cls file: xpatch, fancyhdr, titlesec, setspace, nowidow, caption
 %           subcaption, geometry, graphicx
 %biblatex and hyperref must also be loaded later in the preamble
 
 
-% notitlepage is used because \begin{abstract} uses titlepage by default, which resets the page numbers
-
-%math-packages loads: amsmath,amsthm, mathtools, thmtools, and associated tagging fixes
-%algorithms-packages loads: algorithm, algpseudocode, also provides \parstate for long, wrapped states
-
 
 
 %Additional class options:
+% math-packages: loads amsmath,amsthm, mathtools, thmtools, and associated tagging fixes
+% algorithms-packages: loads algorithm, algpseudocode, fixes the numbering, also provides \parstate for long, wrapped states
 % no-mathml: disables math tagging (not required by Iowa State)
 % no-tag-tree: disables a slow part of tagging (must be re-enabled before submission)
+% bib-no-break: by default, page breaks in the middle of entries are discouraged, but may happen for a particularly long entry (4+ lines).
+%       With this option, a page break will never happen in the middle of an entry, no matter how long. This is "recommended" by not required
+%       by Iowa State.
 
 
 
@@ -111,7 +111,7 @@
 submitted to Iowa State University on the first line.}{
 Note that only the first letter of
 the first word and proper names
-are capitalized and this is the second line.}
+are capitalized and this is the second line}
 
 %%PDF properties automatically set
 \author{\theAuthor}
@@ -138,7 +138,6 @@ are capitalized and this is the second line.}
 %With unicode instead of bm, symbf should be used
 %This remaps \bm to prevent problems. There might be slightly different behavior.
 \let\bm\symbf
-
 \begin{document}
 \include{Preface/titlepage}
 \frontmattersetup
@@ -168,7 +167,7 @@ are capitalized and this is the second line.}
 %Optional Acknowledgements
 \cleardoublepage \phantomsection
 \include{Preface/acknowl}
-%Optional thesis abstract
+%Required thesis abstract
 \cleardoublepage \phantomsection
 \include{Preface/abstract}
 \newpage

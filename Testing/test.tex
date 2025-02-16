@@ -1,83 +1,75 @@
 %!LW recipe=latexmk (lualatex)
 \DocumentMetadata{
  lang=en,
- testphase={phase-III,math,table,title,firstaid},
+ testphase={
+  phase-III,
+  table,
+  firstaid
+  },
  pdfversion=2.0,
  pdfstandard=ua-2,
  pdfstandard=a-4f,
  uncompress
 }
-\documentclass{book}
-
-\usepackage{titlesec}
-
-\usepackage[linktocpage=true]{hyperref}
-
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{graphicx}
+\documentclass{article}
 
 
-
-\RemoveFromHook{begindocument}[latex-lab-testphase-float]
-\makeatletter
-\ExplSyntaxOn
-\socket_new_plug:nnn{tagsupport/parbox/before}{caption}
-  {   
-   \tagpdfparaOn %restart para tagging
-   \tl_if_empty:NTF\@current@float@struct
-    {     
-     \tag_struct_begin:n{tag=Caption,firstkid}
-    }
-    {
-     %\tag_struct_begin:n{tag=Caption,firstkid}
-     \tag_struct_begin:n{tag=Caption,parent=\@current@float@struct,firstkid}
-    } 
-  }
-\socket_new_plug:nnn{tagsupport/parbox/after}{caption}
-  {
-   \tag_struct_end:   
-  }
-\l@addto@macro\caption@beginex@hook{%
-  \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
-  \AssignSocketPlug{tagsupport/parbox/before}{caption}
-  \AssignSocketPlug{tagsupport/parbox/after}{caption}}
-\ExplSyntaxOff
-\AtBeginDocument{
-	\renewcommand*\caption@anchor[1]{%
-        \ifmeasuring@ \else
-           \caption@raisedlink{\MakeLinkTarget*{#1}}%
-        \fi}%  
-}
-
-
-\ExplSyntaxOn
-\cs_new_eq:NN \origsubfigure \subfigure 
-\cs_new_eq:NN \origsubfigureend \endsubfigure
-\RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
-  \origsubfigure[#1][#2][#3]{#4}
-  \tagstructbegin{tag=Part}
-  \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
-}
-\ExplSyntaxOff
-\def\endsubfigure{
-  \tagstructend
-  \origsubfigureend
-}
-\makeatother
+% \RemoveFromHook{begindocument}[latex-lab-testphase-float]
+% \makeatletter
+% \ExplSyntaxOn
+% \socket_new_plug:nnn{tagsupport/parbox/before}{caption}
+%   {   
+%    \tagpdfparaOn %restart para tagging
+%    \tl_if_empty:NTF\@current@float@struct
+%     {     
+%      \tag_struct_begin:n{tag=Caption,firstkid}
+%     }
+%     {
+%      %\tag_struct_begin:n{tag=Caption,firstkid}
+%      \tag_struct_begin:n{tag=Caption,parent=\@current@float@struct,firstkid}
+%     } 
+%   }
+% \socket_new_plug:nnn{tagsupport/parbox/after}{caption}
+%   {
+%    \tag_struct_end:   
+%   }
+% \l@addto@macro\caption@beginex@hook{%
+%   \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
+%   \AssignSocketPlug{tagsupport/parbox/before}{caption}
+%   \AssignSocketPlug{tagsupport/parbox/after}{caption}}
+% \ExplSyntaxOff
+% \AtBeginDocument{
+% 	\renewcommand*\caption@anchor[1]{%
+%         \ifmeasuring@ \else
+%            \caption@raisedlink{\MakeLinkTarget*{#1}}%
+%         \fi}%  
+% }
 
 
-\usepackage{tikz-cd}
+% \ExplSyntaxOn
+% \cs_new_eq:NN \origsubfigure \subfigure 
+% \cs_new_eq:NN \origsubfigureend \endsubfigure
+% \RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
+%   \origsubfigure[#1][#2][#3]{#4}
+%   \tagstructbegin{tag=Part}
+%   \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
+% }
+% \ExplSyntaxOff
+% \def\endsubfigure{
+%   \tagstructend
+%   \origsubfigureend
+% }
+% \makeatother
+
+
+%\usepackage{tikz-cd}
 
 \begin{document}
-\section{Problem 3.2.ii}
-Consider something
-
-\begin{tikzcd}
-  \lim_J F \arrow[rr] &  & \Pi_{j\in J} Fj \arrow[rr, "c", shift left] \arrow[rr, "d"', shift right] &  & \Pi_{f\in \text{mor}J\setminus J} F(\text{cod}f)
-\end{tikzcd}
-
-where c.
-It is clear that $\lim_{J} F$ has the property of the diagram. Therefore, it suffices to show that any cone $\{\tau_j:s\rightarrow F(j) \; | \: j\in J\}$ over $F$ with summit $s$ that satisfies the modified diagram also satisfies the original equalizer diagram:
-
+\begin{table}
+  \begin{tabular}{|c|c|}
+    a & b \\
+    d & e
+  \end{tabular}
+  \caption{Table}
+\end{table}
 \end{document}

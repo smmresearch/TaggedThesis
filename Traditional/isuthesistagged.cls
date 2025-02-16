@@ -40,7 +40,6 @@
 %\usepackage{etoolbox}
 \usepackage{xpatch}
 %  Thesis looks much like report
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 
 \newtoggle{math-tagthesis}
 \togglefalse{math-tagthesis}
@@ -68,8 +67,23 @@
     \AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}
 }
 
+\DeclareOption{bib-no-break}{
+    \AtEndPreamble{
+        \renewcommand*{\bibsetup}{%
+            \interlinepenalty=10000\relax %up from 5000 by default
+            \widowpenalty=10000\relax
+            \clubpenalty=10000\relax
+            \raggedbottom
+            \frenchspacing
+            \biburlsetup
+        }
+    }
+}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+
 \ProcessOptions\relax
-\LoadClass{report}
+\LoadClass[11pt,notitlepage]{report}
+% notitlepage is used because \begin{abstract} uses titlepage by default, which resets the page numbers
 
 %%%%
 % 2024 Additions for new requirements and modern conveniences
@@ -724,6 +738,7 @@
     \MakeLinkTarget[specialchapter]{}
     \include{Preface/nomenclature}
 }
+
 %In the tagging structure, this collects the floats in each
 %section. Without it, all the floats for the entire document
 %are collected.
@@ -762,7 +777,6 @@
             \caption@raisedlink{\MakeLinkTarget*{#1}}%
         \fi}%  
 }
-
 %This part is my own invention - to get subfigures
 %to have captions be where they are supposed to be
 %by appending some extras to the subfigure environment
