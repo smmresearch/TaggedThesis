@@ -14,7 +14,7 @@
 %it can take more than 5 runs (latexmk's default max) for everything to settle.
 
 
-% With lualatex, do not use amssymb, input/output enc
+% With unicode with lualatex (recommended), do not use amssymb, input/output enc
 % Get Error ".. \@ doesn't match definition.."? 
 % First, make sure you have ran biber and re-ran lualatex
 % Then, try deleting *.aux file of file you were messing with. If needed, escalate to deleting all auxillary files.
@@ -84,10 +84,11 @@
 
 %Check package documentation for other font options
 %For example, the "default" is a Computer Modern clone
-\usepackage[stixtwo]{fontsetup}
+\usepackage[libertinus]{fontsetup}
 
 %Instead of font setup, unicode-math has more fine-tuned control
 %\usepackage{unicode-math}
+
 % \setmainfont{texgyrepagella}[
 % Extension       = .otf,
 % UprightFont     = *-regular,
