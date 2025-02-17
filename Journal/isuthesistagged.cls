@@ -82,7 +82,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 
 \ProcessOptions\relax
-\LoadClass[11pt,notitlepage]{report}
+\LoadClass[notitlepage]{report}
 % notitlepage is used because \begin{abstract} uses titlepage by default, which resets the page numbers
 
 %%%%
@@ -809,7 +809,7 @@
 \setlength{\@fptop}{0pt} %command added to ensure images always float on top of the page
 
 \usepackage{geometry}
-\geometry{letterpaper, left=1in, top=1in, right=1in, bottom=1in, includehead=true,headheight=14pt}
+\geometry{letterpaper, left=1in, top=1in, right=1in, bottom=1in, includehead=true,headheight=15pt}
 
 \usepackage{graphicx}
 
