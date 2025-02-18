@@ -415,22 +415,22 @@
         % \vbox ensures whole title page stays on one page even if it becomes overfull
         \vbox to \textheight{
             \begin{center}
-                \vskip 28pt                   % Added to more evenly space page (JAS11)
+                \vskip 25pt                   % Added to more evenly space page (JAS11)
                     {\bfseries \@title}
-                \vskip 14pt                    % Changed from 11pt to more evenly space page (JAS11)
+                \vskip 12pt                    % Changed from 11pt to more evenly space page (JAS11)
                 by \\
-                \vskip 14pt                   % Changed from 11pt to more evenly space page (JAS11)
+                \vskip 12pt                   % Changed from 11pt to more evenly space page (JAS11)
                     {\bfseries \@author}      % Changed to bold at thesis office request (JAS16)
-                \vskip 41pt                  % Changed from 30pt to more evenly space page (JAS11)
+                \vskip 40pt                  % Changed from 30pt to more evenly space page (JAS11)
                 A \@format\ submitted to \@submit\ \\
                 in partial fulfillment of the requirements for the degree of\\
                 \@degree \\[2.5pt]
 
-                \vskip 55pt                   % Changed from 30pt to cover dept loss
+                \vskip 40pt                   % Changed from 30pt to cover dept loss
                 %   \@depart
                 \@major
                 %   \@minor                     % No longer listed - Sept. 2001
-                \vskip 41pt                    % Changed from 14pt to more evenly space page (JAS11)
+                \vskip 40pt                    % Changed from 14pt to more evenly space page (JAS11)
                 \begin{singlespace}  % Elminated to more evenly space page (JAS11)
                     Program of Study Committee: \\
                     \@mprof
@@ -445,48 +445,11 @@
                 \end{singlespace}   % Eliminated to more evenly space page (JAS11)
             \end{center}
             \vfill
-            \vspace{14pt}%{14pt}
+            \vspace{12pt}%{14pt}
             \vfill
             \@titlefoot } % end of \vbox
     \end{titlepage}
 }% end maketitle
-\long\def\makenosigtitle{\begin{titlepage}
-        % \vbox ensures whole title page stays on one page even if it becomes overfull
-        \vbox to \textheight{
-            \begin{center}
-                {\bfseries \@title}
-                \vskip 11pt
-                by \\
-                \vskip 11pt
-                    {\bfseries \@author}         % changed from non-bold at thesis office request (JAS16)
-                \vskip 30pt
-                A \@format\ submitted to \@submit\ \\
-                in partial fulfillment of the requirements for the degree of\\
-                \@degree \\[2.5pt]
-                \vskip 41pt                   % Changed from 30pt to cover dept loss
-                %   \@depart
-                \@major
-                %   \@minor                      % No longer listed - Sept. 2001
-                \vskip 14pt
-                \begin{singlespace}
-                    Program of Study Committee: \\
-                    \@mprof
-                    \@mprofs
-                    \@cmprofs
-                    \@members
-                \end{singlespace}
-                \vfill
-                %  % \vspace{4pt}
-                %   %\vfill
-                \@disclaimertitlepage
-            \end{center}
-            \vfill
-            \vspace{14pt}%{14pt}
-            \vfill
-            \@titlefoot } % end of \vbox
-    \end{titlepage}
-}% end makenosigtitle
-
 \long\def\startabstract{
     \begin{center}
         {\bfseries \@title}
