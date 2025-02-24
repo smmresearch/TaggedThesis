@@ -409,9 +409,7 @@
 \def\@titlefoot{\begin{center}Iowa State University\\
         Ames, Iowa\\ \@copyyear\  \\
         \@notice \end{center}}%Added \  after \@copyyear to avoid having \\ problem
-
 \long\def\maketitle{\begin{titlepage}
-
         % \vbox ensures whole title page stays on one page even if it becomes overfull
         \vbox to \textheight{
             \begin{center}
