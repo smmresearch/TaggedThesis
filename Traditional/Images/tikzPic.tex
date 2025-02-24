@@ -1,0 +1,25 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{tikz}
+
+
+%These commands allows you to reference labels from the manuscript (note links don't work)
+%If you don't need that, you can delete all of this
+\usepackage{xr}
+\usepackage{hyperref}
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Subsection}
+%\externaldocument{<path to thesis.aux>}{<path to thesis.pdf>}
+%the .. means "parent folder" i.e. instead of the Images folder look in the Journal/Traditional Folder
+\externaldocument{../LatexAux/thesis}[../thesis.pdf]
+%%%%%
+
+\begin{document}
+%
+\begin{tikzpicture}
+    \draw[gray, thick] (-1,2) -- (2,-4);
+    \draw[gray, thick] (-1,-1) -- (2,2);
+    \filldraw[black] (0,0) circle (2pt) node[anchor=west]{A Tikz Picture kept in a separate file \autoref*{introSection} };
+\end{tikzpicture}
+\end{document}
