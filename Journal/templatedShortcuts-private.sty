@@ -1,19 +1,28 @@
 \ProvidesPackage{templatedShortcuts-private}
 \RequirePackage{amsthm}
-\RequirePackage{thmtools}
+%\RequirePackage{thmtools}
 \let\oldemptyset\emptyset
 \let\emptyset\varnothing
 
 \newtheorem{theorem}{Theorem}[chapter]
+\renewcommand\theHtheorem{\thechapter.\arabic {theorem}}
 \newtheorem*{theorem*}{Theorem}
 \newtheorem{proclamation}{Proclamation}[chapter]
+\renewcommand\theHproclamation{\theproclamation.\arabic {proclamation}}
 \newtheorem{corollary}{Corollary}[chapter]
+\renewcommand\theHcorollary{\thechapter.\arabic {corollary}}
 \newtheorem{conjecture}{Conjecture}[chapter]
+\renewcommand\theHconjecture{\thechapter.\arabic {conjecture}}
 \newtheorem{lemma}{Lemma}[chapter]
+\renewcommand\theHlemma{\thechapter.\arabic {lemma}}
 \newtheorem{proposition}{Proposition}[chapter]
+\renewcommand\theHproposition{\thechapter.\arabic {proposition}}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
+\renewcommand\theHdefinition{\thechapter.\arabic {definition}}
 \theoremstyle{remark}
+\newtheorem{remarkN}{Remark}[chapter]
+\renewcommand\theHremarkN{\thechapter.\arabic {remarkN}}
 \newtheorem*{remark}{Remark}
 \newtheorem*{claim}{Claim}
 \makeatletter

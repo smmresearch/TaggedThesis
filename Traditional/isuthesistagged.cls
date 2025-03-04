@@ -795,7 +795,7 @@
     \usepackage{amsmath}
     \usepackage{amsthm}
     \usepackage{mathtools}
-    \usepackage{thmtools}
+    %\usepackage{thmtools}
     %Following makes proof more reliable for tagging, from: https://github.com/latex3/tagging-project/issues/790
     \renewenvironment{proof}[1][\proofname]{\par
         \pushQED{\qed}%
