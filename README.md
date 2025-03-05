@@ -1,3 +1,5 @@
+Issues or pull requests are welcome.
+
 Tagging is slow - do the vast majority of the writing in a separate document (with all your usual presets) before copying over for finishing touches.
 
 If using latexmk with tagging activated, it probably overdoes the number of re-runs, which is part of the slowness problem.
@@ -18,4 +20,4 @@ The list is pessimistic - some packages labeled as incompatible have workarounds
 The template has only been tested with MikTeX. It probably works with an up-to-date version of TeXLive.\
 I suspect it won't work with Overleaf (packages too out of date and compilation timeout) - but this has not been tested.
 
-Issues or pull requests are welcome.
+
