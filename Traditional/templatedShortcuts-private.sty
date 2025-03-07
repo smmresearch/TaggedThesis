@@ -1,14 +1,11 @@
 \ProvidesPackage{templatedShortcuts-private}
 \RequirePackage{amsthm}
-%\RequirePackage{thmtools}
 \let\oldemptyset\emptyset
 \let\emptyset\varnothing
 
 \newtheorem{theorem}{Theorem}[chapter]
 \renewcommand\theHtheorem{\thechapter.\arabic {theorem}}
 \newtheorem*{theorem*}{Theorem}
-\newtheorem{proclamation}{Proclamation}[chapter]
-\renewcommand\theHproclamation{\theproclamation.\arabic {proclamation}}
 \newtheorem{corollary}{Corollary}[chapter]
 \renewcommand\theHcorollary{\thechapter.\arabic {corollary}}
 \newtheorem{conjecture}{Conjecture}[chapter]
