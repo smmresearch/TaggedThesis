@@ -1,75 +1,41 @@
 %!LW recipe=latexmk (lualatex)
-\DocumentMetadata{
- lang=en,
- testphase={
-  phase-III,
-  table,
-  firstaid
-  },
- pdfversion=2.0,
- pdfstandard=ua-2,
- pdfstandard=a-4f,
- uncompress
-}
+% \DocumentMetadata{
+%  lang=en,
+%  testphase={
+%   phase-III,
+%   table,
+%   firstaid
+%   },
+%  pdfversion=2.0,
+%  pdfstandard=ua-2,
+%  pdfstandard=a-4f,
+%  uncompress
+% }
 \documentclass{article}
 
-
-% \RemoveFromHook{begindocument}[latex-lab-testphase-float]
-% \makeatletter
-% \ExplSyntaxOn
-% \socket_new_plug:nnn{tagsupport/parbox/before}{caption}
-%   {   
-%    \tagpdfparaOn %restart para tagging
-%    \tl_if_empty:NTF\@current@float@struct
-%     {     
-%      \tag_struct_begin:n{tag=Caption,firstkid}
+%\usepackage{amsmath}
+\usepackage{amsthm}
+% \renewenvironment{proof}[1][\proofname]{\par
+%         \pushQED{\qed}%
+%         \normalfont \topsep6\p@\@plus6\p@\relax
+%         \trivlist
+%         \item[\hskip\labelsep
+%                     \itshape
+%                     #1\@addpunct{.}]\ignorespaces
+%     }{%
+%         \popQED\endtrivlist\@endpefalse %<-- par inserted
 %     }
-%     {
-%      %\tag_struct_begin:n{tag=Caption,firstkid}
-%      \tag_struct_begin:n{tag=Caption,parent=\@current@float@struct,firstkid}
-%     } 
-%   }
-% \socket_new_plug:nnn{tagsupport/parbox/after}{caption}
-%   {
-%    \tag_struct_end:   
-%   }
-% \l@addto@macro\caption@beginex@hook{%
-%   \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
-%   \AssignSocketPlug{tagsupport/parbox/before}{caption}
-%   \AssignSocketPlug{tagsupport/parbox/after}{caption}}
-% \ExplSyntaxOff
-% \AtBeginDocument{
-% 	\renewcommand*\caption@anchor[1]{%
-%         \ifmeasuring@ \else
-%            \caption@raisedlink{\MakeLinkTarget*{#1}}%
-%         \fi}%  
-% }
-
-
-% \ExplSyntaxOn
-% \cs_new_eq:NN \origsubfigure \subfigure 
-% \cs_new_eq:NN \origsubfigureend \endsubfigure
-% \RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
-%   \origsubfigure[#1][#2][#3]{#4}
-%   \tagstructbegin{tag=Part}
-%   \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
-% }
-% \ExplSyntaxOff
-% \def\endsubfigure{
-%   \tagstructend
-%   \origsubfigureend
-% }
 % \makeatother
+\newtheorem{case}{Case}
 
-
-%\usepackage{tikz-cd}
 
 \begin{document}
-\begin{table}
-  \begin{tabular}{|c|c|}
-    a & b \\
-    d & e
-  \end{tabular}
-  \caption{Table}
-\end{table}
+\meaning\proof
+\show\proof
+\begin{proof}
+  Hello!
+  \begin{case}
+    Here t
+  \end{case}
+\end{proof}
 \end{document}

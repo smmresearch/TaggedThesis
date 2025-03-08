@@ -737,6 +737,10 @@
         \ifmeasuring@ \else
             \caption@raisedlink{\MakeLinkTarget*{#1}}%
         \fi}%  
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Subsection}
+    \renewcommand{\subsubsectionautorefname}{Subsubsection}
 }
 %This part is my own invention - to get subfigures
 %to have captions be where they are supposed to be
