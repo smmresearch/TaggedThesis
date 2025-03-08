@@ -795,18 +795,20 @@
     \usepackage{amsmath}
     \usepackage{amsthm}
     \usepackage{mathtools}
+    \usepackage[thmtools-compat]{keytheorems}
     %\usepackage{thmtools}
     %Following makes proof more reliable for tagging, from: https://github.com/latex3/tagging-project/issues/790
-    \renewenvironment{proof}[1][\proofname]{\par
-        \pushQED{\qed}%
-        \normalfont \topsep6\p@\@plus6\p@\relax
-        \trivlist
-        \item[\hskip\labelsep
-                    \itshape
-                    #1\@addpunct{.}]\ignorespaces
-    }{%
-        \popQED\endtrivlist\par\@endpefalse %<-- par inserted
-    }
+    %It seems to be incompatible sometimes...
+    % \renewenvironment{proof}[1][\proofname]{\par
+    %     \pushQED{\qed}%
+    %     \normalfont \topsep6\p@\@plus6\p@\relax
+    %     \trivlist
+    %     \item[\hskip\labelsep
+    %                 \itshape
+    %                 #1\@addpunct{.}]\ignorespaces
+    % }{%
+    %     \popQED\endtrivlist\par\@endpefalse %<-- par inserted
+    % }
 }{}
 
 %algorithms
