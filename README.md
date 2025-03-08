@@ -12,7 +12,7 @@ Things to keep in mind while drafting:
 Something like ```$x_1$``` (single character) is fine.
 5. The template uses LuaLatex. Drafting with pdflatex will usually be fine, but you can also minimize the chance for problems by starting with lualatex if you are comfortable setting up LuaLatex.
 6. Alt-text is added to images using ```\includegraphics[alt={alt text here}]{...}```. If you use a recent version of latex, you should be able to add the alt text to includegraphics without any tagging (it does not do anything without tagging, but it also does not break anything). Table markup I would add later once you have transferred to the template.
-7. If you have a proof consisting of only equations (no body text!), add a ```~``` at the beginning of the proof (it is just a space) to workaround a bug in tagging (you will get an error about para-hooks don't match). Along the lines of ```\begin{proof} ~ \[<equations>\] \end{proof}```
+7. If you have a proof consisting of only equations (no body text!), add a ```~``` at the beginning of the proof (it is just a space) to workaround a bug in tagging (otherwise, you will get an error about para-hooks don't match). Along the lines of ```\begin{proof} ~ \[<equations>\] \end{proof}```
 
 
 Official list of packages compatible with tagging: https://latex3.github.io/tagging-project/tagging-status/
