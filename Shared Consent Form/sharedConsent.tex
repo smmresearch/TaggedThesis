@@ -1,0 +1,62 @@
+% Need to load a font for the checkboxes that supports the empty and checked boxes (many do not)
+% Deja Vu Sans is one option (to be clear, this does not need to match any other font you may use)
+% To use do: \newfontfamily\stix{DejaVu Sans} after \usepackage{fontspec}
+% in the preamble of the whole document. This won't change the font, just allows us to use the
+% font just for the checkboxes. The rest of the text will be in your main body font of choice.
+% Copy & paste: ☐ for unchecked and ☒ are checked
+\section{Appendix B: Consent to include co-authored article in dissertation}
+\subsection*{THE PARTIES}
+\vspace{-1em}
+{
+  \begin{table}[h]
+    \setlength\extrarowheight{2pt}
+    \tagpdfsetup{table/header-columns={1}}
+    \begin{tabular}{|l|l|}
+      \hline
+      Student Author               & <Name>, Mathematics, Iowa State University                       \\ \hline
+      Other student co-authors     & \begin{tabular}[c]{@{}l@{}}Name 1 \\ Name2 \\ etc.\end{tabular}  \\ \hline
+      Title of co-authored section & \begin{tabular}[c]{@{}l@{}}Line 1 \\ Line2 \\ etc. \end{tabular} \\ \hline
+      Journal name                 & <Journal>                                                        \\ \hline
+    \end{tabular}
+  \end{table}
+}
+\tagtool{flush-floats=subsubsection}
+\subsection*{DISTRIBUTION OF TASKS AND RESPONSIBILITIES}
+In this research publication, I, <name>, was responsible for the following roles:\\
+\begin{singlespace}
+  {\stix ☐} Conceptualization\\
+  {\stix ☐} Data configuration\\
+  {\stix ☒} Formal analysis\\
+  {\stix ☐} Funding acquisition\\
+  {\stix ☒} Investigation\\
+  {\stix ☒} Methodology\\
+  {\stix ☐} Resources\\
+  {\stix ☒} Software\\
+  {\stix ☐} Supervision\\
+  {\stix ☐} Validation\\
+  {\stix ☒} Visualization\\
+  {\stix ☒} Writing - original draft\\
+  {\stix ☒} Writing - review \& editing\\
+  {\stix ☐} Other:\\
+\end{singlespace}
+
+{\footnotesize\noindent The CRediT taxonomy is taken from \url{https://credit.niso.org/}. See link for descriptions of contributor roles.}
+%commentoutlater
+%This is not to be included with the thesis, but should be printed out to be signed.
+% \newpage
+% \subsection*{TERMS AND CONDITIONS}
+% \begin{enumerate}
+%     \item Student Author has indicated the roles played in the research that was co-authored with other graduate student(s) who may also include the same research in their dissertation, thesis, or creative component.
+%     \item The major professor(s) and DOGE have consented to have the co-authored content included in Student Author dissertation, thesis, or creative component while recognizing that other student co-author(s) may also include the same chapter in their dissertation, thesis, or creative component.
+% \end{enumerate}
+
+% \begin{table}[h]
+%     \begin{tabular}{|l|l|l|}
+%         \hline
+%         \textbf{Name}                                                                                                       & \textbf{Signature}\hphantom{......................................aabc.....................} & \textbf{Date}\hphantom{abcdefghijklmonpqrstu} \\ \hline
+%         \begin{tabular}[c]{@{}l@{}}\textit{Name of Student Author}\\ <Name> \end{tabular}                             &                                                                                              &                                               \\ \hline
+%         \begin{tabular}[c]{@{}l@{}}\textit{Name of Major Professor}\\ \textit{for Student Author}\\ <Name> \end{tabular} &                                                                                              &                                               \\ \hline
+%         \begin{tabular}[c]{@{}l@{}}\textit{Name of DOGE}\\\textit{for Student Author}\\ <Name>\end{tabular}       &                                                                                              &                                               \\ \hline
+%     \end{tabular}
+% \end{table}
+\tagtool{flush-floats=subsection}
