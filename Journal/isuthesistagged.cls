@@ -409,7 +409,9 @@
 \def\@titlefoot{\begin{center}Iowa State University\\
         Ames, Iowa\\ \@copyyear\  \\
         \@notice \end{center}}%Added \  after \@copyyear to avoid having \\ problem
+
 \long\def\maketitle{\begin{titlepage}
+
         % \vbox ensures whole title page stays on one page even if it becomes overfull
         \vbox to \textheight{
             \begin{center}
@@ -448,34 +450,8 @@
             \@titlefoot } % end of \vbox
     \end{titlepage}
 }% end maketitle
-\long\def\startabstract{
-    \begin{center}
-        {\bfseries \@title}
-        \vskip 11pt
-        \@author
-        \vskip 11pt
-        \begin{singlespace}
-            % \@mprof 
-            % \@mprofs \\
-            % \@cmprofs \\
-            Iowa State University
-        \end{singlespace}
-    \end{center}
-}% end startabstract
 
-\newcommand{\paperinfo}[1]{\vspace{-.4 in} \begin{center} A paper #1 \end{center}
-    \vspace{.4 in}}
-
-\newcommand{\paperauthor}[1]{\vspace{-.5 in} \begin{center} #1 \end{center}
-    \vspace{.25 in}}
-
-\def\alternatenum{%  command to set numbering down to subpara
-    \setcounter{secnumdepth}{5}}
-
-\def\alternate{%  command to set numbering down to subsection
-    \setcounter{secnumdepth}{3}}
-
-\def\alternatepart{%  command to number only parts
+\def\alternatepartnum{%  command to number only parts
     \setcounter{secnumdepth}{0}
     \renewcommand{\thechapter}{}
     \makeatletter
@@ -485,7 +461,7 @@
     \makeatother
 }
 
-\def\alternatechap{%  command to number only parts and chapters
+\def\alternatechapnum{%  command to number only parts and chapters
     \setcounter{secnumdepth}{0}
     \makeatletter
     \renewcommand{\thefigure}{\@arabic\c@figure}
@@ -569,11 +545,6 @@
 \newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
 \addtocontents{lof}{\protect\noaddvspace}
 \addtocontents{lot}{\protect\noaddvspace}
-
-% Resets chapter command so the word CHAPTER appears
-
-\def\chaptertitle{% resets chaptername
-    \renewcommand{\chaptername}{CHAPTER\ }}
 
 % Resets part name so PART appears
 % 2024 - I think this is unused b/c the @part is patched instead
@@ -767,9 +738,9 @@
 }
 
 %%%Default setup I doubt much of anyone changes
-\chaptertitle
+\renewcommand{\chaptername}{CHAPTER\ }
 % Old-style, thesis numbering down to subsubsection
-\alternate
+\setcounter{secnumdepth}{3}
 
 \setlength{\@fptop}{0pt} %command added to ensure images always float on top of the page
 
@@ -798,8 +769,9 @@
     \usepackage{amsthm}
     \usepackage{mathtools}
     \usepackage[thmtools-compat]{keytheorems}
+    %\usepackage{thmtools}
     %Following makes proof more reliable for tagging, from: https://github.com/latex3/tagging-project/issues/790
-    %It seems to be incompatible sometimes with cases and such
+    %It seems to be incompatible sometimes...
     % \renewenvironment{proof}[1][\proofname]{\par
     %     \pushQED{\qed}%
     %     \normalfont \topsep6\p@\@plus6\p@\relax
