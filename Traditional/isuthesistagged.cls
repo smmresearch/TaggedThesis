@@ -127,10 +127,16 @@
     \newcommand{\titleWithLineBreak}{#1\\#2}
     \newcommand{\titleWithoutBreak}{#1 #2}
 }
+
 %Add the page number in a modern way - works nicer with other modern things
 \usepackage{fancyhdr}
 \renewcommand{\headrulewidth}{0pt}
-%\fancyhf{}
+%plain style is used on the first page of chapters
+\fancypagestyle{plain}{
+    \fancyhead[L,R]{}
+    \fancyhead[C]{\thepage}
+    \fancyfoot[L,C,R]{}
+}
 \fancyhead[L,R]{}
 \fancyhead[C]{\thepage}
 \fancyfoot[L,C,R]{}
@@ -307,12 +313,9 @@
 }
 \def\endsocbib{\egroup\egroup\endgraf\vskip\baselineskip}
 
-% TITLEPAGE
-% The titlepage environment inhibits output of page number, and starts roman
-% page numbering.
+%%%Title Page
 \def\titlepage
-{\thispagestyle{empty}
-    \pagenumbering{roman}}
+{\thispagestyle{empty}}
 \def\endtitlepage{\newpage}
 
 \def\title#1{\gdef\@title{#1}}              \title{Unknown}
@@ -632,7 +635,8 @@
 
 %%%%%%%%%%%%%%%%%%2025 fixes and new packages
 \newcommand{\frontmattersetup}{
-    \fancypagestyle{plain}{}
+    \pagestyle{fancy}
+    \pagenumbering{roman}
     \raggedright
     \parindent 0.25 in % set all paragraphs in the document to have indent
 
