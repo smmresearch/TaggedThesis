@@ -315,7 +315,8 @@
 
 %%%Title Page
 \def\titlepage
-{\thispagestyle{empty}}
+{\thispagestyle{empty}
+    \pagenumbering{roman}}
 \def\endtitlepage{\newpage}
 
 \def\title#1{\gdef\@title{#1}}              \title{Unknown}
@@ -636,7 +637,6 @@
 %%%%%%%%%%%%%%%%%%2025 fixes and new packages
 \newcommand{\frontmattersetup}{
     \pagestyle{fancy}
-    \pagenumbering{roman}
     \raggedright
     \parindent 0.25 in % set all paragraphs in the document to have indent
 
