@@ -15,7 +15,7 @@ Something like ```$x_1$``` (single character) is fine.
 7. If you have a proof consisting of only equations (no body text!), add a ```~``` at the beginning of the proof (it is just a space) to workaround a bug in tagging (otherwise, you will get an error about para-hooks don't match). Along the lines of ```\begin{proof} ~ \[<equations>\] \end{proof}```
 
 When you copy over:
-1. Don't overload the preamble - the template already implements the basics. If you don't know what a package/command in your draft's preamble does, try compiling without it.
+1. Don't overload the preamble - the template already implements the basics. If you don't know what a package/command in your draft's preamble does, the template probably already handles it.
 
 
 Official list of packages compatible with tagging: https://latex3.github.io/tagging-project/tagging-status/
