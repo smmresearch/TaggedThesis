@@ -2,19 +2,17 @@
 
 % Use these lines for multiple appendices
 
-\appendixtitle 
+\appendixtitle
 \appendix
 
 %%%%%%%%%%%
 
-%Use these lines instead for a single appendix
-% \unappendixtitle
-% \singleappendixtitle
-% \bookmarksetup{numbered=false}
+%Use this line instead for a single appendix
+%\singleappendixtitle
 %%%%%%%%%%
 
-\chapter{ADDITIONAL MATERIAL} 
-
+\chapter{ADDITIONAL MATERIAL}
+\finishAppendixSetup%must come immediately after the first appendix chapter command
 
 This is now the same as any other chapter except that
 all sectioning levels below the chapter level must begin
@@ -22,33 +20,46 @@ with the *-form of a sectioning command.
 
 \section*{More stuff}
 \begin{equation}
-    x^2+z=yz
+	x^2+z=yz
 \end{equation}
 \begin{figure}
-    \caption{Something something.}
+	\caption{Something something.}
 \end{figure}
 \begin{table}[h!tb] \centering
-    \caption[This table shows a standard non-empty table. Please check the code caption for extended instructions]{This table shows a standard empty table. In case of long captions, we want to use the long caption as the description to the table and image but not use it in the table of contents and list of figures/ tables. In order to do this, there are two captions which have been provided, remove the first square bracket options if there is only one small caption. You can use citations like this to}
-    \begin{tabular}{ll}
-        Bach            &Cello Suite Number 1  \\
-        Beethoven       &Cello Sonata Number 3 \\
-        Brahms          &Cello Sonata Number 1
-      \end{tabular}
-\label{nothingagain}
+	\caption[This table shows a standard non-empty table. Please check the code caption for extended instructions]{This table shows a standard empty table. In case of long captions, we want to use the long caption as the description to the table and image but not use it in the table of contents and list of figures/ tables. In order to do this, there are two captions which have been provided, remove the first square bracket options if there is only one small caption. You can use citations like this to}
+	\begin{tabular}{ll}
+		Bach      & Cello Suite Number 1  \\
+		Beethoven & Cello Sonata Number 3 \\
+		Brahms    & Cello Sonata Number 1
+	\end{tabular}
+	\label{nothingagain}
 
-\vspace{ 2 in}
+	\vspace{ 2 in}
 \end{table}
 Supplemental material.
 \begin{figure}[b]
 	\begin{subfigure}[c]{0.495\textwidth}
-	\centering\includegraphics[alt={sample image},width=0.99\textwidth]{example-image-c}%
-	\subcaption{\label{fig:2a}}
+		\centering\includegraphics[alt={sample image},width=0.99\textwidth]{example-image-c}%
+		\subcaption{\label{fig:2a}}
 	\end{subfigure}
 	\begin{subfigure}[c]{0.495\textwidth}
-	\centering{\includegraphics[alt={sample image},width=0.99\textwidth]{example-image-c}}%
-	\subcaption{\label{fig:2b}}%
+		\centering{\includegraphics[alt={sample image},width=0.99\textwidth]{example-image-c}}%
+		\subcaption{\label{fig:2b}}%
 	\end{subfigure}%
 	\caption{A figure with two subfigures: (a) first subfigure; (b) second subfigure.\label{fig:2}}
 \end{figure}
 
+\begin{algorithm}
+	\caption{Score Algorithm}
+	\begin{algorithmic}[1]
+		\State {\textbf{Input: }{$s$ is a sensor }}
+		\Statex
+		\For{$j\in \{1,2,\ldots,15\}$}
+		\State Randomly choose $5$ days
+		\For{$x\in \{1,2,\ldots,1000\}$}
+		\parstate{Set $a$ to be something in this very long state that will have to be wrapped quite possibly around and around and around}
+		\EndFor
+		\EndFor
+	\end{algorithmic}
+\end{algorithm}
 

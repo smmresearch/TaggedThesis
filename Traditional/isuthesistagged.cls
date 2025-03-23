@@ -173,10 +173,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Format the section title appropriately (while being compatible with tagging)
-\newcommand{\chapterTitleWithSpaceBeforeNum}{CHAPTER }
+\newcommand{\chapterTitle}{CHAPTER}
 %this command is used so it can be redefined to be appendix when needed
 
-\titleformat{\chapter}[block]{\large\centering\bfseries}{\chapterTitleWithSpaceBeforeNum\thechapter.}{12pt}{}
+\newtoggle{singleappendix-tagthesis}
+\togglefalse{singleappendix-tagthesis}
+
+\titleformat{\chapter}[block]{\large\centering\bfseries}{%
+    \chapterTitle%
+    \nottoggle{singleappendix-tagthesis}{\ \thechapter}{}%
+    .%
+}{12pt}{}
 \titlespacing{\chapter}{0pt}{0in}{0.6in}
 \titleformat{\section}[block]{\large\centering\bfseries}{\thesection}{.5em}{}
 \titlespacing{\section}{0pt}{*3}{2.3ex \@plus.2ex}
@@ -563,24 +570,29 @@
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX\ }}
     %\renewcommand{\appendixname}{APPENDIX\ }
-    \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX\ }
+    \renewcommand{\chapterTitle}{APPENDIX}
 }
 
 % USE THE following instead of \appendixtitle for singleappendix
 % first \unappendixtitle
 % second \singleappendixtitle
 \def\singleappendixtitle{% resets appendixname
+    \toggletrue{singleappendix-tagthesis}
     \def\@chapapp{APPENDIX}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
     %\renewcommand{\appendixname}{APPENDIX\ }
-    \renewcommand{\chapterTitleWithSpaceBeforeNum}{APPENDIX}
+    \renewcommand{\chapterTitle}{APPENDIX}
     %Single appendix has no number, hence no space
     \setcounter{chapter}{0}
     \setcounter{section}{0}
-    \def\theequation{A.\arabic{equation}}
-    \def\thetable{A.\@arabic\c@table}
-    \def\thefigure{A.\@arabic\c@figure}
+    \bookmarksetup{numbered=false}
+}
+
+\def\finishAppendixSetup{%
+    \iftoggle{singleappendix-tagthesis}{
+        \renewcommand{\thechapter}{A}
+    }
 }
 
 % Resets appendix command so the word APPENDIX appears
@@ -590,6 +602,7 @@
     \def\@chapapp{}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{}}
+    \togglefalse{singleappendix-tagthesis}
 }
 %%%%%%%%%%%%%%%%%%%%
 
@@ -793,7 +806,7 @@
     \usepackage[chapter]{algorithm}
     \usepackage{algpseudocode}
     \newcommand{\algmargin}{\the\ALG@thistlm}
-    \renewcommand{\thealgorithm}{\arabic{chapter}.\arabic{algorithm}}
+    \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
     \algnewcommand{\parstate}[1]{\State%
         \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
 
