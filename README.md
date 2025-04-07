@@ -13,11 +13,13 @@ Something like ```$x_1$``` (single character) is fine.
 5. The template uses LuaLatex. Drafting with pdflatex will usually be fine, but you can also minimize the chance for problems by starting with lualatex if you are comfortable setting up LuaLatex.
 6. Alt-text is added to images using ```\includegraphics[alt={alt text here}]{...}```. If you use a recent version of latex, you should be able to add the alt text to includegraphics without any tagging (it does not do anything without tagging, but it also does not break anything). Table markup I would add later once you have transferred to the template.
 
+
+When you copy over: 
+1. Don't overload the preamble - the template already implements the basics. If you don't know what a package/command in your draft's preamble does, the template probably already handles it.
+2. Don't take any warning about tagging too seriously until you recompile a few times. 
+
 Official list of packages compatible with tagging: https://latex3.github.io/tagging-project/tagging-status/
 The list is pessimistic - some packages labeled as incompatible have workarounds or cause only less-than-ideal tagging.
-works with an up-to-date version of TeXLive.\
+
+The template has only been tested with MikTeX and probably works with an up-to-date version of TeXLive.
 I suspect it won't work with Overleaf (packages too out of date and compilation timeout) - but this has not been tested.
-
-
-
-The template has only been tested with MikTeX. It probably 
