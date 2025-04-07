@@ -773,8 +773,6 @@
 \usepackage{graphicx}
 
 \doublespacing
-\AtBeginEnvironment{table}{\singlespacing}% 
-\AtBeginEnvironment{figure}{\singlespacing}% 
 
 \overfullrule=0pt
 
