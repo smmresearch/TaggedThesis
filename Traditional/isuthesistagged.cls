@@ -811,6 +811,7 @@
 \iftoggle{algorithms-tagthesis}{
     \usepackage[chapter]{algorithm}
     \usepackage{algpseudocode}
+    \newcommand{\algorithmautorefname}{Algorithm}
     \newcommand{\algmargin}{\the\ALG@thistlm}
     \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
     \algnewcommand{\parstate}[1]{\State%
