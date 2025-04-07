@@ -1,20 +1,21 @@
 %!LW recipe=latexmk (lualatex)
-% \DocumentMetadata{
-%  lang=en,
-%  testphase={
-%   phase-III,
-%   table,
-%   firstaid
-%   },
-%  pdfversion=2.0,
-%  pdfstandard=ua-2,
-%  pdfstandard=a-4f,
-%  uncompress
-% }
-\documentclass{article}
+\DocumentMetadata{
+ lang=en,
+ testphase={
+  phase-III,
+  table,
+  firstaid
+  },
+ pdfversion=2.0,
+ pdfstandard=ua-2,
+ pdfstandard=a-4f,
+ uncompress
+}
+\documentclass[math-packages]{isuthesistagged}
 
 %\usepackage{amsmath}
-\usepackage{amsthm}
+
+\usepackage{hyperref}
 % \renewenvironment{proof}[1][\proofname]{\par
 %         \pushQED{\qed}%
 %         \normalfont \topsep6\p@\@plus6\p@\relax
@@ -29,6 +30,59 @@
 \newtheorem{case}{Case}
 
 \newcommand{\withSpace}{Hello }
+
+% \makeatletter
+% \renewenvironment{proof}[1][\proofname]{\par
+%   \pushQED{\qed}%
+%   \normalfont \topsep6\p@\@plus6\p@\relax
+%   \trivlist
+%   \item[\hskip\labelsep
+%         \itshape
+%     #1\@addpunct{.}]\ignorespaces%
+%     %\setlength{\parskip}{\normalparskip}%
+%     %\setlength{\parindent}{\normalparindent}
+% }{%
+%   \popQED\endtrivlist\par\@endpefalse %<-- par inserted
+% }
+% \makeatother
+\makeatletter
+\ExplSyntaxOn
+%\cs_new_eq:NN \origproof \proof
+% \RenewDocumentCommand{\proof}{O{\proofname}}{
+%     \origproof[#1]%
+%     \setlength{\parskip}{\normalparskip}%
+%     \setlength{\parindent}{\normalparindent}%
+%     \noindent%
+%     \ignorespaces
+% }
+\ExplSyntaxOff
+
+\makeatother
+% \AtBeginDocument{%
+%   \setlength{\normalparindent}{\parindent}%
+%   \setlength{\normalparskip}{\parskip}%
+% }
+% \AtBeginEnvironment{proof}{\setlength{\parskip}{\normalparskip}%
+% \setlength{\parindent}{\normalparindent}}
+\newtheorem{theorem}{Theorem}
+
 \begin{document}
+\frontmattersetup
+% \begin{proof}
+%     \[a+b=c\]
+% \end{proof}
+\begin{proof}[Here's a name]
+    First paragraph...
+
+    Second paragraph. Sentences that go on forever and ever ignore spaces talk about zoos have fun, eat cake, and look at bears, so on and so forth blah blah.
+
+    \begin{theorem}
+        Testing another theorem.
+    \end{theorem}
+
+    Third paragraph.
+\end{proof}
 Abcdefghijkl \withSpace\withSpace\withSpace but not there I suspect. \withSpace woo-hoo!
+
+sdfasdfs
 \end{document}

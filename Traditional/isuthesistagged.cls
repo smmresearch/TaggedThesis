@@ -641,13 +641,17 @@
 %Standard Report class changes;  JAS 10/95-3/96
 %  Part -standard (change Huge and huge to Large
 %%%%  both afterindentfalse and afterindenttrue should mean the same thing after below
-\let\@afterindentfalse\@afterindenttrue
-\@afterindenttrue
+
+% \let\@afterindentfalse\@afterindenttrue
+% \@afterindenttrue
 %%%%
-\usepackage[all]{nowidow}
+%\usepackage[all]{nowidow}
 %
 
 %%%%%%%%%%%%%%%%%%2025 fixes and new packages
+\newlength{\normalparindent}
+\newlength{\normalparskip}
+
 \newcommand{\frontmattersetup}{
     \pagestyle{fancy}
     \raggedright
@@ -659,6 +663,8 @@
     \addtocontents{lot}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOT}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
     \addtocontents{lof}{~\hfill\tagstructbegin{tag=Lbl,stash,label=pageOfLOF}\tagmcbegin{tag=Lbl}\textbf{Page}\par\tagmcend\tagstructend}
     % %%
+    \setlength{\normalparindent}{\parindent}%
+    \setlength{\normalparskip}{\parskip}%
 }
 
 \newcommand{\tableofcontentsTagged}{
@@ -781,25 +787,27 @@
 
 %%Optional packages
 %math option
+\ExplSyntaxOn
 \iftoggle{math-tagthesis}{
     \usepackage{amsmath}
     \usepackage{amsthm}
     \usepackage{mathtools}
     \usepackage[thmtools-compat]{keytheorems}
     %\usepackage{thmtools}
-    %Following makes proof more reliable for tagging, from: https://github.com/latex3/tagging-project/issues/790
-    %It seems to be incompatible sometimes...
-    % \renewenvironment{proof}[1][\proofname]{\par
-    %     \pushQED{\qed}%
-    %     \normalfont \topsep6\p@\@plus6\p@\relax
-    %     \trivlist
-    %     \item[\hskip\labelsep
-    %                 \itshape
-    %                 #1\@addpunct{.}]\ignorespaces
-    % }{%
-    %     \popQED\endtrivlist\par\@endpefalse %<-- par inserted
-    % }
+    %The following is a fix for two proof problems
+    % a) Proofs with only equations bugged out
+    % b) Proofs were not being properly indented
+    \cs_new_eq:NN \origproof \proof
+    \RenewDocumentCommand{\proof}{O{\proofname}}{
+        \origproof[#1]%
+        \setlength{\parskip}{\normalparskip}%
+        \setlength{\parindent}{\normalparindent}%
+        \noindent%
+        \ignorespaces
+    }
+
 }{}
+\ExplSyntaxOff
 
 %algorithms
 \iftoggle{algorithms-tagthesis}{

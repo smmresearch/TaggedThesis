@@ -794,9 +794,6 @@
     \usepackage{mathtools}
     \usepackage[thmtools-compat]{keytheorems}
     %\usepackage{thmtools}
-    %The following is a fix for two proof problems
-    % a) Proofs with only equations bugged out
-    % b) Proofs were not being properly indented
     \cs_new_eq:NN \origproof \proof
     \RenewDocumentCommand{\proof}{O{\proofname}}{
         \origproof[#1]%
