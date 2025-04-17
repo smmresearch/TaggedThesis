@@ -426,7 +426,7 @@
         % \vbox ensures whole title page stays on one page even if it becomes overfull
         \vbox to \textheight{
             \begin{center}
-                \vskip 25pt                   % Added to more evenly space page (JAS11)
+                \vskip 45pt                   % Added to more evenly space page (JAS11)
                     {\bfseries \@title}
                 \vskip 12pt                    % Changed from 11pt to more evenly space page (JAS11)
                 by \\
@@ -441,7 +441,7 @@
                 %   \@depart
                 \@major
                 %   \@minor                     % No longer listed - Sept. 2001
-                \vskip 40pt                    % Changed from 14pt to more evenly space page (JAS11)
+                \vskip 55pt                    % Changed from 14pt to more evenly space page (JAS11)
                 \begin{singlespace}  % Elminated to more evenly space page (JAS11)
                     Program of Study Committee: \\
                     \@mprof

@@ -1,88 +1,155 @@
-%!LW recipe=latexmk (lualatex)
+% %!LW recipe=latexmk (lualatex)
 \DocumentMetadata{
  lang=en,
- testphase={
-  phase-III,
-  table,
-  firstaid
-  },
+ testphase=latest,
  pdfversion=2.0,
  pdfstandard=ua-2,
  pdfstandard=a-4f,
  uncompress
 }
-\documentclass[math-packages]{isuthesistagged}
+\documentclass{article}
 
-%\usepackage{amsmath}
+% \usepackage{amsmath}
+% \usepackage{amsthm}
 
+% \usepackage{hyperref}
+% \usepackage{fontsetup}
+
+% \newtheorem{theorem}{Theorem}
+% % \DeclareInstance{block}{theoremblock-0}{display}
+% %   {
+% %     leftmargin      = 0pt ,
+% %     parindent       = 95pt ,
+% %     par-skip        = 85pt ,
+% %   } 
+
+% %   \DeclareInstance{blockenv}{theorem}{display}
+% % {
+% %   env-name       = theorem-like,
+% %   tag-name       = theorem-like,
+% %   tag-class      = ,
+% %   tagging-recipe = standalone,
+% %   inner-level-counter  = ,
+% %   level-increase = false,
+% %   setup-code     = ,
+% %   block-instance = theoremblock ,
+% % }
+% \usepackage{esvect}
+% \newcommand{\norme}[2][]{\ensuremath{\left\lVert #2 \right\rVert_{#1}}}
+% \begin{document}
+% \[\norme[p]{\adjustbox{raise=-0.5ex, set height=2.0ex}{$\vv{AB}$}}^2.\]
+% \end{document}
+\usepackage{amsmath}
+\usepackage{esvect}
+\usepackage{adjustbox}
+\usepackage{lmodern}
+%\usepackage[xcharter]{fontsetup}
+\author{Hello its me}
+
+%%PDF properties automatically set
 \usepackage{hyperref}
-% \renewenvironment{proof}[1][\proofname]{\par
-%         \pushQED{\qed}%
-%         \normalfont \topsep6\p@\@plus6\p@\relax
-%         \trivlist
-%         \item[\hskip\labelsep
-%                     \itshape
-%                     #1\@addpunct{.}]\ignorespaces
-%     }{%
-%         \popQED\endtrivlist\@endpefalse %<-- par inserted
-%     }
-% \makeatother
-\newtheorem{case}{Case}
 
-\newcommand{\withSpace}{Hello }
-
-% \makeatletter
-% \renewenvironment{proof}[1][\proofname]{\par
-%   \pushQED{\qed}%
-%   \normalfont \topsep6\p@\@plus6\p@\relax
-%   \trivlist
-%   \item[\hskip\labelsep
-%         \itshape
-%     #1\@addpunct{.}]\ignorespaces%
-%     %\setlength{\parskip}{\normalparskip}%
-%     %\setlength{\parindent}{\normalparindent}
-% }{%
-%   \popQED\endtrivlist\par\@endpefalse %<-- par inserted
-% }
-% \makeatother
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{caption}
+\usepackage{subcaption}
 \makeatletter
+%This work-around comes from: https://github.com/latex3/tagging-project/issues/720
+\RemoveFromHook{begindocument}[latex-lab-testphase-float]
 \ExplSyntaxOn
-%\cs_new_eq:NN \origproof \proof
-% \RenewDocumentCommand{\proof}{O{\proofname}}{
-%     \origproof[#1]%
-%     \setlength{\parskip}{\normalparskip}%
-%     \setlength{\parindent}{\normalparindent}%
-%     \noindent%
-%     \ignorespaces
-% }
+\socket_new_plug:nnn{tagsupport/parbox/before}{caption}
+{
+    \tagpdfparaOn %restart para tagging
+    \tl_if_empty:NTF\@current@float@struct
+    {
+        \tag_struct_begin:n{tag=Caption,firstkid}
+    }
+    {
+        \tag_struct_begin:n{tag=Caption,parent=\@current@float@struct,firstkid}
+    }
+}
+\socket_new_plug:nnn{tagsupport/parbox/after}{caption}
+{
+    \tag_struct_end:
+}
+\l@addto@macro\caption@beginex@hook{%
+    \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
+    \AssignSocketPlug{tagsupport/parbox/before}{caption}
+    \AssignSocketPlug{tagsupport/parbox/after}{caption}}
 \ExplSyntaxOff
+\AtBeginDocument{
+    \renewcommand*\caption@anchor[1]{%
+        \ifmeasuring@ \else
+            \caption@raisedlink{\MakeLinkTarget*{#1}}%
+        \fi}%  
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Subsection}
+    \renewcommand{\subsubsectionautorefname}{Subsubsection}
+}
+%This part is my own invention - to get subfigures
+%to have captions be where they are supposed to be
+%by appending some extras to the subfigure environment
+%As with everything else, it probably won't be necessary
+%in the long term
+%
+%Further, no warranties on the robustness
+%If complicated subfigures are causing problems,
+%you are probably are better commenting this out
+%and dealing with the subpar tagging.
+\ExplSyntaxOn
+\cs_new_eq:NN \origsubfigure \subfigure
+\cs_new_eq:NN \origsubfigureend \endsubfigure
+\RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
+    \origsubfigure[#1][#2][#3]{#4}
+    \tagstructbegin{tag=Part}
+    \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
+}
+\ExplSyntaxOff
+\def\endsubfigure{
+    \tagstructend
+    \origsubfigureend
+}
 
 \makeatother
-% \AtBeginDocument{%
-%   \setlength{\normalparindent}{\parindent}%
-%   \setlength{\normalparskip}{\parskip}%
-% }
-% \AtBeginEnvironment{proof}{\setlength{\parskip}{\normalparskip}%
-% \setlength{\parindent}{\normalparindent}}
-\newtheorem{theorem}{Theorem}
-
+%\DeclareMathSymbol{\lisp}{\mathaccent}{xcharter}{"020D7}
 \begin{document}
-\frontmattersetup
-% \begin{proof}
-%     \[a+b=c\]
-% \end{proof}
-\begin{proof}[Here's a name]
-    First paragraph...
+\section{Hello its me}
+% Template Titlepage File
+% Please choose appropriate options for Master's thesis, Doctoral dissertations, and creative components. Please read the comments to make an informed choice
+abcdefghijkl
 
-    Second paragraph. Sentences that go on forever and ever ignore spaces talk about zoos have fun, eat cake, and look at bears, so on and so forth blah blah.
+\begin{algorithm}[H]
+    \caption{Calculate $y = x^n$}
+    \label{alg1}
+    \begin{algorithmic}
+        \REQUIRE $n \geq 0 \vee x \neq 0$
+        \ENSURE $y = x^n$
+        \STATE $y \leftarrow 1$
+        \IF{$n < 0$}
+        \STATE $X \leftarrow 1 / x$
+        \STATE $N \leftarrow -n$
+        \ELSE
+        \STATE $X \leftarrow x$
+        \STATE $N \leftarrow n$
+        \ENDIF
+        \WHILE{$N \neq 0$}
+        \IF{$N$ is even}
+        \STATE $X \leftarrow X \times X$
+        \STATE $N \leftarrow N / 2$
+        \ELSE[$N$ is odd]
+        \STATE $y \leftarrow y \times X$
+        \STATE $N \leftarrow N - 1$
+        \ENDIF
+        \ENDWHILE
+    \end{algorithmic}
+\end{algorithm}
 
-    \begin{theorem}
-        Testing another theorem.
-    \end{theorem}
-
-    Third paragraph.
-\end{proof}
-Abcdefghijkl \withSpace\withSpace\withSpace but not there I suspect. \withSpace woo-hoo!
-
-sdfasdfs
+more more more and more as it happens
+\begin{figure}
+    \caption{woot woot}
+\end{figure}
+yeppers
+\section{Another one}
+Hey hey hey i'm on vacay
 \end{document}
