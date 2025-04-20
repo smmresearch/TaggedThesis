@@ -28,6 +28,14 @@
 %% a nominal charge for copying etc.
 %%
 
+%%%% Things that are patched for tagging as of 2025, but may not need to be in the future due to native support for tagging
+%%%  In such a case, delete the patch
+%%% 1. Caption and Subcaption Package (search for usepackage{caption} for patch)
+%%% 2. titlesec package (search for usepackage titlesec)
+%%%            a. If titlesec ever gets full support, it would probably be better to use
+%%%               titlesec to format Part titles instead of the xpatching
+%%% 3. Proof environment (search for the proof parts inside iftoggle{math-tagthesis})
+
 \def\fileversion{2.0}
 \def\filedate{2024/02/14}
 \typeout{%
@@ -230,9 +238,6 @@
 %    ****************************************
 %
 % Default initializations
-
-%\ps@plain                          % 'plain' page style.
-\pagenumbering{arabic}             % Arabic page numbers.
 \onecolumn                         % Single column.
 \if@twoside\else\raggedbottom\fi   % Ragged bottom unless twoside option.
 
@@ -333,68 +338,13 @@
 %\def\mprof#1{\gdef\@mprof{#1, Major Professor}} \def\@mprof{}
 \def\submit#1{\gdef\@submit{#1}}            \submit{the graduate faculty}
 
-\newcount\@deptnum  \@deptnum=1
-\newcount\@majornum \@majornum=1
-\def\@depart{}
-\def\@deptone{}
-\def\@depttwo{}
-\def\@depttitle{}
-
-% Relic of needing a signature page
-% \newcount\@numcomm
-% \def\committee#1{\@numcomm=#1}
-% \committee{0}
-
-\newdimen\@signwidth \@signwidth=6cm
-
-\def\@depmajmac#1#2#3#4{% department and major macro
-    \ifcase\@deptnum \def\@depart{}
-    \or \def\@depart{\@depttitle #1 \\}
-    \else \def\@depart{\@depttitle #1\\ #2\\}\fi
-    \ifcase\@majornum \def\@major{}
-    \or \def\@major{\@majortitle #3}
-    \else \def\@major{\@majortitle #3 \\  #4}\fi}
-
-\newif\if@interdept \@interdeptfalse
-\newif\if@interdeptm \@interdeptmfalse
-\newcount\signdeptnum  \signdeptnum=1
-\newcount\signmajornum \signmajornum=1
-
-\def\interdept{\@interdepttrue}
-\def\interdeptm{\@interdeptmtrue}
-
-\def\dept#1{\gdef\@deptone{#1} \gdef\@depttwo{} \@deptnum=1
-    \if@interdept\def\@depttitle{Interdepartmental Program: } \else
-        \def\@depttitle{Department: }\fi}
-\def\codepts#1#2{\gdef\@deptone{#1} \gdef\@depttwo{#2} \@deptnum=2
-    \def\@depttitle{Departments: }\signdeptnum=2}
-\def\major#1{\@majornum=1 \@depmajmac{\@deptone}{\@depttwo}{#1}{}
-    \if@interdeptm\def\@majortitle{Interdepartmental Major: } \else
-        \def\@majortitle{Major: }\fi}
-\def\comajors#1#2{\@majornum=2 \signmajornum=2
-    \@depmajmac{\@deptone}{\@depttwo}{#1}{#2}
-    \def\@majortitle{Co-majors: }}
-
-\def\signmajor#1{\def\@signmajor{#1}}
-\signmajor{\ifnum\signmajornum=2 Co-major Professor \else
-        Major Professor\fi}
-\def\signdept#1{\def\@signdept{#1}}
-\signdept{\if@interdept For the Major Program \else
-        \ifnum\@deptnum=2 For the Co-major Program \else
-            For the Major Program\fi\fi}
+\def\major#1{\def\@major{Major: #1}}
+\def\comajors#1{\def\@major{Co-majors: #1}}
 
 \def\@depart{}
 \def\@major{}
 
-\def\minor#1{\def\@minor{\\Minor: #1}}
-\def\@minor{}
-
-\def\mprof#1{\def\@mprof{#1, Major Professor}\signmajornum=2} \def\@mprof{}
-
-% original changed july 2017
-%\def\mprofs#1#2{\def\@mprofs{#1, Co-major Professor\\#2, Co-major Professor} 
-%\signmajornum=2} 
-%\def\@mprofs{}
+\def\mprof#1{\def\@mprof{#1, Major Professor}} \def\@mprof{}
 
 \def\mprofs#1{\def\@mprofs{#1, Co-major Professor}}
 \def\@mprofs{}
@@ -413,9 +363,6 @@
 \def\notice{\gdef\@notice{Copyright
         \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
 \def\@notice{}
-
-\def\supervisor#1{\gdef\@supervisor{#1}}
-\def\@supervisor{}
 
 \def\@titlefoot{\begin{center}Iowa State University\\
         Ames, Iowa\\ \@copyyear\  \\
@@ -438,9 +385,7 @@
                 \@degree \\[2.5pt]
 
                 \vskip 40pt                   % Changed from 30pt to cover dept loss
-                %   \@depart
                 \@major
-                %   \@minor                     % No longer listed - Sept. 2001
                 \vskip 40pt                    % Changed from 14pt to more evenly space page (JAS11)
                 \begin{singlespace}  % Elminated to more evenly space page (JAS11)
                     Program of Study Committee: \\
@@ -614,40 +559,6 @@
 \renewcommand{\listtablename}
 {\protect \centering \large LIST OF TABLES}    %JAS
 
-%%%%
-%% Subpackage: thesisreport.sty for use with the isuthesis package.
-%%
-%% LaTeX document package `isuthesis', for use with LaTeX2e.
-%% This is a package that is used with the report class to
-%%   create a thesis at Iowa State University.
-%%
-%% COPYRIGHT 1997, by Joe Struss (jastruss@iastate.edu)
-%%
-%% Copying of part or all of any file in the isuthesis.sty package
-%% including isumacros.sty, thesisreport.sty and isuthesis.sty
-%% is allowed under the following conditions only:
-%% (1) You may freely distribute unchanged copies of the files. Please
-%%     include the any or all documentation when you do so.
-%% (2) You may modify a renamed copy of any file, but only for personal
-%%     use or use within an organization.
-%% (3) You may copy fragments from the files, for personal use or for use
-%%     in a macro package for distribution, as long as credit is given
-%%     where credit is due.
-%%
-%% You are NOT ALLOWED to take money for the distribution or use of
-%% these files or modified versions or fragments thereof, except for
-%% a nominal charge for copying etc.
-%%
-%Standard Report class changes;  JAS 10/95-3/96
-%  Part -standard (change Huge and huge to Large
-%%%%  both afterindentfalse and afterindenttrue should mean the same thing after below
-
-% \let\@afterindentfalse\@afterindenttrue
-% \@afterindenttrue
-%%%%
-%\usepackage[all]{nowidow}
-%
-
 %%%%%%%%%%%%%%%%%%2025 fixes and new packages
 \newlength{\normalparindent}
 \newlength{\normalparskip}
@@ -731,10 +642,6 @@
         \ifmeasuring@ \else
             \caption@raisedlink{\MakeLinkTarget*{#1}}%
         \fi}%  
-    \renewcommand{\chapterautorefname}{Chapter}
-    \renewcommand{\sectionautorefname}{Section}
-    \renewcommand{\subsectionautorefname}{Subsection}
-    \renewcommand{\subsubsectionautorefname}{Subsubsection}
 }
 %This part is my own invention - to get subfigures
 %to have captions be where they are supposed to be
@@ -775,6 +682,14 @@
 \doublespacing
 
 \overfullrule=0pt
+
+%%%%Hyperref set-up
+\AtEndPreamble{
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Subsection}
+    \renewcommand{\subsubsectionautorefname}{Subsubsection}
+}
 
 %%%Captioning Format
 \DeclareCaptionListFormat{figureList}{Figure #1#2}
