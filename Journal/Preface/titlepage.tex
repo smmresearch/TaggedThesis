@@ -6,39 +6,24 @@
 
 \degree{DOCTOR OF PHILOSOPHY}
 \major{Mathematics}
+%For co-majors use this command instead of major. Separate the co-majors with a semi-colon
+\comajors{Statistics; Computer Science}
 
 \mprof{John Smith}
-% In case of co majors please comment out the mprof line above and use the following two lines of mprofs and cmprofs to defines the two co-major profs
+% If you have co-major professors, use \mprofs for the first, and \cmprofs for the second 
+% instead of mprof
 %\mprofs{ABC}
 %\cmprofs{DEF}
 
 \format{dissertation}%change to thesis or creative component as needed for a master's
 \members{Jane Dee \\ Allen Wrench\\ Katniss Everdeen}
-\disclaimertitlepage
+\disclaimertitlepage %sets-up title page to add disclaimer at end
+\notice %sets-up title page to add the copyright notice at the bottom
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% If co-majors select only co-major options as described and skip other options like \major, \mprof and make sure committee members are appropriately included.
-% Use the following line for co-majors, separate with ; (usually used with doctoral dissertations)
-\comajors{Statistics; Computer Science}
-%\mprof{Susan D. Ross}
-% In case of co majors please comment out the mprof line above and use the following two lines of mprofs and cmprofs to defines the two co-major profs
-%\mprofs{ABC}
-%\cmprofs{DEF}
-
-%\format{dissertation}
-%\members{Mary Jones \\ Bjork Petersen \\ Sam Anders \\ Harold Jones}
-%\disclaimertitlepage
-
-%%%%%%%%%%%%%%
-% Creative component: lines to add / remove
-% Add these additional lines for a Creative Component
-% - also comment out the \maketitle command
-%\format{creative component}
 %%%%%%
 % "A <format> submitted to <the graduate faculty>..." can
 % be changed to something other than graduate faculty with
 % this command:
 % \submit{the graduate faculty alternative}
 
-\notice
 \maketitle
