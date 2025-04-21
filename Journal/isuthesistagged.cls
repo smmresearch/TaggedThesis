@@ -511,10 +511,7 @@
 % after unsetting chaptername
 
 \def\appendixtitle{% resets appendixname
-    \def\@chapapp{APPENDIX}
-    \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX\ }}
-    %\renewcommand{\appendixname}{APPENDIX\ }
     \renewcommand{\chapterTitle}{APPENDIX}
 }
 
@@ -523,7 +520,6 @@
 % second \singleappendixtitle
 \def\singleappendixtitle{% resets appendixname
     \toggletrue{singleappendix-tagthesis}
-    \def\@chapapp{APPENDIX}
     \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
     %\renewcommand{\appendixname}{APPENDIX\ }
@@ -540,15 +536,6 @@
     }
 }
 
-% Resets appendix command so the word APPENDIX appears
-% after unsetting chaptername
-
-\def\unappendixtitle{% resets appendixname
-    \def\@chapapp{}
-    \def\thechapter{}
-    \addtocontents{toc}{\def\protect\@chapapp{}}
-    \togglefalse{singleappendix-tagthesis}
-}
 %%%%%%%%%%%%%%%%%%%%
 
 % % Protects added (JAS05 / JAS09)
