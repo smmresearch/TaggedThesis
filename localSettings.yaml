@@ -1,0 +1,152 @@
+verbatimEnvironments:
+    verbatim: 1
+    lstlisting: 1
+    minted: 1
+verbatimCommands:
+    verb: 1
+    lstinline: 1
+noIndentBlock:
+    noindent: 1
+    cmhtest: 1
+    # citing:
+    #     begin: '\\\w*cite\w*\{[^}]*?\}\{'
+    #     body: '[^}]*?'
+    #     end: '\}'
+    # includegraphics:
+    #     begin: '\\includegraphics\{[^}]*?\}\{'
+    #     body: '[^}]*?'
+    #     end: '\}'  
+modifyLineBreaks:
+    commands:
+      label:
+        CommandStartsOnOwnLine: 1
+    preserveBlankLines: 1
+    condenseMultipleBlankLinesInto: 0
+    environments:
+        BeginStartsOnOwnLine: 1
+        BodyStartsOnOwnLine: 1
+        EndStartsOnOwnLine: 1
+        EndFinishesWithLineBreak: 1
+        DBSFinishesWithLineBreak: 1
+    items:
+        ItemStartsOnOwnLine: 1
+    specialBeginEnd:
+        displayMath:
+            SpecialBeginStartsOnOwnLine: 1
+            SpecialEndFinishesWithLineBreak: 1
+            SpecialBodyStartsOnOwnLine: 1
+            SpecialEndStartsOnOwnLine: 1
+    oneSentencePerLine:
+        manipulateSentences: 1
+        removeSentenceLineBreaks: 0
+        multipleSpacesToSingle: 1
+        textWrapSentences: 0   # setting to 1 disables main textWrap routine
+        sentenceIndent: ""
+        sentencesFollow:
+            par: 1
+            blankLine: 1
+            fullStop: 1
+            exclamationMark: 1
+            questionMark: 1
+            rightBrace: 1
+            commentOnPreviousLine: 1
+            other: 0
+        sentencesBeginWith:
+            A-Z: 1
+            a-z: 0
+            other: 0
+        sentencesEndWith:
+            basicFullStop: 0
+            betterFullStop: 1
+            exclamationMark: 1
+            questionMark: 1
+            other: 0
+        sentencesDoNOTcontain:
+            other: |-
+              (?x)
+              \\begin
+              |
+              \\text
+              |
+              \\end                   
+fineTuning:
+    environments:
+      name: '[a-zA-Z@\*0-9_\\]+'
+    ifElseFi:
+      name: '(?!@?if[a-zA-Z@]*?\{)@?if[a-zA-Z@]*?'
+    commands:
+      name: '[+a-zA-Z@\*0-9_\:]+?'
+    items:
+      canBeFollowedBy: '(?:\[[^]]*?\])|(?:<[^>]*?>)'
+    keyEqualsValuesBracesBrackets:
+      name: '[a-zA-Z@\*0-9_\/.:\#-]+[a-zA-Z@\*0-9_\/.\h\{\}:\#-]*?'
+      follow: '(?:(?<!\\)\{)|,|(?:(?<!\\)\[)'
+    namedGroupingBracesBrackets:
+      name: '[0-9\.a-zA-Z@\*><]+?'
+      follow: '\h|\R|\{|\[|\$|\)|\('
+    UnNamedGroupingBracesBrackets:
+      follow: '\{|\[|,|&|\)|\(|\$'
+    arguments:
+      before: '(?:#\d\h*;?,?\/?)+|\<.*?\>'
+      between: '_|\^|\*'
+    trailingComments:
+      notPreceededBy: '(?<!\\)'
+    modifyLineBreaks:
+      doubleBackSlash: '\\\\(?:\h*\[\h*\d+\h*[a-zA-Z]+\h*\])?'
+      comma: ','
+      betterFullStop: |-
+        (?x)                                # ignore spaces in the below
+        (?:                                 #
+          \.\)                              # .) 
+          (?!\h*[a-z])                      # not *followed by* a-z
+        )                                   #
+        |
+        (?:                                 #
+          \."                               # ."
+          (?!\h*[a-z])                      # not *followed by* a-z
+        )                                   #
+        |
+        (?:                                 #
+          \.\h*\\\\                         # .\\
+        )
+        |                                   # OR
+        (?:                                 #
+          (?<!                              # not *preceeded by*
+            (?:
+              (?:Ph)        
+              |
+              (?:Ph\.D)        
+              |
+              (?:Dr)                   
+              |
+              (?:Mr)                      
+              |
+              (?:Mrs)                      
+              |
+              (?:Ms)                        
+              |                             #
+              (?:[eE]\.[gG])                # e.g OR E.g OR e.G OR E.G
+              |                             #
+              (?:[iI]\.[eE])                # i.e OR I.e OR i.E OR I.E
+              |                             #
+              (?:etc)                       # etc
+              |
+              (?:\\right)                   #\right.
+              |
+              (?:\\left)                    #\left.
+              |
+              (?:et\s al)                   #et al.
+            )                               #
+          )                                 #
+        )                                   # 
+        \.                                  # .
+        (?!                                 # not *followed by*
+          (?:                               #
+            [a-zA-Z0-9-~,]                  #
+            |                               #
+            \),                             # ),
+            |                               #
+            \)\.                            # ).
+          )                                 #
+        )                                   #
+

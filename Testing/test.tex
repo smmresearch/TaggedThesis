@@ -7,7 +7,7 @@
  pdfstandard=a-4f,
  uncompress
 }
-\documentclass{article}
+\documentclass{report}
 
 % \usepackage{amsmath}
 % \usepackage{amsthm}
@@ -113,43 +113,42 @@
 
 \makeatother
 %\DeclareMathSymbol{\lisp}{\mathaccent}{xcharter}{"020D7}
+\AddToHook{cmd/part/before}{\tagtool{flush-floats=paragraph}}
+\AddToHook{cmd/section/before}{\tagtool{flush-floats=paragraph}}
+\AddToHook{cmd/chapter/before}{\tagtool{flush-floats=paragraph}}
+\AddToHook{cmd/subsection/before}{\tagtool{flush-floats=paragraph}}
+\AddToHook{cmd/subsubsection/before}{\tagtool{flush-floats=paragraph}}
+
 \begin{document}
 \section{Hello its me}
 % Template Titlepage File
 % Please choose appropriate options for Master's thesis, Doctoral dissertations, and creative components. Please read the comments to make an informed choice
 abcdefghijkl
-
-\begin{algorithm}[H]
-    \caption{Calculate $y = x^n$}
-    \label{alg1}
-    \begin{algorithmic}
-        \REQUIRE $n \geq 0 \vee x \neq 0$
-        \ENSURE $y = x^n$
-        \STATE $y \leftarrow 1$
-        \IF{$n < 0$}
-        \STATE $X \leftarrow 1 / x$
-        \STATE $N \leftarrow -n$
-        \ELSE
-        \STATE $X \leftarrow x$
-        \STATE $N \leftarrow n$
-        \ENDIF
-        \WHILE{$N \neq 0$}
-        \IF{$N$ is even}
-        \STATE $X \leftarrow X \times X$
-        \STATE $N \leftarrow N / 2$
-        \ELSE[$N$ is odd]
-        \STATE $y \leftarrow y \times X$
-        \STATE $N \leftarrow N - 1$
-        \ENDIF
-        \ENDWHILE
-    \end{algorithmic}
-\end{algorithm}
-
+\subsection{Yay!}
 more more more and more as it happens
 \begin{figure}
     \caption{woot woot}
 \end{figure}
-yeppers
+\subsection{yippee!}
+Hello it is me.
+\begin{figure}
+    \caption{woot woot}
+\end{figure}
+More of me here.
+
+And even more there.
 \section{Another one}
-Hey hey hey i'm on vacay
+yeppers
+\begin{figure}
+    \caption{woot woot}
+\end{figure}
+Yay us!
+\chapter{Yikes}
+Yippee
+\begin{figure}
+    \caption{woot woot}
+\end{figure}
+Woo.
+\chapter{Yes!!!!}
+Woot. Woot.
 \end{document}

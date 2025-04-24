@@ -14,7 +14,7 @@
 %it can take more than 5 runs (latexmk's default max) for everything to settle.
 
 
-% With unicode with lualatex (recommended), do not use amssymb, input/output enc
+% If using unicode with lualatex, do not use amssymb, input/output enc
 % Get Error ".. \@ doesn't match definition.."? 
 % First, make sure you have ran biber and re-ran lualatex
 % Then, try deleting *.aux file of file you were messing with. If needed, escalate to deleting all auxillary files.
@@ -92,6 +92,9 @@
 % ]
 % \setmathfont{texgyrepagella-math.otf}
 
+%Instead of fontsetup and unicode-math, you
+%can use lmodern for a classic (not-unicode) Computer Modern font
+%\usepackage{lmodern}\usepackage[T1]{fontenc} 
 
 %Natbib compatibility mode activated
 %Different styles available - look at biblatex documentation

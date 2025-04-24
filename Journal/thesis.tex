@@ -1,4 +1,4 @@
-%!LW recipe=latexmk (lualatex)
+%!LW recipe=lualatex-plain
 %The above command is for use with VSCode as an editor - can be deleted for others
 
 %%%%%%% Instructions %%%%%%%%%%%%%%%%%%%
@@ -14,7 +14,7 @@
 %it can take more than 5 runs (latexmk's default max) for everything to settle.
 
 
-% With unicode with lualatex (recommended), do not use amssymb, input/output enc
+% If using unicode with lualatex, do not use amssymb, input/output enc
 % Get Error ".. \@ doesn't match definition.."? 
 % First, make sure you have ran biber and re-ran lualatex
 % Then, try deleting *.aux file of file you were messing with. If needed, escalate to deleting all auxillary files.
@@ -79,10 +79,9 @@
 
 %%
 
-%Check package documentation for other font options
-%For example, the "default" is a Computer Modern clone
-\usepackage[libertinus]{fontsetup}
 
+%Check package documentation for other font options
+\usepackage[libertinus]{fontsetup}
 %Instead of font setup, unicode-math has more fine-tuned control
 %\usepackage{unicode-math}
 
@@ -94,6 +93,11 @@
 % BoldItalicFont  = *-bolditalic 
 % ]
 % \setmathfont{texgyrepagella-math.otf}
+
+%Instead of fontsetup and unicode-math, you
+%can use lmodern for a classic (not-unicode) Computer Modern font
+%\usepackage{lmodern}\usepackage[T1]{fontenc} 
+
 
 
 %Natbib compatibility mode activated
