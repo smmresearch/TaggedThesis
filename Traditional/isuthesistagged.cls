@@ -101,12 +101,13 @@
 % Must be patched before hyperref is loaded.
 %%%%
 
-%adds a Period to the numberline
+%adds a period after the chapter number in the TOC
 \newcommand{\numberlineP}[1]{\numberline{#1.}}
 \xpatchcmd{\@chapter}% <cmd>
 {\numberline}% <search>
 {\numberlineP}% <replace>
 {}{}% <success><failure>
+%Adds "PART" on part pages, then changes font sizes
 \xpatchcmd{\@part}% <cmd>
 {\thepart}% <search>
 {PART \thepart}% <replace>
@@ -131,6 +132,8 @@
     \addtocounter{footnote}{-1}%
     \endgroup
 }
+%In PDF properties we cannot have a line break,
+%hence why we want to define both
 \newcommand{\twoLineTitle}[2]{
     \newcommand{\titleWithLineBreak}{#1\\#2}
     \newcommand{\titleWithoutBreak}{#1 #2}
@@ -178,6 +181,9 @@
 {\par}
 {\par\tagtool{sec-start=#1}\tagtool{para}}
 {}{\fail}
+%in the original this has para/flattened, but
+%that causes bibliography problems for some reason
+%that switching to para fixed
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Format the section title appropriately (while being compatible with tagging)
@@ -189,7 +195,7 @@
 
 \titleformat{\chapter}[block]{\large\centering\bfseries}{%
     \chapterTitle%
-    \nottoggle{singleappendix-tagthesis}{\ \thechapter}{}%
+    \nottoggle{singleappendix-tagthesis}{\ \thechapter}{}%if it is a single appendix, don't include the chapter #
     .%
 }{12pt}{}
 \titlespacing{\chapter}{0pt}{0in}{0.6in}
@@ -203,7 +209,7 @@
 \titlespacing{\paragraph}{0pt}{*3}{1.5ex \@plus .2ex}
 \titleformat{\subparagraph}[block]{\bfseries\filright}{\thesubsubsection}{.5em}{}
 \titlespacing{\subparagraph}{0.25in}{*3}{1.5ex \@plus .2ex}
-%Formatting Part breaks the TOC implementation as of 2024, hence why it is patched instead
+%Formatting Part like this breaks the TOC implementation as of 2024, hence why it is patched instead
 %%%%%%%%%%%%%%%
 %%%%%%%%%%
 
@@ -407,6 +413,8 @@
     \end{titlepage}
 }% end maketitle
 
+%these alternate commands could probably be deleted
+%because they are unused and I doubt anyone will find them
 \def\alternatepartnum{%  command to number only parts
     \setcounter{secnumdepth}{0}
     \renewcommand{\thechapter}{}
@@ -426,6 +434,7 @@
     \makeatother
 }
 
+%this also goes unused
 \def\reset{% resets many chapter level counters
     \setcounter{chapter}{0}
     \setcounter{section}{0}
@@ -440,6 +449,8 @@
     \setcounter{mpfootnote}{0}
 }
 
+%the nochap commands could probably be deleted,
+%because they are unused and I doubt anyone will find them
 \def\nochap{% bizarre hack to not use a chapter number
     \makeatletter
     \renewcommand{\thefigure}{\@arabic\c@figure}
@@ -516,15 +527,12 @@
 }
 
 % USE THE following instead of \appendixtitle for singleappendix
-% first \unappendixtitle
-% second \singleappendixtitle
+% \singleappendixtitle
 \def\singleappendixtitle{% resets appendixname
     \toggletrue{singleappendix-tagthesis}
-    \def\thechapter{}
+    \def\thechapter{}%unnumbered/unlettered
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
-    %\renewcommand{\appendixname}{APPENDIX\ }
     \renewcommand{\chapterTitle}{APPENDIX}
-    %Single appendix has no number, hence no space
     \setcounter{chapter}{0}
     \setcounter{section}{0}
     \bookmarksetup{numbered=false}
@@ -532,7 +540,7 @@
 
 \def\finishAppendixSetup{%
     \iftoggle{singleappendix-tagthesis}{
-        \renewcommand{\thechapter}{A}
+        \renewcommand{\thechapter}{A} %do want a letter for figures/tables/etc
     }
 }
 
@@ -641,17 +649,23 @@
 %you are probably are better commenting this out
 %and dealing with the subpar tagging.
 \ExplSyntaxOn
+%first save original definition
 \cs_new_eq:NN \origsubfigure \subfigure
 \cs_new_eq:NN \origsubfigureend \endsubfigure
 \RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
+    %redefine subfigure to first create the usual
+    %subfigure environment, then wrap it in a part
+    %and 
     \origsubfigure[#1][#2][#3]{#4}
     \tagstructbegin{tag=Part}
     \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
+    %I believe this sets the "float structure" to be the Part
+    %we just created
 }
 \ExplSyntaxOff
 \def\endsubfigure{
-    \tagstructend
-    \origsubfigureend
+    \tagstructend%close the Part structure
+    \origsubfigureend%do normal end of subfig things
 }
 
 %%%Default setup I doubt much of anyone changes
@@ -666,7 +680,7 @@
 
 \usepackage{graphicx}
 
-\doublespacing
+\doublespacing%from setspace, automatically leaves figures/tables single spaced
 
 \overfullrule=0pt
 
@@ -715,7 +729,7 @@
     \usepackage{algpseudocode}
     \newcommand{\algorithmautorefname}{Algorithm}
     \newcommand{\algmargin}{\the\ALG@thistlm}
-    \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
+    \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}%puts the chapter number in front of algorithm number
     \algnewcommand{\parstate}[1]{\State%
         \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
 
