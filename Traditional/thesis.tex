@@ -78,6 +78,9 @@
 
 %%
 
+
+%%%%%%%Fonts
+
 %Check package documentation for other font options
 %For example, the "default" is a Computer Modern clone
 \usepackage[libertinus]{fontsetup}
@@ -92,9 +95,16 @@
 % ]
 % \setmathfont{texgyrepagella-math.otf}
 
+%With unicode, instead symbf should be used instead of bm
+%This remaps \bm to prevent problems. There might be slightly different behavior.
+\let\bm\symbf
+
 %Instead of fontsetup and unicode-math, you
 %can use lmodern for a classic (not-unicode) Computer Modern font
+%In this case, you should also comment out \let\bm\symbf
 %\usepackage{lmodern}\usepackage[T1]{fontenc} 
+
+%%%%%%%%%%%%%%%%%%%%%%
 
 %Natbib compatibility mode activated
 %Different styles available - look at biblatex documentation
