@@ -83,7 +83,7 @@
 
 %Check package documentation for other font options
 \usepackage[libertinus]{fontsetup}
-%Instead of font setup, unicode-math has more fine-tuned control
+%Instead of font setup, unicode-math with fontspec has more fine-tuned control
 %\usepackage{unicode-math}
 
 % \setmainfont{texgyrepagella}[
@@ -101,6 +101,9 @@
 
 %Instead of fontsetup and unicode-math, you
 %can use lmodern for a classic (not-unicode) Computer Modern font
+%However, without unicode, the accessibility of the math formulas
+%is much worse (currently ISU has no requirements about
+%the accessibility of math, so it is suitable for submission)
 %In this case, you should also comment out \let\bm\symbf
 %\usepackage{lmodern}\usepackage[T1]{fontenc} 
 
