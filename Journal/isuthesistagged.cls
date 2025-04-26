@@ -350,7 +350,6 @@
 \def\major#1{\def\@major{Major: #1}}
 \def\comajors#1{\def\@major{Co-majors: #1}}
 
-\def\@depart{}
 \def\@major{}
 
 \def\mprof#1{\def\@mprof{#1, Major Professor}} \def\@mprof{}
