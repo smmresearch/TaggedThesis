@@ -107,7 +107,8 @@
 {\numberline}% <search>
 {\numberlineP}% <replace>
 {}{}% <success><failure>
-%Adds "PART" on part pages, then changes font sizes
+%Adds "PART" on the TOC , then changes font sizes on the part page
+%Note: patchcmd only replaces the *first* instance of \thepart
 \xpatchcmd{\@part}% <cmd>
 {\thepart}% <search>
 {PART \thepart}% <replace>
@@ -209,7 +210,9 @@
 \titlespacing{\paragraph}{0pt}{*3}{1.5ex \@plus .2ex}
 \titleformat{\subparagraph}[block]{\bfseries\filright}{\thesubsubsection}{.5em}{}
 \titlespacing{\subparagraph}{0.25in}{*3}{1.5ex \@plus .2ex}
-%Formatting Part like this breaks the TOC implementation as of 2024, hence why it is patched instead
+%Formatting Part like this breaks stuff as of 2024, hence we do the following instead
+% Change the part on the part page to PART
+\renewcommand{\partname}{PART\ }
 %%%%%%%%%%%%%%%
 %%%%%%%%%%
 
@@ -512,11 +515,6 @@
 \newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
 \addtocontents{lof}{\protect\noaddvspace}
 \addtocontents{lot}{\protect\noaddvspace}
-
-% Resets part name so PART appears
-% 2024 - I think this is unused b/c the @part is patched instead
-
-\renewcommand{\partname}{PART\ }
 
 % Resets appendix command so the word APPENDIX appears
 % after unsetting chaptername
