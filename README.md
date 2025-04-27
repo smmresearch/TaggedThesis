@@ -22,6 +22,7 @@ Official list of packages compatible with tagging: https://latex3.github.io/tagg
 The list is pessimistic - some packages labeled as incompatible have workarounds or cause only less-than-ideal tagging.
 
 The template has only been tested with MikTeX and probably works with an up-to-date version of TeXLive/MacTex.
+
 I suspect it won't work with Overleaf, but this has not yet been tested (let me know if you have!).
 There are two main problems with Overleaf:
 a) As of Spring of 2025, Overleaf's latest version is TexLive 2024, which was probably frozen around March 2024. This version is too old to support tagging table headers.
