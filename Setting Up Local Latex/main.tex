@@ -4,10 +4,21 @@
 Still a work in progress...
 
 There are many ways to set-up LaTeX on your local machine.
-My favorite is to use VS Code with Latex Workshop.
-There are several guides on the internet for the basic set-up of VS Code with Latex Workshop.
-But here are a couple things I have learned and found useful.
+My favorite is to use VS Code with Latex Workshop, but TexStudio is probably the more beginner friendly option.
+There are several guides on the internet for the basic set-up of Latex.
+But here are a couple things I have learned and found useful specifically for tagging documents.
 
+\section{TexStudio Option}
+To use TexStudio, you will need to download Latex (from the internet) - it is free. You can choose which distribution of Latex to download, the most popular are TexLive, MikTex, or MacTex (I prefer MikTex for Windows).
+You will also need to download TexStudio (from the internet) - it is also free.
+
+Then, we want to use LuaLatex with this project for tagging. Therefore, in TexStudio go to Options- Configure TexStudio- Build. Using the dropdowns to change the default compiler to LuaLatex and the bibliography tool to Biber.
+When you want to compile, use the double play button icon. When you change the bibliography (by changing the bib file or by adding references), you will want to compile the latex (if you have not already done so), then run the bibliography tool by going to Tools - Bibliography, and then compile the Latex again.
+
+If you get errors, the first things you should do is re-compile the latex, run the bibliography tool, and re-compile the latex again and see if the errors persist.
+A warning about cross-references may persist across several runs - you do not need to worry about it while drafting. Before final submission, just keep recompiling until it goes away (and it will).
+If the error ".. doesn't match definition.." does not resolve by running the bibliography tool and recompiling, you can also try Tools - Clean Auxiliary Files, and then compiling - bibliography tool - compiling again.
+\section{VS Code Option}
 \subsection{Using LuaLatex without using latexmk}
 By default, Latex Workshop mostly uses latexmk - a useful tool. However, with tagging enabled, latexmk does several runs every time you make any change, which can be frustratingly slow.
 Most of the time, it is better to do a single compilation between minor changes as you edit and then a couple more recompiles to make sure everything is settled right before submission.
