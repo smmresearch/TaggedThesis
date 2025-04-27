@@ -24,7 +24,10 @@ The list is pessimistic - some packages labeled as incompatible have workarounds
 The template has only been tested with MikTeX and probably works with an up-to-date version of TeXLive/MacTex.
 
 I suspect it won't work with Overleaf, but this has not yet been tested (let me know if you have!).
+
 There are two main problems with Overleaf:
+
 a) As of Spring of 2025, Overleaf's latest version is TexLive 2024, which was probably frozen around March 2024. This version is too old to support tagging table headers.
 Soon-ish (as in probably Summer 2025), Overleaf will likely provide TexLive 2025, which will at least support tagging table headers (although the >1 year lag in updates will probably continue to be difficult to accommodate until tagging is fully matured).
+
 b) The compilation timeout on Overleaf is 4 minutes. My thesis at 150 pages with a few figures and too many fonts takes about 2 minutes on my personal hardware. This seems fine, except Overleaf uses latexmk, which actually does multiple runs everytime you run it. While you can adjust the max runs, to have a bibliography without constantly changing the latexmk settings, you would probably have to at least let latexmk do Latex -> Biber -> Latex, which could surpass 4 minutes in a lengthy document with alot going on. Latexmk also throws errors around if you prevent it from doing the re-runs it wants to do, so there would probably be many false flags.
