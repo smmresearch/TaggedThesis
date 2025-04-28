@@ -12,7 +12,7 @@ But here are a couple things I have learned and found useful specifically for ta
 To use TexStudio, you will need to download Latex (from the internet) - it is free. You can choose which distribution of Latex to download, the most popular are TexLive, MikTex, or MacTex (I prefer MikTex for Windows).
 You will also need to download TexStudio (from the internet) - it is also free.
 
-Then, we want to use LuaLatex with this project for tagging. Therefore, in TexStudio go to Options- Configure TexStudio- Build. Using the dropdowns to change the default compiler to LuaLatex and the bibliography tool to Biber.
+Then, we want to use LuaLatex with this project for tagging. Therefore, in TexStudio go to Options- Configure TexStudio- Build. Use the dropdowns to change the default compiler to LuaLatex and the bibliography tool to Biber.
 When you want to compile, use the double play button icon. When you change the bibliography (by changing the bib file or by adding references), you will want to compile the latex (if you have not already done so), then run the bibliography tool by going to Tools - Bibliography, and then compile the Latex again.
 
 If you get errors, the first things you should do is re-compile the latex, run the bibliography tool, and re-compile the latex again and see if the errors persist.
@@ -22,12 +22,15 @@ If the error ".. doesn't match definition.." does not resolve by running the bib
 \subsection{Using LuaLatex without using latexmk}
 By default, Latex Workshop mostly uses latexmk - a useful tool. However, with tagging enabled, latexmk does several runs every time you make any change, which can be frustratingly slow.
 Most of the time, it is better to do a single compilation between minor changes as you edit and then a couple more recompiles to make sure everything is settled right before submission.
-I also like auxillary files to be in a separate folder and therefore provide instructions to that end.
+I also like auxillary files to be in a separate folder and therefore provide instructions to that end. Putting the auxillary files in a separate folder is only (easily) possible with MikTex, so there will also be instructions for leaving the auxillary files alone.
 
-To do this, we need to add extra recipes in order to have an option to just run LuaLatex or possibly LuaLatex + Biber + LuaLatex (for after bibliography changes).
+Regardless, to do this, we need to add extra recipes in order to have an option to just run LuaLatex or possibly LuaLatex + Biber + LuaLatex (for after bibliography changes).
 Go to Settings, search for Recipes, then choose the option to open Settings.json.
+
+\subsubsection{Auxillary Files in a Different Folder with MikTex}
 Search for ``latex-workshop.latex.tools" and \textbf{add} to the list there:
-\begin{verbatim}
+\begin{samepage}
+    \begin{verbatim}
     {
             "name": "lualatex",
             "command": "lualatex",
@@ -52,11 +55,40 @@ Search for ``latex-workshop.latex.tools" and \textbf{add} to the list there:
             "env": {}
         },
 \end{verbatim}
+\end{samepage}
+\subsection{Auxillary Files in same folder (with any latex)}
+Search for ``latex-workshop.latex.tools" and \textbf{add} to the list there:
+\begin{samepage}
+    \begin{verbatim}
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "--interaction=nonstopmode",
+                "--synctex=1",
+                "--c-style-errors",
+                "--output-directory=%DIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOC%,
+                "--output-directory=%DIR%",
+            ],
+            "env": {}
+        },
+\end{verbatim}
+\end{samepage}
 
+\subsection{Continued Instructions for both}
 Then, search for "latex-workshop.latex.recipes" and add to the list there:
 \begin{samepage}
     \begin{verbatim}
-    {
+        {
             "name": "lualatex-plain",
             "tools": [
                 "lualatex"
