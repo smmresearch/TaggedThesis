@@ -1,13 +1,20 @@
-% %!LW recipe=latexmk (lualatex)
+% %!LW recipe=lualatex-plain
 \DocumentMetadata{
  lang=en,
- testphase=latest,
+ testphase={
+  phase-III,
+  math,
+  table,
+  title,
+  firstaid,
+  float
+  },
  pdfversion=2.0,
  pdfstandard=ua-2,
  pdfstandard=a-4f,
  uncompress
 }
-\documentclass{report}
+\documentclass{isuthesistagged}
 
 % \usepackage{amsmath}
 % \usepackage{amsthm}
@@ -50,105 +57,35 @@
 \usepackage{hyperref}
 
 \usepackage{algorithm}
-\usepackage{algorithmic}
 \usepackage{caption}
 \usepackage{subcaption}
-\makeatletter
-%This work-around comes from: https://github.com/latex3/tagging-project/issues/720
-\RemoveFromHook{begindocument}[latex-lab-testphase-float]
-\ExplSyntaxOn
-\socket_new_plug:nnn{tagsupport/parbox/before}{caption}
-{
-    \tagpdfparaOn %restart para tagging
-    \tl_if_empty:NTF\@current@float@struct
-    {
-        \tag_struct_begin:n{tag=Caption,firstkid}
-    }
-    {
-        \tag_struct_begin:n{tag=Caption,parent=\@current@float@struct,firstkid}
-    }
-}
-\socket_new_plug:nnn{tagsupport/parbox/after}{caption}
-{
-    \tag_struct_end:
-}
-\l@addto@macro\caption@beginex@hook{%
-    \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
-    \AssignSocketPlug{tagsupport/parbox/before}{caption}
-    \AssignSocketPlug{tagsupport/parbox/after}{caption}}
-\ExplSyntaxOff
-\AtBeginDocument{
-    \renewcommand*\caption@anchor[1]{%
-        \ifmeasuring@ \else
-            \caption@raisedlink{\MakeLinkTarget*{#1}}%
-        \fi}%  
-    \renewcommand{\chapterautorefname}{Chapter}
-    \renewcommand{\sectionautorefname}{Section}
-    \renewcommand{\subsectionautorefname}{Subsection}
-    \renewcommand{\subsubsectionautorefname}{Subsubsection}
-}
-%This part is my own invention - to get subfigures
-%to have captions be where they are supposed to be
-%by appending some extras to the subfigure environment
-%As with everything else, it probably won't be necessary
-%in the long term
-%
-%Further, no warranties on the robustness
-%If complicated subfigures are causing problems,
-%you are probably are better commenting this out
-%and dealing with the subpar tagging.
-\ExplSyntaxOn
-\cs_new_eq:NN \origsubfigure \subfigure
-\cs_new_eq:NN \origsubfigureend \endsubfigure
-\RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
-    \origsubfigure[#1][#2][#3]{#4}
-    \tagstructbegin{tag=Part}
-    \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
-}
-\ExplSyntaxOff
-\def\endsubfigure{
-    \tagstructend
-    \origsubfigureend
-}
 
-\makeatother
+
+
 %\DeclareMathSymbol{\lisp}{\mathaccent}{xcharter}{"020D7}
-\AddToHook{cmd/part/before}{\tagtool{flush-floats=paragraph}}
-\AddToHook{cmd/section/before}{\tagtool{flush-floats=paragraph}}
-\AddToHook{cmd/chapter/before}{\tagtool{flush-floats=paragraph}}
-\AddToHook{cmd/subsection/before}{\tagtool{flush-floats=paragraph}}
-\AddToHook{cmd/subsubsection/before}{\tagtool{flush-floats=paragraph}}
-
 \begin{document}
-\section{Hello its me}
-% Template Titlepage File
-% Please choose appropriate options for Master's thesis, Doctoral dissertations, and creative components. Please read the comments to make an informed choice
-abcdefghijkl
-\subsection{Yay!}
-more more more and more as it happens
-\begin{figure}
-    \caption{woot woot}
-\end{figure}
-\subsection{yippee!}
-Hello it is me.
-\begin{figure}
-    \caption{woot woot}
-\end{figure}
-More of me here.
 
-And even more there.
-\section{Another one}
-yeppers
+Hello all, I am here. Yay me!
 \begin{figure}
-    \caption{woot woot}
+    \caption{whoops}
 \end{figure}
-Yay us!
-\chapter{Yikes}
-Yippee
-\begin{figure}
-    \caption{woot woot}
-\end{figure}
-Woo.
-\chapter{Yes!!!!}
-Woot. Woot.
+More text here.
+\begin{algorithm}[h]
+    \caption{yay us}
+    % \SetAlgoLined
+    % \KwData{this text}
+    % \KwResult{how to write algorithm with \LaTeX2e }
+    % initialization\;
+    % \While{not at end of this document}{
+    %     read current\;
+    %     \eIf{understand}{
+    %         go to next section\;
+    %         current section becomes this one\;
+    %     }{
+    %         go back to the beginning of current section\;
+    %     }
+    % }
+    % \caption{How to write algorithms}
+\end{algorithm}
+
 \end{document}

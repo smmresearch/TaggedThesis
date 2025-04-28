@@ -706,6 +706,7 @@
 %This work-around comes from: https://github.com/latex3/tagging-project/issues/720
 \RemoveFromHook{begindocument}[latex-lab-testphase-float]
 \ExplSyntaxOn
+
 \socket_new_plug:nnn{tagsupport/parbox/before}{caption}
 {
     \tagpdfparaOn %restart para tagging

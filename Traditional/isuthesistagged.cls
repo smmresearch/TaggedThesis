@@ -721,9 +721,12 @@
 \ExplSyntaxOff
 
 %algorithms
+\ExplSyntaxOn
 \iftoggle{algorithms-tagthesis}{
     \usepackage[chapter]{algorithm}
     \usepackage{algpseudocode}
+    \tagpdfsetup{role/new-tag = algorithms/Sect}
+    \seq_gput_right:Nn \g__tag_float_types_seq {algorithm} %add algorithm as a type of float
     \newcommand{\algorithmautorefname}{Algorithm}
     \newcommand{\algmargin}{\the\ALG@thistlm}
     \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}%puts the chapter number in front of algorithm number
@@ -731,3 +734,4 @@
         \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
 
 }{}
+\ExplSyntaxOff
