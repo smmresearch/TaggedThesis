@@ -34,6 +34,7 @@ b) The compilation timeout on Overleaf is 4 minutes. My thesis at 150 pages with
 
 
 Checking It Works
+
 You can validate the PDF meets ISO tagging standards by using VeraPDF (either by downloading it or at demo.verapdf.org) and using the profile PDF/UA-2. 
 Technically, it complains about the font Libertinus (glyph width blah blah blah) in the example files, but that has nothing to do with tagging. If it bothers you, it can be fixed by switching to another font.
 If you actually want to manually inspect the tag structure, I unfortunately do not know another program other than Acrobat Pro. I will note Acrobat Pro's automated accessibility checker has its own bugs and I would not believe everything it reports.
