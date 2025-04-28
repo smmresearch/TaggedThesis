@@ -31,3 +31,9 @@ a) As of Spring of 2025, Overleaf's latest version is TexLive 2024, which was pr
 Soon-ish (as in probably Summer 2025), Overleaf will likely provide TexLive 2025, which will at least support tagging table headers (although the >1 year lag in updates will probably continue to be difficult to accommodate until tagging is fully matured).
 
 b) The compilation timeout on Overleaf is 4 minutes. My thesis at 150 pages with a few figures and too many fonts takes about 2 minutes on my personal hardware. This seems fine, except Overleaf uses latexmk, which actually does multiple runs every time you run it. While you can adjust the max runs, to have a bibliography without constantly changing the latexmk settings, you would probably have to at least let latexmk do Latex -> Biber -> Latex, which could surpass 4 minutes in a lengthy document with alot going on. Latexmk also throws errors around if you prevent it from doing the re-runs it wants to do, so there would probably be many false flags.
+
+
+Checking It Works
+You can validate the PDF meets ISO tagging standards by using VeraPDF (either by downloading it or at demo.verapdf.org) and using the profile PDF/UA-2. 
+Technically, it complains about the font Libertinus (glyph width blah blah blah) in the example files, but that has nothing to do with tagging. If it bothers you, it can be fixed by switching to another font.
+If you actually want to manually inspect the tag structure, I unfortunately do not know another program other than Acrobat Pro. I will note Acrobat Pro's automated accessibility checker has its own bugs and I would not believe everything it reports.
