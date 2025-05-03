@@ -28,6 +28,14 @@
 %% a nominal charge for copying etc.
 %%
 
+%%%% Things that are patched for tagging as of 2025, but may not need to be in the future due to native support for tagging
+%%%  In such a case, delete the patch
+%%% 1. Caption and Subcaption Package (search for usepackage{caption} for patch)
+%%% 2. titlesec package (search for usepackage titlesec)
+%%%            a. If titlesec ever gets full support, it would probably be better to use
+%%%               titlesec to format Part titles instead of the xpatching
+%%% 3. Proof environment (search for the proof parts inside iftoggle{math-tagthesis})
+
 \def\fileversion{2.0}
 \def\filedate{2024/02/14}
 \typeout{%
@@ -93,12 +101,14 @@
 % Must be patched before hyperref is loaded.
 %%%%
 
-%adds a Period to the numberline
+%adds a period after the chapter number in the TOC
 \newcommand{\numberlineP}[1]{\numberline{#1.}}
 \xpatchcmd{\@chapter}% <cmd>
 {\numberline}% <search>
 {\numberlineP}% <replace>
 {}{}% <success><failure>
+%Adds "PART" on the TOC , then changes font sizes on the part page
+%Note: patchcmd only replaces the *first* instance of \thepart
 \xpatchcmd{\@part}% <cmd>
 {\thepart}% <search>
 {PART \thepart}% <replace>
@@ -123,6 +133,8 @@
     \addtocounter{footnote}{-1}%
     \endgroup
 }
+%In PDF properties we cannot have a line break,
+%hence why we want to define both
 \newcommand{\twoLineTitle}[2]{
     \newcommand{\titleWithLineBreak}{#1\\#2}
     \newcommand{\titleWithoutBreak}{#1 #2}
@@ -170,6 +182,9 @@
 {\par}
 {\par\tagtool{sec-start=#1}\tagtool{para}}
 {}{\fail}
+%in the original this has para/flattened, but
+%that causes bibliography problems for some reason
+%that switching to para fixed
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Format the section title appropriately (while being compatible with tagging)
@@ -181,7 +196,7 @@
 
 \titleformat{\chapter}[block]{\large\centering\bfseries}{%
     \chapterTitle%
-    \nottoggle{singleappendix-tagthesis}{\ \thechapter}{}%
+    \nottoggle{singleappendix-tagthesis}{\ \thechapter}{}%if it is a single appendix, don't include the chapter #
     .%
 }{12pt}{}
 \titlespacing{\chapter}{0pt}{0in}{0.6in}
@@ -195,7 +210,9 @@
 \titlespacing{\paragraph}{0pt}{*3}{1.5ex \@plus .2ex}
 \titleformat{\subparagraph}[block]{\bfseries\filright}{\thesubsubsection}{.5em}{}
 \titlespacing{\subparagraph}{0.25in}{*3}{1.5ex \@plus .2ex}
-%Formatting Part breaks the TOC implementation as of 2024, hence why it is patched instead
+%Formatting Part like this breaks stuff as of 2024, hence we do the following instead
+% Change the part on the part page to PART
+\renewcommand{\partname}{PART\ }
 %%%%%%%%%%%%%%%
 %%%%%%%%%%
 
@@ -230,9 +247,6 @@
 %    ****************************************
 %
 % Default initializations
-
-%\ps@plain                          % 'plain' page style.
-\pagenumbering{arabic}             % Arabic page numbers.
 \onecolumn                         % Single column.
 \if@twoside\else\raggedbottom\fi   % Ragged bottom unless twoside option.
 
@@ -333,68 +347,12 @@
 %\def\mprof#1{\gdef\@mprof{#1, Major Professor}} \def\@mprof{}
 \def\submit#1{\gdef\@submit{#1}}            \submit{the graduate faculty}
 
-\newcount\@deptnum  \@deptnum=1
-\newcount\@majornum \@majornum=1
-\def\@depart{}
-\def\@deptone{}
-\def\@depttwo{}
-\def\@depttitle{}
+\def\major#1{\def\@major{Major: #1}}
+\def\comajors#1{\def\@major{Co-majors: #1}}
 
-% Relic of needing a signature page
-% \newcount\@numcomm
-% \def\committee#1{\@numcomm=#1}
-% \committee{0}
-
-\newdimen\@signwidth \@signwidth=6cm
-
-\def\@depmajmac#1#2#3#4{% department and major macro
-    \ifcase\@deptnum \def\@depart{}
-    \or \def\@depart{\@depttitle #1 \\}
-    \else \def\@depart{\@depttitle #1\\ #2\\}\fi
-    \ifcase\@majornum \def\@major{}
-    \or \def\@major{\@majortitle #3}
-    \else \def\@major{\@majortitle #3 \\  #4}\fi}
-
-\newif\if@interdept \@interdeptfalse
-\newif\if@interdeptm \@interdeptmfalse
-\newcount\signdeptnum  \signdeptnum=1
-\newcount\signmajornum \signmajornum=1
-
-\def\interdept{\@interdepttrue}
-\def\interdeptm{\@interdeptmtrue}
-
-\def\dept#1{\gdef\@deptone{#1} \gdef\@depttwo{} \@deptnum=1
-    \if@interdept\def\@depttitle{Interdepartmental Program: } \else
-        \def\@depttitle{Department: }\fi}
-\def\codepts#1#2{\gdef\@deptone{#1} \gdef\@depttwo{#2} \@deptnum=2
-    \def\@depttitle{Departments: }\signdeptnum=2}
-\def\major#1{\@majornum=1 \@depmajmac{\@deptone}{\@depttwo}{#1}{}
-    \if@interdeptm\def\@majortitle{Interdepartmental Major: } \else
-        \def\@majortitle{Major: }\fi}
-\def\comajors#1#2{\@majornum=2 \signmajornum=2
-    \@depmajmac{\@deptone}{\@depttwo}{#1}{#2}
-    \def\@majortitle{Co-majors: }}
-
-\def\signmajor#1{\def\@signmajor{#1}}
-\signmajor{\ifnum\signmajornum=2 Co-major Professor \else
-        Major Professor\fi}
-\def\signdept#1{\def\@signdept{#1}}
-\signdept{\if@interdept For the Major Program \else
-        \ifnum\@deptnum=2 For the Co-major Program \else
-            For the Major Program\fi\fi}
-
-\def\@depart{}
 \def\@major{}
 
-\def\minor#1{\def\@minor{\\Minor: #1}}
-\def\@minor{}
-
-\def\mprof#1{\def\@mprof{#1, Major Professor}\signmajornum=2} \def\@mprof{}
-
-% original changed july 2017
-%\def\mprofs#1#2{\def\@mprofs{#1, Co-major Professor\\#2, Co-major Professor} 
-%\signmajornum=2} 
-%\def\@mprofs{}
+\def\mprof#1{\def\@mprof{#1, Major Professor}} \def\@mprof{}
 
 \def\mprofs#1{\def\@mprofs{#1, Co-major Professor}}
 \def\@mprofs{}
@@ -414,9 +372,6 @@
         \copyright\/ \@author,\ \@copyyear. All rights reserved.}}
 \def\@notice{}
 
-\def\supervisor#1{\gdef\@supervisor{#1}}
-\def\@supervisor{}
-
 \def\@titlefoot{\begin{center}Iowa State University\\
         Ames, Iowa\\ \@copyyear\  \\
         \@notice \end{center}}%Added \  after \@copyyear to avoid having \\ problem
@@ -426,7 +381,7 @@
         % \vbox ensures whole title page stays on one page even if it becomes overfull
         \vbox to \textheight{
             \begin{center}
-                \vskip 45pt                   % Added to more evenly space page (JAS11)
+                \vskip 25pt                   % Added to more evenly space page (JAS11)
                     {\bfseries \@title}
                 \vskip 12pt                    % Changed from 11pt to more evenly space page (JAS11)
                 by \\
@@ -438,10 +393,8 @@
                 \@degree \\[2.5pt]
 
                 \vskip 40pt                   % Changed from 30pt to cover dept loss
-                %   \@depart
                 \@major
-                %   \@minor                     % No longer listed - Sept. 2001
-                \vskip 55pt                    % Changed from 14pt to more evenly space page (JAS11)
+                \vskip 40pt                    % Changed from 14pt to more evenly space page (JAS11)
                 \begin{singlespace}  % Elminated to more evenly space page (JAS11)
                     Program of Study Committee: \\
                     \@mprof
@@ -462,6 +415,8 @@
     \end{titlepage}
 }% end maketitle
 
+%these alternate commands could probably be deleted
+%because they are unused and I doubt anyone will find them
 \def\alternatepartnum{%  command to number only parts
     \setcounter{secnumdepth}{0}
     \renewcommand{\thechapter}{}
@@ -481,6 +436,7 @@
     \makeatother
 }
 
+%this also goes unused
 \def\reset{% resets many chapter level counters
     \setcounter{chapter}{0}
     \setcounter{section}{0}
@@ -495,6 +451,8 @@
     \setcounter{mpfootnote}{0}
 }
 
+%the nochap commands could probably be deleted,
+%because they are unused and I doubt anyone will find them
 \def\nochap{% bizarre hack to not use a chapter number
     \makeatletter
     \renewcommand{\thefigure}{\@arabic\c@figure}
@@ -557,33 +515,21 @@
 \addtocontents{lof}{\protect\noaddvspace}
 \addtocontents{lot}{\protect\noaddvspace}
 
-% Resets part name so PART appears
-% 2024 - I think this is unused b/c the @part is patched instead
-
-\renewcommand{\partname}{PART\ }
-
 % Resets appendix command so the word APPENDIX appears
 % after unsetting chaptername
 
 \def\appendixtitle{% resets appendixname
-    \def\@chapapp{APPENDIX}
-    \def\thechapter{}
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX\ }}
-    %\renewcommand{\appendixname}{APPENDIX\ }
     \renewcommand{\chapterTitle}{APPENDIX}
 }
 
 % USE THE following instead of \appendixtitle for singleappendix
-% first \unappendixtitle
-% second \singleappendixtitle
+% \singleappendixtitle
 \def\singleappendixtitle{% resets appendixname
     \toggletrue{singleappendix-tagthesis}
-    \def\@chapapp{APPENDIX}
-    \def\thechapter{}
+    \def\thechapter{}%unnumbered/unlettered
     \addtocontents{toc}{\def\protect\@chapapp{APPENDIX}}
-    %\renewcommand{\appendixname}{APPENDIX\ }
     \renewcommand{\chapterTitle}{APPENDIX}
-    %Single appendix has no number, hence no space
     \setcounter{chapter}{0}
     \setcounter{section}{0}
     \bookmarksetup{numbered=false}
@@ -591,19 +537,10 @@
 
 \def\finishAppendixSetup{%
     \iftoggle{singleappendix-tagthesis}{
-        \renewcommand{\thechapter}{A}
+        \renewcommand{\thechapter}{A} %do want a letter for figures/tables/etc
     }
 }
 
-% Resets appendix command so the word APPENDIX appears
-% after unsetting chaptername
-
-\def\unappendixtitle{% resets appendixname
-    \def\@chapapp{}
-    \def\thechapter{}
-    \addtocontents{toc}{\def\protect\@chapapp{}}
-    \togglefalse{singleappendix-tagthesis}
-}
 %%%%%%%%%%%%%%%%%%%%
 
 % % Protects added (JAS05 / JAS09)
@@ -613,40 +550,6 @@
 {\protect \centering \large LIST OF FIGURES}  %JAS
 \renewcommand{\listtablename}
 {\protect \centering \large LIST OF TABLES}    %JAS
-
-%%%%
-%% Subpackage: thesisreport.sty for use with the isuthesis package.
-%%
-%% LaTeX document package `isuthesis', for use with LaTeX2e.
-%% This is a package that is used with the report class to
-%%   create a thesis at Iowa State University.
-%%
-%% COPYRIGHT 1997, by Joe Struss (jastruss@iastate.edu)
-%%
-%% Copying of part or all of any file in the isuthesis.sty package
-%% including isumacros.sty, thesisreport.sty and isuthesis.sty
-%% is allowed under the following conditions only:
-%% (1) You may freely distribute unchanged copies of the files. Please
-%%     include the any or all documentation when you do so.
-%% (2) You may modify a renamed copy of any file, but only for personal
-%%     use or use within an organization.
-%% (3) You may copy fragments from the files, for personal use or for use
-%%     in a macro package for distribution, as long as credit is given
-%%     where credit is due.
-%%
-%% You are NOT ALLOWED to take money for the distribution or use of
-%% these files or modified versions or fragments thereof, except for
-%% a nominal charge for copying etc.
-%%
-%Standard Report class changes;  JAS 10/95-3/96
-%  Part -standard (change Huge and huge to Large
-%%%%  both afterindentfalse and afterindenttrue should mean the same thing after below
-
-% \let\@afterindentfalse\@afterindenttrue
-% \@afterindenttrue
-%%%%
-%\usepackage[all]{nowidow}
-%
 
 %%%%%%%%%%%%%%%%%%2025 fixes and new packages
 \newlength{\normalparindent}
@@ -706,7 +609,6 @@
 %This work-around comes from: https://github.com/latex3/tagging-project/issues/720
 \RemoveFromHook{begindocument}[latex-lab-testphase-float]
 \ExplSyntaxOn
-
 \socket_new_plug:nnn{tagsupport/parbox/before}{caption}
 {
     \tagpdfparaOn %restart para tagging
@@ -732,10 +634,6 @@
         \ifmeasuring@ \else
             \caption@raisedlink{\MakeLinkTarget*{#1}}%
         \fi}%  
-    \renewcommand{\chapterautorefname}{Chapter}
-    \renewcommand{\sectionautorefname}{Section}
-    \renewcommand{\subsectionautorefname}{Subsection}
-    \renewcommand{\subsubsectionautorefname}{Subsubsection}
 }
 %This part is my own invention - to get subfigures
 %to have captions be where they are supposed to be
@@ -748,17 +646,23 @@
 %you are probably are better commenting this out
 %and dealing with the subpar tagging.
 \ExplSyntaxOn
+%first save original definition
 \cs_new_eq:NN \origsubfigure \subfigure
 \cs_new_eq:NN \origsubfigureend \endsubfigure
 \RenewDocumentCommand{\subfigure}{O{b} O{} O{s} m}{
+    %redefine subfigure to first create the usual
+    %subfigure environment, then wrap it in a part
+    %and 
     \origsubfigure[#1][#2][#3]{#4}
     \tagstructbegin{tag=Part}
     \tl_set:Ne\@current@float@struct{\tag_get:n{struct_num}}
+    %I believe this sets the "float structure" to be the Part
+    %we just created
 }
 \ExplSyntaxOff
 \def\endsubfigure{
-    \tagstructend
-    \origsubfigureend
+    \tagstructend%close the Part structure
+    \origsubfigureend%do normal end of subfig things
 }
 
 %%%Default setup I doubt much of anyone changes
@@ -773,11 +677,17 @@
 
 \usepackage{graphicx}
 
-\doublespacing
-\AtBeginEnvironment{table}{\singlespacing}% 
-\AtBeginEnvironment{figure}{\singlespacing}% 
+\doublespacing%from setspace, automatically leaves figures/tables single spaced
 
 \overfullrule=0pt
+
+%%%%Hyperref set-up
+\AtEndPreamble{
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Subsection}
+    \renewcommand{\subsubsectionautorefname}{Subsubsection}
+}
 
 %%%Captioning Format
 \DeclareCaptionListFormat{figureList}{Figure #1#2}
@@ -795,6 +705,9 @@
     \usepackage{mathtools}
     \usepackage[thmtools-compat]{keytheorems}
     %\usepackage{thmtools}
+    %The following is a fix for two proof problems
+    % a) Proofs with only equations bugged out
+    % b) Proofs were not being properly indented
     \cs_new_eq:NN \origproof \proof
     \RenewDocumentCommand{\proof}{O{\proofname}}{
         \origproof[#1]%
@@ -808,12 +721,17 @@
 \ExplSyntaxOff
 
 %algorithms
+\ExplSyntaxOn
 \iftoggle{algorithms-tagthesis}{
     \usepackage[chapter]{algorithm}
     \usepackage{algpseudocode}
+    \tagpdfsetup{role/new-tag = algorithms/Sect}
+    \seq_gput_right:Nn \g__tag_float_types_seq {algorithm} %add algorithm as a type of float
+    \newcommand{\algorithmautorefname}{Algorithm}
     \newcommand{\algmargin}{\the\ALG@thistlm}
-    \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}
+    \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}%puts the chapter number in front of algorithm number
     \algnewcommand{\parstate}[1]{\State%
         \parbox[t]{\dimexpr\linewidth-\algmargin}{\strut #1\strut}}
 
 }{}
+\ExplSyntaxOff

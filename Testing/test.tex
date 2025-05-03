@@ -14,7 +14,7 @@
  pdfstandard=a-4f,
  uncompress
 }
-\documentclass{isuthesistagged}
+\documentclass{article}
 
 % \usepackage{amsmath}
 % \usepackage{amsthm}
@@ -56,36 +56,54 @@
 %%PDF properties automatically set
 \usepackage{hyperref}
 
-\usepackage{algorithm}
-\usepackage{caption}
-\usepackage{subcaption}
+\usepackage{algorithm2e}
+\ExplSyntaxOn
+\tagpdfsetup{role/new-tag = algocfs/Sect}
+\seq_gput_right:Nn \g__tag_float_types_seq {algocf} %add algorithm as a type of float
+\ExplSyntaxOff
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\algocf@makecaption}% <cmd>
+{\parbox[t]{\hsize}{\algocf@captiontext{#1}{#2}}}% <search>
+{\parbox[t]{\hsize}{\tagstructbegin{tag=Caption}\algocf@captiontext{#1}{#2}\tagstructend}}% <replace>
+{\typeout{yay}}{\typeout{nay}}% <success><failure>
+\xpatchcmd{\algocf@makecaption}% <cmd>
+{\algocf@captiontext{#1}{#2}}% <search>
+{\tagstructbegin{tag=Caption}\algocf@captiontext{#1}{#2}\tagstructend}% <replace>
+{\typeout{yay}}{\typeout{nay}}% <success><failure>
 
+\xpatchcmd{\AlCapNameSty}% <cmd>
+{\textnormal{#1}}% <search>
+{\textnormal{\tagstructbegin{tag=Caption} #1 \tagstructend}}% <replace>
+{\typeout{yay}}{\typeout{nay}}% <success><failure>
 
+\makeatother
 
 %\DeclareMathSymbol{\lisp}{\mathaccent}{xcharter}{"020D7}
 \begin{document}
 
 Hello all, I am here. Yay me!
 \begin{figure}
+    Yay!
     \caption{whoops}
 \end{figure}
 More text here.
+
 \begin{algorithm}[h]
-    \caption{yay us}
-    % \SetAlgoLined
-    % \KwData{this text}
-    % \KwResult{how to write algorithm with \LaTeX2e }
-    % initialization\;
-    % \While{not at end of this document}{
-    %     read current\;
-    %     \eIf{understand}{
-    %         go to next section\;
-    %         current section becomes this one\;
-    %     }{
-    %         go back to the beginning of current section\;
-    %     }
-    % }
-    % \caption{How to write algorithms}
+    \SetAlgoLined
+    \KwData{this text}
+    \KwResult{how to write algorithm with \LaTeX2e }
+    initialization\;
+    \While{not at end of this document}{
+        read current\;
+        \eIf{understand}{
+            go to next section\;
+            current section becomes this one\;
+        }{
+            go back to the beginning of current section\;
+        }
+    }
+    \caption{How to write algorithms}
 \end{algorithm}
 
 \end{document}

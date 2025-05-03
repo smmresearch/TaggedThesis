@@ -16,7 +16,7 @@ Then, we want to use LuaLatex with this project for tagging. Therefore, in TexSt
 When you want to compile, use the double play button icon. When you change the bibliography (by changing the bib file or by adding references), you will want to compile the latex (if you have not already done so), then run the bibliography tool by going to Tools - Bibliography, and then compile the Latex again.
 
 If you get errors, the first things you should do is re-compile the latex, run the bibliography tool, and re-compile the latex again and see if the errors persist.
-A warning about cross-references may persist across several runs - you do not need to worry about it while drafting. Before final submission, just keep recompiling until it goes away (and it will).
+A warning about cross-references may persist across several runs - you do not need to worry about it while drafting. Before final submission, keep recompiling until it goes away (and it will).
 If the error ".. doesn't match definition.." does not resolve by running the bibliography tool and recompiling, you can also try Tools - Clean Auxiliary Files, and then compiling - bibliography tool - compiling again.
 \section{VS Code Option}
 \subsection{Using LuaLatex without using latexmk}
@@ -31,7 +31,7 @@ Go to Settings, search for Recipes, then choose the option to open Settings.json
 Search for ``latex-workshop.latex.tools" and \textbf{add} to the list there:
 \begin{samepage}
     \begin{verbatim}
-    {
+        {
             "name": "lualatex",
             "command": "lualatex",
             "args": [
