@@ -206,9 +206,9 @@
 \titlespacing{\subsection}{0pt}{*3}{1.5ex \@plus .2ex}
 \titleformat{\subsubsection}[block]{\bfseries\filright}{\thesubsubsection}{.5em}{}
 \titlespacing{\subsubsection}{0.25in}{*3}{1.5ex \@plus .2ex}
-\titleformat{\paragraph}[block]{\normalsize\bfseries\filright}{\thesubsection}{.5em}{}
+\titleformat{\paragraph}[block]{\normalsize\bfseries\filright}{}{.5em}{}
 \titlespacing{\paragraph}{0pt}{*3}{1.5ex \@plus .2ex}
-\titleformat{\subparagraph}[block]{\bfseries\filright}{\thesubsubsection}{.5em}{}
+\titleformat{\subparagraph}[block]{\bfseries\filright}{}{.5em}{}
 \titlespacing{\subparagraph}{0.25in}{*3}{1.5ex \@plus .2ex}
 %Formatting Part like this breaks stuff as of 2024, hence we do the following instead
 % Change the part on the part page to PART
