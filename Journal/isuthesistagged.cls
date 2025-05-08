@@ -29,6 +29,7 @@
 %%
 
 %%%% Things that are patched for tagging as of 2025, but may not need to be in the future due to native support for tagging
+%%%  The beginning and end of the patches are clearly labeled ("... tagging patch (begin/end)").
 %%%  In such a case, delete the patch
 %%% 1. Caption and Subcaption Package (search for usepackage{caption} for patch)
 %%% 2. titlesec package (search for usepackage titlesec)
@@ -164,6 +165,8 @@
 }
 
 \usepackage{titlesec}
+
+%%%%%%%%%%%%%%%%Titlesec tagging patch begin
 %% Patches needed for titlesec to work with tagging in 2024
 % Will likely be natively supported by the package/Latex
 % See this issue: https://github.com/latex3/tagging-project/issues/24
@@ -185,6 +188,8 @@
 %in the original this has para/flattened, but
 %that causes bibliography problems for some reason
 %that switching to para fixed
+
+%%%%%%%%%%%%Titlesec tagging patch end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Format the section title appropriately (while being compatible with tagging)
@@ -606,6 +611,9 @@
 %Caption package & tagging fixes
 \usepackage{caption}
 \usepackage{subcaption}
+
+%%%%%%%%%%%%%%%%Caption tagging patch begin
+
 %This work-around comes from: https://github.com/latex3/tagging-project/issues/720
 \RemoveFromHook{begindocument}[latex-lab-testphase-float]
 \ExplSyntaxOn
@@ -635,6 +643,10 @@
             \caption@raisedlink{\MakeLinkTarget*{#1}}%
         \fi}%  
 }
+
+%%%%%%%%%%%%%%%%Caption tagging patch end (subcaption patch below)
+%%%%%%%%%%%%%%%%Subcaption tagging patch begin
+
 %This part is my own invention - to get subfigures
 %to have captions be where they are supposed to be
 %by appending some extras to the subfigure environment
@@ -664,6 +676,7 @@
     \tagstructend%close the Part structure
     \origsubfigureend%do normal end of subfig things
 }
+%%%%%%%%%%%%%%%%Subcaption tagging patch end
 
 %%%Default setup I doubt much of anyone changes
 \renewcommand{\chaptername}{CHAPTER\ }
@@ -704,7 +717,8 @@
     \usepackage{amsthm}
     \usepackage{mathtools}
     \usepackage[thmtools-compat]{keytheorems}
-    %\usepackage{thmtools}
+
+    %%%%%%%%%%%%%%%%Proof tagging patch begin
     %The following is a fix for two proof problems
     % a) Proofs with only equations bugged out
     % b) Proofs were not being properly indented
@@ -716,7 +730,7 @@
         \noindent%
         \ignorespaces
     }
-
+    %%%%%%%%%%%%%%%%Proof tagging patch end
 }{}
 \ExplSyntaxOff
 
@@ -725,8 +739,10 @@
 \iftoggle{algorithms-tagthesis}{
     \usepackage[chapter]{algorithm}
     \usepackage{algpseudocode}
+    %%%%%%%%%%%%%%%%Algorithm tagging patch begin
     \tagpdfsetup{role/new-tag = algorithms/Sect}
     \seq_gput_right:Nn \g__tag_float_types_seq {algorithm} %add algorithm as a type of float
+    %%%%%%%%%%%%%%%%Algorithm tagging patch end
     \newcommand{\algorithmautorefname}{Algorithm}
     \newcommand{\algmargin}{\the\ALG@thistlm}
     \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}%puts the chapter number in front of algorithm number

@@ -10,11 +10,9 @@
 %biber thesis --output-directory=.\LatexAux  
 
 %biber's output-directory should match lualatex's aux-directory or both should be omitted. c-style-errors is optional.
-%You can also use latexmk if desired. Beware, sometimes if you have just added alot or are starting fresh,
-%it can take more than 5 runs (latexmk's default max) for everything to settle.
-
 
 % If using unicode with lualatex, do not use amssymb, input/output enc
+% Don't take any warning/error seriously until it persists over multiple compilations
 % Get Error ".. \@ doesn't match definition.."? 
 % First, make sure you have ran biber and re-ran lualatex
 % Then, try deleting *.aux file of file you were messing with. If needed, escalate to deleting all auxillary files.
