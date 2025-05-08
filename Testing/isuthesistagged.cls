@@ -611,7 +611,7 @@
 \ExplSyntaxOn
 \socket_new_plug:nnn{tagsupport/parbox/before}{caption}
 {
-    \tagpdfparaOn %restart para tagging
+    \tagtool{para/tagging=true} %restart para tagging
     \tl_if_empty:NTF\@current@float@struct
     {
         \tag_struct_begin:n{tag=Caption,firstkid}
@@ -625,7 +625,7 @@
     \tag_struct_end:
 }
 \l@addto@macro\caption@beginex@hook{%
-    \tagpdfparaOff %leavevmode in parbox should not start paragraph structure
+    \tagtool{para/tagging=false} %leavevmode in parbox should not start paragraph structure
     \AssignSocketPlug{tagsupport/parbox/before}{caption}
     \AssignSocketPlug{tagsupport/parbox/after}{caption}}
 \ExplSyntaxOff
