@@ -64,6 +64,18 @@
 \DeclareOption{algorithms-packages}{%
     \toggletrue{algorithms-tagthesis}
 }
+\ExplSyntaxOn
+\DeclareOption{draft}{
+    \tagpdfsetup{
+        math/mathml/sources=,
+        math/mathml/luamml/load=false,
+        math/tex/AF=false
+    }
+    \AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}
+    \AtBeginDocument{\__tag_math_disable:}
+    \tagpdfsetup{debug/log=none}
+}
+\ExplSyntaxOff
 
 \DeclareOption{no-mathml}{
     \tagpdfsetup{
@@ -554,11 +566,11 @@
     \AssignSocketPlug{tagsupport/parbox/before}{caption}
     \AssignSocketPlug{tagsupport/parbox/after}{caption}}
 \ExplSyntaxOff
-\AtBeginDocument{
+\AtBeginDocument[caption-tagthesis]{%without the label this can be ran too early.
     \renewcommand*\caption@anchor[1]{%
         \ifmeasuring@ \else
             \caption@raisedlink{\MakeLinkTarget*{#1}}%
-        \fi}%  
+        \fi}%  fA
 }
 
 %%%%%%%%%%%%%%%%Caption tagging patch end (subcaption patch below)

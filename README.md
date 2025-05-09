@@ -1,22 +1,22 @@
 Issues or pull requests are welcome.
 
-Tagging is slow - do the vast majority of the writing in a separate document (with all your usual presets) before copying over for finishing touches.
+Tagging does slow down the compiler. Using the draft option while drafting: ```\documentclass[12pt, draft]{isutaggedthesis}``` disables most of tagging, the loading of figures, and other "expensive tasks," making compilation much faster. Remove the option before submitting (you probably also want to do so periodically as you go along).
 
 If using latexmk with tagging activated, it probably overdoes the number of re-runs, which is part of the slowness problem.
 
 Things to keep in mind while drafting:
 1. If you need landscape tables/figures, subfigures, or algorithms, there are competing packages to do the same thing. Use the examples/packages used in the template.
-2. Biblatex is needed in the template. To prevent any potential problems, you could use it from the start (but biblatex has pretty good backwards-compatibility).
+2. Biblatex is needed in the template. To prevent any potential problems, you could use it from the start (but biblatex has pretty good backwards-compatibility with bibtex and natbib).
 3. If using Tikz, put those in a separate document and use includegraphics. There are more instructions in the template or in the closed issues.
 4. For whatever reason the tagging thing doesn't like if you do something like ```$x_\someCommand{whatever}$``` instead of ```$x_{\someCommand{whatever}}$```  (even though both work with standard latex).
 Something like ```$x_1$``` (single character) is fine.
-5. The template uses LuaLatex. Drafting with pdflatex will usually be fine, but you can also minimize the chance for problems by starting with lualatex if you are comfortable setting up LuaLatex.
-6. Alt-text is added to images using ```\includegraphics[alt={alt text here}]{...}```. If you use a recent version of latex, you should be able to add the alt text to includegraphics without any tagging (it does not do anything without tagging, but it also does not break anything). Table markup I would add later once you have transferred to the template.
+5. The template uses LuaLatex.
+6. Alt-text is added to images using ```\includegraphics[alt={alt text here}]{...}```. If you use a recent version of latex, you should be able to add the alt text to includegraphics without any tagging (it does not do anything without tagging, but it also does not break anything). Tables also require markup, for which you need tagging in your document.
 
 
 When you copy over: 
 1. Don't overload the preamble - the template already implements the basics. If you don't know what a package/command in your draft's preamble does, the template probably already handles it.
-2. Don't take any warning about tagging too seriously until you recompile a few times. 
+2. Don't take any warning about tagging too seriously until you run Biber and recompile a few times. 
 
 Official list of packages compatible with tagging: https://latex3.github.io/tagging-project/tagging-status/
 The list is pessimistic - some packages labeled as incompatible have workarounds or cause only less-than-ideal tagging.
