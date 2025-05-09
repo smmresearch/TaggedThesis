@@ -36,6 +36,7 @@
 %%%            a. If titlesec ever gets full support, it would probably be better to use
 %%%               titlesec to format Part titles instead of the xpatching
 %%% 3. Proof environment (search for the proof parts inside iftoggle{math-tagthesis})
+%%% 4. Algorithms being tagged as floats
 
 \def\fileversion{2.0}
 \def\filedate{2024/02/14}
