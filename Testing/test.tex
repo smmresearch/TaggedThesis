@@ -1,54 +1,20 @@
-% %!LW recipe=lualatex-plain
+%!LW recipe=lualatex-plain
 \DocumentMetadata{
  lang=en,
- testphase={
-  phase-III,
-  math,
-  table,
-  title,
-  firstaid,
-  float
-  },
+ testphase=latest,
  pdfversion=2.0,
  pdfstandard=ua-2,
  pdfstandard=a-4f,
  uncompress
 }
-\documentclass{article}
-
-% \usepackage{amsmath}
-% \usepackage{amsthm}
-
-% \usepackage{hyperref}
-% \usepackage{fontsetup}
-
-% \newtheorem{theorem}{Theorem}
-% % \DeclareInstance{block}{theoremblock-0}{display}
-% %   {
-% %     leftmargin      = 0pt ,
-% %     parindent       = 95pt ,
-% %     par-skip        = 85pt ,
-% %   } 
-
-% %   \DeclareInstance{blockenv}{theorem}{display}
-% % {
-% %   env-name       = theorem-like,
-% %   tag-name       = theorem-like,
-% %   tag-class      = ,
-% %   tagging-recipe = standalone,
-% %   inner-level-counter  = ,
-% %   level-increase = false,
-% %   setup-code     = ,
-% %   block-instance = theoremblock ,
-% % }
-% \usepackage{esvect}
-% \newcommand{\norme}[2][]{\ensuremath{\left\lVert #2 \right\rVert_{#1}}}
-% \begin{document}
-% \[\norme[p]{\adjustbox{raise=-0.5ex, set height=2.0ex}{$\vv{AB}$}}^2.\]
-% \end{document}
+\documentclass{isuthesistagged}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmathfont{texgyrepagella-math.otf}
+% \usepackage{chemformula}
+% \setchemformula{math-scripts=true}
 \usepackage{amsmath}
-\usepackage{esvect}
-\usepackage{adjustbox}
+% \usepackage{adjustbox}
 \usepackage{lmodern}
 %\usepackage[xcharter]{fontsetup}
 \author{Hello its me}
@@ -57,53 +23,13 @@
 \usepackage{hyperref}
 
 \usepackage{algorithm2e}
-\ExplSyntaxOn
-\tagpdfsetup{role/new-tag = algocfs/Sect}
-\seq_gput_right:Nn \g__tag_float_types_seq {algocf} %add algorithm as a type of float
-\ExplSyntaxOff
-\usepackage{xpatch}
-\makeatletter
-\xpatchcmd{\algocf@makecaption}% <cmd>
-{\parbox[t]{\hsize}{\algocf@captiontext{#1}{#2}}}% <search>
-{\parbox[t]{\hsize}{\tagstructbegin{tag=Caption}\algocf@captiontext{#1}{#2}\tagstructend}}% <replace>
-{\typeout{yay}}{\typeout{nay}}% <success><failure>
-\xpatchcmd{\algocf@makecaption}% <cmd>
-{\algocf@captiontext{#1}{#2}}% <search>
-{\tagstructbegin{tag=Caption}\algocf@captiontext{#1}{#2}\tagstructend}% <replace>
-{\typeout{yay}}{\typeout{nay}}% <success><failure>
-
-\xpatchcmd{\AlCapNameSty}% <cmd>
-{\textnormal{#1}}% <search>
-{\textnormal{\tagstructbegin{tag=Caption} #1 \tagstructend}}% <replace>
-{\typeout{yay}}{\typeout{nay}}% <success><failure>
-
-\makeatother
-
+% \ExplSyntaxOn
+% \AtBeginDocument{\__tag_math_disable:}
+% \ExplSyntaxOff
 %\DeclareMathSymbol{\lisp}{\mathaccent}{xcharter}{"020D7}
 \begin{document}
-
-Hello all, I am here. Yay me!
-\begin{figure}
-    Yay!
-    \caption{whoops}
-\end{figure}
-More text here.
-
-\begin{algorithm}[h]
-    \SetAlgoLined
-    \KwData{this text}
-    \KwResult{how to write algorithm with \LaTeX2e }
-    initialization\;
-    \While{not at end of this document}{
-        read current\;
-        \eIf{understand}{
-            go to next section\;
-            current section becomes this one\;
-        }{
-            go back to the beginning of current section\;
-        }
-    }
-    \caption{How to write algorithms}
-\end{algorithm}
+\MakeUppercase{Hello \NoCaseChange{lemon } $xy^3=2$}
+% \ch{( 2 Na+ ,SO4^2- ) + (Ba^2+ , 2 Cl- ) -> BaSO4 v + 2 NaCl}
+% \ch{A ->[ $\Delta$,~ [ H+ ]] B}
 
 \end{document}

@@ -213,10 +213,10 @@
 \togglefalse{singleappendix-tagthesis}
 
 \titleformat{\chapter}[block]{\large\centering\bfseries}{%
-    \chapterTitle%
+    \MakeUppercase{\chapterTitle}%
     \nottoggle{singleappendix-tagthesis}{\ \thechapter}{}%if it is a single appendix, don't include the chapter #
     .%
-}{12pt}{}
+}{12pt}{\MakeUppercase}
 \titlespacing{\chapter}{0pt}{0in}{0.6in}
 \titleformat{\section}[block]{\large\centering\bfseries}{\thesection}{.5em}{}
 \titlespacing{\section}{0pt}{*3}{2.3ex \@plus.2ex}
@@ -425,7 +425,7 @@
     \vskip 13.2pt plus 0pt %adds a blank line after a chapter item 
         %\vskip 4pt plus 2pt
         %{\bf \@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
-        {\@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
+        {\@dottedtocline{0}{0em}{1.5em}{\@chapapp\MakeUppercase{\protect#1}}{#2}}}
 
 % 2024 - I don't get how these commands ever added the word Table or Figure
 % but I think they add the dotted leader, so here they stay 

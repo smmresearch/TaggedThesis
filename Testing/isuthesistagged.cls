@@ -29,12 +29,14 @@
 %%
 
 %%%% Things that are patched for tagging as of 2025, but may not need to be in the future due to native support for tagging
+%%%  The beginning and end of the patches are clearly labeled ("... tagging patch (begin/end)").
 %%%  In such a case, delete the patch
 %%% 1. Caption and Subcaption Package (search for usepackage{caption} for patch)
 %%% 2. titlesec package (search for usepackage titlesec)
 %%%            a. If titlesec ever gets full support, it would probably be better to use
 %%%               titlesec to format Part titles instead of the xpatching
 %%% 3. Proof environment (search for the proof parts inside iftoggle{math-tagthesis})
+%%% 4. Algorithms being tagged as floats
 
 \def\fileversion{2.0}
 \def\filedate{2024/02/14}
@@ -62,6 +64,18 @@
 \DeclareOption{algorithms-packages}{%
     \toggletrue{algorithms-tagthesis}
 }
+\ExplSyntaxOn
+\DeclareOption{draft}{
+    \tagpdfsetup{
+        math/mathml/sources=,
+        math/mathml/luamml/load=false,
+        math/tex/AF=false
+    }
+    \AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}
+    \AtBeginDocument{\__tag_math_disable:}
+    \tagpdfsetup{debug/log=none}
+}
+\ExplSyntaxOff
 
 \DeclareOption{no-mathml}{
     \tagpdfsetup{
@@ -164,6 +178,8 @@
 }
 
 \usepackage{titlesec}
+
+%%%%%%%%%%%%%%%%Titlesec tagging patch begin
 %% Patches needed for titlesec to work with tagging in 2024
 % Will likely be natively supported by the package/Latex
 % See this issue: https://github.com/latex3/tagging-project/issues/24
@@ -186,6 +202,8 @@
 %that causes bibliography problems for some reason
 %that switching to para fixed
 
+%%%%%%%%%%%%Titlesec tagging patch end
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Format the section title appropriately (while being compatible with tagging)
 \newcommand{\chapterTitle}{CHAPTER}
@@ -195,10 +213,10 @@
 \togglefalse{singleappendix-tagthesis}
 
 \titleformat{\chapter}[block]{\large\centering\bfseries}{%
-    \chapterTitle%
+    \MakeUppercase{\chapterTitle}%
     \nottoggle{singleappendix-tagthesis}{\ \thechapter}{}%if it is a single appendix, don't include the chapter #
     .%
-}{12pt}{}
+}{12pt}{\MakeUppercase}
 \titlespacing{\chapter}{0pt}{0in}{0.6in}
 \titleformat{\section}[block]{\large\centering\bfseries}{\thesection}{.5em}{}
 \titlespacing{\section}{0pt}{*3}{2.3ex \@plus.2ex}
@@ -206,9 +224,9 @@
 \titlespacing{\subsection}{0pt}{*3}{1.5ex \@plus .2ex}
 \titleformat{\subsubsection}[block]{\bfseries\filright}{\thesubsubsection}{.5em}{}
 \titlespacing{\subsubsection}{0.25in}{*3}{1.5ex \@plus .2ex}
-\titleformat{\paragraph}[block]{\normalsize\bfseries\filright}{\thesubsection}{.5em}{}
+\titleformat{\paragraph}[block]{\normalsize\bfseries\filright}{}{.5em}{}
 \titlespacing{\paragraph}{0pt}{*3}{1.5ex \@plus .2ex}
-\titleformat{\subparagraph}[block]{\bfseries\filright}{\thesubsubsection}{.5em}{}
+\titleformat{\subparagraph}[block]{\bfseries\filright}{}{.5em}{}
 \titlespacing{\subparagraph}{0.25in}{*3}{1.5ex \@plus .2ex}
 %Formatting Part like this breaks stuff as of 2024, hence we do the following instead
 % Change the part on the part page to PART
@@ -249,90 +267,6 @@
 % Default initializations
 \onecolumn                         % Single column.
 \if@twoside\else\raggedbottom\fi   % Ragged bottom unless twoside option.
-
-%   ***********************************************
-%   *    Local (Iowa State University) macros     *
-%   ***********************************************
-
-% 2024 - Does anyone actually use these? They are so buried in this file.
-% My guess is that bibliography commands do not even work with biblatex.
-
-% SUPERSCRIPTS AND SUBSCRIPTS
-% Declaration which causes superscripts and subscripts to be output at normal
-% text size
-\def\bigscript{
-    \scriptfont0=\textfont0
-    \scriptscriptfont0=\textfont0
-    \scriptfont1=\textfont1
-    \scriptscriptfont1=\textfont1
-    \scriptfont2=\textfont2
-    \scriptscriptfont2=\textfont2
-    \scriptfont3=\textfont3
-    \scriptscriptfont3=\textfont3
-    \def\xiipt{\textfont\z@\twlrm
-        \scriptfont\z@\twlrm \scriptscriptfont\z@\twlrm
-        \textfont\@ne\twlmi \scriptfont\@ne\twlmi \scriptscriptfont\@ne\twlmi
-        \textfont\tw@\twlsy \scriptfont\tw@\twlsy \scriptscriptfont\tw@\twlsy
-        \textfont\thr@@\tenex \scriptfont\thr@@\tenex \scriptscriptfont\thr@@\tenex
-        \def\unboldmath{\everymath{}\everydisplay{}\@nomath\unboldmath
-            \textfont\@ne\twlmi
-            \textfont\tw@\twlsy \textfont\lyfam\twlly
-            \@boldfalse}\@boldfalse
-        \def\boldmath{\@ifundefined{twlmib}{\global\font\twlmib\@mbi\@magscale1\global
-                \font\twlsyb\@mbsy \@magscale1\global\font
-                \twllyb\@lasyb\@magscale1\relax\@addfontinfo\@xiipt
-                {\def\boldmath{\everymath
-                        {\mit}\everydisplay{\mit}\@prtct\@nomathbold
-                        \textfont\@ne\twlmib \textfont\tw@\twlsyb
-                        \textfont\lyfam\twllyb\@prtct\@boldtrue}}}{}\@xiipt\boldmath}%
-        \def\prm{\fam\z@\twlrm}%
-        \def\pit{\fam\itfam\twlit}\textfont\itfam\twlit \scriptfont\itfam\egtit
-        \scriptscriptfont\itfam\sevit
-        \def\psl{\fam\slfam\twlsl}\textfont\slfam\twlsl
-        \scriptfont\slfam\tensl \scriptscriptfont\slfam\tensl
-        \def\pbf{\fam\bffam\twlbf}\textfont\bffam\twlbf
-        \scriptfont\bffam\ninbf \scriptscriptfont\bffam\ninbf
-        \def\ptt{\fam\ttfam\twltt}\textfont\ttfam\twltt
-        \scriptfont\ttfam\nintt \scriptscriptfont\ttfam\nintt
-        \def\psf{\fam\sffam\twlsf}\textfont\sffam\twlsf
-        \scriptfont\sffam\tensf \scriptscriptfont\sffam\tensf
-        \def\psc{\@getfont\psc\scfam\@xiipt{\@mcsc\@magscale1}}%
-        \def\ly{\fam\lyfam\twlly}\textfont\lyfam\twlly
-        \scriptfont\lyfam\egtly \scriptscriptfont\lyfam\sixly
-        \@setstrut \rm}
-} %end bigscript
-
-% Singlespaced hanging paragraph environment for uncited bibliographies.
-\def\hangpar{\par \def\baselinestretch{1}\@normalsize
-    \raggedright \parindent=0pt \parskip=12pt
-    \everypar{\hangindent=24pt \hangafter=1}}
-\def\endhangpar{\par}
-
-% Singlespaced hanging paragraph environment suitable for uncited
-% bibliographies in sociology and anthropology.
-\newif\if@firstdate \@firstdatetrue
-\def\socbib{\par \def\baselinestretch{1}\@normalsize
-    \raggedright \parindent=0pt \parskip=0pt
-    \newskip\socparskip \socparskip = 12pt
-    \newdimen\@datewidth \@datewidth = 60 pt
-    \newdimen\@stextwidth \@stextwidth=\textwidth
-    \advance \@stextwidth by -\@datewidth
-    \newskip\@socskip \@socskip=5pt plus 1pt minus 1pt
-    \newbox\@sdatebox
-    \def\@twodates##1[##2]{\global\setbox\@sdatebox=\vtop{%
-            \hbox to \@datewidth{\kern 20 pt ##1\hfil}%
-            \hbox to \@datewidth{\kern 20 pt ##2\hfil}%
-        }\@socdate}
-    \def\@onedate##1{\global\setbox\@sdatebox=%
-        \vtop{\hbox to \@datewidth{\kern 20pt ##1\hfil}}\@socdate}
-    \def\par{\egroup \egroup \endgraf \vskip\socparskip \@firstdatetrue}
-    \def\@socdate{\if@firstdate \endgraf \nopagebreak \@firstdatefalse \else %
-            \egroup \egroup \endgraf \vskip\@socskip \fi%
-        \hbox to \textwidth\bgroup%
-        \box\@sdatebox\vtop\bgroup\hsize\@stextwidth\ignorespaces}
-    \def\socdate##1{\@ifnextchar[{\@twodates{##1}}{\@onedate{##1}}}
-}
-\def\endsocbib{\egroup\egroup\endgraf\vskip\baselineskip}
 
 %%%Title Page
 \def\titlepage
@@ -491,7 +425,7 @@
     \vskip 13.2pt plus 0pt %adds a blank line after a chapter item 
         %\vskip 4pt plus 2pt
         %{\bf \@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
-        {\@dottedtocline{0}{0em}{1.5em}{\@chapapp#1}{#2}}}
+        {\@dottedtocline{0}{0em}{1.5em}{\@chapapp\MakeUppercase{\protect#1}}{#2}}}
 
 % 2024 - I don't get how these commands ever added the word Table or Figure
 % but I think they add the dotted leader, so here they stay 
@@ -606,6 +540,9 @@
 %Caption package & tagging fixes
 \usepackage{caption}
 \usepackage{subcaption}
+
+%%%%%%%%%%%%%%%%Caption tagging patch begin
+
 %This work-around comes from: https://github.com/latex3/tagging-project/issues/720
 \RemoveFromHook{begindocument}[latex-lab-testphase-float]
 \ExplSyntaxOn
@@ -629,12 +566,16 @@
     \AssignSocketPlug{tagsupport/parbox/before}{caption}
     \AssignSocketPlug{tagsupport/parbox/after}{caption}}
 \ExplSyntaxOff
-\AtBeginDocument{
+\AtBeginDocument[caption-tagthesis]{%without the label this can be ran too early.
     \renewcommand*\caption@anchor[1]{%
         \ifmeasuring@ \else
             \caption@raisedlink{\MakeLinkTarget*{#1}}%
-        \fi}%  
+        \fi}%  fA
 }
+
+%%%%%%%%%%%%%%%%Caption tagging patch end (subcaption patch below)
+%%%%%%%%%%%%%%%%Subcaption tagging patch begin
+
 %This part is my own invention - to get subfigures
 %to have captions be where they are supposed to be
 %by appending some extras to the subfigure environment
@@ -664,6 +605,7 @@
     \tagstructend%close the Part structure
     \origsubfigureend%do normal end of subfig things
 }
+%%%%%%%%%%%%%%%%Subcaption tagging patch end
 
 %%%Default setup I doubt much of anyone changes
 \renewcommand{\chaptername}{CHAPTER\ }
@@ -704,7 +646,8 @@
     \usepackage{amsthm}
     \usepackage{mathtools}
     \usepackage[thmtools-compat]{keytheorems}
-    %\usepackage{thmtools}
+
+    %%%%%%%%%%%%%%%%Proof tagging patch begin
     %The following is a fix for two proof problems
     % a) Proofs with only equations bugged out
     % b) Proofs were not being properly indented
@@ -716,7 +659,7 @@
         \noindent%
         \ignorespaces
     }
-
+    %%%%%%%%%%%%%%%%Proof tagging patch end
 }{}
 \ExplSyntaxOff
 
@@ -725,8 +668,10 @@
 \iftoggle{algorithms-tagthesis}{
     \usepackage[chapter]{algorithm}
     \usepackage{algpseudocode}
+    %%%%%%%%%%%%%%%%Algorithm tagging patch begin
     \tagpdfsetup{role/new-tag = algorithms/Sect}
     \seq_gput_right:Nn \g__tag_float_types_seq {algorithm} %add algorithm as a type of float
+    %%%%%%%%%%%%%%%%Algorithm tagging patch end
     \newcommand{\algorithmautorefname}{Algorithm}
     \newcommand{\algmargin}{\the\ALG@thistlm}
     \renewcommand{\thealgorithm}{\thechapter.\arabic{algorithm}}%puts the chapter number in front of algorithm number
