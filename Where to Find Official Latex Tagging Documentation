@@ -1,0 +1,22 @@
+Where to find Latex Official Documentation around Tagging:
+Some of it is here: 
+https://latex3.github.io/tagging-project/
+
+If you have problem, the issues of this official repository have alot of answers (and if you have done your research carefully, you can also contribute):
+github.com/latex3/tagging-project/
+
+The maintainers of Latex are also active on: https://tex.stackexchange.com/questions/tagged/tagged-pdf
+Urlike Fischer, Joseph Wright, David Carlisle are on the Latex official team
+
+The ISO Standard for PDF is still being refined. You can see issues others have brought up on this official repository of the PDF Association:
+https://github.com/pdf-association/pdf-issues/
+(I'll note, unlike the tagging-project, I don't think the PDF Association wants outside contributors, so be a silent observer.)
+
+
+Much of the core tagging code, especially for paragraphs, is located in tagpdf, which, with its associated documentation, is here:
+https://ctan.org/pkg/tagpdf
+
+However, much of the more specific tagging utilities and its associated documentation is located in the latex-lab set of files:
+https://ctan.org/pkg/latex-lab
+Click source to see all the different components and associated documentation.
+This includes the tagging specific to tables, figures, and math.
