@@ -6,8 +6,10 @@
 %Use lualatex to compile with --interaction-mode=nonstopmode
 %The commands I run are of the form (in the folder containing thesis.tex): 
 
-%lualatex --aux-directory=./LatexAux --synctex=1 --interaction=nonstopmode --c-style-errors .\thesis.tex
+%lualatex-dev --aux-directory=./LatexAux --synctex=1 --interaction=nonstopmode --c-style-errors .\thesis.tex
 %biber thesis --output-directory=.\LatexAux  
+
+%the -dev won't be necessary post June 2025 release of latex
 
 %biber's output-directory should match lualatex's aux-directory or both should be omitted. c-style-errors is optional.
 
@@ -136,6 +138,11 @@ are capitalized!}
 %The command below can be used to get rid of footnote rule(line)
 %\renewcommand*\footnoterule{}
 
+
+%Tikz is a popular package for creating diagrams in Latex
+%It is included to demonstrate how to write alt text
+%It is *not* required if you are not otherwise using it
+\usepackage{tikz}
 
 \begin{document}
 \include{Preface/titlepage}
