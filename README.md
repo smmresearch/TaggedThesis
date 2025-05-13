@@ -7,7 +7,7 @@ If using latexmk with tagging activated, it probably overdoes the number of re-r
 Things to keep in mind while drafting:
 1. If you need landscape tables/figures, subfigures, or algorithms, there are competing packages to do the same thing. Use the examples/packages used in the template.
 2. Biblatex is needed in the template. To prevent any potential problems, you could use it from the start (but biblatex has pretty good backwards-compatibility with bibtex and natbib).
-3. If using Tikz, put those in a separate document and use includegraphics. There are more instructions in the template or in the closed issues.
+3. If using Tikz, put those in a separate document and use includegraphics. There are more instructions in the template or in the closed issues. Alternatively, use the latest and the greatest and check out the June-Dev-Compatible-with-Tikz-Branch (which should no longer be in beta/development come June)
 4. For whatever reason the tagging thing doesn't like if you do something like ```$x_\someCommand{whatever}$``` instead of ```$x_{\someCommand{whatever}}$```  (even though both work with standard latex).
 Something like ```$x_1$``` (single character) is fine.
 5. The template uses LuaLatex.
