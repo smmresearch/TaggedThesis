@@ -41,7 +41,7 @@ The abstract describes the work in the first paper general. You can use the same
 
   From \autoref{orthogonalProjectionIsGoodActually}, it follows \[\ell_1(\hat{x},y)\ \ell_1(\hat{x},y)-2\langle x,n\rangle \leq\]
 \end{proof}
-
+Wasn't that a great proof of \autoref{lem2}?
 \begin{lemma}
   A lemma.
 \end{lemma}
@@ -64,9 +64,27 @@ Then, we should also have some in-line math $B\left(\frac{3x}{2y-x}\right)$ and 
 \section{Floating Practice}
 Text here.
 
-\begin{figure}\centering
-  \includegraphics[alt={two lines intersecting at a point}]{Images/tikzPic.pdf}
-  \caption{A Tikz figure with alt text and external reference}
+%similar alt text as tikz works with e.g. \begin{tikzcd} or \begin{picture}
+
+%a tikz picture that will not move
+\begin{center}
+  \captionsetup{type=figure}%if you don't using floating figures, you must tell latex that it is a figure
+  \begin{tikzpicture}[alt={tikz graphic that works natively on the June version}]
+    \draw[gray, thick] (-1,2) -- (2,-4);
+    \draw[gray, thick] (-1,-1) -- (2,2);
+    \filldraw[black] (0,0) circle (2pt) node[anchor=west]{A Tikz Picture that stays put! };
+  \end{tikzpicture}
+  \caption{A caption for a tikz picture}
+\end{center}
+Some more text here you see.
+%a floating tikz instead
+\begin{figure}[tb]
+  \begin{tikzpicture}[alt={tikz graphic that works natively that floats}]
+    \draw[gray, thick] (-1,2) -- (2,-4);
+    \draw[gray, thick] (-1,-1) -- (2,2);
+    \filldraw[black] (0,0) circle (2pt) node[anchor=west]{A Tikz Picture that floats! };
+  \end{tikzpicture}
+  \caption{A caption for a tikz picture}
 \end{figure}
 
 \begin{algorithm}

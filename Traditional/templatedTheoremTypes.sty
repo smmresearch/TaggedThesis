@@ -1,5 +1,6 @@
 \ProvidesPackage{templatedTheoremTypes}
 \RequirePackage{amsthm}
+
 \let\oldemptyset\emptyset
 \let\emptyset\varnothing
 
@@ -22,6 +23,18 @@
 \renewcommand\theHremarkN{\thesubsection.\arabic {remarkN}}
 \newtheorem*{remark}{Remark}
 \newtheorem*{claim}{Claim}
+
+\AtBeginDocument{
+  \providecommand\theoremautorefname{Theorem}
+  \providecommand\lemmaautorefname{Lemma}
+  \providecommand\conjectureautorefname{Conjecture}
+  \providecommand\corollaryautorefname{Corollary}
+  \providecommand\propositionautorefname{Proposition}
+  \providecommand\definitionautorefname{Definition}
+  \providecommand\remarkautorefname{Remark}
+  \providecommand\claimautorefname{Claim}
+}
+
 \makeatletter
 \newtheoremstyle{indenteddef}
 {3pt}% space before

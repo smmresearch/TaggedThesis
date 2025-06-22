@@ -1,35 +1,17 @@
 %!LW recipe=lualatex-plain
 \DocumentMetadata{
  lang=en,
- testphase=latest,
+ tagging=on,
  pdfversion=2.0,
  pdfstandard=ua-2,
  pdfstandard=a-4f,
  uncompress
 }
-\documentclass{isuthesistagged}
+\documentclass{article}
 \usepackage{fontspec}
 \usepackage{unicode-math}
-\setmathfont{texgyrepagella-math.otf}
-% \usepackage{chemformula}
-% \setchemformula{math-scripts=true}
-\usepackage{amsmath}
-% \usepackage{adjustbox}
-\usepackage{lmodern}
-%\usepackage[xcharter]{fontsetup}
-\author{Hello its me}
-
-%%PDF properties automatically set
-\usepackage{hyperref}
-
-\usepackage{algorithm2e}
-% \ExplSyntaxOn
-% \AtBeginDocument{\__tag_math_disable:}
-% \ExplSyntaxOff
-%\DeclareMathSymbol{\lisp}{\mathaccent}{xcharter}{"020D7}
 \begin{document}
-\MakeUppercase{Hello \NoCaseChange{lemon } $xy^3=2$}
-% \ch{( 2 Na+ ,SO4^2- ) + (Ba^2+ , 2 Cl- ) -> BaSO4 v + 2 NaCl}
-% \ch{A ->[ $\Delta$,~ [ H+ ]] B}
-
+What
+\[3x+2\]
+Woot
 \end{document}

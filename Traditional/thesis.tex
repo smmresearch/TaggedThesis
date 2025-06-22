@@ -1,4 +1,4 @@
-%!LW recipe=latexmk (lualatex)
+%!LW recipe=lualatex-plain
 %The above command is for use with VSCode as an editor - can be deleted for others
 
 %%%%%%% Instructions %%%%%%%%%%%%%%%%%%%
@@ -17,7 +17,10 @@
 % First, make sure you have ran biber and re-ran lualatex
 % Then, try deleting *.aux file of file you were messing with. If needed, escalate to deleting all auxillary files.
 
-%%Using Tikz? Externally generate as pdf (with just normal presets/without tagging) and use includegraphics to add alt text
+%% Tikz and \begin{picture}...\end{picture} figures are supported natively with tagging - see examples in the template
+%% However, more obscure options for generating figures (like the xy package) are not
+%% Suggestion:
+%% Generate such a figure as a standalone pdf (use document class {standalone} with normal preamble and no tagging) and use includegraphics to add alt text
 
 
 %%% While drafting, the class options no-mathml and/or no-tag-tree can speed up compiling.
@@ -27,7 +30,7 @@
 
 \DocumentMetadata{
  lang=en,
- testphase=latest,
+ tagging=on,
  pdfversion=2.0,
  pdfstandard=ua-2,
  pdfstandard=a-4f,
@@ -50,7 +53,7 @@
 %Additional class options:
 % draft: disables most of tagging, loading of figures, and other "expensive" tasks. Makes compilation much faster. Ignore any warnings from tagpdf when this option is on.
 %       Cannot be used for final submission. Automatically includes the option no-mathml and no-tag-tree.
-% math-packages: loads amsmath,amsthm, mathtools, keytheorems, and associated tagging fixes
+% math-packages: loads amsmath,amsthm, mathtools, and associated tagging fixes
 % algorithms-packages: loads algorithm, algpseudocode, fixes the numbering, also provides \parstate for long, wrapped states
 % no-mathml: disables math tagging (not required by Iowa State)
 % no-tag-tree: disables a slow part of tagging (must be re-enabled before submission)
@@ -134,6 +137,10 @@ are capitalized}
 %The command below can be used to get rid of footnote rule(line)
 %\renewcommand*\footnoterule{}
 
+%Tikz is a popular package for creating diagrams in Latex
+%It is included to demonstrate how to write alt text
+%It is *not* required if you are not otherwise using it
+\usepackage{tikz}
 
 \begin{document}
 \include{Preface/titlepage}
