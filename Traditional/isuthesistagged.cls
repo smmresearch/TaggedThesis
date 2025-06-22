@@ -645,7 +645,6 @@
     \usepackage{amsmath}
     \usepackage{amsthm}
     \usepackage{mathtools}
-    \usepackage[thmtools-compat]{keytheorems}
 
     %%%%%%%%%%%%%%%%Proof tagging patch begin
     %The following is a fix for two proof problems
