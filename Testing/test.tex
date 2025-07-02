@@ -1,17 +1,51 @@
-%!LW recipe=lualatex-plain
-\DocumentMetadata{
- lang=en,
- tagging=on,
- pdfversion=2.0,
- pdfstandard=ua-2,
- pdfstandard=a-4f,
- uncompress
-}
 \documentclass{article}
-\usepackage{fontspec}
-\usepackage{unicode-math}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{ragged2e}
 \begin{document}
-What
-\[3x+2\]
-Woot
-\end{document}
+\begin{table}
+    \centering
+    \begin{tabular}{rlrr|>{}l}
+        \toprule
+        Year                                                       & Release        & \#              & FTA            & \%            \\
+        \midrule
+                                                                   & ROR            & 122507          & 15907          & 13\%          \\
+        \cmidrule{2-5}
+                                                                   & Supervision    & 9991            & 2668           & 27\%          \\
+        \cmidrule{2-5}
+                                                                   & Bail Paid      & 15406           & 1766           & 11\%          \\
+        \cmidrule{2-5}
+        \textbf{\multirow{-4}{*}{\raggedleft\arraybackslash 2019}} & \textbf{Total} & \textbf{147904} & \textbf{20341} & \textbf{14\%} \\
+        \midrule
+        \cmidrule{1-5}
+                                                                   & ROR            & 156155          & 14840          & 10\%          \\
+        \cmidrule{2-5}
+                                                                   & Supervision    & 35670           & 8779           & 25\%          \\
+        \cmidrule{2-5}
+                                                                   & Bail Paid      & 7481            & 382            & 5\%           \\
+        \cmidrule{2-5}
+        \textbf{\multirow{-4}{*}{\raggedleft\arraybackslash 2022}} & \textbf{Total} & \textbf{199306} & \textbf{24001} & \textbf{12\%} \\
+        \midrule
+        \cmidrule{1-5}
+                                                                   & ROR            & 174856          & 14646          & 8\%           \\
+        \cmidrule{2-5}
+                                                                   & Supervision    & 40780           & 9034           & 22\%          \\
+        \cmidrule{2-5}
+                                                                   & Bail Paid      & 7325            & 354            & 5\%           \\
+        \cmidrule{2-5}
+        \textbf{\multirow{-4}{*}{\raggedleft\arraybackslash 2023}} & \textbf{Total} & \textbf{222961} & \textbf{24034} & \textbf{11\%} \\
+        \midrule
+        \cmidrule{1-5}
+                                                                   & ROR            & 162288          & 8852           & 5\%           \\
+        \cmidrule{2-5}
+                                                                   & Supervision    & 35613           & 6252           & 18\%          \\
+        \cmidrule{2-5}
+                                                                   & Bail Paid      & 5496            & 147            & 3\%           \\
+        \cmidrule{2-5}
+        \textbf{\multirow{-4}{*}{\raggedleft\arraybackslash 2024}} & \textbf{Total} & \textbf{203397} & \textbf{15251} & \textbf{7\%}  \\
+        \midrule
+        \hline
+        \bottomrule
+    \end{tabular}
+\end{table}\end{document}
