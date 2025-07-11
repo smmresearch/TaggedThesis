@@ -20,9 +20,24 @@ When you copy over:
 Official list of packages compatible with tagging: https://latex3.github.io/tagging-project/tagging-status/
 The list is pessimistic - some packages labeled as incompatible have workarounds or cause only less-than-ideal tagging.
 
-The template has only been tested with MikTeX and probably works with an up-to-date version of TeXLive/MacTex.
 
-I suspect it won't work with Overleaf, but this has not yet been tested (let me know if you have!).
+# Where to Compile
+I would recommend using a local installation of LaTeX. If you don't already have your preferred set-up, there are some tips in the folder Setting Up Local LaTeX.
+It is essential your version of LaTeX is recently updated.
+
+I suspect it won't work with Overleaf (problems detailed below), but this has not yet been tested (let me know if you have!). 
+An up-and-coming (free as of 2025) alternative to Overleaf is Crixet.com.
+Similar to Overleaf, Crixet is all in-browser and allows for collaboration. Further, Crixet appears to update far more often than Overleaf and has a different behind-the-scenes infrastructure which prevents timeouts.
+To use Crixet, at the very top of thesis.tex, replace
+```
+%!LW recipe=lualatex-plain
+```
+with
+```
+% !TEX program = lualatex
+```
+
+Upon testing in Summer 2025, the template compiles on Crixet with tagging, however, it is much slower than installing and running LaTeX on your own computer. Using the draft option often is highly recommended.
 
 There are two main problems with Overleaf:
 
@@ -32,7 +47,7 @@ Soon-ish (as in probably Summer 2025), Overleaf will likely provide TexLive 2025
 b) The compilation timeout on Overleaf is 4 minutes. My thesis at 150 pages with a few figures and too many fonts takes about 2 minutes on my personal hardware. This seems fine, except Overleaf uses latexmk, which actually does multiple runs every time you run it. While you can adjust the max runs, to have a bibliography without constantly changing the latexmk settings, you would probably have to at least let latexmk do Latex -> Biber -> Latex, which could surpass 4 minutes in a lengthy document with alot going on. Latexmk also throws errors around if you prevent it from doing the re-runs it wants to do, so there would probably be many false flags.
 
 
-# Checking It Works
+# Checking The PDF is Tagged
 
 You can validate the PDF meets ISO tagging standards by using VeraPDF (either by downloading it or at demo.verapdf.org) and using the profile PDF/UA-2. 
 Technically, it complains about the font Libertinus (glyph width blah blah blah) in the example files, but that has nothing to do with tagging. If it bothers you, it can be fixed by switching to another font.
