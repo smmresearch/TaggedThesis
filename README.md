@@ -1,6 +1,6 @@
 Issues or pull requests are welcome.
 
-Tagging does slow down the compiler. Using the draft option while drafting: ```\documentclass[12pt, draft]{isutaggedthesis}``` disables most of tagging, the loading of figures, and other "expensive tasks," making compilation much faster. Remove the option before submitting (you probably also want to do so periodically as you go along).
+Tagging does slow down the compiler. Using the draft option while drafting: ```\documentclass[12pt, draft]{isutaggedthesis}``` disables most of tagging, the loading of figures, and other "expensive tasks," making compilation much faster.
 
 If using latexmk with tagging activated, it probably overdoes the number of re-runs, which is part of the slowness problem.
 
@@ -13,7 +13,7 @@ Something like ```$x_1$``` (single character) is fine.
 5. Alt-text is added to images using ```\includegraphics[alt={alt text here}]{...}```. If you use a recent version of latex, you should be able to add the alt text to includegraphics without any tagging (it does not do anything without tagging, but it also does not break anything). Tables also require markup, for which you need tagging in your document.
 
 
-When you copy over: 
+When you begin to use the template: 
 1. Don't overload the preamble - the template already implements the basics. If you don't know what a package/command in your draft's preamble does, the template probably already handles it.
 2. Don't take any warning about tagging too seriously until you run Biber and recompile a few times. 
 
@@ -22,7 +22,7 @@ The list is pessimistic - some packages labeled as incompatible have workarounds
 
 
 # Where to Compile
-I would recommend using a local installation of LaTeX. If you don't already have your preferred set-up, there are some tips in the folder Setting Up Local LaTeX.
+I would recommend using a local installation of LaTeX. If you don't already have your preferred set-up, there are some suggestions in the folder Setting Up Local LaTeX.
 It is essential your version of LaTeX is recently updated.
 
 I suspect it won't work with Overleaf (problems detailed below), but this has not yet been tested (let me know if you have!). 
