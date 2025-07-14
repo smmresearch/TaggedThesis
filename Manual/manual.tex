@@ -43,6 +43,7 @@
 %Check package documentation for other font options
 \usepackage[libertinus]{fontsetup}
 %Instead of font setup, unicode-math with fontspec has more fine-tuned control
+\newfontfamily\stix{DejaVu Sans}
 %\usepackage{unicode-math}
 
 % \setmainfont{texgyrepagella}[
@@ -672,4 +673,19 @@ If instead the reader will probably finish the sentence/paragraph/section and re
 \end{lstlisting}
 
 If this float is alone in appendix, I would probably tag it as a float for consistency, but there is not one right answer.
+\subsection{Shared Consent Form}
+If you have co-authored papers, you may need a Shared Consent Form. A TeX Version of Type II of this form is available in Shared Consent Form folder (a Type I TeX form has not yet been created). You can copy the file to the Body folder and include this file with
+\begin{lstlisting}
+    \input{Body/sharedConsent.tex}
+\end{lstlisting}
+where needed.
+
+To use this version, you need to use unicode and load a font that defines the characters {\stix ☐} and {\stix  ☒} (many do not). One option is DejaVu Sans, available for free here: \url{https://dejavu-fonts.github.io/Download.html}.
+Then, add
+\begin{lstlisting}
+    \newfontfamily\stix{DejaVu Sans}
+\end{lstlisting}
+to the preamble of thesis.tex where DejaVu Sans is the name of the font. This will not change the font of the whole document. Within the .tex file you can copy and paste: {\stix ☐} and {\stix  ☒} from here to create the unchecked and checked boxes. The curly braces are the \texttt{stix} commands are important.
+
+Note, the TERMS AND CONDITIONS section and the signatures are \textbf{not} to be included in the final submission. However, the code is provided for you to be able to print out and get signed as needed.
 \end{document}
