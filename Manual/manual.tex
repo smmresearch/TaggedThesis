@@ -144,7 +144,7 @@ $x_{\someCommand{whatever}}$
 \end{lstlisting}
           for tagging to work. If the subscript is a single character, you do not need curly brackets.
     \item Don't overload the preamble - the template already implements the basics. If you don't know what a package/command in your draft's preamble does, the template probably already handles it.
-    \item Don't take any warning about tagging too seriously until you run Biber and recompile a few times.
+    \item Don't take any warning about tagging too seriously until you run Biber and recompile a few times. If that doesn't help, try deleting all auxillary files and starting fresh.
 \end{enumerate}
 
 \subsection{What about Overleaf?}
@@ -651,4 +651,25 @@ If you actually want to manually inspect the tag structure, you can use ngpdf.co
 
 Note, figures and tables are not located in the tagging tree exactly where they are located in the PDF. Instead, they are grouped together at the end of each sub-section. Even though figures and tables physically interrupt the text, usually readers actually come back to them later. Therefore, it does not make sense to have figures and tables disrupt the text within the tagging tree.
 
+\section{Special Situations}
+\subsection{Using H floats}
+H floats are a misnomer - they are not actually floating around anymore. For the most useful tagging, you should ask yourself whether you expect the reader to stop reading the text exactly where you placed the float and switch to looking at the float. If so, then you will want to wrap the float in a ``Part'' tag:
+\begin{lstlisting}
+    \tagstructbegin{tag=Part} 
+    \begin{figure}[H]
+        ...
+    \end{figure}
+    \tagstructend 
+\end{lstlisting}
+
+If instead the reader will probably finish the sentence/paragraph/section and return to the float later, then you will want to tag it like a float. In this case, it would look like:
+\begin{lstlisting}
+    \tagstructbegin{tag=float} 
+    \begin{figure}[H]
+        ...
+    \end{figure}
+    \tagstructend 
+\end{lstlisting}
+
+If this float is alone in appendix, I would probably tag it as a float for consistency, but there is not one right answer.
 \end{document}
