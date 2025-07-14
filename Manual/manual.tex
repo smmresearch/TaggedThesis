@@ -1,0 +1,654 @@
+%!LW recipe=lualatex-plain
+
+%Can pass additional options to packages loaded by the class
+%with \PassOptionsToPackage{<options>}{<packagename>}
+\PassOptionsToPackage{noend}{algpseudocode}
+
+
+% Template file for a standard thesis
+\documentclass[12pt]{article}
+%packages always loaded in cls file: xpatch, fancyhdr, titlesec, setspace, nowidow, caption
+%           subcaption, geometry, graphicx
+%biblatex and hyperref must also be loaded later in the preamble
+
+
+
+
+%Additional class options:
+% draft: disables most of tagging, loading of figures, and other "expensive" tasks. Makes compilation much faster. Ignore any warnings from tagpdf when this option is on.
+%       Cannot be used for final submission. Automatically includes the option no-mathml and no-tag-tree.
+% math-packages: loads amsmath,amsthm, mathtools, and associated tagging fixes
+% algorithms-packages: loads algorithm, algpseudocode, fixes the numbering, also provides \parstate for long, wrapped states
+% no-mathml: disables math tagging (not required by Iowa State)
+% no-tag-tree: disables a slow part of tagging (must be re-enabled before submission)
+% bib-no-break: by default, page breaks in the middle of bibliography entries are discouraged, but may happen for a particularly long entry (4+ lines).
+%       With this option, a page break will never happen in the middle of an entry, no matter how long. This is "recommended" by not required
+%       by Iowa State.
+
+
+
+
+%For complex tables
+\usepackage{multirow}
+\usepackage{pdflscape}
+
+%%Provides math presets: 
+%    Sets up some common math presets like Theorem, Definition, etc.
+%    Easier to edit or exclude than the class file
+
+%%
+
+%%%%%%%Fonts
+
+%Check package documentation for other font options
+\usepackage[libertinus]{fontsetup}
+%Instead of font setup, unicode-math with fontspec has more fine-tuned control
+%\usepackage{unicode-math}
+
+% \setmainfont{texgyrepagella}[
+% Extension       = .otf,
+% UprightFont     = *-regular,
+% ItalicFont      = *-italic,
+% BoldFont        = *-bold,
+% BoldItalicFont  = *-bolditalic 
+% ]
+% \setmathfont{texgyrepagella-math.otf}
+
+%With unicode, symbf should be used instead of bm
+%This remaps \bm to prevent problems. There might be slightly different behavior.
+\let\bm\symbf
+
+%Instead of fontsetup and unicode-math, you
+%can use lmodern for a classic (not-unicode) Computer Modern font
+%However, without unicode, the accessibility of the math formulas
+%is much worse (currently ISU has no requirements about
+%the accessibility of math, so it is suitable for submission)
+%In this case, you should also comment out \let\bm\symbf
+% \usepackage{lmodern}\usepackage[T1]{fontenc} 
+
+%%%%%%%%%%%%%%%%
+
+%Natbib compatibility mode activated
+%Different styles available - look at biblatex documentation
+\usepackage[natbib=true,style=authoryear]{biblatex}
+\addbibresource{thesisAccessTest.bib}
+\setlength{\bibitemsep}{13.2pt}
+
+
+\author{Sarah McCarty}
+\title{LaTeX Template Manual}
+\usepackage[linktocpage=true,pdfauthor={Sarah McCarty},pdftitle={LaTeX Template Manual},]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB,pdfencoding=auto}
+\usepackage{bookmark}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Optional nomenclature package
+\usepackage[notintoc,english]{nomencl}
+
+
+%The command below can be used to get rid of footnote rule(line)
+%\renewcommand*\footnoterule{}
+
+
+%Tikz is a popular package for creating diagrams in Latex
+%It is included to demonstrate how to write alt text
+%It is *not* required if you are not otherwise using it
+\usepackage{tikz}
+\usepackage{listings}
+
+\begin{document}
+\lstset{frame=tb,
+    language=[Latex]Tex,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3
+}
+
+\maketitle
+\tableofcontents
+\newpage
+\section{Get Started}
+To get started with the template, choose either Journal style or Traditional Style and download the corresponding folder.
+
+Note, you must use LuaLatex and Biber (for the bibliography) to compile the template. It is highly recommended you install LaTeX onto your computer and use it offline. If you need help, there are many tutorials on the internet and specific tips in the folder \textit{Setting Up Local LaTeX}.  Make sure your latex version is up-to-date. You will have warnings after the first run. Run LuaLatex $\rightarrow$ Biber $\rightarrow$ LuaLatex to have a readable document. There may still be some warnings. Warnings about cross-references can be mostly ignored until you are preparing your final submission. To get rid of all warnings, you may have to run LuaLatex several times.
+
+Your thesis must be tagged for accessibility. This template is set-up to have LaTeX do the tagging for you. The official list of packages compatible with tagging is located here: \url{https://latex3.github.io/tagging-project/tagging-status/}
+The list is pessimistic - some packages labeled as incompatible have workarounds or cause only less-than-ideal tagging.
+
+\section{Tips for Drafting}
+\begin{enumerate}
+    \item If you need landscape tables/figures, subfigures, or algorithms, there are competing packages to do the same thing. Use the examples/packages used in the template.
+    \item LuaLatex and Biblatex are required in the template.
+    \item Instead of
+          \begin{lstlisting}
+$x_\someCommand{whatever}$
+\end{lstlisting} you must use curly brackets and do
+          \begin{lstlisting}
+$x_{\someCommand{whatever}}$
+\end{lstlisting}
+          for tagging to work. If the subscript is a single character, you do not need curly brackets.
+    \item Don't overload the preamble - the template already implements the basics. If you don't know what a package/command in your draft's preamble does, the template probably already handles it.
+    \item Don't take any warning about tagging too seriously until you run Biber and recompile a few times.
+\end{enumerate}
+
+\subsection{What about Overleaf?}
+There are two main problems with Overleaf:
+
+First, as of Spring of 2025, Overleaf's latest version is TexLive 2024, which was probably frozen around March 2024. This version is too old to support tagging table headers.
+In the Summer of 2025, Overleaf will likely provide TexLive 2025, which will at least support tagging table headers (although the >1 year lag in updates will probably continue to be difficult to accommodate until tagging is fully matured).
+
+Second, the compilation timeout on Overleaf is 4 minutes. This may be too short depending on the speed of Overleaf's servers and the complexity of your thesis.
+
+\subsection{What about In-Browser but Not Overleaf?}
+An up-and-coming (free as of 2025) alternative to Overleaf is Crixet.com.
+Similar to Overleaf, Crixet is all in-browser and allows for collaboration. Further, Crixet appears to update far more often than Overleaf and has a different behind-the-scenes infrastructure which prevents timeouts.
+To use Crixet, at the very top of thesis.tex, replace
+\begin{lstlisting}
+%!LW recipe=lualatex-plain  
+\end{lstlisting}
+with
+\begin{lstlisting}
+% !TEX program = lualatex
+\end{lstlisting}
+
+Upon testing in Summer 2025, the template compiles on Crixet with tagging, however, it is much slower than installing and running LaTeX on your own computer. Using the draft option often is highly recommended if you choose this route.
+
+\section{Types of Content}
+\subsection{Text}
+\label{text}
+Text is tagged automatically.
+
+The default font for LuaLatex is unicode based (great for non-latin characters and emojis), which is a little different than the old default font on pdflatex (the most popular latex compiler).
+A reasonable font choice for the body text is preset in the template, but you can change the font (it should be plain, 12 pt). You must use the same font throughout.
+
+The easiest method to change the font is to like one of the fonts supported by the package fontsetup (see its documentation), and change the setting of libertinus to the one to your taste:
+\begin{lstlisting}
+\usepackage[libertinus]{fontsetup}
+\end{lstlisting}
+This command is located in the preamble of thesis.tex.
+
+If you would like to point LaTeX to a specific set of fonts on your computer, you can \textbf{delete} the fontsetup line above and replace it with:
+\begin{lstlisting}
+\usepackage{unicode-math}
+\setmainfont{texgyrepagella}[
+Extension       = .otf,
+UprightFont     = *-regular,
+ItalicFont      = *-italic,
+BoldFont        = *-bold,
+BoldItalicFont  = *-bolditalic 
+]
+\setmathfont{texgyrepagella-math.otf}
+\end{lstlisting}
+where \texttt{texgyrepagella} is the name of your chosen font. See fontspec and unicode-math package for more information.
+\subsubsection{Not Using Unicode}
+It is possible to \textbf{not} use unicode, which may make documents look a little more familiar. However, without unicode, the accessibility of the math formulas is much worse (currently ISU has no requirements about
+the accessibility of math, so it is suitable for submission).
+To use old fonts instead of unicode, replace the fontsetup command with
+\begin{lstlisting}
+    \usepackage{lmodern}\usepackage[T1]{fontenc} 
+\end{lstlisting}
+Also, delete the line
+\begin{lstlisting}
+    \let\bm\symbf
+\end{lstlisting}
+
+\subsection{Figures}
+A figure consists of: the figure itself, a caption, and invisible alt text for screen readers.
+
+The most basic figure has the following set-up.
+\begin{lstlisting}
+\begin{figure}[b]%b may be replaced as needed
+    \centering
+    \includegraphics[alt={Alt text here}]{image.png}
+    \caption{A figure's caption.} %after includegraphics
+\end{figure}
+\end{lstlisting}
+
+Whenever you use the figure environment, captions are automatically formatted for you, except for the fact captions for figures should be \textbf{below} the figure. Therefore, the caption command must be after the image.
+
+\subsubsection{Alt Text}
+You must set the alt text of all figures with a description for the visually impaired. Notice in the example above that \texttt{includegraphics} includes an argument for the alt text in the square brackets. Alt text can be set in a similar way for Tikz and Picture generated figures as well (if your LaTeX is from June 2025 or later).
+
+\begin{lstlisting}
+\begin{figure}[b]
+    \centering
+    \begin{tikzpicture}[alt={tikz graphic}]
+        \draw[gray, thick] (-1,2) -- (2,-4);
+    \end{tikzpicture}
+    \caption{A figure's caption.}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \begin{picture}[alt={more alt}](3,3)
+    \put(0,0){{\color{blue}\circle*{0.25}}\hbox{\kern3pt \texttt{(0,0)}}}
+    \end{picture}
+    \caption{A figure's caption.}
+\end{figure}
+\end{lstlisting}
+
+If you are using LaTeX to generate a figure via a method that does not support alt text, you will want to generate the graphic separately from your main dissertation. For example, xy-pic is not supported by tagging. Therefore, move the xy-pic to a separate file which has its documentclass set to standalone.
+
+\begin{lstlisting}
+\documentclass{standalone}
+\usepackage[all]{xy}
+
+\begin{document}
+$\xymatrix{
+A \ar[d] \ar[r] & B \ar[d] \\
+C \ar[r] & D
+}$
+\end{document}
+\end{lstlisting}
+
+Compiling this document will generate the figure as a standalone PDF. This can then be included in your main thesis with include graphics.
+
+\begin{lstlisting}
+    \includegraphics[alt={alt text}]{pathToOtherPDF.pdf}
+\end{lstlisting}
+
+If your standalone graphic needs to reference labels from your main dissertation, use the \texttt{xr} package.
+\subsubsection{Not Using Figure Environment}
+Most of the time figures will be in a figure environment. Occasionally, however, you may not want to use the figure environment. In such a case, use \texttt{captionsetup} before the figure to ensure proper formatting.
+
+\begin{lstlisting}
+% no \begin{figure}...\end{figure}
+\captionsetup{type=figure}%if you don't use floating figures, you must tell latex that it is a figure
+\includegraphics[alt={alt text}]{image.png}
+\end{lstlisting}
+
+\subsubsection{Subfigures}
+Subfigures are supported by the template. They are supported via the \texttt{subcaption} package. See the example below.
+
+\begin{lstlisting}
+\begin{figure}[b]
+    \centering
+    \begin{subfigure}[c]{0.495\textwidth}
+        \includegraphics[alt={sample image},width=0.99\textwidth]{example-image-c}%
+        \subcaption{\label{fig:2a}}
+    \end{subfigure}
+    \begin{subfigure}[c]{0.495\textwidth}
+        \centering{\includegraphics[alt={sample image},width=0.99\textwidth]{example-image-c}}%
+        \subcaption{\label{fig:2b}}%
+    \end{subfigure}%
+    \caption{A figure with two subfigures: (a) first subfigure; (b) second subfigure.\label{fig:2}}
+\end{figure}
+\end{lstlisting}
+
+\subsubsection{List of Figures}
+\label{listoffigures}
+List of Figures is required if you have figures. It is generated automatically by the template by using the \texttt{listoffiguresTagged} command. If you want a shorter caption to be used in the List of Figures, use the optional argument of caption:
+\begin{lstlisting}
+    \caption[This is short and will appear in the List of Figures.]{This is the very, very long and detailed caption that will appear under the figure with all the details.}
+\end{lstlisting}
+
+\subsubsection{Continued Figures}
+If your figure spans multiple pages, use \texttt{ContinuedFloat} and use ``Continued'' as the caption for the figure environments that appear on the later pages. This will automatically handle the numbering. Only one entry will appear in the List of Figures.
+\begin{lstlisting}
+    \begin{figure}
+        ...
+        \caption{Main caption for big figure}
+    \end{figure}
+\begin{figure}
+    \ContinuedFloat %first thing after begin{figure}
+    ...
+    \caption{Continued} %below figure
+\end{figure}
+\end{lstlisting}
+
+\subsubsection{Landscape Figure}
+
+To have a landscape figure, wrap the figure in a landscape environment.
+\begin{lstlisting}
+\begin{landscape}
+\hfill
+\vfill
+
+\begin{figure}[h!]%h! necessary for it to be centered
+...
+\caption{...}
+\end{figure}
+
+\hfill
+\vfill    
+\end{landscape}
+\end{lstlisting}
+A landscape figure should be on the page by itself.
+
+\subsection{Tables}
+Tables are generally entered by normal LaTeX means, however, they require some extra mark-up to be properly tagged. Note, several popular table related packages are compatible with tagging, such as \texttt{booktabs}. However, it is best to check compatibility if concerned (\url{https://latex3.github.io/tagging-project/tagging-status/}).
+
+Table captions are automatically formatted. Table captions should be above the table, therefore the caption command should be before the table.
+
+Table headers must be tagged.
+Therefore, you must also declare any header rows or columns using \texttt{tagpdfsetup} inside the table environment.
+
+\begin{lstlisting}
+\begin{table}[h!tb] \centering
+    \caption{A table caption.}
+    \tagpdfsetup{table/header-rows={1}}%just row 1 is a header
+    %\tagpdfsetup{table/header-rows={1,2}} would have rows 1 and 2 be header rows instead
+    %Use \tagpdfsetup{table/header-columns={}} for header columns instead
+
+    \begin{tabular}{ll}
+        Bach      & Cello Suite Number 1  \\
+        Beethoven & Cello Sonata Number 3 \\
+        Brahms    & Cello Sonata Number 1
+    \end{tabular}
+\end{table}
+\end{lstlisting}
+
+\subsubsection{Tables Used For Formatting}
+Occasionally, a LaTeX table is used for formatting instead of being used as a real table. In such a case, it should be declared to be for presentation purposes with \texttt{tagpdfsetup}.
+\begin{lstlisting}
+\begin{table}
+    \tagpdfsetup{table/tagging=presentation}
+    ... 
+\end{table}
+\end{lstlisting}
+
+\subsubsection{Complex Tables with Multi-rows or Multi-columns}
+Sometimes cells span multiple rows or columns. If a cell spans multiple columns, nothing further needs to be done. If a cell spans multiple rows, a \texttt{tagpdfsetup} inside the cell must be used to declare how many rows it spans. See example.
+\begin{lstlisting}
+    \begin{tabular}{rr}
+      1  & B      \\
+     0  & \tagpdfsetup{table/multirow={2}}\multirow{2}{*}{A} \\
+     0 &                                 
+    \end{tabular}
+\end{lstlisting}
+
+\subsubsection{List of Tables}
+\label{listoftables}
+List of Tables is required if you have tables. It is generated automatically by the template by using the \texttt{listoftablesTagged} command.
+
+If you want a shorter caption to be used in the List of Tables, use the optional argument of caption:
+\begin{lstlisting}
+    \caption[This is short and will appear in the List of Tables.]{This is the very, very long and detailed caption that will appear above the table with all the details.}
+\end{lstlisting}
+
+\subsubsection{Continued Table}
+If your table spans multiple pages, use \texttt{ContinuedFloat} and use ``Continued'' as the caption for the tables that appear on the later pages. This will automatically handle the numbering. Only one entry will appear in the List of Tables.
+\begin{lstlisting}
+\begin{table}
+    \caption{Main table caption} %above table
+    ...
+\end{table}
+\begin{table}
+    \ContinuedFloat  %first thing after begin{table}
+    \caption{Continued} %above table
+    ...
+\end{table}
+\end{lstlisting}
+
+\subsubsection{Landscape Table}
+
+To have a landscape table, wrap the table in a landscape environment.
+\begin{lstlisting}
+\begin{landscape}
+\hfill
+\vfill
+
+\begin{table}[h!]%h! necessary for it to be centered
+\centering
+\caption{This table shows almost nothing but is a
+sideways table and takes up a whole page by itself}
+\label{nothingelse}
+\tagpdfsetup{table/header-rows={1}}%first row are headers
+\begin{tabular}{lcc} \hline
+\textbf{Element} & \textbf{Control} & \textbf{Experimental} \\ \hline
+Moon Rings & 1.23 & 3.38 \\
+Moon Tides & 2.26 & 3.12 \\
+Moon Walk & 3.33 & 9.29 \\ \hline
+\end{tabular}
+\end{table}
+
+\hfill
+\vfill    
+\end{landscape}
+\end{lstlisting}
+A landscape table should be on the page by itself.
+
+\subsection{Math and Equations}
+It is suggested you use the \texttt{math-packages} document class option.
+Then, math works as expected and automatically.
+
+LuaLatex handles fonts a little differently than pdflatex. To make bold math in LuaLatex with \texttt{unicode-math}, it is suggested to use the command \texttt{symbf}. However, many people are used to using \texttt{bm}. The template re-maps the \texttt{bm} command to \texttt{symbf} so you don't have to change anything. Nonetheless, there might be cases were the output looks slightly different.
+
+Note, it is possible to \textbf{not} use \texttt{unicode-math} with the template, though not recommended. See \autoref{text}.
+
+\subsection{Theorems, Proofs, Definitions, etc.}
+It is suggested you use the \texttt{math-packages} document class option.
+Then, theorems, proofs, definitions, etc. work as expected.
+The \texttt{templatedTheoermTypes.sty} package file is optional, however, it conveniently predefines common environments of this type and sets the numbering to restart each chapter.
+
+\subsection{Algorithms}
+It is suggested you use the \texttt{algorithm-packages} document class option to have painless tagged algorithms. This option loads the packages algorithm and algpseudocode. While you may try to use other algorithm packages, they may not be compatible with tagging. This option also defines a \texttt{parstate} command which allows for states that must be wrapped onto multiple lines.
+
+The command in the preamble:
+\begin{lstlisting}
+\PassOptionsToPackage{noend}{algpseudocode}
+\end{lstlisting}
+is entirely optional. You can use similar commands to pass your preferred options to algpseudocode.
+
+With algorithm-packages option, you may write captioned algorithms as usual and they will automatically be tagged.
+\begin{lstlisting}
+\begin{algorithm}
+  \caption{Score Algorithm}
+  \begin{algorithmic}[1]
+    \State {\textbf{Input: }{$s$ is a sensor }}
+    \State Randomly choose $5$ days
+    \For{$x\in \{1,2,\ldots,1000\}$}
+    \parstate{Set $a$ to be something in this very long state that will have to be wrapped quite possibly around and around and around}
+    \EndFor
+  \end{algorithmic}
+\end{algorithm}
+\end{lstlisting}
+
+\subsection{Chemistry}
+Chemistry packages have not been throughly tested. A standard for the tagging of chemistry formulas has not been well defined.
+In basic testing, \texttt{mhchem} is compatible with math-style tagging, however, \texttt{chemformula} is problematic.
+
+Since the tagging of chemistry as math is questionable and might break the document, you might choose to disable the tagging of all math/chemistry formulas while keeping the tagging of headings, tables, figures, etc. To do this, replace DocumentMetadata at the top of thesis.tex with
+\begin{lstlisting}
+\DocumentMetadata{
+ lang=en,
+ testphase={
+  phase-III,
+  table,
+  title,
+  firstaid
+  },
+ pdfversion=2.0,
+ pdfstandard=ua-2,
+ pdfstandard=a-4f,
+}
+\end{lstlisting}
+It does have the unfortunate side effect that any math will also not be tagged.
+
+\section{Preliminary Pages}
+\subsection{Title Page}
+Required. The required elements are implemented in the template. Ensure you fill out:
+\begin{lstlisting}
+%Set author
+\newcommand{\theAuthor}{Alice Wonder}
+%Set the tite 
+\twoLineTitle{This is the title of a thesis
+submitted to Iowa State University on the first line}{
+Second line, only the first letter of
+the first word and names
+are capitalized!}
+\end{lstlisting}
+in the preamble of thesis.tex to properly set the author and title. The PDF properties will be set for you. The title should only have the first word and proper nouns capitalized. If you have a one line title, leave the second argument blank.
+\begin{lstlisting}
+%Set the tite 
+\twoLineTitle{A short title.}{}
+\end{lstlisting}
+
+Additionally, finish filling out the information in Preface $>$ titlepage.tex according to the instructions. You must provide the name of your degree, your major, your major professor, and your committee members. There are additional instructions in that file if you have a co-major.
+
+You can modify the spacing of the title page by editing the following section in isuthesistagged.cls:
+\begin{lstlisting}
+\long\def\maketitle{\begin{titlepage}
+\vbox to \textheight{
+    \begin{center}
+        \vskip 25pt                   % space at top
+            {\bfseries \@title}
+        \vskip 12pt                    % space between title and by
+        by \\
+        \vskip 12pt                   % space below by 
+            {\bfseries \@author}
+        \vskip 40pt                  % space after author
+        A \@format\ submitted to \@submit\ \\
+        in partial fulfillment of the requirements for the degree of\\
+        \@degree \\[2.5pt]
+        \vskip 40pt                   % space between degree and major
+        \@major
+        \vskip 40pt                    % space between major and committee
+        \begin{singlespace}
+            Program of Study Committee: \\
+            \@mprof
+            \@mprofs
+            \@cmprofs
+            \@members
+            \vfill
+            \vspace{12pt} %space after committee
+            \@disclaimertitlepage
+        \end{singlespace}
+    \end{center}
+    \vfill
+    \vspace{12pt}%space before copyright
+    \@titlefoot } % end of \vbox
+\end{titlepage}
+}% end maketitle
+\end{lstlisting}
+For example, changing 12 pt to 24 pt will generally increase the space. However, note the macro forces the title page to fit on one page regardless of the space settings. Therefore, if too many spaces are too large, you may not see the expected effects (trying shrinking spaces instead).
+
+\subsection{Table of Contents}
+Required. It is automatically generated.
+
+If you absolutely must add a page break inside the table of contents, then before the sectioning command (chapter/section/subsection/...) you want on the next page of the Table of Contents, add the command
+\begin{lstlisting}
+    \addtocontents{toc}{\protect\newpage}
+\end{lstlisting}
+Generally, however, it is best to leave the Table of Contents as-is.
+\subsection{Abstract}
+Required. See Preface $>$ abstract.tex.
+
+\subsection{Dedication}
+Optional - maximum of 1 page. See Preface $>$ dedication.tex.
+
+\subsection{List of Tables, List of Figures}
+Required if you have tables or figures, respectively. It is mostly automatic. See \autoref{listoftables} and \autoref{listoffigures}.
+
+\subsection{Nomenclature}
+Optional. Most use the nomenclature package and this is what is shown in the template file. See Preface $>$ nomenclature.tex. To use the nomenclature package, in addition to running lualatex and biber (for the bibliography), you must also run a command along the lines of
+\begin{lstlisting}
+    makeindex .\LatexAux\thesis.nlo -s nomencl.ist -o .\LatexAux\thesis.nls
+\end{lstlisting}
+See manual for the nomenclature package for details.
+
+\subsection{Acknowledgements}
+Optional - max 4 pages. See Preface $>$ acknowledgements.tex.
+
+\section{Page Numbers and Margins}
+These requirements are handled by the template. The preliminary pages should have roman numerals and the body should have arabic numerals. If this is not working, you likely accidentally deleted some part of
+\begin{lstlisting}
+    \frontmattersetup
+    ...
+    \pagestyle{fancy}
+    \pagenumbering{arabic}
+\end{lstlisting}
+in thesis.tex. See the original thesis.tex for placement.
+
+\section{Headings}
+If you use chapter, section, subsection, etc. commands, the styling and tagging of headings are handled automatically. Chapter headings must be all caps, but this too is handled automatically. For example,
+\begin{lstlisting}
+    \chapter{A Title}
+\end{lstlisting} will still be properly formatted as \textbf{CHAPTER 1. A TITLE}. If you have an exception to this all-caps requirement and need lower-case letters outside of math (which are automatically left alone), you can use \texttt{NoCaseChange}. For example,
+\begin{lstlisting}
+    \chapter{An \NoCaseChange{ReLU} Production}
+\end{lstlisting}
+will be formatted as \textbf{CHAPTER 2. AN ReLU PRODUCTION}.
+
+In the \textbf{rare} case you create a heading \textit{without using the sectioning commands}, you will manually need to instruct LaTeX to tag it. For example,
+\begin{lstlisting}
+{
+\tagtool{para/tag=H3}%h2=section, h3=subsection,....
+\textbf{A great heading which is not part of a sectioning command}
+}
+\end{lstlisting}
+The curly brackets around \texttt{tagtool} and the text acting as a heading is required.
+Make sure the formatting of the heading matches the rest of the headings of that level.
+
+\section{Bibliography}
+To be compatible with tagging, you must use BibLaTeX (not BibTeX). The good news is BibLaTeX is quite backwards compatible with bibtex or natbib, such that you should not have to change your cite commands or your bib file. There are a wide variety of BibLatex styles - see BibLatex documentation.
+
+By default, BibLatex uses biber, so ensure you are using biber to process the bib file or change the backend of biblatex.
+
+If using the Journal Style, you include references for each chapter before any appendices. To do so, use the command
+\begin{lstlisting}
+    \printbibliography[heading=subbibnumbered]
+\end{lstlisting}
+within each chapter. You do \textbf{not} need to provide a heading.
+
+If using the Traditional Style, you will have a Bibliography chapter for the whole thesis before any appendices. To do so, in thesis.tex there are the following lines:
+\begin{lstlisting}
+\chapter*{BIBLIOGRAPHY}
+\addToTOCWithoutChapter{BIBLIOGRAPHY}
+\printbibliography[heading=none]
+\end{lstlisting}
+
+By default, some long bibliography entries may be broken across two pages. It is ISU's opinion that this is bad. You can prevent this by using the \texttt{bib-no-break} document class option.
+
+\section{Class Details}
+The following packages are always loaded in cls file: xpatch, fancyhdr, titlesec, setspace, nowidow, caption, subcaption, geometry, graphicx.
+Further, biblatex and hyperref must also be loaded later in the preamble.
+
+The class has options that can be set within the square brackets
+\begin{lstlisting}
+    \documentclass[options go here]{isuthesistagged}
+\end{lstlisting}
+Additional class options:
+\begin{itemize}
+    \item draft: disables most of tagging, loading of figures, and other "expensive" tasks. Makes compilation much faster. Ignore any warnings from tagpdf when this option is on. Cannot be used for final submission. Automatically includes the option no-mathml and no-tag-tree.
+    \item math-packages: loads amsmath,amsthm, mathtools, and associated tagging fixes
+    \item algorithms-packages: loads algorithm, algpseudocode, fixes the numbering and tagging, also provides a command for long states
+    \item no-mathml: disables math tagging (not required by Iowa State)
+    \item no-tag-tree: disables a slow part of tagging (must be re-enabled before submission)
+    \item bib-no-break: by default, page breaks in the middle of bibliography entries are discouraged, but may happen for a particularly long entry (4+ lines). With this option, a page break will never happen in the middle of an entry, no matter how long. This is "recommended" by not required by Iowa State.
+\end{itemize}
+
+The template must be compiled with LuaLatex. See your editor settings or the tips in Setting Up Local Latex. If you use a terminal instead of an editor, you will call lualatex and biber (for the bibliography) on the command line. I run commands of the form
+\begin{lstlisting}
+    lualatex --aux-directory=./LatexAux --synctex=1 --interaction=nonstopmode --c-style-errors .\thesis.tex
+    biber thesis --output-directory=.\LatexAux  
+\end{lstlisting}
+on MikTex on Windows (this also puts the auxillary files in another directory). TexLive doesn't support auxillary files in another directory, so you would want to modify the commands to be
+\begin{lstlisting}
+    lualatex --synctex=1 --interaction=nonstopmode --c-style-errors .\thesis.tex
+    biber thesis 
+\end{lstlisting}
+
+\section{Checking the Tagging}
+You can validate the PDF meets ISO tagging standards by using VeraPDF (either by downloading it or at \url{demo.verapdf.org}) and using the profile PDF/UA-2.
+Technically, it complains about the font Libertinus (problems with glyph width) in the example files, but that has nothing to do with tagging. If it bothers you, it can be fixed by switching to another font.
+If you actually want to manually inspect the tag structure, you can use ngpdf.com (upload the file, then choose the editor option).
+
+Note, figures and tables are not located in the tagging tree exactly where they are located in the PDF. Instead, they are grouped together at the end of each sub-section. Even though figures and tables physically interrupt the text, usually readers actually come back to them later. Therefore, it does not make sense to have figures and tables disrupt the text within the tagging tree.
+
+\end{document}
