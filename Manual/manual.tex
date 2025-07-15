@@ -335,9 +335,8 @@ A landscape figure should be on the page by itself.
 Tables are generally entered by normal LaTeX means, however, they require some extra mark-up to be properly tagged. Note, several popular table related packages are compatible with tagging, such as \texttt{booktabs}. However, it is best to check compatibility if concerned (\url{https://latex3.github.io/tagging-project/tagging-status/}).
 
 Table captions are automatically formatted. Table captions should be above the table, therefore the caption command should be before the table.
-
-Table headers must be tagged.
-Therefore, you must also declare any header rows or columns using \texttt{tagpdfsetup} inside the table environment.
+Table cells are automatically tagged, but table headers must be tagged.
+Since LaTeX cannot tell what are headers without help, you must also declare any header rows or columns using \texttt{tagpdfsetup} inside the table environment.
 
 \begin{lstlisting}
 \begin{table}[h!tb] \centering
@@ -347,6 +346,7 @@ Therefore, you must also declare any header rows or columns using \texttt{tagpdf
     %Use \tagpdfsetup{table/header-columns={}} for header columns instead
 
     \begin{tabular}{ll}
+        Musician      & Piece  \\
         Bach      & Cello Suite Number 1  \\
         Beethoven & Cello Sonata Number 3 \\
         Brahms    & Cello Sonata Number 1
