@@ -596,6 +596,50 @@ In the \textbf{rare} case you create a heading \textit{without using the section
 The curly brackets around \texttt{tagtool} and the text acting as a heading is required.
 Make sure the formatting of the heading matches the rest of the headings of that level.
 
+\subsection{Appendices}
+Appendices are handled differently in Journal and Traditional. In both cases, appendices are labeled with letters: $A$, $B$, $\ldots$
+
+For a Journal style thesis, simply add another section labeled with ``Appendix $<letter>$'':
+\begin{lstlisting}
+\printbibliography[heading=subbibnumbered]
+%Appendices come after the bibliography
+\section{Appendix A: Appendix A Title Goes Here After The Colon}
+Appendix A things
+\section{Appendix B: Appendix B Title Goes Here After The Colon}
+Appendix B things
+\end{lstlisting}
+
+For a Traditional style thesis, the Appendices are additional chapters after the References chapter. In this case, the chapter command will automatically add Appendix $<letter>$ to the title for you.
+If you have a single appendix:
+\begin{lstlisting}
+\singleappendixtitle
+\chapter{Appendix Name}
+\finishAppendixSetup%must come immediately after chapter 
+...%body of the appendix
+\end{lstlisting}
+
+If you have multiple appendices, in the \textbf{first} appendix:
+\begin{lstlisting}
+\appendixtitle
+\appendix
+\chapter{First Appendix Name}
+\finishAppendixSetup%immediately after chapter in the first appendix
+...%body of the appendix
+\end{lstlisting}
+
+In subsequent appendices, you only need the chapter command:
+\begin{lstlisting}
+\chapter{Appendix of Second and Onward Appendix}
+...%body of the appendix
+\end{lstlisting}
+
+In a traditional thesis, all headings \textit{below} chapter (i.e. section, subsection, $\ldots$) in the appendices should be \textit{unnumbered}. To do this, use the starred version of the sectioning commands:
+\begin{lstlisting}
+    \section*{Section Name}
+    ...
+    \subsection*{Subsection Name}
+\end{lstlisting}
+
 \section{Bibliography}
 To be compatible with tagging, you must use BibLaTeX (not BibTeX). The good news is BibLaTeX is quite backwards compatible with bibtex or natbib, such that you should not have to change your cite commands or your bib file. There are a wide variety of BibLatex styles - see BibLatex documentation.
 
@@ -654,7 +698,9 @@ Note, figures and tables are not located in the tagging tree exactly where they 
 
 \section{Special Situations}
 \subsection{Using H floats}
-H floats are a misnomer - they are not actually floating around anymore. For the most useful tagging, you should ask yourself whether you expect the reader to stop reading the text exactly where you placed the float and switch to looking at the float. If so, then you will want to wrap the float in a ``Part'' tag:
+H floats are a misnomer - they are not actually floating around anymore. H floats are not yet officially supported, but we can fix the tagging ourselves.
+
+For the most useful tagging, you should ask yourself whether you expect the reader to stop reading the text exactly where you placed the float and switch to looking at the float. If so, then you will want to wrap the float in a ``Part'' tag:
 \begin{lstlisting}
     \tagstructbegin{tag=Part} 
     \begin{figure}[H]
