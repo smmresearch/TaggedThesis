@@ -745,4 +745,44 @@ Then, add
 to the preamble of thesis.tex where DejaVu Sans is the name of the font. This will \textbf{not} change the font of the whole document. Within the .tex file you can copy and paste: {\stix ☐} and {\stix  ☒} from here to create the unchecked and checked boxes. The curly braces and the \texttt{stix} commands are important.
 
 Note, the TERMS AND CONDITIONS section and the signatures are \textbf{not} to be included in the final submission. However, the code is provided for you to be able to print out and get signed as needed.
+\subsection{Error: "... \@ does not doesn't match definition..."}
+First, trying running biber and re-running lualatex a few times. If the error still does not resolve, try deleting all auxillary files and running lualatex $->$ biber $->$ lualatex.
+\subsection{Error: Missing  .... \_\_um\_group\_begin}
+It appears to happen when you have something like
+\begin{lstlisting}
+    x_\someCommand{whatever}
+\end{lstlisting}
+To resolve, add curly braces to the sub/super script:
+\begin{lstlisting}
+   x_{\someCommand{whatever}} 
+\end{lstlisting}
+\subsection{Parent-Child Warnings}
+In the standards for the PDF, there are rules about which tags in the tree should go under which other tags. For example, a table cell has to be a child of a table row.
+Some of these warnings are not a big deal, but there are ways to fix them.
+\subsubsection{'P/pdf2' $-->$ 'float/latex'}
+This warning can appear with some floats - especially algorithms.
+This is easily remedied by adding a blank line before \texttt{begin{algorithm}} or other kind of floating environment if needed.
+\subsubsection{Reference $-->$ Formula }
+This is caused by math in caption or header (which then ends up in the list of figures/table/contents).
+The PDF standards were modified in 2025 to allow this. However, LaTeX has not yet been updated.
+I would suggest leaving it as is. However, if it bothers you, it can be worked-around.
+
+If it is caused by math in a caption, wrap the formula in a Span.
+For example,
+\begin{lstlisting}
+    words {\tagstructbegin{tag=Span}$math$\tagstructend}\tagmcend\tagmcbegin{} more words
+\end{lstlisting}
+
+If it is caused by math in a header, you should already be using texorpdfstring. Put the Span inside the tex argument:
+\begin{lstlisting}
+\section{ words \texorpdfstring{ { \tagstructbegin{tag=Span}$math$\tagstructend\tagmcend\tagmcbegin{} } }{<plain text for the pdf metadata} more words }
+\end{lstlisting}
+Notice, all of
+\begin{lstlisting}
+\tagstructbegin{tag=Span}$math$\tagstructend\tagmcend\tagmcbegin{}
+\end{lstlisting}
+is wrapped in a seemingly-extraneous set of { ...}. This is necessary.
+\subsection{Warning: Patching footnotes failed.}
+Do not worry about this warning.
+
 \end{document}
