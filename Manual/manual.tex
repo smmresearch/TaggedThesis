@@ -257,7 +257,7 @@ C \ar[r] & D
 \end{document}
 \end{lstlisting}
 
-Compiling this document will generate the figure as a standalone PDF. This can then be included in your main thesis with include graphics.
+Compiling this document will generate the figure as a standalone PDF. This can then be included in your main thesis with \texttt{includegraphics}.
 
 \begin{lstlisting}
     \includegraphics[alt={alt text}]{pathToOtherPDF.pdf}
@@ -361,6 +361,16 @@ Occasionally, a LaTeX table is used for formatting instead of being used as a re
     \tagpdfsetup{table/tagging=presentation}
     ... 
 \end{table}
+\end{lstlisting}
+\subsubsection{Not Using Table Environment}
+Most of the time tables will be in a table environment. Occasionally, however, you may not want to use the table environment. In such a case, use \texttt{captionsetup} before the table to ensure proper formatting.
+
+\begin{lstlisting}
+% no \begin{table}...\end{table}
+\captionsetup{type=table}%if you don't use floating table, you must tell latex that it is a table
+\begin{tabular}{...}
+    ...
+\end{tabular}
 \end{lstlisting}
 
 \subsubsection{Complex Tables with Multi-rows or Multi-columns}
@@ -472,7 +482,8 @@ Since the tagging of chemistry as math is questionable and might break the docum
   phase-III,
   table,
   title,
-  firstaid
+  firstaid,
+  tikz
   },
  pdfversion=2.0,
  pdfstandard=ua-2,
@@ -718,7 +729,7 @@ If instead the reader will probably finish the sentence/paragraph/section and re
     \tagstructend 
 \end{lstlisting}
 
-If this float is alone in appendix, I would probably tag it as a float for consistency, but there is not one right answer.
+If the float is alone in an appendix, I would suggest tagging it as a float.
 \subsection{Shared Consent Form}
 If you have co-authored papers, you may need a Shared Consent Form. A TeX Version of Type II of this form is available in Shared Consent Form folder (a Type I TeX form has not yet been created). You can copy the file to the Body folder and include this file with
 \begin{lstlisting}
@@ -731,7 +742,7 @@ Then, add
 \begin{lstlisting}
     \newfontfamily\stix{DejaVu Sans}
 \end{lstlisting}
-to the preamble of thesis.tex where DejaVu Sans is the name of the font. This will not change the font of the whole document. Within the .tex file you can copy and paste: {\stix ☐} and {\stix  ☒} from here to create the unchecked and checked boxes. The curly braces are the \texttt{stix} commands are important.
+to the preamble of thesis.tex where DejaVu Sans is the name of the font. This will \textbf{not} change the font of the whole document. Within the .tex file you can copy and paste: {\stix ☐} and {\stix  ☒} from here to create the unchecked and checked boxes. The curly braces and the \texttt{stix} commands are important.
 
 Note, the TERMS AND CONDITIONS section and the signatures are \textbf{not} to be included in the final submission. However, the code is provided for you to be able to print out and get signed as needed.
 \end{document}
