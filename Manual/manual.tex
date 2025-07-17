@@ -781,8 +781,109 @@ Notice, all of
 \begin{lstlisting}
 \tagstructbegin{tag=Span}$math$\tagstructend\tagmcend\tagmcbegin{}
 \end{lstlisting}
-is wrapped in a seemingly-extraneous set of { ...}. This is necessary.
+is wrapped in a seemingly-extraneous set of {...}. This is necessary.
 \subsection{Warning: Patching footnotes failed.}
 Do not worry about this warning.
+\section{Thesis.tex Breakdown}
+\begin{lstlisting}
+%Required:DocumentMetadata turns on tagging
+\DocumentMetadata{
+ lang=en,
+ tagging=on,
+ pdfversion=2.0,
+ pdfstandard=ua-2,
+ pdfstandard=a-4f,
+ %uncompress %can be helpful for debugging
+}
+
+%Optional:Does not put end at the end of algorithm
+\PassOptionsToPackage{noend}{algpseudocode}
+
+%12 pt font, loads math and algorithms packages
+\documentclass[12pt,math-packages,algorithms-packages]{isuthesistagged}
+
+\usepackage{multirow}%Optional:allows multirow cells in table
+\usepackage{pdflscape}%Optional:supports landscape pages
+
+%Optional:Defines Theorem,Definition,Case,etc.
+\usepackage{templatedTheoremTypes}
+
+%Sets libertinus as the font (uses unicode)
+\usepackage[libertinus]{fontsetup}
+
+%Remaps \bm to to \symbf for bold 
+\let\bm\symbf
+
+%Required: biblatex
+%Optional:natbib option - allows the use of natbib-style commands
+%Optional:style=authoryear - can be set to preferred style 
+%In Journal theses, refsection=chapter is required because each
+%chapter is separate. In Traditional style, refsection is omitted
+%because there is just one bibliography
+\usepackage[natbib=true,refsection=chapter,style=authoryear]{biblatex}
+\addbibresource{thesisAccessTest.bib}%adds the bib file
+\setlength{\bibitemsep}{13.2pt}%changes separation between bib items
+
+%Set the author - to be modified as appropriate
+\newcommand{\theAuthor}{Alice Wonder}
+%Set the tite 
+\twoLineTitle{This is the title of a thesis
+submitted to Iowa State University on the first line}{
+Second line, only the first letter of
+the first word and names
+are capitalized!}
+
+%%The following set the author and title in the thesis
+% and in the PDF metadata. No editing required.
+\author{\theAuthor}
+\title{\titleWithLineBreak}
+\usepackage[linktocpage=true,pdfauthor={\theAuthor},pdftitle={\titleWithoutBreak},]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB,pdfencoding=auto}
+\usepackage{bookmark}
+
+
+%Optional nomenclature package
+\usepackage[notintoc,english]{nomencl}
+
+%Optional: Tikz package for figures
+\usepackage{tikz}
+
+\begin{document}
+\include{Preface/titlepage}%Required:titlepage.tex is included
+\frontmattersetup%ensures all preliminary pages are formatted correctly
+
+\include{Preface/dedication}%Optional:Dedication
+
+\tableofcontentsTagged%Required:loads the table of contents
+\cleardoublepage \phantomsection
+\pagebreak %ensures newpage
+
+\listoftablesTagged %remove if no tables, otherwise required
+
+\cleardoublepage \phantomsection
+\listoffiguresTagged %remove if no figures, otherwise required
+
+%Optional nomenclature
+%\cleardoublepage \phantomsection
+%\nomenclatureTagged
+
+%Required: Adds Chapter in front of chapter on TOC
+\addtocontents{toc}{\def\protect\@chapapp{CHAPTER\ }}
+
+%Optional Acknowledgements
+\cleardoublepage \phantomsection
+\include{Preface/acknowl}
+%Required thesis abstract
+\cleardoublepage \phantomsection
+\include{Preface/abstract}
+\newpage
+\pagenumbering{arabic}
+\pagestyle{fancy}%Required:helps set page numbering
+%body of the thesis here
+\tagtool{flush-floats=subsection}% to keep floats where they are supposed to be in the tagging tree
+\clearpage
+\pagebreak
+\end{document}
+\end{lstlisting}
 
 \end{document}
