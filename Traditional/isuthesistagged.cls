@@ -72,7 +72,6 @@
         math/tex/AF=false
     }
     \AddToHook{enddocument/end}{\tagpdfsetup{activate/tree=false}}
-    \AtBeginDocument{\__tag_math_disable:}
     \tagpdfsetup{debug/log=none}
 }
 \ExplSyntaxOff
