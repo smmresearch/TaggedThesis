@@ -1,4 +1,4 @@
-Issues or pull requests are welcome.
+Issues or pull requests are welcome. Discussions focuses on considerations for changes in the future.
 
 Tagging does slow down the compiler. Using the draft option while drafting: ```\documentclass[12pt, draft]{isutaggedthesis}``` disables most of tagging, the loading of figures, and other "expensive tasks," making compilation much faster.
 
