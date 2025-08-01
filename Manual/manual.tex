@@ -168,7 +168,7 @@ with
 % !TEX program = lualatex
 \end{lstlisting}
 
-Upon testing in Summer 2025, the template compiles on Crixet with tagging, however, it is much slower than installing and running LaTeX on your own computer. Using the draft option often is highly recommended if you choose this route.
+Upon testing in Summer 2025, the template compiles on Crixet with tagging, however, it is much slower than installing and running LaTeX on your own computer. Using the draft option (see \autoref{classOptions}) often is highly recommended if you choose this route.
 
 \section{Types of Content}
 \subsection{Text}
@@ -435,7 +435,7 @@ Moon Walk & 3.33 & 9.29 \\ \hline
 A landscape table should be on the page by itself.
 
 \subsection{Math and Equations}
-It is suggested you use the \texttt{math-packages} document class option.
+It is suggested you use the \texttt{math-packages} document class option (see \autoref{classOptions}).
 Then, math works as expected and automatically.
 
 LuaLatex handles fonts a little differently than pdflatex. To make bold math in LuaLatex with \texttt{unicode-math}, it is suggested to use the command \texttt{symbf}. However, many people are used to using \texttt{bm}. The template re-maps the \texttt{bm} command to \texttt{symbf} so you don't have to change anything. Nonetheless, there might be cases were the output looks slightly different.
@@ -443,12 +443,12 @@ LuaLatex handles fonts a little differently than pdflatex. To make bold math in 
 Note, it is possible to \textbf{not} use \texttt{unicode-math} with the template, though not recommended. See \autoref{text}.
 
 \subsection{Theorems, Proofs, Definitions, etc.}
-It is suggested you use the \texttt{math-packages} document class option.
+It is suggested you use the \texttt{math-packages} document class option (see \autoref{classOptions}).
 Then, theorems, proofs, definitions, etc. work as expected.
 The \texttt{templatedTheoermTypes.sty} package file is optional, however, it conveniently predefines common environments of this type and sets the numbering to restart each chapter.
 
 \subsection{Algorithms}
-It is suggested you use the \texttt{algorithm-packages} document class option to have painless tagged algorithms. This option loads the packages algorithm and algpseudocode. While you may try to use other algorithm packages, they may not be compatible with tagging. This option also defines a \texttt{parstate} command which allows for states that must be wrapped onto multiple lines.
+It is suggested you use the \texttt{algorithm-packages} document class option (see \autoref{classOptions}) to have painless tagged algorithms. This option loads the packages algorithm and algpseudocode. While you may try to use other algorithm packages, they may not be compatible with tagging. This option also defines a \texttt{parstate} command which allows for states that must be wrapped onto multiple lines.
 
 The command in the preamble:
 \begin{lstlisting}
@@ -597,7 +597,7 @@ If you use chapter, section, subsection, etc. commands, the styling and tagging 
 \end{lstlisting}
 will be formatted as \textbf{CHAPTER 2. AN ReLU PRODUCTION}.
 
-In the \textbf{rare} case you create a heading \textit{without using the sectioning commands}, you will manually need to instruct LaTeX to tag it. For example,
+In the \textbf{rare} case you create a heading \textit{without using the sectioning commands (chapter/section/subsection/...)}, you will manually need to instruct LaTeX to tag it. For example,
 \begin{lstlisting}
 {
 \tagtool{para/tag=H3}%h2=section, h3=subsection,....
@@ -669,9 +669,10 @@ If using the Traditional Style, you will have a Bibliography chapter for the who
 \printbibliography[heading=none]
 \end{lstlisting}
 
-By default, some long bibliography entries may be broken across two pages. It is ISU's opinion that this is bad. You can prevent this by using the \texttt{bib-no-break} document class option.
+By default, some long bibliography entries may be broken across two pages. It is ISU's opinion that this is bad. You can prevent this by using the \texttt{bib-no-break} document class option (see \autoref{classOptions}).
 
 \section{Class Details}
+\label{classOptions}
 The following packages are always loaded in cls file: xpatch, fancyhdr, titlesec, setspace, nowidow, caption, subcaption, geometry, graphicx.
 Further, biblatex and hyperref must also be loaded later in the preamble.
 
@@ -686,7 +687,7 @@ Additional class options:
     \item algorithms-packages: loads algorithm, algpseudocode, fixes the numbering and tagging, also provides a command for long states
     \item no-mathml: disables math tagging (not required by Iowa State)
     \item no-tag-tree: disables a slow part of tagging (must be re-enabled before submission)
-    \item bib-no-break: by default, page breaks in the middle of bibliography entries are discouraged, but may happen for a particularly long entry (4+ lines). With this option, a page break will never happen in the middle of an entry, no matter how long. This is "recommended" by not required by Iowa State.
+    \item bib-no-break: by default, page breaks in the middle of bibliography entries are discouraged, but may happen for a particularly long entry (4+ lines). With this option, a page break will never happen in the middle of an entry, no matter how long. This is "recommended" but not required by Iowa State.
 \end{itemize}
 
 The template must be compiled with LuaLatex. See your editor settings or the tips in Setting Up Local Latex. If you use a terminal instead of an editor, you will call lualatex and biber (for the bibliography) on the command line. I run commands of the form
