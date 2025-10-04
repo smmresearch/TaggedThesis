@@ -1,6 +1,6 @@
 Issues or pull requests are welcome. Discussions focuses on considerations for changes in the future.
 
-A minimal working version of the thesis is available on Crixet (a free, online LaTeX editor): https://app.crixet.com/?u=b855d32f-4d89-4694-bc89-14f2027baad1&pg=1&m=thesis.tex&d=7  
+A minimal working version of the thesis is available on Crixet: https://app.crixet.com/?u=b855d32f-4d89-4694-bc89-14f2027baad1&pg=1&m=thesis.tex&d=7  
 Note, the first compilation is particularly slow.
 
 The examples in this repository are much larger to showcase more situations, show more ISU requirements, and to differentiate between the Journal and Traditional styles.
@@ -31,8 +31,6 @@ I would recommend using a local installation of LaTeX. If you don't already have
 It is essential your version of LaTeX is recently updated.
 
 I suspect it won't work with Overleaf (problems detailed below), but this has not yet been tested (let me know if you have!). 
-An up-and-coming (free as of 2025) alternative to Overleaf is Crixet.com.
-Similar to Overleaf, Crixet is all in-browser and allows for collaboration. Further, Crixet appears to update far more often than Overleaf and has a different behind-the-scenes infrastructure which prevents timeouts.
 To use Crixet, at the very top of thesis.tex, replace
 ```
 %!LW recipe=lualatex-plain
