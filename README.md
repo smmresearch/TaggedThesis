@@ -1,8 +1,5 @@
 Issues or pull requests are welcome. Discussions focuses on considerations for changes in the future.
 
-A minimal working version of the thesis is available on Crixet: https://app.crixet.com/?u=b855d32f-4d89-4694-bc89-14f2027baad1&pg=1&m=thesis.tex&d=7  
-Note, the first compilation is particularly slow.
-
 The examples in this repository are much larger to showcase more situations, show more ISU requirements, and to differentiate between the Journal and Traditional styles.
 
 Tagging does slow down the compiler. Using the draft option while drafting: ```\documentclass[12pt, draft]{isutaggedthesis}``` disables most of tagging, the loading of figures, and other "expensive tasks," making compilation much faster.
@@ -31,16 +28,6 @@ I would recommend using a local installation of LaTeX. If you don't already have
 It is essential your version of LaTeX is recently updated.
 
 I suspect it won't work with Overleaf (problems detailed below), but this has not yet been tested (let me know if you have!). 
-To use Crixet, at the very top of thesis.tex, replace
-```
-%!LW recipe=lualatex-plain
-```
-with
-```
-% !TEX program = lualatex
-```
-
-Upon testing in Summer 2025, the template compiles on Crixet with tagging, however, it is much slower than installing and running LaTeX on your own computer. Using the draft option often is highly recommended.
 
 There are two main problems with Overleaf:
 
